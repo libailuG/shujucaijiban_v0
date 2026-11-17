@@ -1,0 +1,299 @@
+Motor HID report sizes 257 257
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:44)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+adapter speed: 500 kHz
+Info : CMSIS-DAP: Connecting to 127.0.0.1:64653 using TCP backend
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Error: CMSIS-DAP: error reading header
+Error: Error on socket 'peek_socket': WSAGetLastError==10035, message: �޷��������һ������ֹ���׽��ֲ�����
+
+.
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: JTAG supported
+Info : CMSIS-DAP: SWO-UART supported
+Info : CMSIS-DAP: Atomic commands supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 1 TDO = 1 nTRST = 1 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 500 kHz
+Info : SWD DPIDR 0x2ba01477
+Info : [stm32g4x.cpu] Cortex-M4 r0p1 processor detected
+Info : [stm32g4x.cpu] target has 6 breakpoints, 4 watchpoints
+Info : [stm32g4x.cpu] Examination succeed
+Info : [stm32g4x.cpu] starting gdb server on 3333
+Info : Listening on port 3333 for gdb connections
+GUARD CPUID=0x410fc241 CHIPID=0x20036468
+dumped 32768 bytes in 1.909208s (16.761 KiB/s)
+dumped 2048 bytes in 0.115489s (17.318 KiB/s)
+[stm32g4x.cpu] halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080001f0 msp: 0x20002580
+Info : device idcode = 0x20036468 (STM32G43/G44xx - Rev 'unknown' : 0x2003)
+Info : RDP level 0 (0xAA)
+Info : flash size = 128 KiB
+Info : flash mode : single-bank
+Warn : Adding extra erase range, 0x08013130 .. 0x080137ff
+auto erase enabled
+wrote 45360 bytes from file tmp/dap_motor_diagnosis/restore2m/application.hex in 1.928954s (22.964 KiB/s)
+verified 45360 bytes in 0.406914s (108.861 KiB/s)
+0x200003d4: 00001500 00000085 00000100 00000070 00000000 00000000 00000000 00000000 
+0x200003f4: 00000000 0000006b 0000006b 00000000 00000000 
+0x200003d4: 00003ae0 00000174 000000e0 0000013a 00000000 00000000 00000000 00000000 
+0x200003f4: 00000000 00000135 00000135 00000000 00000000 
+dumped 32768 bytes in 0.647793s (49.398 KiB/s)
+dumped 2048 bytes in 0.041674s (47.992 KiB/s)
+0xe000ed08: 08008000 
+shutdown command invoked

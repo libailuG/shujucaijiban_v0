@@ -1,0 +1,32 @@
+#ifndef BOARD_IMU_H
+#define BOARD_IMU_H
+#include <stdint.h>
+
+/* 实板方向备注（用户确认）：板子平放时，X轴朝左，Y轴朝后。 */
+typedef struct { float x, y, z; } ImuVector3;
+typedef struct { float roll, pitch, yaw; } ImuAngles;
+typedef struct {
+    ImuAngles angle_rad;       /* ZYX Euler angles; yaw is relative/drifts. */
+    ImuVector3 gyro_rad_s;
+    ImuVector3 accel_m_s2;     /* Includes gravity. */
+    uint32_t timestamp_us;     /* TIM2, wraps about every 71.6 minutes. */
+    uint32_t sample_count;
+    uint32_t valid;            /* Last transaction succeeded. */
+    uint32_t angle_valid;      /* Gravity initialized the attitude estimate. */
+    int32_t last_error;        /* 0=OK; negative=initialization/read failure. */
+} ImuData;
+
+extern volatile ImuData g_imu_data; /* 原传感器坐标，保留作对照。 */
+/* 最终竖装映射（用户实测确认可用）：
+ * 相对上一版(-原Z,原X,-原Y)，X/Z同时反向、Y不变，相当于绕Y轴转180度。
+ * 用户测试直立位置Roll约0度；Pitch按用户测试的同一观察方向顺时针负、逆时针正。
+ * 顺/逆时针依赖观察方向；原始“Y朝下”的安装判断已由本实测映射替代。
+ * (X,Y,Z)=(原Z,原X,原Y)，加速度m/s^2、角速度rad/s、姿态rad。
+ * Roll绕机身X、Pitch绕机身Y，右手正方向；Yaw为相对航向，会漂移。
+ */
+extern volatile ImuData g_imu_body_data;
+void imu_get_body_data(ImuData *out); /* 一致快照；检查valid/angle_valid。 */
+void imu_init(void);
+void imu_poll(void);          /* Consume IRQ completions and solve attitude in main. */
+void imu_get_data(ImuData *out);
+#endif

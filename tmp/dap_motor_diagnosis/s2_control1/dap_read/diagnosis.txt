@@ -1,0 +1,11 @@
+2026-11-12 DAP read-only diagnosis, STM32H723 mainboard.
+No source edits, flash writes, reset/halt, register writes, injected remote packets or motion commands.
+CPU observed running at end of sample and trace captures.
+Flash dump 0x08000000 size0x50000 matched ALL 267728 populated bytes in current Objects/zhuban_led.hex; ObjectsCli differs, so ONLY freshly exported Objects AXF symbols used.
+Observed accepted UART9 mode3; received data1=0/data2=3, no bit3 hold. Zero state0/switch0.
+Network initialized1/selftest_ok1, max error2.9802322387695312e-8; torque limit6, slew0.
+Both motor TX mode1 torque0/KP0; UART TX data2=3, data8/9=0; motor RX valid mode1/error0 and IMU valid/angle_valid/error0 observed; counters advance.
+Trace: 60 non-atomic samples, status warmup1=54, BAD_INPUT(-1)=6; controller ticks never observed above10. Memory was read while running; individual fields are not a single coherent halted snapshot.
+Compute capture:180 samples; status warmup1=160/BAD_INPUT(-1)=20. last_compute_us max29162, multiple long samples29150..29162us; warmup samples74..83us.
+Source demands20ms+/-1ms and getter suppresses commands older than21000us from previous_tick (set before compute). Long full network computations exceed command deadline, block main-loop sensor/feedback processing, and cause input/timing resets and repeated warmup. This is a demonstrated timing blocker; captures do not exclude additional transient input faults.
+No remediation or firmware deployment performed. Next: optimize inference compilation/execution to fit20ms with margin, recompile/offline verify; measure on hardware only after authorized deployment. Do not bypass input checks or simply enlarge dt tolerance.

@@ -1,0 +1,1 @@
+PASS: actual linked ARM parser; all49 splits, noise, concatenation, ring wrap, error epoch, bad tail resync, OTA split and routing

@@ -1,0 +1,1 @@
+PASS actual Keil ARM: 3-flash marker, channel order, 100/500ms status, 300ms gaps, 1s/2s pauses, per-channel timeout, timer wrap, no-data invalidity

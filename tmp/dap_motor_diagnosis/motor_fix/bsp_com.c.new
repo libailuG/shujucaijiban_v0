@@ -1,0 +1,139 @@
+#include "bsp_com.h"
+#include "ota_protocol.h"
+#include "dwt.h"
+#include <string.h>
+#define COM1_RX_BUFFER_SIZE 256U
+#define RX_RING_SIZE 512U
+uint8_t COM1_RX_Buffer[COM1_RX_BUFFER_SIZE];
+uint8_t COM1_TX_Buffer[256];
+volatile MotorComDiagnostics g_motor_com_diag;
+static uint8_t rx_ring[RX_RING_SIZE], stream[80];
+static volatile uint32_t rx_head, rx_tail, rx_epoch;
+static uint32_t seen_epoch, stream_used;
+static volatile bool COM1_TxCptflag = true;
+static bool COM1_OTA_ResetAck;
+
+static void receive_start(void)
+{
+    if (HAL_UARTEx_ReceiveToIdle_DMA(&huart1, COM1_RX_Buffer, COM1_RX_BUFFER_SIZE) != HAL_OK)
+        ++g_motor_com_diag.rx_start_fail;
+    /* HT does not terminate normal DMA: never publish a partial batch twice. */
+    __HAL_DMA_DISABLE_IT(huart1.hdmarx, DMA_IT_HT);
+}
+void bsp_com_init(void) { UART1_RS485_R; receive_start(); }
+
+bool bsp_com_send(uint8_t *data, uint16_t size)
+{
+    if (!COM1_TxCptflag || !data || !size || size > sizeof(COM1_TX_Buffer)) return false;
+    memcpy(COM1_TX_Buffer, data, size);
+    COM1_OTA_ResetAck = size == 9U && data[0] == OTA_FRAME_HEADER_0 &&
+        data[1] == OTA_FRAME_HEADER_1 && data[3] == OTA_MASTER_ID &&
+        data[4] == 2U && data[5] == 5U && data[6] == 0U;
+    COM1_TxCptflag = false;
+    UART1_RS485_W;
+    /* DWT is initialized by main before bsp_com_init. Allow DE to settle. */
+    delay_us(2U);
+    if (HAL_UART_Transmit_DMA(&huart1, COM1_TX_Buffer, size) != HAL_OK) {
+        UART1_RS485_R;
+        COM1_TxCptflag = true;
+        COM1_OTA_ResetAck = false;
+        ++g_motor_com_diag.tx_fail;
+        return false;
+    }
+    ++g_motor_com_diag.tx_started;
+    return true;
+}
+void COM1_RX_ClearData(void)
+{
+    uint32_t saved = __get_PRIMASK();
+    __disable_irq(); rx_tail = rx_head; seen_epoch = rx_epoch;
+    __set_PRIMASK(saved); stream_used = 0;
+}
+static void discard_first(void)
+{
+    --stream_used;
+    memmove(stream, stream + 1, stream_used);
+    ++g_motor_com_diag.discarded_bytes;
+}
+/* DMA/IDLE batch boundaries are NOT packet boundaries. Retain partial frames,
+ * scan past noise, and emit one packet at a time, preserving OTA routing. */
+bool COM1_RX_GetData(uint8_t *data, uint16_t *size)
+{
+    if (!data || !size) return false;
+    *size = 0;
+    for (unsigned budget = 0; budget < RX_RING_SIZE; ++budget) {
+        if (seen_epoch != rx_epoch) COM1_RX_ClearData();
+        uint32_t tail = rx_tail;
+        if (tail == rx_head) break;
+        __DMB(); stream[stream_used++] = rx_ring[tail];
+        rx_tail = (tail + 1U) & (RX_RING_SIZE - 1U);
+        while (stream_used) {
+            unsigned needed;
+            if (stream[0] == OTA_FRAME_HEADER_0 && stream_used >= 2U &&
+                stream[1] == OTA_FRAME_HEADER_1) {
+                if (stream_used < 5U) break;
+                if (stream[4] < 1U || stream[4] > 67U) { discard_first(); continue; }
+                needed = 7U + stream[4];
+                if (stream_used < needed) break;
+                /* Existing ota_handle_frame still checks address and CRC. */
+            } else if (stream[0] == 0xAAU || stream[0] == 0xBBU) {
+                if (stream_used < 4U) break;
+                uint8_t header = stream[0], end = header == 0xAAU ? 0xEEU : 0xDDU;
+                if (stream[1] != header || stream[2] != header || stream[3] != header) {
+                    discard_first(); continue;
+                }
+                needed = 48U;
+                if (stream_used < needed) break;
+                if (stream[44] != end || stream[45] != end || stream[46] != end || stream[47] != end) {
+                    discard_first(); continue;
+                }
+            } else { discard_first(); continue; }
+            memcpy(data, stream, needed); *size = (uint16_t)needed;
+            stream_used -= needed;
+            memmove(stream, stream + needed, stream_used);
+            ++g_motor_com_diag.packets;
+            return true;
+        }
+    }
+    return false;
+}
+void COM1_ReSet(void) { receive_start(); }
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t size)
+{
+    if (huart->Instance != USART1) return;
+    if (HAL_UARTEx_GetRxEventType(huart) == HAL_UART_RXEVENT_HT) {
+        ++g_motor_com_diag.ht_events; return;
+    }
+    ++g_motor_com_diag.rx_batches;
+    g_motor_com_diag.last_batch_size = size;
+    if (size <= COM1_RX_BUFFER_SIZE) {
+        for (unsigned i = 0; i < size; ++i) {
+            uint32_t head = rx_head, next = (head + 1U) & (RX_RING_SIZE - 1U);
+            ++g_motor_com_diag.rx_bytes;
+            if (next == rx_tail) { ++rx_epoch; ++g_motor_com_diag.overflow; break; }
+            rx_ring[head] = COM1_RX_Buffer[i]; __DMB(); rx_head = next;
+        }
+    }
+    receive_start();
+}
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
+{
+    if (huart->Instance != USART1) return;
+    UART1_RS485_R;
+    COM1_TxCptflag = true;
+    ++g_motor_com_diag.tx_complete;
+    if (COM1_OTA_ResetAck) { COM1_OTA_ResetAck = false; ota_response_sent(); }
+}
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
+{
+    if (huart->Instance != USART1) return;
+    ++g_motor_com_diag.uart_errors;
+    g_motor_com_diag.error_flags_or |= HAL_UART_GetError(huart);
+    ++rx_epoch;
+    /* Abort RX only. Never overwrite the independent TX state or DMA. */
+    HAL_UART_AbortReceive(huart);
+    __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_PEF | UART_CLEAR_FEF |
+        UART_CLEAR_NEF | UART_CLEAR_OREF | UART_CLEAR_IDLEF);
+    __HAL_UART_SEND_REQ(huart, UART_RXDATA_FLUSH_REQUEST);
+    receive_start();
+}

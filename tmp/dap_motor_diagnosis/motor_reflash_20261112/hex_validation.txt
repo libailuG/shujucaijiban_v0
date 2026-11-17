@@ -1,0 +1,1 @@
+Validated HEX bytes=41636 range=0x8008000..0x80122a3

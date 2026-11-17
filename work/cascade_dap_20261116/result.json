@@ -1,0 +1,108 @@
+{
+  "duration_s": 30.443428,
+  "sample_count": 31,
+  "cpu_halted": false,
+  "flash_rewritten": false,
+  "state": {
+    "start": 3,
+    "end": 3,
+    "delta": 0
+  },
+  "rx_bytes": {
+    "start": 25631538,
+    "end": 28300556,
+    "delta": 2669018
+  },
+  "uart_errors": {
+    "start": 0,
+    "end": 0,
+    "delta": 0
+  },
+  "dma_errors": {
+    "start": 0,
+    "end": 0,
+    "delta": 0
+  },
+  "overruns": {
+    "start": 1,
+    "end": 1,
+    "delta": 0
+  },
+  "partial_timeouts": {
+    "start": 0,
+    "end": 0,
+    "delta": 0
+  },
+  "tx_requests": {
+    "start": 2,
+    "end": 2,
+    "delta": 0
+  },
+  "tx_errors": {
+    "start": 0,
+    "end": 0,
+    "delta": 0
+  },
+  "bad_replies": {
+    "start": 0,
+    "end": 0,
+    "delta": 0
+  },
+  "bad_crc": {
+    "start": 0,
+    "end": 0,
+    "delta": 0
+  },
+  "bad_length": {
+    "start": 0,
+    "end": 0,
+    "delta": 0
+  },
+  "accepted": {
+    "start": 105915,
+    "end": 116944,
+    "delta": 11029
+  },
+  "rejected": {
+    "start": 0,
+    "end": 0,
+    "delta": 0
+  },
+  "duplicate_push": {
+    "start": 0,
+    "end": 0,
+    "delta": 0
+  },
+  "skipped_push": {
+    "start": 0,
+    "end": 0,
+    "delta": 0
+  },
+  "bound": {
+    "start": 1,
+    "end": 1,
+    "delta": 0
+  },
+  "foot_new": {
+    "start": 103382,
+    "end": 112954,
+    "delta": 9572
+  },
+  "shank_new": {
+    "start": 103626,
+    "end": 113697,
+    "delta": 10071
+  },
+  "thigh_new": {
+    "start": 105916,
+    "end": 116945,
+    "delta": 11029
+  },
+  "push_hz": 362.27851870032504,
+  "foot_new_hz": 314.419256596202,
+  "shank_new_hz": 330.81031479109384,
+  "thigh_new_hz": 362.27851870032504,
+  "low_intrusion_duration_s": 10.013553,
+  "low_intrusion_push_hz": 436.2088062049504,
+  "snapshot_warning": "Live DAP record reads are not an atomic multi-source snapshot; ages/values are diagnostic samples."
+}

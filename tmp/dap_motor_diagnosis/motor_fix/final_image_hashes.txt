@@ -1,0 +1,9 @@
+
+Algorithm : SHA256
+Hash      : 37D56185956F8BB91AB9A81E21E75723894BF37BF2461A2D1E906C78FA0391D7
+Path      : C:\Users\libai\Desktop\X1\imu_caiji\zhuban_caiji\Objects\zhuban_led.hex
+
+Algorithm : SHA256
+Hash      : ED4D311886F1FF6A2807B9BBA61D7B3103999165F9B61BFF7D1B001C2CDD6BEF
+Path      : C:\Users\libai\Desktop\X1\motor\motor_G431_new_protocol\motor_G431_new_protocol\motor\MDK-ARM\taixi_motor_driver1\taixi_motor_driver1.hex
+

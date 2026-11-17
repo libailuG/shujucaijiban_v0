@@ -1,0 +1,2 @@
+PASS actual linked ARM: left/right mode2 exactly once, >=10ms after leftTC, no mode2 ACK required, independent fresh mode1 recovery, stale cache rejected, switch2 holds torque/KP0 even after DONE, explicit OFF restores control, early OFF stays zero until recovery, no debug/no zero, rearm edge, timer wrap
+PASS UART9 actual linked ARM integration: bit1 rising routes zero request, bit0 ACK preserved, bit1 250ms flash, complete steadyON, OFF ACK cleared, paired telemetry unchanged, torque requests ignored while switch2ON

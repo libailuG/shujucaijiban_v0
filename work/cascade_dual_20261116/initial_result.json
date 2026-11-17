@@ -1,0 +1,202 @@
+{
+  "duration_s": 30.561164,
+  "flashed_verified": true,
+  "firmware": "firmware/Objects/zhuban_caiji.hex",
+  "run_halted": false,
+  "left": {
+    "state": {
+      "start": 3,
+      "end": 3,
+      "delta": 0
+    },
+    "rx_bytes": {
+      "start": 4045535,
+      "end": 6759342,
+      "delta": 2713807
+    },
+    "uart_errors": {
+      "start": 1,
+      "end": 1,
+      "delta": 0
+    },
+    "dma_errors": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "overruns": {
+      "start": 1,
+      "end": 1,
+      "delta": 0
+    },
+    "partial_timeouts": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "tx_requests": {
+      "start": 1,
+      "end": 1,
+      "delta": 0
+    },
+    "tx_errors": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "bad_replies": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "bad_crc": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "bad_length": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "accepted": {
+      "start": 16715,
+      "end": 27929,
+      "delta": 11214
+    },
+    "rejected": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "duplicate_push": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "skipped_push": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "bound": {
+      "start": 1,
+      "end": 1,
+      "delta": 0
+    },
+    "foot_new": {
+      "start": 16121,
+      "end": 26661,
+      "delta": 10540
+    },
+    "shank_new": {
+      "start": 16121,
+      "end": 26661,
+      "delta": 10540
+    },
+    "thigh_new": {
+      "start": 16715,
+      "end": 27930,
+      "delta": 11215
+    },
+    "accepted_hz": 366.93628554200353
+  },
+  "right": {
+    "state": {
+      "start": 1,
+      "end": 4,
+      "delta": 3
+    },
+    "rx_bytes": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "uart_errors": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "dma_errors": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "overruns": {
+      "start": 1,
+      "end": 1,
+      "delta": 0
+    },
+    "partial_timeouts": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "tx_requests": {
+      "start": 241,
+      "end": 410,
+      "delta": 169
+    },
+    "tx_errors": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "bad_replies": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "bad_crc": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "bad_length": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "accepted": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "rejected": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "duplicate_push": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "skipped_push": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "bound": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "foot_new": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "shank_new": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "thigh_new": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "accepted_hz": 0.0
+  }
+}

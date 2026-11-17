@@ -1,0 +1,2956 @@
+
+========================================================================
+
+** ELF Header Information
+
+    File Name: firmware/Objects/g1_assist_v10_policy.o
+
+    Machine class: ELFCLASS32 (32-bit)
+    Data encoding: ELFDATA2LSB (Little endian)
+    Header version: EV_CURRENT (Current version)
+    Operating System ABI: none
+    ABI Version: 0
+    File Type: ET_REL (Relocatable object) (1)
+    Machine: EM_ARM (ARM)
+
+    Entry offset (in SHF_ENTRYSECT section): 0x00000000
+    Flags: None (0x05000000)
+
+    ARM ELF revision: 5 (ABI version 2)
+
+    Header size: 52 bytes (0x34)
+    Program header entry size: 0 bytes (0x0)
+    Section header entry size: 40 bytes (0x28)
+
+    Program header entries: 0
+    Section header entries: 84
+
+    Program header offset: 0 (0x00000000)
+    Section header offset: 371980 (0x0005ad0c)
+
+    Section header string table index: 1
+
+========================================================================
+
+** Section #1 '.strtab' (SHT_STRTAB)
+    Size   : 1459 bytes
+
+
+** Section #2 '.text' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 0 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #3 '.text.g1_assist_v10_history_reset' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 224 bytes (alignment 8)
+    Address: 0x00000000
+
+    [Anonymous symbol #2]
+    $t
+    g1_assist_v10_history_reset
+        0x00000000:    b085        ..      SUB      sp,sp,#0x14
+        0x00000002:    9004        ..      STR      r0,[sp,#0x10]
+        0x00000004:    9103        ..      STR      r1,[sp,#0xc]
+        0x00000006:    9202        ..      STR      r2,[sp,#8]
+        0x00000008:    9804        ..      LDR      r0,[sp,#0x10]
+        0x0000000a:    b130        0.      CBZ      r0,{pc}+0x10 ; 0x1a
+        0x0000000c:    e7ff        ..      B        {pc}+0x2 ; 0xe
+        0x0000000e:    9803        ..      LDR      r0,[sp,#0xc]
+        0x00000010:    b118        ..      CBZ      r0,{pc}+0xa ; 0x1a
+        0x00000012:    e7ff        ..      B        {pc}+0x2 ; 0x14
+        0x00000014:    9802        ..      LDR      r0,[sp,#8]
+        0x00000016:    b908        ..      CBNZ     r0,{pc}+0x6 ; 0x1c
+        0x00000018:    e7ff        ..      B        {pc}+0x2 ; 0x1a
+        0x0000001a:    e05f        _.      B        {pc}+0xc2 ; 0xdc
+        0x0000001c:    2000        .       MOVS     r0,#0
+        0x0000001e:    9001        ..      STR      r0,[sp,#4]
+        0x00000020:    e7ff        ..      B        {pc}+0x2 ; 0x22
+        0x00000022:    9801        ..      LDR      r0,[sp,#4]
+        0x00000024:    2818        .(      CMP      r0,#0x18
+        0x00000026:    d831        1.      BHI      {pc}+0x66 ; 0x8c
+        0x00000028:    e7ff        ..      B        {pc}+0x2 ; 0x2a
+        0x0000002a:    2000        .       MOVS     r0,#0
+        0x0000002c:    9000        ..      STR      r0,[sp,#0]
+        0x0000002e:    e7ff        ..      B        {pc}+0x2 ; 0x30
+        0x00000030:    9800        ..      LDR      r0,[sp,#0]
+        0x00000032:    2801        .(      CMP      r0,#1
+        0x00000034:    d825        %.      BHI      {pc}+0x4e ; 0x82
+        0x00000036:    e7ff        ..      B        {pc}+0x2 ; 0x38
+        0x00000038:    9803        ..      LDR      r0,[sp,#0xc]
+        0x0000003a:    9a00        ..      LDR      r2,[sp,#0]
+        0x0000003c:    f8500022    P.".    LDR      r0,[r0,r2,LSL #2]
+        0x00000040:    9904        ..      LDR      r1,[sp,#0x10]
+        0x00000042:    9b01        ..      LDR      r3,[sp,#4]
+        0x00000044:    eb0101c3    ....    ADD      r1,r1,r3,LSL #3
+        0x00000048:    f8410022    A.".    STR      r0,[r1,r2,LSL #2]
+        0x0000004c:    9802        ..      LDR      r0,[sp,#8]
+        0x0000004e:    9a00        ..      LDR      r2,[sp,#0]
+        0x00000050:    f8500022    P.".    LDR      r0,[r0,r2,LSL #2]
+        0x00000054:    9904        ..      LDR      r1,[sp,#0x10]
+        0x00000056:    9b01        ..      LDR      r3,[sp,#4]
+        0x00000058:    eb0101c3    ....    ADD      r1,r1,r3,LSL #3
+        0x0000005c:    eb010182    ....    ADD      r1,r1,r2,LSL #2
+        0x00000060:    f8c100c8    ....    STR      r0,[r1,#0xc8]
+        0x00000064:    9804        ..      LDR      r0,[sp,#0x10]
+        0x00000066:    9901        ..      LDR      r1,[sp,#4]
+        0x00000068:    eb0000c1    ....    ADD      r0,r0,r1,LSL #3
+        0x0000006c:    9900        ..      LDR      r1,[sp,#0]
+        0x0000006e:    eb000181    ....    ADD      r1,r0,r1,LSL #2
+        0x00000072:    2000        .       MOVS     r0,#0
+        0x00000074:    f8c10190    ....    STR      r0,[r1,#0x190]
+        0x00000078:    e7ff        ..      B        {pc}+0x2 ; 0x7a
+        0x0000007a:    9800        ..      LDR      r0,[sp,#0]
+        0x0000007c:    3001        .0      ADDS     r0,#1
+        0x0000007e:    9000        ..      STR      r0,[sp,#0]
+        0x00000080:    e7d6        ..      B        {pc}-0x50 ; 0x30
+        0x00000082:    e7ff        ..      B        {pc}+0x2 ; 0x84
+        0x00000084:    9801        ..      LDR      r0,[sp,#4]
+        0x00000086:    3001        .0      ADDS     r0,#1
+        0x00000088:    9001        ..      STR      r0,[sp,#4]
+        0x0000008a:    e7ca        ..      B        {pc}-0x68 ; 0x22
+        0x0000008c:    2000        .       MOVS     r0,#0
+        0x0000008e:    9001        ..      STR      r0,[sp,#4]
+        0x00000090:    e7ff        ..      B        {pc}+0x2 ; 0x92
+        0x00000092:    9801        ..      LDR      r0,[sp,#4]
+        0x00000094:    2818        .(      CMP      r0,#0x18
+        0x00000096:    d81c        ..      BHI      {pc}+0x3c ; 0xd2
+        0x00000098:    e7ff        ..      B        {pc}+0x2 ; 0x9a
+        0x0000009a:    2000        .       MOVS     r0,#0
+        0x0000009c:    9000        ..      STR      r0,[sp,#0]
+        0x0000009e:    e7ff        ..      B        {pc}+0x2 ; 0xa0
+        0x000000a0:    9800        ..      LDR      r0,[sp,#0]
+        0x000000a2:    2819        .(      CMP      r0,#0x19
+        0x000000a4:    d810        ..      BHI      {pc}+0x24 ; 0xc8
+        0x000000a6:    e7ff        ..      B        {pc}+0x2 ; 0xa8
+        0x000000a8:    9a04        ..      LDR      r2,[sp,#0x10]
+        0x000000aa:    9801        ..      LDR      r0,[sp,#4]
+        0x000000ac:    2168        h!      MOVS     r1,#0x68
+        0x000000ae:    fb002001    ...     MLA      r0,r0,r1,r2
+        0x000000b2:    9900        ..      LDR      r1,[sp,#0]
+        0x000000b4:    eb000181    ....    ADD      r1,r0,r1,LSL #2
+        0x000000b8:    2000        .       MOVS     r0,#0
+        0x000000ba:    f8c10258    ..X.    STR      r0,[r1,#0x258]
+        0x000000be:    e7ff        ..      B        {pc}+0x2 ; 0xc0
+        0x000000c0:    9800        ..      LDR      r0,[sp,#0]
+        0x000000c2:    3001        .0      ADDS     r0,#1
+        0x000000c4:    9000        ..      STR      r0,[sp,#0]
+        0x000000c6:    e7eb        ..      B        {pc}-0x26 ; 0xa0
+        0x000000c8:    e7ff        ..      B        {pc}+0x2 ; 0xca
+        0x000000ca:    9801        ..      LDR      r0,[sp,#4]
+        0x000000cc:    3001        .0      ADDS     r0,#1
+        0x000000ce:    9001        ..      STR      r0,[sp,#4]
+        0x000000d0:    e7df        ..      B        {pc}-0x3e ; 0x92
+        0x000000d2:    9904        ..      LDR      r1,[sp,#0x10]
+        0x000000d4:    2000        .       MOVS     r0,#0
+        0x000000d6:    f8c10c80    ....    STR      r0,[r1,#0xc80]
+        0x000000da:    e7ff        ..      B        {pc}+0x2 ; 0xdc
+        0x000000dc:    b005        ..      ADD      sp,sp,#0x14
+        0x000000de:    4770        pG      BX       lr
+
+** Section #4 '.ARM.exidx.text.g1_assist_v10_history_reset' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #3 '.text.g1_assist_v10_history_reset'
+
+
+** Section #5 '.rel.ARM.exidx.text.g1_assist_v10_history_reset' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #4 '.ARM.exidx.text.g1_assist_v10_history_reset'
+
+
+** Section #6 '.text.g1_assist_v10_history_append' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 228 bytes (alignment 8)
+    Address: 0x00000000
+
+    [Anonymous symbol #4]
+    $t
+    g1_assist_v10_history_append
+        0x00000000:    b086        ..      SUB      sp,sp,#0x18
+        0x00000002:    f8ddc018    ....    LDR      r12,[sp,#0x18]
+        0x00000006:    9005        ..      STR      r0,[sp,#0x14]
+        0x00000008:    9104        ..      STR      r1,[sp,#0x10]
+        0x0000000a:    9203        ..      STR      r2,[sp,#0xc]
+        0x0000000c:    9302        ..      STR      r3,[sp,#8]
+        0x0000000e:    9805        ..      LDR      r0,[sp,#0x14]
+        0x00000010:    b148        H.      CBZ      r0,{pc}+0x16 ; 0x26
+        0x00000012:    e7ff        ..      B        {pc}+0x2 ; 0x14
+        0x00000014:    9804        ..      LDR      r0,[sp,#0x10]
+        0x00000016:    b130        0.      CBZ      r0,{pc}+0x10 ; 0x26
+        0x00000018:    e7ff        ..      B        {pc}+0x2 ; 0x1a
+        0x0000001a:    9803        ..      LDR      r0,[sp,#0xc]
+        0x0000001c:    b118        ..      CBZ      r0,{pc}+0xa ; 0x26
+        0x0000001e:    e7ff        ..      B        {pc}+0x2 ; 0x20
+        0x00000020:    9802        ..      LDR      r0,[sp,#8]
+        0x00000022:    b908        ..      CBNZ     r0,{pc}+0x6 ; 0x28
+        0x00000024:    e7ff        ..      B        {pc}+0x2 ; 0x26
+        0x00000026:    e05b        [.      B        {pc}+0xba ; 0xe0
+        0x00000028:    9805        ..      LDR      r0,[sp,#0x14]
+        0x0000002a:    f8d00c80    ....    LDR      r0,[r0,#0xc80]
+        0x0000002e:    9000        ..      STR      r0,[sp,#0]
+        0x00000030:    2000        .       MOVS     r0,#0
+        0x00000032:    9001        ..      STR      r0,[sp,#4]
+        0x00000034:    e7ff        ..      B        {pc}+0x2 ; 0x36
+        0x00000036:    9801        ..      LDR      r0,[sp,#4]
+        0x00000038:    2801        .(      CMP      r0,#1
+        0x0000003a:    d827        '.      BHI      {pc}+0x52 ; 0x8c
+        0x0000003c:    e7ff        ..      B        {pc}+0x2 ; 0x3e
+        0x0000003e:    9804        ..      LDR      r0,[sp,#0x10]
+        0x00000040:    9a01        ..      LDR      r2,[sp,#4]
+        0x00000042:    f8500022    P.".    LDR      r0,[r0,r2,LSL #2]
+        0x00000046:    9905        ..      LDR      r1,[sp,#0x14]
+        0x00000048:    9b00        ..      LDR      r3,[sp,#0]
+        0x0000004a:    eb0101c3    ....    ADD      r1,r1,r3,LSL #3
+        0x0000004e:    f8410022    A.".    STR      r0,[r1,r2,LSL #2]
+        0x00000052:    9803        ..      LDR      r0,[sp,#0xc]
+        0x00000054:    9a01        ..      LDR      r2,[sp,#4]
+        0x00000056:    f8500022    P.".    LDR      r0,[r0,r2,LSL #2]
+        0x0000005a:    9905        ..      LDR      r1,[sp,#0x14]
+        0x0000005c:    9b00        ..      LDR      r3,[sp,#0]
+        0x0000005e:    eb0101c3    ....    ADD      r1,r1,r3,LSL #3
+        0x00000062:    eb010182    ....    ADD      r1,r1,r2,LSL #2
+        0x00000066:    f8c100c8    ....    STR      r0,[r1,#0xc8]
+        0x0000006a:    9802        ..      LDR      r0,[sp,#8]
+        0x0000006c:    9a01        ..      LDR      r2,[sp,#4]
+        0x0000006e:    f8500022    P.".    LDR      r0,[r0,r2,LSL #2]
+        0x00000072:    9905        ..      LDR      r1,[sp,#0x14]
+        0x00000074:    9b00        ..      LDR      r3,[sp,#0]
+        0x00000076:    eb0101c3    ....    ADD      r1,r1,r3,LSL #3
+        0x0000007a:    eb010182    ....    ADD      r1,r1,r2,LSL #2
+        0x0000007e:    f8c10190    ....    STR      r0,[r1,#0x190]
+        0x00000082:    e7ff        ..      B        {pc}+0x2 ; 0x84
+        0x00000084:    9801        ..      LDR      r0,[sp,#4]
+        0x00000086:    3001        .0      ADDS     r0,#1
+        0x00000088:    9001        ..      STR      r0,[sp,#4]
+        0x0000008a:    e7d4        ..      B        {pc}-0x54 ; 0x36
+        0x0000008c:    2000        .       MOVS     r0,#0
+        0x0000008e:    9001        ..      STR      r0,[sp,#4]
+        0x00000090:    e7ff        ..      B        {pc}+0x2 ; 0x92
+        0x00000092:    9801        ..      LDR      r0,[sp,#4]
+        0x00000094:    2819        .(      CMP      r0,#0x19
+        0x00000096:    d813        ..      BHI      {pc}+0x2a ; 0xc0
+        0x00000098:    e7ff        ..      B        {pc}+0x2 ; 0x9a
+        0x0000009a:    9806        ..      LDR      r0,[sp,#0x18]
+        0x0000009c:    9a01        ..      LDR      r2,[sp,#4]
+        0x0000009e:    f8500022    P.".    LDR      r0,[r0,r2,LSL #2]
+        0x000000a2:    f8ddc014    ....    LDR      r12,[sp,#0x14]
+        0x000000a6:    9900        ..      LDR      r1,[sp,#0]
+        0x000000a8:    2368        h#      MOVS     r3,#0x68
+        0x000000aa:    fb01c103    ....    MLA      r1,r1,r3,r12
+        0x000000ae:    eb010182    ....    ADD      r1,r1,r2,LSL #2
+        0x000000b2:    f8c10258    ..X.    STR      r0,[r1,#0x258]
+        0x000000b6:    e7ff        ..      B        {pc}+0x2 ; 0xb8
+        0x000000b8:    9801        ..      LDR      r0,[sp,#4]
+        0x000000ba:    3001        .0      ADDS     r0,#1
+        0x000000bc:    9001        ..      STR      r0,[sp,#4]
+        0x000000be:    e7e8        ..      B        {pc}-0x2c ; 0x92
+        0x000000c0:    9800        ..      LDR      r0,[sp,#0]
+        0x000000c2:    1c42        B.      ADDS     r2,r0,#1
+        0x000000c4:    f248501f    H..P    MOV      r0,#0x851f
+        0x000000c8:    f2c510eb    ....    MOVT     r0,#0x51eb
+        0x000000cc:    fba21000    ....    UMULL    r1,r0,r2,r0
+        0x000000d0:    08c0        ..      LSRS     r0,r0,#3
+        0x000000d2:    2119        .!      MOVS     r1,#0x19
+        0x000000d4:    fb002011    ...     MLS      r0,r0,r1,r2
+        0x000000d8:    9905        ..      LDR      r1,[sp,#0x14]
+        0x000000da:    f8c10c80    ....    STR      r0,[r1,#0xc80]
+        0x000000de:    e7ff        ..      B        {pc}+0x2 ; 0xe0
+        0x000000e0:    b006        ..      ADD      sp,sp,#0x18
+        0x000000e2:    4770        pG      BX       lr
+
+** Section #7 '.ARM.exidx.text.g1_assist_v10_history_append' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #6 '.text.g1_assist_v10_history_append'
+
+
+** Section #8 '.rel.ARM.exidx.text.g1_assist_v10_history_append' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #7 '.ARM.exidx.text.g1_assist_v10_history_append'
+
+
+** Section #9 '.text.g1_assist_v10_history_build_observation' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 262 bytes (alignment 8)
+    Address: 0x00000000
+
+    [Anonymous symbol #6]
+    $t
+    g1_assist_v10_history_build_observation
+        0x00000000:    b085        ..      SUB      sp,sp,#0x14
+        0x00000002:    9004        ..      STR      r0,[sp,#0x10]
+        0x00000004:    9103        ..      STR      r1,[sp,#0xc]
+        0x00000006:    9804        ..      LDR      r0,[sp,#0x10]
+        0x00000008:    b118        ..      CBZ      r0,{pc}+0xa ; 0x12
+        0x0000000a:    e7ff        ..      B        {pc}+0x2 ; 0xc
+        0x0000000c:    9803        ..      LDR      r0,[sp,#0xc]
+        0x0000000e:    b908        ..      CBNZ     r0,{pc}+0x6 ; 0x14
+        0x00000010:    e7ff        ..      B        {pc}+0x2 ; 0x12
+        0x00000012:    e076        v.      B        {pc}+0xf0 ; 0x102
+        0x00000014:    2000        .       MOVS     r0,#0
+        0x00000016:    9002        ..      STR      r0,[sp,#8]
+        0x00000018:    e7ff        ..      B        {pc}+0x2 ; 0x1a
+        0x0000001a:    9802        ..      LDR      r0,[sp,#8]
+        0x0000001c:    2818        .(      CMP      r0,#0x18
+        0x0000001e:    d870        p.      BHI      {pc}+0xe4 ; 0x102
+        0x00000020:    e7ff        ..      B        {pc}+0x2 ; 0x22
+        0x00000022:    9804        ..      LDR      r0,[sp,#0x10]
+        0x00000024:    f8d00c80    ....    LDR      r0,[r0,#0xc80]
+        0x00000028:    9902        ..      LDR      r1,[sp,#8]
+        0x0000002a:    1842        B.      ADDS     r2,r0,r1
+        0x0000002c:    f248501f    H..P    MOV      r0,#0x851f
+        0x00000030:    f2c510eb    ....    MOVT     r0,#0x51eb
+        0x00000034:    fba21000    ....    UMULL    r1,r0,r2,r0
+        0x00000038:    08c0        ..      LSRS     r0,r0,#3
+        0x0000003a:    2119        .!      MOVS     r1,#0x19
+        0x0000003c:    fb002011    ...     MLS      r0,r0,r1,r2
+        0x00000040:    9000        ..      STR      r0,[sp,#0]
+        0x00000042:    2000        .       MOVS     r0,#0
+        0x00000044:    9001        ..      STR      r0,[sp,#4]
+        0x00000046:    e7ff        ..      B        {pc}+0x2 ; 0x48
+        0x00000048:    9801        ..      LDR      r0,[sp,#4]
+        0x0000004a:    2801        .(      CMP      r0,#1
+        0x0000004c:    d834        4.      BHI      {pc}+0x6c ; 0xb8
+        0x0000004e:    e7ff        ..      B        {pc}+0x2 ; 0x50
+        0x00000050:    9804        ..      LDR      r0,[sp,#0x10]
+        0x00000052:    9900        ..      LDR      r1,[sp,#0]
+        0x00000054:    eb0000c1    ....    ADD      r0,r0,r1,LSL #3
+        0x00000058:    9a01        ..      LDR      r2,[sp,#4]
+        0x0000005a:    f8500022    P.".    LDR      r0,[r0,r2,LSL #2]
+        0x0000005e:    9903        ..      LDR      r1,[sp,#0xc]
+        0x00000060:    9b02        ..      LDR      r3,[sp,#8]
+        0x00000062:    eb020243    ..C.    ADD      r2,r2,r3,LSL #1
+        0x00000066:    f8410022    A.".    STR      r0,[r1,r2,LSL #2]
+        0x0000006a:    9804        ..      LDR      r0,[sp,#0x10]
+        0x0000006c:    9900        ..      LDR      r1,[sp,#0]
+        0x0000006e:    eb0000c1    ....    ADD      r0,r0,r1,LSL #3
+        0x00000072:    9a01        ..      LDR      r2,[sp,#4]
+        0x00000074:    eb000082    ....    ADD      r0,r0,r2,LSL #2
+        0x00000078:    f8d000c8    ....    LDR      r0,[r0,#0xc8]
+        0x0000007c:    9903        ..      LDR      r1,[sp,#0xc]
+        0x0000007e:    9b02        ..      LDR      r3,[sp,#8]
+        0x00000080:    eb020243    ..C.    ADD      r2,r2,r3,LSL #1
+        0x00000084:    eb010182    ....    ADD      r1,r1,r2,LSL #2
+        0x00000088:    f8c100c8    ....    STR      r0,[r1,#0xc8]
+        0x0000008c:    9804        ..      LDR      r0,[sp,#0x10]
+        0x0000008e:    9900        ..      LDR      r1,[sp,#0]
+        0x00000090:    eb0000c1    ....    ADD      r0,r0,r1,LSL #3
+        0x00000094:    9a01        ..      LDR      r2,[sp,#4]
+        0x00000096:    eb000082    ....    ADD      r0,r0,r2,LSL #2
+        0x0000009a:    f8d00190    ....    LDR      r0,[r0,#0x190]
+        0x0000009e:    9903        ..      LDR      r1,[sp,#0xc]
+        0x000000a0:    9b02        ..      LDR      r3,[sp,#8]
+        0x000000a2:    eb020243    ..C.    ADD      r2,r2,r3,LSL #1
+        0x000000a6:    eb010182    ....    ADD      r1,r1,r2,LSL #2
+        0x000000aa:    f8c10190    ....    STR      r0,[r1,#0x190]
+        0x000000ae:    e7ff        ..      B        {pc}+0x2 ; 0xb0
+        0x000000b0:    9801        ..      LDR      r0,[sp,#4]
+        0x000000b2:    3001        .0      ADDS     r0,#1
+        0x000000b4:    9001        ..      STR      r0,[sp,#4]
+        0x000000b6:    e7c7        ..      B        {pc}-0x6e ; 0x48
+        0x000000b8:    2000        .       MOVS     r0,#0
+        0x000000ba:    9001        ..      STR      r0,[sp,#4]
+        0x000000bc:    e7ff        ..      B        {pc}+0x2 ; 0xbe
+        0x000000be:    9801        ..      LDR      r0,[sp,#4]
+        0x000000c0:    2819        .(      CMP      r0,#0x19
+        0x000000c2:    d819        ..      BHI      {pc}+0x36 ; 0xf8
+        0x000000c4:    e7ff        ..      B        {pc}+0x2 ; 0xc6
+        0x000000c6:    9a04        ..      LDR      r2,[sp,#0x10]
+        0x000000c8:    9800        ..      LDR      r0,[sp,#0]
+        0x000000ca:    2168        h!      MOVS     r1,#0x68
+        0x000000cc:    fb002001    ...     MLA      r0,r0,r1,r2
+        0x000000d0:    f8ddc004    ....    LDR      r12,[sp,#4]
+        0x000000d4:    eb00008c    ....    ADD      r0,r0,r12,LSL #2
+        0x000000d8:    f8d00258    ..X.    LDR      r0,[r0,#0x258]
+        0x000000dc:    9903        ..      LDR      r1,[sp,#0xc]
+        0x000000de:    9a02        ..      LDR      r2,[sp,#8]
+        0x000000e0:    231a        .#      MOVS     r3,#0x1a
+        0x000000e2:    fb02c203    ....    MLA      r2,r2,r3,r12
+        0x000000e6:    eb010182    ....    ADD      r1,r1,r2,LSL #2
+        0x000000ea:    f8c10258    ..X.    STR      r0,[r1,#0x258]
+        0x000000ee:    e7ff        ..      B        {pc}+0x2 ; 0xf0
+        0x000000f0:    9801        ..      LDR      r0,[sp,#4]
+        0x000000f2:    3001        .0      ADDS     r0,#1
+        0x000000f4:    9001        ..      STR      r0,[sp,#4]
+        0x000000f6:    e7e2        ..      B        {pc}-0x38 ; 0xbe
+        0x000000f8:    e7ff        ..      B        {pc}+0x2 ; 0xfa
+        0x000000fa:    9802        ..      LDR      r0,[sp,#8]
+        0x000000fc:    3001        .0      ADDS     r0,#1
+        0x000000fe:    9002        ..      STR      r0,[sp,#8]
+        0x00000100:    e78b        ..      B        {pc}-0xe6 ; 0x1a
+        0x00000102:    b005        ..      ADD      sp,sp,#0x14
+        0x00000104:    4770        pG      BX       lr
+
+** Section #10 '.ARM.exidx.text.g1_assist_v10_history_build_observation' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #9 '.text.g1_assist_v10_history_build_observation'
+
+
+** Section #11 '.rel.ARM.exidx.text.g1_assist_v10_history_build_observation' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #10 '.ARM.exidx.text.g1_assist_v10_history_build_observation'
+
+
+** Section #12 '.text.g1_assist_v10_policy_forward' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 520 bytes (alignment 8)
+    Address: 0x00000000
+
+    [Anonymous symbol #8]
+    $t
+    g1_assist_v10_policy_forward
+        0x00000000:    b580        ..      PUSH     {r7,lr}
+        0x00000002:    b08e        ..      SUB      sp,sp,#0x38
+        0x00000004:    900d        ..      STR      r0,[sp,#0x34]
+        0x00000006:    910c        ..      STR      r1,[sp,#0x30]
+        0x00000008:    920b        ..      STR      r2,[sp,#0x2c]
+        0x0000000a:    980d        ..      LDR      r0,[sp,#0x34]
+        0x0000000c:    b130        0.      CBZ      r0,{pc}+0x10 ; 0x1c
+        0x0000000e:    e7ff        ..      B        {pc}+0x2 ; 0x10
+        0x00000010:    980c        ..      LDR      r0,[sp,#0x30]
+        0x00000012:    b118        ..      CBZ      r0,{pc}+0xa ; 0x1c
+        0x00000014:    e7ff        ..      B        {pc}+0x2 ; 0x16
+        0x00000016:    980b        ..      LDR      r0,[sp,#0x2c]
+        0x00000018:    b908        ..      CBNZ     r0,{pc}+0x6 ; 0x1e
+        0x0000001a:    e7ff        ..      B        {pc}+0x2 ; 0x1c
+        0x0000001c:    e0ef        ..      B        {pc}+0x1e2 ; 0x1fe
+        0x0000001e:    2000        .       MOVS     r0,#0
+        0x00000020:    900a        ..      STR      r0,[sp,#0x28]
+        0x00000022:    e7ff        ..      B        {pc}+0x2 ; 0x24
+        0x00000024:    980a        ..      LDR      r0,[sp,#0x28]
+        0x00000026:    0940        @.      LSRS     r0,r0,#5
+        0x00000028:    2818        .(      CMP      r0,#0x18
+        0x0000002a:    d82a        *.      BHI      {pc}+0x58 ; 0x82
+        0x0000002c:    e7ff        ..      B        {pc}+0x2 ; 0x2e
+        0x0000002e:    980d        ..      LDR      r0,[sp,#0x34]
+        0x00000030:    990a        ..      LDR      r1,[sp,#0x28]
+        0x00000032:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x00000036:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000003a:    f2400000    @...    MOVW     r0,#:LOWER16: OBS_MEAN
+        0x0000003e:    f2c00000    ....    MOVT     r0,#:UPPER16: OBS_MEAN
+        0x00000042:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x00000046:    ed901a00    ....    VLDR     s2,[r0,#0]
+        0x0000004a:    ee300a41    0.A.    VSUB.F32 s0,s0,s2
+        0x0000004e:    f2400000    @...    MOVW     r0,#:LOWER16: OBS_STD
+        0x00000052:    f2c00000    ....    MOVT     r0,#:UPPER16: OBS_STD
+        0x00000056:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x0000005a:    ed901a00    ....    VLDR     s2,[r0,#0]
+        0x0000005e:    ed9f2a69    ..i*    VLDR     s4,[pc,#420] ; [0x204] = 0x3c23d70a
+        0x00000062:    ee311a02    1...    VADD.F32 s2,s2,s4
+        0x00000066:    ee800a01    ....    VDIV.F32 s0,s0,s2
+        0x0000006a:    980b        ..      LDR      r0,[sp,#0x2c]
+        0x0000006c:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x00000070:    f5006080    ...`    ADD      r0,r0,#0x400
+        0x00000074:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x00000078:    e7ff        ..      B        {pc}+0x2 ; 0x7a
+        0x0000007a:    980a        ..      LDR      r0,[sp,#0x28]
+        0x0000007c:    3001        .0      ADDS     r0,#1
+        0x0000007e:    900a        ..      STR      r0,[sp,#0x28]
+        0x00000080:    e7d0        ..      B        {pc}-0x5c ; 0x24
+        0x00000082:    2000        .       MOVS     r0,#0
+        0x00000084:    9009        ..      STR      r0,[sp,#0x24]
+        0x00000086:    e7ff        ..      B        {pc}+0x2 ; 0x88
+        0x00000088:    9809        ..      LDR      r0,[sp,#0x24]
+        0x0000008a:    283f        ?(      CMP      r0,#0x3f
+        0x0000008c:    d83a        :.      BHI      {pc}+0x78 ; 0x104
+        0x0000008e:    e7ff        ..      B        {pc}+0x2 ; 0x90
+        0x00000090:    9909        ..      LDR      r1,[sp,#0x24]
+        0x00000092:    f2400000    @...    MOVW     r0,#:LOWER16: BIAS_0
+        0x00000096:    f2c00000    ....    MOVT     r0,#:UPPER16: BIAS_0
+        0x0000009a:    f8500021    P.!.    LDR      r0,[r0,r1,LSL #2]
+        0x0000009e:    9007        ..      STR      r0,[sp,#0x1c]
+        0x000000a0:    2000        .       MOVS     r0,#0
+        0x000000a2:    9008        ..      STR      r0,[sp,#0x20]
+        0x000000a4:    e7ff        ..      B        {pc}+0x2 ; 0xa6
+        0x000000a6:    9808        ..      LDR      r0,[sp,#0x20]
+        0x000000a8:    0940        @.      LSRS     r0,r0,#5
+        0x000000aa:    2818        .(      CMP      r0,#0x18
+        0x000000ac:    d820         .      BHI      {pc}+0x44 ; 0xf0
+        0x000000ae:    e7ff        ..      B        {pc}+0x2 ; 0xb0
+        0x000000b0:    9809        ..      LDR      r0,[sp,#0x24]
+        0x000000b2:    9908        ..      LDR      r1,[sp,#0x20]
+        0x000000b4:    f44f7248    O.Hr    MOV      r2,#0x320
+        0x000000b8:    fb001202    ....    MLA      r2,r0,r2,r1
+        0x000000bc:    f2400000    @...    MOVW     r0,#:LOWER16: WEIGHT_0
+        0x000000c0:    f2c00000    ....    MOVT     r0,#:UPPER16: WEIGHT_0
+        0x000000c4:    eb000082    ....    ADD      r0,r0,r2,LSL #2
+        0x000000c8:    ed901a00    ....    VLDR     s2,[r0,#0]
+        0x000000cc:    980b        ..      LDR      r0,[sp,#0x2c]
+        0x000000ce:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x000000d2:    f5006080    ...`    ADD      r0,r0,#0x400
+        0x000000d6:    ed902a00    ...*    VLDR     s4,[r0,#0]
+        0x000000da:    ed9d0a07    ....    VLDR     s0,[sp,#0x1c]
+        0x000000de:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000000e2:    ed8d0a07    ....    VSTR     s0,[sp,#0x1c]
+        0x000000e6:    e7ff        ..      B        {pc}+0x2 ; 0xe8
+        0x000000e8:    9808        ..      LDR      r0,[sp,#0x20]
+        0x000000ea:    3001        .0      ADDS     r0,#1
+        0x000000ec:    9008        ..      STR      r0,[sp,#0x20]
+        0x000000ee:    e7da        ..      B        {pc}-0x48 ; 0xa6
+        0x000000f0:    9807        ..      LDR      r0,[sp,#0x1c]
+        0x000000f2:    990b        ..      LDR      r1,[sp,#0x2c]
+        0x000000f4:    9a09        ..      LDR      r2,[sp,#0x24]
+        0x000000f6:    f8410022    A.".    STR      r0,[r1,r2,LSL #2]
+        0x000000fa:    e7ff        ..      B        {pc}+0x2 ; 0xfc
+        0x000000fc:    9809        ..      LDR      r0,[sp,#0x24]
+        0x000000fe:    3001        .0      ADDS     r0,#1
+        0x00000100:    9009        ..      STR      r0,[sp,#0x24]
+        0x00000102:    e7c1        ..      B        {pc}-0x7a ; 0x88
+        0x00000104:    980b        ..      LDR      r0,[sp,#0x2c]
+        0x00000106:    f5006280    ...b    ADD      r2,r0,#0x400
+        0x0000010a:    f2400100    @...    MOVW     r1,#:LOWER16: BIAS_1
+        0x0000010e:    f2c00100    ....    MOVT     r1,#:UPPER16: BIAS_1
+        0x00000112:    466b        kF      MOV      r3,sp
+        0x00000114:    6059        Y`      STR      r1,[r3,#4]
+        0x00000116:    f2400100    @...    MOVW     r1,#:LOWER16: WEIGHT_1
+        0x0000011a:    f2c00100    ....    MOVT     r1,#:UPPER16: WEIGHT_1
+        0x0000011e:    6019        .`      STR      r1,[r3,#0]
+        0x00000120:    2140        @!      MOVS     r1,#0x40
+        0x00000122:    9104        ..      STR      r1,[sp,#0x10]
+        0x00000124:    f44f7380    O..s    MOV      r3,#0x100
+        0x00000128:    9303        ..      STR      r3,[sp,#0xc]
+        0x0000012a:    f7fffffe    ....    BL       linear_elu ; 0x0 Section #16
+        0x0000012e:    9903        ..      LDR      r1,[sp,#0xc]
+        0x00000130:    9b04        ..      LDR      r3,[sp,#0x10]
+        0x00000132:    9a0b        ..      LDR      r2,[sp,#0x2c]
+        0x00000134:    f5026080    ...`    ADD      r0,r2,#0x400
+        0x00000138:    f2400c00    @...    MOVW     r12,#:LOWER16: BIAS_2
+        0x0000013c:    f2c00c00    ....    MOVT     r12,#:UPPER16: BIAS_2
+        0x00000140:    46ee        .F      MOV      lr,sp
+        0x00000142:    f8cec004    ....    STR      r12,[lr,#4]
+        0x00000146:    f2400c00    @...    MOVW     r12,#:LOWER16: WEIGHT_2
+        0x0000014a:    f2c00c00    ....    MOVT     r12,#:UPPER16: WEIGHT_2
+        0x0000014e:    f8cec000    ....    STR      r12,[lr,#0]
+        0x00000152:    f7fffffe    ....    BL       linear_elu ; 0x0 Section #16
+        0x00000156:    9904        ..      LDR      r1,[sp,#0x10]
+        0x00000158:    980b        ..      LDR      r0,[sp,#0x2c]
+        0x0000015a:    f5006280    ...b    ADD      r2,r0,#0x400
+        0x0000015e:    f2400300    @...    MOVW     r3,#:LOWER16: BIAS_3
+        0x00000162:    f2c00300    ....    MOVT     r3,#:UPPER16: BIAS_3
+        0x00000166:    46ec        .F      MOV      r12,sp
+        0x00000168:    f8cc3004    ...0    STR      r3,[r12,#4]
+        0x0000016c:    f2400300    @...    MOVW     r3,#:LOWER16: WEIGHT_3
+        0x00000170:    f2c00300    ....    MOVT     r3,#:UPPER16: WEIGHT_3
+        0x00000174:    f8cc3000    ...0    STR      r3,[r12,#0]
+        0x00000178:    2310        .#      MOVS     r3,#0x10
+        0x0000017a:    f7fffffe    ....    BL       linear_elu ; 0x0 Section #16
+        0x0000017e:    2000        .       MOVS     r0,#0
+        0x00000180:    9009        ..      STR      r0,[sp,#0x24]
+        0x00000182:    e7ff        ..      B        {pc}+0x2 ; 0x184
+        0x00000184:    9809        ..      LDR      r0,[sp,#0x24]
+        0x00000186:    2801        .(      CMP      r0,#1
+        0x00000188:    d839        9.      BHI      {pc}+0x76 ; 0x1fe
+        0x0000018a:    e7ff        ..      B        {pc}+0x2 ; 0x18c
+        0x0000018c:    9909        ..      LDR      r1,[sp,#0x24]
+        0x0000018e:    f2400000    @...    MOVW     r0,#:LOWER16: BIAS_4
+        0x00000192:    f2c00000    ....    MOVT     r0,#:UPPER16: BIAS_4
+        0x00000196:    f8500021    P.!.    LDR      r0,[r0,r1,LSL #2]
+        0x0000019a:    9006        ..      STR      r0,[sp,#0x18]
+        0x0000019c:    9909        ..      LDR      r1,[sp,#0x24]
+        0x0000019e:    f2400000    @...    MOVW     r0,#:LOWER16: WEIGHT_4
+        0x000001a2:    f2c00000    ....    MOVT     r0,#:UPPER16: WEIGHT_4
+        0x000001a6:    eb001081    ....    ADD      r0,r0,r1,LSL #6
+        0x000001aa:    9005        ..      STR      r0,[sp,#0x14]
+        0x000001ac:    2000        .       MOVS     r0,#0
+        0x000001ae:    9008        ..      STR      r0,[sp,#0x20]
+        0x000001b0:    e7ff        ..      B        {pc}+0x2 ; 0x1b2
+        0x000001b2:    9808        ..      LDR      r0,[sp,#0x20]
+        0x000001b4:    280f        .(      CMP      r0,#0xf
+        0x000001b6:    d818        ..      BHI      {pc}+0x34 ; 0x1ea
+        0x000001b8:    e7ff        ..      B        {pc}+0x2 ; 0x1ba
+        0x000001ba:    9805        ..      LDR      r0,[sp,#0x14]
+        0x000001bc:    9908        ..      LDR      r1,[sp,#0x20]
+        0x000001be:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x000001c2:    ed901a00    ....    VLDR     s2,[r0,#0]
+        0x000001c6:    980b        ..      LDR      r0,[sp,#0x2c]
+        0x000001c8:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x000001cc:    f5006080    ...`    ADD      r0,r0,#0x400
+        0x000001d0:    ed902a00    ...*    VLDR     s4,[r0,#0]
+        0x000001d4:    ed9d0a06    ....    VLDR     s0,[sp,#0x18]
+        0x000001d8:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000001dc:    ed8d0a06    ....    VSTR     s0,[sp,#0x18]
+        0x000001e0:    e7ff        ..      B        {pc}+0x2 ; 0x1e2
+        0x000001e2:    9808        ..      LDR      r0,[sp,#0x20]
+        0x000001e4:    3001        .0      ADDS     r0,#1
+        0x000001e6:    9008        ..      STR      r0,[sp,#0x20]
+        0x000001e8:    e7e3        ..      B        {pc}-0x36 ; 0x1b2
+        0x000001ea:    9806        ..      LDR      r0,[sp,#0x18]
+        0x000001ec:    990c        ..      LDR      r1,[sp,#0x30]
+        0x000001ee:    9a09        ..      LDR      r2,[sp,#0x24]
+        0x000001f0:    f8410022    A.".    STR      r0,[r1,r2,LSL #2]
+        0x000001f4:    e7ff        ..      B        {pc}+0x2 ; 0x1f6
+        0x000001f6:    9809        ..      LDR      r0,[sp,#0x24]
+        0x000001f8:    3001        .0      ADDS     r0,#1
+        0x000001fa:    9009        ..      STR      r0,[sp,#0x24]
+        0x000001fc:    e7c2        ..      B        {pc}-0x78 ; 0x184
+        0x000001fe:    b00e        ..      ADD      sp,sp,#0x38
+        0x00000200:    bd80        ..      POP      {r7,pc}
+        0x00000202:    bf00        ..      NOP      
+    $d
+        0x00000204:    3c23d70a    ..#<    DCD    1008981770
+
+** Section #13 '.rel.text.g1_assist_v10_policy_forward' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 216 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    27 relocations applied to section #12 '.text.g1_assist_v10_policy_forward'
+
+
+** Section #14 '.ARM.exidx.text.g1_assist_v10_policy_forward' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #12 '.text.g1_assist_v10_policy_forward'
+
+
+** Section #15 '.rel.ARM.exidx.text.g1_assist_v10_policy_forward' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #14 '.ARM.exidx.text.g1_assist_v10_policy_forward'
+
+
+** Section #16 '.text.linear_elu' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 148 bytes (alignment 8)
+    Address: 0x00000000
+
+    linear_elu
+    [Anonymous symbol #24]
+    $t
+        0x00000000:    b580        ..      PUSH     {r7,lr}
+        0x00000002:    b088        ..      SUB      sp,sp,#0x20
+        0x00000004:    f8ddc02c    ..,.    LDR      r12,[sp,#0x2c]
+        0x00000008:    f8ddc028    ..(.    LDR      r12,[sp,#0x28]
+        0x0000000c:    9007        ..      STR      r0,[sp,#0x1c]
+        0x0000000e:    9106        ..      STR      r1,[sp,#0x18]
+        0x00000010:    9205        ..      STR      r2,[sp,#0x14]
+        0x00000012:    9304        ..      STR      r3,[sp,#0x10]
+        0x00000014:    2000        .       MOVS     r0,#0
+        0x00000016:    9003        ..      STR      r0,[sp,#0xc]
+        0x00000018:    e7ff        ..      B        {pc}+0x2 ; 0x1a
+        0x0000001a:    9803        ..      LDR      r0,[sp,#0xc]
+        0x0000001c:    9904        ..      LDR      r1,[sp,#0x10]
+        0x0000001e:    4288        .B      CMP      r0,r1
+        0x00000020:    d236        6.      BCS      {pc}+0x70 ; 0x90
+        0x00000022:    e7ff        ..      B        {pc}+0x2 ; 0x24
+        0x00000024:    980b        ..      LDR      r0,[sp,#0x2c]
+        0x00000026:    9903        ..      LDR      r1,[sp,#0xc]
+        0x00000028:    f8500021    P.!.    LDR      r0,[r0,r1,LSL #2]
+        0x0000002c:    9001        ..      STR      r0,[sp,#4]
+        0x0000002e:    980a        ..      LDR      r0,[sp,#0x28]
+        0x00000030:    9903        ..      LDR      r1,[sp,#0xc]
+        0x00000032:    9a06        ..      LDR      r2,[sp,#0x18]
+        0x00000034:    4351        QC      MULS     r1,r2,r1
+        0x00000036:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x0000003a:    9000        ..      STR      r0,[sp,#0]
+        0x0000003c:    2000        .       MOVS     r0,#0
+        0x0000003e:    9002        ..      STR      r0,[sp,#8]
+        0x00000040:    e7ff        ..      B        {pc}+0x2 ; 0x42
+        0x00000042:    9802        ..      LDR      r0,[sp,#8]
+        0x00000044:    9906        ..      LDR      r1,[sp,#0x18]
+        0x00000046:    4288        .B      CMP      r0,r1
+        0x00000048:    d216        ..      BCS      {pc}+0x30 ; 0x78
+        0x0000004a:    e7ff        ..      B        {pc}+0x2 ; 0x4c
+        0x0000004c:    9800        ..      LDR      r0,[sp,#0]
+        0x0000004e:    9902        ..      LDR      r1,[sp,#8]
+        0x00000050:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x00000054:    ed901a00    ....    VLDR     s2,[r0,#0]
+        0x00000058:    9807        ..      LDR      r0,[sp,#0x1c]
+        0x0000005a:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x0000005e:    ed902a00    ...*    VLDR     s4,[r0,#0]
+        0x00000062:    ed9d0a01    ....    VLDR     s0,[sp,#4]
+        0x00000066:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000006a:    ed8d0a01    ....    VSTR     s0,[sp,#4]
+        0x0000006e:    e7ff        ..      B        {pc}+0x2 ; 0x70
+        0x00000070:    9802        ..      LDR      r0,[sp,#8]
+        0x00000072:    3001        .0      ADDS     r0,#1
+        0x00000074:    9002        ..      STR      r0,[sp,#8]
+        0x00000076:    e7e4        ..      B        {pc}-0x34 ; 0x42
+        0x00000078:    9801        ..      LDR      r0,[sp,#4]
+        0x0000007a:    f7fffffe    ....    BL       elu ; 0x0 Section #44
+        0x0000007e:    9905        ..      LDR      r1,[sp,#0x14]
+        0x00000080:    9a03        ..      LDR      r2,[sp,#0xc]
+        0x00000082:    f8410022    A.".    STR      r0,[r1,r2,LSL #2]
+        0x00000086:    e7ff        ..      B        {pc}+0x2 ; 0x88
+        0x00000088:    9803        ..      LDR      r0,[sp,#0xc]
+        0x0000008a:    3001        .0      ADDS     r0,#1
+        0x0000008c:    9003        ..      STR      r0,[sp,#0xc]
+        0x0000008e:    e7c4        ..      B        {pc}-0x74 ; 0x1a
+        0x00000090:    b008        ..      ADD      sp,sp,#0x20
+        0x00000092:    bd80        ..      POP      {r7,pc}
+
+** Section #17 '.rel.text.linear_elu' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #16 '.text.linear_elu'
+
+
+** Section #18 '.ARM.exidx.text.linear_elu' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #16 '.text.linear_elu'
+
+
+** Section #19 '.rel.ARM.exidx.text.linear_elu' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #18 '.ARM.exidx.text.linear_elu'
+
+
+** Section #20 '.text.g1_assist_v10_stop' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 210 bytes (alignment 8)
+    Address: 0x00000000
+
+    [Anonymous symbol #27]
+    $t
+    g1_assist_v10_stop
+        0x00000000:    b580        ..      PUSH     {r7,lr}
+        0x00000002:    f6ad4d08    ...M    SUB      sp,sp,#0xc08
+        0x00000006:    f8cd0c04    ....    STR      r0,[sp,#0xc04]
+        0x0000000a:    f8cd1c00    ....    STR      r1,[sp,#0xc00]
+        0x0000000e:    f8dd0c00    ....    LDR      r0,[sp,#0xc00]
+        0x00000012:    b140        @.      CBZ      r0,{pc}+0x14 ; 0x26
+        0x00000014:    e7ff        ..      B        {pc}+0x2 ; 0x16
+        0x00000016:    f8dd1c00    ....    LDR      r1,[sp,#0xc00]
+        0x0000001a:    2000        .       MOVS     r0,#0
+        0x0000001c:    6048        H`      STR      r0,[r1,#4]
+        0x0000001e:    f8dd1c00    ....    LDR      r1,[sp,#0xc00]
+        0x00000022:    6008        .`      STR      r0,[r1,#0]
+        0x00000024:    e7ff        ..      B        {pc}+0x2 ; 0x26
+        0x00000026:    f8dd0c04    ....    LDR      r0,[sp,#0xc04]
+        0x0000002a:    b908        ..      CBNZ     r0,{pc}+0x6 ; 0x30
+        0x0000002c:    e7ff        ..      B        {pc}+0x2 ; 0x2e
+        0x0000002e:    e04d        M.      B        {pc}+0x9e ; 0xcc
+        0x00000030:    f8dd1c04    ....    LDR      r1,[sp,#0xc04]
+        0x00000034:    f64212e4    B...    MOV      r2,#0x29e4
+        0x00000038:    2000        .       MOVS     r0,#0
+        0x0000003a:    9003        ..      STR      r0,[sp,#0xc]
+        0x0000003c:    5088        .P      STR      r0,[r1,r2]
+        0x0000003e:    f8dd0c04    ....    LDR      r0,[sp,#0xc04]
+        0x00000042:    f64211ec    B...    MOV      r1,#0x29ec
+        0x00000046:    4408        .D      ADD      r0,r0,r1
+        0x00000048:    9000        ..      STR      r0,[sp,#0]
+        0x0000004a:    a805        ..      ADD      r0,sp,#0x14
+        0x0000004c:    9001        ..      STR      r0,[sp,#4]
+        0x0000004e:    f64031ec    @..1    MOV      r1,#0xbec
+        0x00000052:    9102        ..      STR      r1,[sp,#8]
+        0x00000054:    f7fffffe    ....    BL       __aeabi_memclr4
+        0x00000058:    9800        ..      LDR      r0,[sp,#0]
+        0x0000005a:    9901        ..      LDR      r1,[sp,#4]
+        0x0000005c:    9a02        ..      LDR      r2,[sp,#8]
+        0x0000005e:    f7fffffe    ....    BL       __aeabi_memcpy4
+        0x00000062:    9803        ..      LDR      r0,[sp,#0xc]
+        0x00000064:    f8dd1c04    ....    LDR      r1,[sp,#0xc04]
+        0x00000068:    f64212e0    B...    MOV      r2,#0x29e0
+        0x0000006c:    5088        .P      STR      r0,[r1,r2]
+        0x0000006e:    f8dd1c04    ....    LDR      r1,[sp,#0xc04]
+        0x00000072:    f64212dc    B...    MOV      r2,#0x29dc
+        0x00000076:    5088        .P      STR      r0,[r1,r2]
+        0x00000078:    9004        ..      STR      r0,[sp,#0x10]
+        0x0000007a:    e7ff        ..      B        {pc}+0x2 ; 0x7c
+        0x0000007c:    9804        ..      LDR      r0,[sp,#0x10]
+        0x0000007e:    2811        .(      CMP      r0,#0x11
+        0x00000080:    d80e        ..      BHI      {pc}+0x20 ; 0xa0
+        0x00000082:    e7ff        ..      B        {pc}+0x2 ; 0x84
+        0x00000084:    f8dd0c04    ....    LDR      r0,[sp,#0xc04]
+        0x00000088:    9904        ..      LDR      r1,[sp,#0x10]
+        0x0000008a:    eb000181    ....    ADD      r1,r0,r1,LSL #2
+        0x0000008e:    f6421294    B...    MOV      r2,#0x2994
+        0x00000092:    2000        .       MOVS     r0,#0
+        0x00000094:    5088        .P      STR      r0,[r1,r2]
+        0x00000096:    e7ff        ..      B        {pc}+0x2 ; 0x98
+        0x00000098:    9804        ..      LDR      r0,[sp,#0x10]
+        0x0000009a:    3001        .0      ADDS     r0,#1
+        0x0000009c:    9004        ..      STR      r0,[sp,#0x10]
+        0x0000009e:    e7ed        ..      B        {pc}-0x22 ; 0x7c
+        0x000000a0:    f8dd1c04    ....    LDR      r1,[sp,#0xc04]
+        0x000000a4:    f6421288    B...    MOV      r2,#0x2988
+        0x000000a8:    2000        .       MOVS     r0,#0
+        0x000000aa:    5088        .P      STR      r0,[r1,r2]
+        0x000000ac:    f8dd1c04    ....    LDR      r1,[sp,#0xc04]
+        0x000000b0:    f6421284    B...    MOV      r2,#0x2984
+        0x000000b4:    5088        .P      STR      r0,[r1,r2]
+        0x000000b6:    f8dd1c04    ....    LDR      r1,[sp,#0xc04]
+        0x000000ba:    f6421290    B...    MOV      r2,#0x2990
+        0x000000be:    5088        .P      STR      r0,[r1,r2]
+        0x000000c0:    f8dd1c04    ....    LDR      r1,[sp,#0xc04]
+        0x000000c4:    f642128c    B...    MOV      r2,#0x298c
+        0x000000c8:    5088        .P      STR      r0,[r1,r2]
+        0x000000ca:    e7ff        ..      B        {pc}+0x2 ; 0xcc
+        0x000000cc:    f60d4d08    ...M    ADD      sp,sp,#0xc08
+        0x000000d0:    bd80        ..      POP      {r7,pc}
+
+** Section #21 '.rel.text.g1_assist_v10_stop' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 16 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    2 relocations applied to section #20 '.text.g1_assist_v10_stop'
+
+
+** Section #22 '.ARM.exidx.text.g1_assist_v10_stop' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #20 '.text.g1_assist_v10_stop'
+
+
+** Section #23 '.rel.ARM.exidx.text.g1_assist_v10_stop' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #22 '.ARM.exidx.text.g1_assist_v10_stop'
+
+
+** Section #24 '.text.g1_assist_v10_reset' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 100 bytes (alignment 8)
+    Address: 0x00000000
+
+    [Anonymous symbol #29]
+    $t
+    g1_assist_v10_reset
+        0x00000000:    b580        ..      PUSH     {r7,lr}
+        0x00000002:    b084        ..      SUB      sp,sp,#0x10
+        0x00000004:    9002        ..      STR      r0,[sp,#8]
+        0x00000006:    9101        ..      STR      r1,[sp,#4]
+        0x00000008:    9200        ..      STR      r2,[sp,#0]
+        0x0000000a:    9802        ..      LDR      r0,[sp,#8]
+        0x0000000c:    b920         .      CBNZ     r0,{pc}+0xc ; 0x18
+        0x0000000e:    e7ff        ..      B        {pc}+0x2 ; 0x10
+        0x00000010:    f04f30ff    O..0    MOV      r0,#0xffffffff
+        0x00000014:    9003        ..      STR      r0,[sp,#0xc]
+        0x00000016:    e022        ".      B        {pc}+0x48 ; 0x5e
+        0x00000018:    9802        ..      LDR      r0,[sp,#8]
+        0x0000001a:    2100        .!      MOVS     r1,#0
+        0x0000001c:    f7fffffe    ....    BL       g1_assist_v10_stop ; 0x0 Section #20
+        0x00000020:    9801        ..      LDR      r0,[sp,#4]
+        0x00000022:    f7fffffe    ....    BL       finite_pair ; 0x0 Section #28
+        0x00000026:    b128        (.      CBZ      r0,{pc}+0xe ; 0x34
+        0x00000028:    e7ff        ..      B        {pc}+0x2 ; 0x2a
+        0x0000002a:    9800        ..      LDR      r0,[sp,#0]
+        0x0000002c:    f7fffffe    ....    BL       finite_pair ; 0x0 Section #28
+        0x00000030:    b920         .      CBNZ     r0,{pc}+0xc ; 0x3c
+        0x00000032:    e7ff        ..      B        {pc}+0x2 ; 0x34
+        0x00000034:    f04f30ff    O..0    MOV      r0,#0xffffffff
+        0x00000038:    9003        ..      STR      r0,[sp,#0xc]
+        0x0000003a:    e010        ..      B        {pc}+0x24 ; 0x5e
+        0x0000003c:    9802        ..      LDR      r0,[sp,#8]
+        0x0000003e:    9901        ..      LDR      r1,[sp,#4]
+        0x00000040:    9a00        ..      LDR      r2,[sp,#0]
+        0x00000042:    f7fffffe    ....    BL       g1_assist_v10_history_reset ; 0x0 Section #3
+        0x00000046:    9902        ..      LDR      r1,[sp,#8]
+        0x00000048:    f64212e8    B...    MOV      r2,#0x29e8
+        0x0000004c:    2001        .       MOVS     r0,#1
+        0x0000004e:    5088        .P      STR      r0,[r1,r2]
+        0x00000050:    9902        ..      LDR      r1,[sp,#8]
+        0x00000052:    f64212e4    B...    MOV      r2,#0x29e4
+        0x00000056:    5088        .P      STR      r0,[r1,r2]
+        0x00000058:    2000        .       MOVS     r0,#0
+        0x0000005a:    9003        ..      STR      r0,[sp,#0xc]
+        0x0000005c:    e7ff        ..      B        {pc}+0x2 ; 0x5e
+        0x0000005e:    9803        ..      LDR      r0,[sp,#0xc]
+        0x00000060:    b004        ..      ADD      sp,sp,#0x10
+        0x00000062:    bd80        ..      POP      {r7,pc}
+
+** Section #25 '.rel.text.g1_assist_v10_reset' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 32 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    4 relocations applied to section #24 '.text.g1_assist_v10_reset'
+
+
+** Section #26 '.ARM.exidx.text.g1_assist_v10_reset' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #24 '.text.g1_assist_v10_reset'
+
+
+** Section #27 '.rel.ARM.exidx.text.g1_assist_v10_reset' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #26 '.ARM.exidx.text.g1_assist_v10_reset'
+
+
+** Section #28 '.text.finite_pair' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 96 bytes (alignment 8)
+    Address: 0x00000000
+
+    finite_pair
+    [Anonymous symbol #32]
+    $t
+        0x00000000:    b580        ..      PUSH     {r7,lr}
+        0x00000002:    b082        ..      SUB      sp,sp,#8
+        0x00000004:    9001        ..      STR      r0,[sp,#4]
+        0x00000006:    9901        ..      LDR      r1,[sp,#4]
+        0x00000008:    2000        .       MOVS     r0,#0
+        0x0000000a:    9000        ..      STR      r0,[sp,#0]
+        0x0000000c:    b319        ..      CBZ      r1,{pc}+0x4a ; 0x56
+        0x0000000e:    e7ff        ..      B        {pc}+0x2 ; 0x10
+        0x00000010:    2000        .       MOVS     r0,#0
+        0x00000012:    b948        H.      CBNZ     r0,{pc}+0x16 ; 0x28
+        0x00000014:    e7ff        ..      B        {pc}+0x2 ; 0x16
+        0x00000016:    9801        ..      LDR      r0,[sp,#4]
+        0x00000018:    6800        .h      LDR      r0,[r0,#0]
+        0x0000001a:    f7fffffe    ....    BL       __ARM_isfinitef ; 0x0 Section #48
+        0x0000001e:    4601        .F      MOV      r1,r0
+        0x00000020:    2000        .       MOVS     r0,#0
+        0x00000022:    9000        ..      STR      r0,[sp,#0]
+        0x00000024:    b971        q.      CBNZ     r1,{pc}+0x20 ; 0x44
+        0x00000026:    e016        ..      B        {pc}+0x30 ; 0x56
+        0x00000028:    9801        ..      LDR      r0,[sp,#4]
+        0x0000002a:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000002e:    eeb70ac0    ....    VCVT.F64.F32 d0,s0
+        0x00000032:    ec510b10    Q...    VMOV     r0,r1,d0
+        0x00000036:    f7fffffe    ....    BL       __ARM_isfinite ; 0x0 Section #51
+        0x0000003a:    4601        .F      MOV      r1,r0
+        0x0000003c:    2000        .       MOVS     r0,#0
+        0x0000003e:    9000        ..      STR      r0,[sp,#0]
+        0x00000040:    b149        I.      CBZ      r1,{pc}+0x16 ; 0x56
+        0x00000042:    e7ff        ..      B        {pc}+0x2 ; 0x44
+        0x00000044:    9801        ..      LDR      r0,[sp,#4]
+        0x00000046:    6840        @h      LDR      r0,[r0,#4]
+        0x00000048:    f7fffffe    ....    BL       __ARM_isfinitef ; 0x0 Section #48
+        0x0000004c:    2800        .(      CMP      r0,#0
+        0x0000004e:    bf18        ..      IT       NE
+        0x00000050:    2001        .       MOVNE    r0,#1
+        0x00000052:    9000        ..      STR      r0,[sp,#0]
+        0x00000054:    e7ff        ..      B        {pc}+0x2 ; 0x56
+        0x00000056:    9800        ..      LDR      r0,[sp,#0]
+        0x00000058:    f0000001    ....    AND      r0,r0,#1
+        0x0000005c:    b002        ..      ADD      sp,sp,#8
+        0x0000005e:    bd80        ..      POP      {r7,pc}
+
+** Section #29 '.rel.text.finite_pair' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 24 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    3 relocations applied to section #28 '.text.finite_pair'
+
+
+** Section #30 '.ARM.exidx.text.finite_pair' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #28 '.text.finite_pair'
+
+
+** Section #31 '.rel.ARM.exidx.text.finite_pair' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #30 '.ARM.exidx.text.finite_pair'
+
+
+** Section #32 '.text.g1_assist_v10_step' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 780 bytes (alignment 8)
+    Address: 0x00000000
+
+    [Anonymous symbol #36]
+    $t
+    g1_assist_v10_step
+        0x00000000:    b580        ..      PUSH     {r7,lr}
+        0x00000002:    b0ba        ..      SUB      sp,sp,#0xe8
+        0x00000004:    f8ddc0f0    ....    LDR      r12,[sp,#0xf0]
+        0x00000008:    9038        8.      STR      r0,[sp,#0xe0]
+        0x0000000a:    9137        7.      STR      r1,[sp,#0xdc]
+        0x0000000c:    9236        6.      STR      r2,[sp,#0xd8]
+        0x0000000e:    9335        5.      STR      r3,[sp,#0xd4]
+        0x00000010:    f2400100    @...    MOVW     r1,#:LOWER16: .L__const.g1_assist_v10_step.scale
+        0x00000014:    f2c00100    ....    MOVT     r1,#:UPPER16: .L__const.g1_assist_v10_step.scale
+        0x00000018:    a806        ..      ADD      r0,sp,#0x18
+        0x0000001a:    2248        H"      MOVS     r2,#0x48
+        0x0000001c:    f7fffffe    ....    BL       __aeabi_memcpy4
+        0x00000020:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x00000022:    b118        ..      CBZ      r0,{pc}+0xa ; 0x2c
+        0x00000024:    e7ff        ..      B        {pc}+0x2 ; 0x26
+        0x00000026:    983c        <.      LDR      r0,[sp,#0xf0]
+        0x00000028:    b940        @.      CBNZ     r0,{pc}+0x14 ; 0x3c
+        0x0000002a:    e7ff        ..      B        {pc}+0x2 ; 0x2c
+        0x0000002c:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x0000002e:    993c        <.      LDR      r1,[sp,#0xf0]
+        0x00000030:    f7fffffe    ....    BL       g1_assist_v10_stop ; 0x0 Section #20
+        0x00000034:    f04f30ff    O..0    MOV      r0,#0xffffffff
+        0x00000038:    9039        9.      STR      r0,[sp,#0xe4]
+        0x0000003a:    e15e        ^.      B        {pc}+0x2c0 ; 0x2fa
+        0x0000003c:    993c        <.      LDR      r1,[sp,#0xf0]
+        0x0000003e:    2000        .       MOVS     r0,#0
+        0x00000040:    6048        H`      STR      r0,[r1,#4]
+        0x00000042:    993c        <.      LDR      r1,[sp,#0xf0]
+        0x00000044:    6008        .`      STR      r0,[r1,#0]
+        0x00000046:    9835        5.      LDR      r0,[sp,#0xd4]
+        0x00000048:    b130        0.      CBZ      r0,{pc}+0x10 ; 0x58
+        0x0000004a:    e7ff        ..      B        {pc}+0x2 ; 0x4c
+        0x0000004c:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x0000004e:    f64211e4    B...    MOV      r1,#0x29e4
+        0x00000052:    5840        @X      LDR      r0,[r0,r1]
+        0x00000054:    b938        8.      CBNZ     r0,{pc}+0x12 ; 0x66
+        0x00000056:    e7ff        ..      B        {pc}+0x2 ; 0x58
+        0x00000058:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x0000005a:    993c        <.      LDR      r1,[sp,#0xf0]
+        0x0000005c:    f7fffffe    ....    BL       g1_assist_v10_stop ; 0x0 Section #20
+        0x00000060:    2001        .       MOVS     r0,#1
+        0x00000062:    9039        9.      STR      r0,[sp,#0xe4]
+        0x00000064:    e149        I.      B        {pc}+0x296 ; 0x2fa
+        0x00000066:    9837        7.      LDR      r0,[sp,#0xdc]
+        0x00000068:    f7fffffe    ....    BL       finite_pair ; 0x0 Section #28
+        0x0000006c:    b128        (.      CBZ      r0,{pc}+0xe ; 0x7a
+        0x0000006e:    e7ff        ..      B        {pc}+0x2 ; 0x70
+        0x00000070:    9836        6.      LDR      r0,[sp,#0xd8]
+        0x00000072:    f7fffffe    ....    BL       finite_pair ; 0x0 Section #28
+        0x00000076:    b940        @.      CBNZ     r0,{pc}+0x14 ; 0x8a
+        0x00000078:    e7ff        ..      B        {pc}+0x2 ; 0x7a
+        0x0000007a:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x0000007c:    993c        <.      LDR      r1,[sp,#0xf0]
+        0x0000007e:    f7fffffe    ....    BL       g1_assist_v10_stop ; 0x0 Section #20
+        0x00000082:    f04f30ff    O..0    MOV      r0,#0xffffffff
+        0x00000086:    9039        9.      STR      r0,[sp,#0xe4]
+        0x00000088:    e137        7.      B        {pc}+0x272 ; 0x2fa
+        0x0000008a:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x0000008c:    f64211e8    B...    MOV      r1,#0x29e8
+        0x00000090:    5840        @X      LDR      r0,[r0,r1]
+        0x00000092:    b130        0.      CBZ      r0,{pc}+0x10 ; 0xa2
+        0x00000094:    e7ff        ..      B        {pc}+0x2 ; 0x96
+        0x00000096:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x00000098:    9937        7.      LDR      r1,[sp,#0xdc]
+        0x0000009a:    9a36        6.      LDR      r2,[sp,#0xd8]
+        0x0000009c:    f7fffffe    ....    BL       g1_assist_v10_history_reset ; 0x0 Section #3
+        0x000000a0:    e091        ..      B        {pc}+0x126 ; 0x1c6
+        0x000000a2:    2000        .       MOVS     r0,#0
+        0x000000a4:    9005        ..      STR      r0,[sp,#0x14]
+        0x000000a6:    e7ff        ..      B        {pc}+0x2 ; 0xa8
+        0x000000a8:    9805        ..      LDR      r0,[sp,#0x14]
+        0x000000aa:    2811        .(      CMP      r0,#0x11
+        0x000000ac:    d81a        ..      BHI      {pc}+0x38 ; 0xe4
+        0x000000ae:    e7ff        ..      B        {pc}+0x2 ; 0xb0
+        0x000000b0:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x000000b2:    9905        ..      LDR      r1,[sp,#0x14]
+        0x000000b4:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x000000b8:    f6421294    B...    MOV      r2,#0x2994
+        0x000000bc:    4410        .D      ADD      r0,r0,r2
+        0x000000be:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x000000c2:    a806        ..      ADD      r0,sp,#0x18
+        0x000000c4:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x000000c8:    ed901a00    ....    VLDR     s2,[r0,#0]
+        0x000000cc:    ee800a01    ....    VDIV.F32 s0,s0,s2
+        0x000000d0:    a819        ..      ADD      r0,sp,#0x64
+        0x000000d2:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x000000d6:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x000000da:    e7ff        ..      B        {pc}+0x2 ; 0xdc
+        0x000000dc:    9805        ..      LDR      r0,[sp,#0x14]
+        0x000000de:    3001        .0      ADDS     r0,#1
+        0x000000e0:    9005        ..      STR      r0,[sp,#0x14]
+        0x000000e2:    e7e1        ..      B        {pc}-0x3a ; 0xa8
+        0x000000e4:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x000000e6:    f64211dc    B...    MOV      r1,#0x29dc
+        0x000000ea:    4408        .D      ADD      r0,r0,r1
+        0x000000ec:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x000000f0:    ed9f1a83    ....    VLDR     s2,[pc,#524] ; [0x300] = 0x3dcccccd
+        0x000000f4:    ee800a01    ....    VDIV.F32 s0,s0,s2
+        0x000000f8:    ed8d0a23    ..#.    VSTR     s0,[sp,#0x8c]
+        0x000000fc:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x000000fe:    f64211e0    B...    MOV      r1,#0x29e0
+        0x00000102:    4408        .D      ADD      r0,r0,r1
+        0x00000104:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000108:    ee800a01    ....    VDIV.F32 s0,s0,s2
+        0x0000010c:    ed8d0a24    ..$.    VSTR     s0,[sp,#0x90]
+        0x00000110:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x00000112:    f642118c    B...    MOV      r1,#0x298c
+        0x00000116:    5840        @X      LDR      r0,[r0,r1]
+        0x00000118:    902b        +.      STR      r0,[sp,#0xac]
+        0x0000011a:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x0000011c:    f6421190    B...    MOV      r1,#0x2990
+        0x00000120:    5840        @X      LDR      r0,[r0,r1]
+        0x00000122:    902c        ,.      STR      r0,[sp,#0xb0]
+        0x00000124:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x00000126:    f24351b4    C..Q    MOV      r1,#0x35b4
+        0x0000012a:    4408        .D      ADD      r0,r0,r1
+        0x0000012c:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000130:    ed9f1a74    ..t.    VLDR     s2,[pc,#464] ; [0x304] = 0x3e32b8c2
+        0x00000134:    ee800a01    ....    VDIV.F32 s0,s0,s2
+        0x00000138:    ed8d0a2d    ..-.    VSTR     s0,[sp,#0xb4]
+        0x0000013c:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x0000013e:    f24351b8    C..Q    MOV      r1,#0x35b8
+        0x00000142:    4408        .D      ADD      r0,r0,r1
+        0x00000144:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000148:    ee800a01    ....    VDIV.F32 s0,s0,s2
+        0x0000014c:    ed8d0a2e    ....    VSTR     s0,[sp,#0xb8]
+        0x00000150:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x00000152:    f24351bc    C..Q    MOV      r1,#0x35bc
+        0x00000156:    4408        .D      ADD      r0,r0,r1
+        0x00000158:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000015c:    eeb11a0c    ....    VMOV.F32 s2,#7.00000000
+        0x00000160:    ee800a01    ....    VDIV.F32 s0,s0,s2
+        0x00000164:    ed8d0a2f    ../.    VSTR     s0,[sp,#0xbc]
+        0x00000168:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x0000016a:    f5005057    ..WP    ADD      r0,r0,#0x35c0
+        0x0000016e:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000172:    ee800a01    ....    VDIV.F32 s0,s0,s2
+        0x00000176:    ed8d0a30    ..0.    VSTR     s0,[sp,#0xc0]
+        0x0000017a:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x0000017c:    f24351d0    C..Q    MOV      r1,#0x35d0
+        0x00000180:    4408        .D      ADD      r0,r0,r1
+        0x00000182:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000186:    eeb80a40    ..@.    VCVT.F32.U32 s0,s0
+        0x0000018a:    ed8d0a31    ..1.    VSTR     s0,[sp,#0xc4]
+        0x0000018e:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x00000190:    f24351cc    C..Q    MOV      r1,#0x35cc
+        0x00000194:    4408        .D      ADD      r0,r0,r1
+        0x00000196:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000019a:    eeb80a40    ..@.    VCVT.F32.U32 s0,s0
+        0x0000019e:    ed9f1a5a    ..Z.    VLDR     s2,[pc,#360] ; [0x308] = 0x43160000
+        0x000001a2:    ee800a01    ....    VDIV.F32 s0,s0,s2
+        0x000001a6:    ed8d0a32    ..2.    VSTR     s0,[sp,#0xc8]
+        0x000001aa:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x000001ac:    9937        7.      LDR      r1,[sp,#0xdc]
+        0x000001ae:    9a36        6.      LDR      r2,[sp,#0xd8]
+        0x000001b0:    f6421384    B...    MOV      r3,#0x2984
+        0x000001b4:    4403        .D      ADD      r3,r3,r0
+        0x000001b6:    46ee        .F      MOV      lr,sp
+        0x000001b8:    f10d0c64    ..d.    ADD      r12,sp,#0x64
+        0x000001bc:    f8cec000    ....    STR      r12,[lr,#0]
+        0x000001c0:    f7fffffe    ....    BL       g1_assist_v10_history_append ; 0x0 Section #6
+        0x000001c4:    e7ff        ..      B        {pc}+0x2 ; 0x1c6
+        0x000001c6:    9938        8.      LDR      r1,[sp,#0xe0]
+        0x000001c8:    f64212e8    B...    MOV      r2,#0x29e8
+        0x000001cc:    2000        .       MOVS     r0,#0
+        0x000001ce:    5088        .P      STR      r0,[r1,r2]
+        0x000001d0:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x000001d2:    f6415104    A..Q    MOV      r1,#0x1d04
+        0x000001d6:    9102        ..      STR      r1,[sp,#8]
+        0x000001d8:    4401        .D      ADD      r1,r1,r0
+        0x000001da:    f7fffffe    ....    BL       g1_assist_v10_history_build_observation ; 0x0 Section #9
+        0x000001de:    9802        ..      LDR      r0,[sp,#8]
+        0x000001e0:    9938        8.      LDR      r1,[sp,#0xe0]
+        0x000001e2:    4408        .D      ADD      r0,r0,r1
+        0x000001e4:    f6014284    ...B    ADD      r2,r1,#0xc84
+        0x000001e8:    a933        3.      ADD      r1,sp,#0xcc
+        0x000001ea:    9103        ..      STR      r1,[sp,#0xc]
+        0x000001ec:    f7fffffe    ....    BL       g1_assist_v10_policy_forward ; 0x0 Section #12
+        0x000001f0:    9803        ..      LDR      r0,[sp,#0xc]
+        0x000001f2:    f7fffffe    ....    BL       finite_pair ; 0x0 Section #28
+        0x000001f6:    b940        @.      CBNZ     r0,{pc}+0x14 ; 0x20a
+        0x000001f8:    e7ff        ..      B        {pc}+0x2 ; 0x1fa
+        0x000001fa:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x000001fc:    993c        <.      LDR      r1,[sp,#0xf0]
+        0x000001fe:    f7fffffe    ....    BL       g1_assist_v10_stop ; 0x0 Section #20
+        0x00000202:    f04f30ff    O..0    MOV      r0,#0xffffffff
+        0x00000206:    9039        9.      STR      r0,[sp,#0xe4]
+        0x00000208:    e077        w.      B        {pc}+0xf2 ; 0x2fa
+        0x0000020a:    2000        .       MOVS     r0,#0
+        0x0000020c:    9005        ..      STR      r0,[sp,#0x14]
+        0x0000020e:    e7ff        ..      B        {pc}+0x2 ; 0x210
+        0x00000210:    9805        ..      LDR      r0,[sp,#0x14]
+        0x00000212:    2801        .(      CMP      r0,#1
+        0x00000214:    d825        %.      BHI      {pc}+0x4e ; 0x262
+        0x00000216:    e7ff        ..      B        {pc}+0x2 ; 0x218
+        0x00000218:    f64a20ab    J..     MOV      r0,#0xaaab
+        0x0000021c:    f6cb60aa    ...`    MOVT     r0,#0xbeaa
+        0x00000220:    f7fffffe    ....    BL       expf
+        0x00000224:    ee010a10    ....    VMOV     s2,r0
+        0x00000228:    eeb70a00    ....    VMOV.F32 s0,#1.00000000
+        0x0000022c:    ee301a41    0.A.    VSUB.F32 s2,s0,s2
+        0x00000230:    9836        6.      LDR      r0,[sp,#0xd8]
+        0x00000232:    9905        ..      LDR      r1,[sp,#0x14]
+        0x00000234:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x00000238:    ed902a00    ...*    VLDR     s4,[r0,#0]
+        0x0000023c:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x0000023e:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x00000242:    f642118c    B...    MOV      r1,#0x298c
+        0x00000246:    4408        .D      ADD      r0,r0,r1
+        0x00000248:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000024c:    ee322a40    2.@*    VSUB.F32 s4,s4,s0
+        0x00000250:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000254:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x00000258:    e7ff        ..      B        {pc}+0x2 ; 0x25a
+        0x0000025a:    9805        ..      LDR      r0,[sp,#0x14]
+        0x0000025c:    3001        .0      ADDS     r0,#1
+        0x0000025e:    9005        ..      STR      r0,[sp,#0x14]
+        0x00000260:    e7d6        ..      B        {pc}-0x50 ; 0x210
+        0x00000262:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x00000264:    9a37        7.      LDR      r2,[sp,#0xdc]
+        0x00000266:    a933        3.      ADD      r1,sp,#0xcc
+        0x00000268:    f7fffffe    ....    BL       pulse_step ; 0x0 Section #36
+        0x0000026c:    9018        ..      STR      r0,[sp,#0x60]
+        0x0000026e:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x00000270:    9937        7.      LDR      r1,[sp,#0xdc]
+        0x00000272:    9a18        ..      LDR      r2,[sp,#0x60]
+        0x00000274:    f7fffffe    ....    BL       guard_step ; 0x0 Section #40
+        0x00000278:    9018        ..      STR      r0,[sp,#0x60]
+        0x0000027a:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x0000027c:    f24351d0    C..Q    MOV      r1,#0x35d0
+        0x00000280:    5840        @X      LDR      r0,[r0,r1]
+        0x00000282:    b1f0        ..      CBZ      r0,{pc}+0x40 ; 0x2c2
+        0x00000284:    e7ff        ..      B        {pc}+0x2 ; 0x286
+        0x00000286:    2000        .       MOVS     r0,#0
+        0x00000288:    9004        ..      STR      r0,[sp,#0x10]
+        0x0000028a:    e7ff        ..      B        {pc}+0x2 ; 0x28c
+        0x0000028c:    9804        ..      LDR      r0,[sp,#0x10]
+        0x0000028e:    2811        .(      CMP      r0,#0x11
+        0x00000290:    dc0d        ..      BGT      {pc}+0x1e ; 0x2ae
+        0x00000292:    e7ff        ..      B        {pc}+0x2 ; 0x294
+        0x00000294:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x00000296:    9904        ..      LDR      r1,[sp,#0x10]
+        0x00000298:    eb000181    ....    ADD      r1,r0,r1,LSL #2
+        0x0000029c:    f6421294    B...    MOV      r2,#0x2994
+        0x000002a0:    2000        .       MOVS     r0,#0
+        0x000002a2:    5088        .P      STR      r0,[r1,r2]
+        0x000002a4:    e7ff        ..      B        {pc}+0x2 ; 0x2a6
+        0x000002a6:    9804        ..      LDR      r0,[sp,#0x10]
+        0x000002a8:    3001        .0      ADDS     r0,#1
+        0x000002aa:    9004        ..      STR      r0,[sp,#0x10]
+        0x000002ac:    e7ee        ..      B        {pc}-0x20 ; 0x28c
+        0x000002ae:    9938        8.      LDR      r1,[sp,#0xe0]
+        0x000002b0:    f64212e0    B...    MOV      r2,#0x29e0
+        0x000002b4:    2000        .       MOVS     r0,#0
+        0x000002b6:    5088        .P      STR      r0,[r1,r2]
+        0x000002b8:    9938        8.      LDR      r1,[sp,#0xe0]
+        0x000002ba:    f64212dc    B...    MOV      r2,#0x29dc
+        0x000002be:    5088        .P      STR      r0,[r1,r2]
+        0x000002c0:    e7ff        ..      B        {pc}+0x2 ; 0x2c2
+        0x000002c2:    9818        ..      LDR      r0,[sp,#0x60]
+        0x000002c4:    9938        8.      LDR      r1,[sp,#0xe0]
+        0x000002c6:    f6421284    B...    MOV      r2,#0x2984
+        0x000002ca:    5088        .P      STR      r0,[r1,r2]
+        0x000002cc:    ed9d0a18    ....    VLDR     s0,[sp,#0x60]
+        0x000002d0:    eeb10a40    ..@.    VNEG.F32 s0,s0
+        0x000002d4:    9838        8.      LDR      r0,[sp,#0xe0]
+        0x000002d6:    f6421188    B...    MOV      r1,#0x2988
+        0x000002da:    4408        .D      ADD      r0,r0,r1
+        0x000002dc:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x000002e0:    9818        ..      LDR      r0,[sp,#0x60]
+        0x000002e2:    993c        <.      LDR      r1,[sp,#0xf0]
+        0x000002e4:    6008        .`      STR      r0,[r1,#0]
+        0x000002e6:    ed9d0a18    ....    VLDR     s0,[sp,#0x60]
+        0x000002ea:    eeb10a40    ..@.    VNEG.F32 s0,s0
+        0x000002ee:    983c        <.      LDR      r0,[sp,#0xf0]
+        0x000002f0:    ed800a01    ....    VSTR     s0,[r0,#4]
+        0x000002f4:    2000        .       MOVS     r0,#0
+        0x000002f6:    9039        9.      STR      r0,[sp,#0xe4]
+        0x000002f8:    e7ff        ..      B        {pc}+0x2 ; 0x2fa
+        0x000002fa:    9839        9.      LDR      r0,[sp,#0xe4]
+        0x000002fc:    b03a        :.      ADD      sp,sp,#0xe8
+        0x000002fe:    bd80        ..      POP      {r7,pc}
+    $d
+        0x00000300:    3dcccccd    ...=    DCD    1036831949
+        0x00000304:    3e32b8c2    ..2>    DCD    1043511490
+        0x00000308:    43160000    ...C    DCD    1125515264
+
+** Section #33 '.rel.text.g1_assist_v10_step' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 136 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    17 relocations applied to section #32 '.text.g1_assist_v10_step'
+
+
+** Section #34 '.ARM.exidx.text.g1_assist_v10_step' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #32 '.text.g1_assist_v10_step'
+
+
+** Section #35 '.rel.ARM.exidx.text.g1_assist_v10_step' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #34 '.ARM.exidx.text.g1_assist_v10_step'
+
+
+** Section #36 '.text.pulse_step' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 2616 bytes (alignment 8)
+    Address: 0x00000000
+
+    pulse_step
+    [Anonymous symbol #42]
+    $t
+        0x00000000:    b580        ..      PUSH     {r7,lr}
+        0x00000002:    b0b6        ..      SUB      sp,sp,#0xd8
+        0x00000004:    9035        5.      STR      r0,[sp,#0xd4]
+        0x00000006:    9134        4.      STR      r1,[sp,#0xd0]
+        0x00000008:    9233        3.      STR      r2,[sp,#0xcc]
+        0x0000000a:    9835        5.      LDR      r0,[sp,#0xd4]
+        0x0000000c:    f6421194    B...    MOV      r1,#0x2994
+        0x00000010:    4408        .D      ADD      r0,r0,r1
+        0x00000012:    9032        2.      STR      r0,[sp,#0xc8]
+        0x00000014:    9835        5.      LDR      r0,[sp,#0xd4]
+        0x00000016:    f642118c    B...    MOV      r1,#0x298c
+        0x0000001a:    4408        .D      ADD      r0,r0,r1
+        0x0000001c:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000020:    ed901a01    ....    VLDR     s2,[r0,#4]
+        0x00000024:    ee300a41    0.A.    VSUB.F32 s0,s0,s2
+        0x00000028:    ed8d0a31    ..1.    VSTR     s0,[sp,#0xc4]
+        0x0000002c:    ed9d0a31    ..1.    VLDR     s0,[sp,#0xc4]
+        0x00000030:    ed9f1ae2    ....    VLDR     s2,[pc,#904] ; [0x3bc] = 0xbdf5c28f
+        0x00000034:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000038:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000003c:    da13        ..      BGE      {pc}+0x2a ; 0x66
+        0x0000003e:    e7ff        ..      B        {pc}+0x2 ; 0x40
+        0x00000040:    9835        5.      LDR      r0,[sp,#0xd4]
+        0x00000042:    f642118c    B...    MOV      r1,#0x298c
+        0x00000046:    4408        .D      ADD      r0,r0,r1
+        0x00000048:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000004c:    ed9f1adc    ....    VLDR     s2,[pc,#880] ; [0x3c0] = 0xbda3d70a
+        0x00000050:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000054:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000058:    da05        ..      BGE      {pc}+0xe ; 0x66
+        0x0000005a:    e7ff        ..      B        {pc}+0x2 ; 0x5c
+        0x0000005c:    eebf0a00    ....    VMOV.F32 s0,#-1.00000000
+        0x00000060:    ed8d0a17    ....    VSTR     s0,[sp,#0x5c]
+        0x00000064:    e028        (.      B        {pc}+0x54 ; 0xb8
+        0x00000066:    ed9d0a31    ..1.    VLDR     s0,[sp,#0xc4]
+        0x0000006a:    2000        .       MOVS     r0,#0
+        0x0000006c:    ed9f1ad5    ....    VLDR     s2,[pc,#852] ; [0x3c4] = 0x3df5c28f
+        0x00000070:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000074:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000078:    9016        ..      STR      r0,[sp,#0x58]
+        0x0000007a:    dd11        ..      BLE      {pc}+0x26 ; 0xa0
+        0x0000007c:    e7ff        ..      B        {pc}+0x2 ; 0x7e
+        0x0000007e:    9835        5.      LDR      r0,[sp,#0xd4]
+        0x00000080:    f6421190    B...    MOV      r1,#0x2990
+        0x00000084:    4408        .D      ADD      r0,r0,r1
+        0x00000086:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000008a:    ed9f1acd    ....    VLDR     s2,[pc,#820] ; [0x3c0] = 0xbda3d70a
+        0x0000008e:    2000        .       MOVS     r0,#0
+        0x00000090:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000094:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000098:    bfb8        ..      IT       LT
+        0x0000009a:    2001        .       MOVLT    r0,#1
+        0x0000009c:    9016        ..      STR      r0,[sp,#0x58]
+        0x0000009e:    e7ff        ..      B        {pc}+0x2 ; 0xa0
+        0x000000a0:    9816        ..      LDR      r0,[sp,#0x58]
+        0x000000a2:    07c0        ..      LSLS     r0,r0,#31
+        0x000000a4:    eeb71a00    ....    VMOV.F32 s2,#1.00000000
+        0x000000a8:    ed9f0ac7    ....    VLDR     s0,[pc,#796] ; [0x3c8] = 0
+        0x000000ac:    2800        .(      CMP      r0,#0
+        0x000000ae:    fe000a01    ....    VSELEQ.F32 s0,s0,s2
+        0x000000b2:    ed8d0a17    ....    VSTR     s0,[sp,#0x5c]
+        0x000000b6:    e7ff        ..      B        {pc}+0x2 ; 0xb8
+        0x000000b8:    ed9d0a17    ....    VLDR     s0,[sp,#0x5c]
+        0x000000bc:    ed8d0a30    ..0.    VSTR     s0,[sp,#0xc0]
+        0x000000c0:    ed9d0a30    ..0.    VLDR     s0,[sp,#0xc0]
+        0x000000c4:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x000000c6:    ed901a06    ....    VLDR     s2,[r0,#0x18]
+        0x000000ca:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x000000ce:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000000d2:    d009        ..      BEQ      {pc}+0x16 ; 0xe8
+        0x000000d4:    e7ff        ..      B        {pc}+0x2 ; 0xd6
+        0x000000d6:    9833        3.      LDR      r0,[sp,#0xcc]
+        0x000000d8:    6800        .h      LDR      r0,[r0,#0]
+        0x000000da:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x000000dc:    6288        .b      STR      r0,[r1,#0x28]
+        0x000000de:    9833        3.      LDR      r0,[sp,#0xcc]
+        0x000000e0:    6840        @h      LDR      r0,[r0,#4]
+        0x000000e2:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x000000e4:    62c8        .b      STR      r0,[r1,#0x2c]
+        0x000000e6:    e7ff        ..      B        {pc}+0x2 ; 0xe8
+        0x000000e8:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x000000ea:    ed900a0a    ....    VLDR     s0,[r0,#0x28]
+        0x000000ee:    9833        3.      LDR      r0,[sp,#0xcc]
+        0x000000f0:    ed901a00    ....    VLDR     s2,[r0,#0]
+        0x000000f4:    ee300a41    0.A.    VSUB.F32 s0,s0,s2
+        0x000000f8:    9835        5.      LDR      r0,[sp,#0xd4]
+        0x000000fa:    f64211dc    B...    MOV      r1,#0x29dc
+        0x000000fe:    4408        .D      ADD      r0,r0,r1
+        0x00000100:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x00000104:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000106:    ed900a0b    ....    VLDR     s0,[r0,#0x2c]
+        0x0000010a:    9833        3.      LDR      r0,[sp,#0xcc]
+        0x0000010c:    ed901a01    ....    VLDR     s2,[r0,#4]
+        0x00000110:    ee300a41    0.A.    VSUB.F32 s0,s0,s2
+        0x00000114:    9835        5.      LDR      r0,[sp,#0xd4]
+        0x00000116:    f64211e0    B...    MOV      r1,#0x29e0
+        0x0000011a:    4408        .D      ADD      r0,r0,r1
+        0x0000011c:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x00000120:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000122:    ed900a0c    ....    VLDR     s0,[r0,#0x30]
+        0x00000126:    ed9f1aa9    ....    VLDR     s2,[pc,#676] ; [0x3cc] = 0x3c23d70a
+        0x0000012a:    ee300a01    0...    VADD.F32 s0,s0,s2
+        0x0000012e:    eeb71a08    ....    VMOV.F32 s2,#1.50000000
+        0x00000132:    fe800a41    ..A.    VMINNM.F32 s0,s0,s2
+        0x00000136:    ed800a0c    ....    VSTR     s0,[r0,#0x30]
+        0x0000013a:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x0000013c:    ed900a0c    ....    VLDR     s0,[r0,#0x30]
+        0x00000140:    ed9f1aa3    ....    VLDR     s2,[pc,#652] ; [0x3d0] = 0x3fbffff8
+        0x00000144:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000148:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000014c:    db06        ..      BLT      {pc}+0x10 ; 0x15c
+        0x0000014e:    e7ff        ..      B        {pc}+0x2 ; 0x150
+        0x00000150:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x00000152:    2000        .       MOVS     r0,#0
+        0x00000154:    6348        Hc      STR      r0,[r1,#0x34]
+        0x00000156:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x00000158:    6448        Hd      STR      r0,[r1,#0x44]
+        0x0000015a:    e7ff        ..      B        {pc}+0x2 ; 0x15c
+        0x0000015c:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x0000015e:    ed900a0d    ....    VLDR     s0,[r0,#0x34]
+        0x00000162:    2000        .       MOVS     r0,#0
+        0x00000164:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x00000168:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000016c:    4601        .F      MOV      r1,r0
+        0x0000016e:    bf18        ..      IT       NE
+        0x00000170:    2101        .!      MOVNE    r1,#1
+        0x00000172:    912f        /.      STR      r1,[sp,#0xbc]
+        0x00000174:    992f        /.      LDR      r1,[sp,#0xbc]
+        0x00000176:    2900        .)      CMP      r1,#0
+        0x00000178:    9015        ..      STR      r0,[sp,#0x54]
+        0x0000017a:    d045        E.      BEQ      {pc}+0x8e ; 0x208
+        0x0000017c:    e7ff        ..      B        {pc}+0x2 ; 0x17e
+        0x0000017e:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000180:    ed900a11    ....    VLDR     s0,[r0,#0x44]
+        0x00000184:    2000        .       MOVS     r0,#0
+        0x00000186:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x0000018a:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000018e:    9015        ..      STR      r0,[sp,#0x54]
+        0x00000190:    dd3a        :.      BLE      {pc}+0x78 ; 0x208
+        0x00000192:    e7ff        ..      B        {pc}+0x2 ; 0x194
+        0x00000194:    ed9d0a30    ..0.    VLDR     s0,[sp,#0xc0]
+        0x00000198:    2000        .       MOVS     r0,#0
+        0x0000019a:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x0000019e:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000001a2:    9015        ..      STR      r0,[sp,#0x54]
+        0x000001a4:    d030        0.      BEQ      {pc}+0x64 ; 0x208
+        0x000001a6:    e7ff        ..      B        {pc}+0x2 ; 0x1a8
+        0x000001a8:    ed9d0a30    ..0.    VLDR     s0,[sp,#0xc0]
+        0x000001ac:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x000001ae:    ed901a0d    ....    VLDR     s2,[r0,#0x34]
+        0x000001b2:    2000        .       MOVS     r0,#0
+        0x000001b4:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x000001b8:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000001bc:    9015        ..      STR      r0,[sp,#0x54]
+        0x000001be:    d023        #.      BEQ      {pc}+0x4a ; 0x208
+        0x000001c0:    e7ff        ..      B        {pc}+0x2 ; 0x1c2
+        0x000001c2:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x000001c4:    ed900a0c    ....    VLDR     s0,[r0,#0x30]
+        0x000001c8:    ed901a0e    ....    VLDR     s2,[r0,#0x38]
+        0x000001cc:    eeb62a00    ...*    VMOV.F32 s4,#0.50000000
+        0x000001d0:    ee211a02    !...    VMUL.F32 s2,s2,s4
+        0x000001d4:    2000        .       MOVS     r0,#0
+        0x000001d6:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x000001da:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000001de:    9015        ..      STR      r0,[sp,#0x54]
+        0x000001e0:    db12        ..      BLT      {pc}+0x28 ; 0x208
+        0x000001e2:    e7ff        ..      B        {pc}+0x2 ; 0x1e4
+        0x000001e4:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x000001e6:    ed900a0c    ....    VLDR     s0,[r0,#0x30]
+        0x000001ea:    ed901a0e    ....    VLDR     s2,[r0,#0x38]
+        0x000001ee:    eeb72a08    ...*    VMOV.F32 s4,#1.50000000
+        0x000001f2:    ee211a02    !...    VMUL.F32 s2,s2,s4
+        0x000001f6:    2000        .       MOVS     r0,#0
+        0x000001f8:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x000001fc:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000200:    bfd8        ..      IT       LE
+        0x00000202:    2001        .       MOVLE    r0,#1
+        0x00000204:    9015        ..      STR      r0,[sp,#0x54]
+        0x00000206:    e7ff        ..      B        {pc}+0x2 ; 0x208
+        0x00000208:    9815        ..      LDR      r0,[sp,#0x54]
+        0x0000020a:    f0000001    ....    AND      r0,r0,#1
+        0x0000020e:    902e        ..      STR      r0,[sp,#0xb8]
+        0x00000210:    982e        ..      LDR      r0,[sp,#0xb8]
+        0x00000212:    b128        (.      CBZ      r0,{pc}+0xe ; 0x220
+        0x00000214:    e7ff        ..      B        {pc}+0x2 ; 0x216
+        0x00000216:    ed9f0a6f    ..o.    VLDR     s0,[pc,#444] ; [0x3d4] = 0x3d1d466e
+        0x0000021a:    ed8d0a14    ....    VSTR     s0,[sp,#0x50]
+        0x0000021e:    e00b        ..      B        {pc}+0x1a ; 0x238
+        0x00000220:    9a2f        /.      LDR      r2,[sp,#0xbc]
+        0x00000222:    f20f70dc    ...p    ADR.W    r0,{pc}+0x7de ; 0xa00
+        0x00000226:    1d01        ..      ADDS     r1,r0,#4
+        0x00000228:    2a00        .*      CMP      r2,#0
+        0x0000022a:    bf18        ..      IT       NE
+        0x0000022c:    4608        .F      MOVNE    r0,r1
+        0x0000022e:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000232:    ed8d0a14    ....    VSTR     s0,[sp,#0x50]
+        0x00000236:    e7ff        ..      B        {pc}+0x2 ; 0x238
+        0x00000238:    ed9d0a14    ....    VLDR     s0,[sp,#0x50]
+        0x0000023c:    ed8d0a2d    ..-.    VSTR     s0,[sp,#0xb4]
+        0x00000240:    ed9d0a2d    ..-.    VLDR     s0,[sp,#0xb4]
+        0x00000244:    ee300a00    0...    VADD.F32 s0,s0,s0
+        0x00000248:    ed8d0a2d    ..-.    VSTR     s0,[sp,#0xb4]
+        0x0000024c:    9835        5.      LDR      r0,[sp,#0xd4]
+        0x0000024e:    ed9d0a30    ..0.    VLDR     s0,[sp,#0xc0]
+        0x00000252:    2100        .!      MOVS     r1,#0
+        0x00000254:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x00000258:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000025c:    bfa8        ..      IT       GE
+        0x0000025e:    2101        .!      MOVGE    r1,#1
+        0x00000260:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x00000264:    f64211dc    B...    MOV      r1,#0x29dc
+        0x00000268:    5840        @X      LDR      r0,[r0,r1]
+        0x0000026a:    902c        ,.      STR      r0,[sp,#0xb0]
+        0x0000026c:    ed9d0a30    ..0.    VLDR     s0,[sp,#0xc0]
+        0x00000270:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000272:    ed901a06    ....    VLDR     s2,[r0,#0x18]
+        0x00000276:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x0000027a:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000027e:    d10e        ..      BNE      {pc}+0x20 ; 0x29e
+        0x00000280:    e7ff        ..      B        {pc}+0x2 ; 0x282
+        0x00000282:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000284:    ed900a07    ....    VLDR     s0,[r0,#0x1c]
+        0x00000288:    ed9f1a50    ..P.    VLDR     s2,[pc,#320] ; [0x3cc] = 0x3c23d70a
+        0x0000028c:    ee300a01    0...    VADD.F32 s0,s0,s2
+        0x00000290:    ed9f1a51    ..Q.    VLDR     s2,[pc,#324] ; [0x3d8] = 0x3d75c28f
+        0x00000294:    fe800a41    ..A.    VMINNM.F32 s0,s0,s2
+        0x00000298:    ed8d0a13    ....    VSTR     s0,[sp,#0x4c]
+        0x0000029c:    e004        ..      B        {pc}+0xc ; 0x2a8
+        0x0000029e:    ed9f0a4b    ..K.    VLDR     s0,[pc,#300] ; [0x3cc] = 0x3c23d70a
+        0x000002a2:    ed8d0a13    ....    VSTR     s0,[sp,#0x4c]
+        0x000002a6:    e7ff        ..      B        {pc}+0x2 ; 0x2a8
+        0x000002a8:    ed9d0a13    ....    VLDR     s0,[sp,#0x4c]
+        0x000002ac:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x000002ae:    ed800a07    ....    VSTR     s0,[r0,#0x1c]
+        0x000002b2:    9830        0.      LDR      r0,[sp,#0xc0]
+        0x000002b4:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x000002b6:    6188        .a      STR      r0,[r1,#0x18]
+        0x000002b8:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x000002ba:    ed900a07    ....    VLDR     s0,[r0,#0x1c]
+        0x000002be:    9a2e        ..      LDR      r2,[sp,#0xb8]
+        0x000002c0:    f20f7044    ..Dp    ADR.W    r0,{pc}+0x748 ; 0xa08
+        0x000002c4:    1d01        ..      ADDS     r1,r0,#4
+        0x000002c6:    2a00        .*      CMP      r2,#0
+        0x000002c8:    bf18        ..      IT       NE
+        0x000002ca:    4608        .F      MOVNE    r0,r1
+        0x000002cc:    ed901a00    ....    VLDR     s2,[r0,#0]
+        0x000002d0:    2000        .       MOVS     r0,#0
+        0x000002d2:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x000002d6:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000002da:    4601        .F      MOV      r1,r0
+        0x000002dc:    bfa8        ..      IT       GE
+        0x000002de:    2101        .!      MOVGE    r1,#1
+        0x000002e0:    912b        +.      STR      r1,[sp,#0xac]
+        0x000002e2:    992b        +.      LDR      r1,[sp,#0xac]
+        0x000002e4:    9012        ..      STR      r0,[sp,#0x48]
+        0x000002e6:    b1b9        ..      CBZ      r1,{pc}+0x32 ; 0x318
+        0x000002e8:    e7ff        ..      B        {pc}+0x2 ; 0x2ea
+        0x000002ea:    ed9d0a30    ..0.    VLDR     s0,[sp,#0xc0]
+        0x000002ee:    2000        .       MOVS     r0,#0
+        0x000002f0:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x000002f4:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000002f8:    9012        ..      STR      r0,[sp,#0x48]
+        0x000002fa:    d00d        ..      BEQ      {pc}+0x1e ; 0x318
+        0x000002fc:    e7ff        ..      B        {pc}+0x2 ; 0x2fe
+        0x000002fe:    ed9d0a2c    ..,.    VLDR     s0,[sp,#0xb0]
+        0x00000302:    ed9d1a2d    ..-.    VLDR     s2,[sp,#0xb4]
+        0x00000306:    2000        .       MOVS     r0,#0
+        0x00000308:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x0000030c:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000310:    bfa8        ..      IT       GE
+        0x00000312:    2001        .       MOVGE    r0,#1
+        0x00000314:    9012        ..      STR      r0,[sp,#0x48]
+        0x00000316:    e7ff        ..      B        {pc}+0x2 ; 0x318
+        0x00000318:    9812        ..      LDR      r0,[sp,#0x48]
+        0x0000031a:    f0000001    ....    AND      r0,r0,#1
+        0x0000031e:    902a        *.      STR      r0,[sp,#0xa8]
+        0x00000320:    992a        *.      LDR      r1,[sp,#0xa8]
+        0x00000322:    2000        .       MOVS     r0,#0
+        0x00000324:    9011        ..      STR      r0,[sp,#0x44]
+        0x00000326:    b171        q.      CBZ      r1,{pc}+0x20 ; 0x346
+        0x00000328:    e7ff        ..      B        {pc}+0x2 ; 0x32a
+        0x0000032a:    ed9d0a30    ..0.    VLDR     s0,[sp,#0xc0]
+        0x0000032e:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000330:    ed901a0d    ....    VLDR     s2,[r0,#0x34]
+        0x00000334:    2000        .       MOVS     r0,#0
+        0x00000336:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x0000033a:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000033e:    bf18        ..      IT       NE
+        0x00000340:    2001        .       MOVNE    r0,#1
+        0x00000342:    9011        ..      STR      r0,[sp,#0x44]
+        0x00000344:    e7ff        ..      B        {pc}+0x2 ; 0x346
+        0x00000346:    9811        ..      LDR      r0,[sp,#0x44]
+        0x00000348:    f0000001    ....    AND      r0,r0,#1
+        0x0000034c:    9029        ).      STR      r0,[sp,#0xa4]
+        0x0000034e:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000350:    6b00        .k      LDR      r0,[r0,#0x30]
+        0x00000352:    9028        (.      STR      r0,[sp,#0xa0]
+        0x00000354:    9829        ).      LDR      r0,[sp,#0xa4]
+        0x00000356:    2800        .(      CMP      r0,#0
+        0x00000358:    d063        c.      BEQ      {pc}+0xca ; 0x422
+        0x0000035a:    e7ff        ..      B        {pc}+0x2 ; 0x35c
+        0x0000035c:    982f        /.      LDR      r0,[sp,#0xbc]
+        0x0000035e:    2800        .(      CMP      r0,#0
+        0x00000360:    d05f        _.      BEQ      {pc}+0xc2 ; 0x422
+        0x00000362:    e7ff        ..      B        {pc}+0x2 ; 0x364
+        0x00000364:    ed9d0a28    ..(.    VLDR     s0,[sp,#0xa0]
+        0x00000368:    ed9f1a1c    ....    VLDR     s2,[pc,#112] ; [0x3dc] = 0x3e4ccccd
+        0x0000036c:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000370:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000374:    db55        U.      BLT      {pc}+0xae ; 0x422
+        0x00000376:    e7ff        ..      B        {pc}+0x2 ; 0x378
+        0x00000378:    ed9d0a28    ..(.    VLDR     s0,[sp,#0xa0]
+        0x0000037c:    ed9f1a18    ....    VLDR     s2,[pc,#96] ; [0x3e0] = 0x3f99999a
+        0x00000380:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000384:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000388:    dc4b        K.      BGT      {pc}+0x9a ; 0x422
+        0x0000038a:    e7ff        ..      B        {pc}+0x2 ; 0x38c
+        0x0000038c:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x0000038e:    ed900a11    ....    VLDR     s0,[r0,#0x44]
+        0x00000392:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x00000396:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000039a:    dd33        3.      BLE      {pc}+0x6a ; 0x404
+        0x0000039c:    e7ff        ..      B        {pc}+0x2 ; 0x39e
+        0x0000039e:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x000003a0:    ed901a0e    ....    VLDR     s2,[r0,#0x38]
+        0x000003a4:    ed9d0a28    ..(.    VLDR     s0,[sp,#0xa0]
+        0x000003a8:    eeb62a00    ...*    VMOV.F32 s4,#0.50000000
+        0x000003ac:    ee200a02     ...    VMUL.F32 s0,s0,s4
+        0x000003b0:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000003b4:    ed8d0a10    ....    VSTR     s0,[sp,#0x40]
+        0x000003b8:    e029        ).      B        {pc}+0x56 ; 0x40e
+        0x000003ba:    bf00        ..      NOP      
+    __arm_cp.9_26
+    $d
+        0x000003bc:    bdf5c28f    ....    DCD    3186999951
+    __arm_cp.9_27
+        0x000003c0:    bda3d70a    ....    DCD    3181631242
+    __arm_cp.9_28
+        0x000003c4:    3df5c28f    ...=    DCD    1039516303
+        0x000003c8:    00000000    ....    DCD    0
+        0x000003cc:    3c23d70a    ..#<    DCD    1008981770
+    __arm_cp.9_31
+        0x000003d0:    3fbffff8    ...?    DCD    1069547512
+    __arm_cp.9_32
+        0x000003d4:    3d1d466e    nF.=    DCD    1025328750
+    __arm_cp.9_33
+        0x000003d8:    3d75c28f    ..u=    DCD    1031127695
+        0x000003dc:    3e4ccccd    ..L>    DCD    1045220557
+    __arm_cp.9_35
+        0x000003e0:    3f99999a    ...?    DCD    1067030938
+    __arm_cp.9_36
+        0x000003e4:    3d23d70a    ..#=    DCD    1025758986
+    __arm_cp.9_37
+        0x000003e8:    3e99999a    ...>    DCD    1050253722
+    __arm_cp.9_38
+        0x000003ec:    3d75c183    ..u=    DCD    1031127427
+    __arm_cp.9_39
+        0x000003f0:    3e999978    x..>    DCD    1050253688
+        0x000003f4:    b58637bd    .7..    DCD    3045472189
+        0x000003f8:    40490fdb    ..I@    DCD    1078530011
+        0x000003fc:    43200000    .. C    DCD    1126170624
+    __arm_cp.9_43
+        0x00000400:    3ca3d70a    ...<    DCD    1017370378
+    $t
+        0x00000404:    ed9d0a28    ..(.    VLDR     s0,[sp,#0xa0]
+        0x00000408:    ed8d0a10    ....    VSTR     s0,[sp,#0x40]
+        0x0000040c:    e7ff        ..      B        {pc}+0x2 ; 0x40e
+        0x0000040e:    ed9d0a10    ....    VLDR     s0,[sp,#0x40]
+        0x00000412:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000414:    ed800a0e    ....    VSTR     s0,[r0,#0x38]
+        0x00000418:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x0000041a:    f04f507e    O.~P    MOV      r0,#0x3f800000
+        0x0000041e:    6448        Hd      STR      r0,[r1,#0x44]
+        0x00000420:    e7ff        ..      B        {pc}+0x2 ; 0x422
+        0x00000422:    9829        ).      LDR      r0,[sp,#0xa4]
+        0x00000424:    b138        8.      CBZ      r0,{pc}+0x12 ; 0x436
+        0x00000426:    e7ff        ..      B        {pc}+0x2 ; 0x428
+        0x00000428:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x0000042a:    2000        .       MOVS     r0,#0
+        0x0000042c:    6308        .c      STR      r0,[r1,#0x30]
+        0x0000042e:    9830        0.      LDR      r0,[sp,#0xc0]
+        0x00000430:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x00000432:    6348        Hc      STR      r0,[r1,#0x34]
+        0x00000434:    e7ff        ..      B        {pc}+0x2 ; 0x436
+        0x00000436:    9835        5.      LDR      r0,[sp,#0xd4]
+        0x00000438:    f642118c    B...    MOV      r1,#0x298c
+        0x0000043c:    4408        .D      ADD      r0,r0,r1
+        0x0000043e:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000442:    ed901a01    ....    VLDR     s2,[r0,#4]
+        0x00000446:    eeb00ac0    ....    VABS.F32 s0,s0
+        0x0000044a:    eeb01ac1    ....    VABS.F32 s2,s2
+        0x0000044e:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x00000452:    ed1f1a1c    ....    VLDR     s2,[pc,#-112] ; [0x3e4] = 0x3d23d70a
+        0x00000456:    2000        .       MOVS     r0,#0
+        0x00000458:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x0000045c:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000460:    bfb8        ..      IT       LT
+        0x00000462:    2001        .       MOVLT    r0,#1
+        0x00000464:    9027        '.      STR      r0,[sp,#0x9c]
+        0x00000466:    9827        '.      LDR      r0,[sp,#0x9c]
+        0x00000468:    b170        p.      CBZ      r0,{pc}+0x20 ; 0x488
+        0x0000046a:    e7ff        ..      B        {pc}+0x2 ; 0x46c
+        0x0000046c:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x0000046e:    ed900a09    ....    VLDR     s0,[r0,#0x24]
+        0x00000472:    ed1f1a2a    ..*.    VLDR     s2,[pc,#-168] ; [0x3cc] = 0x3c23d70a
+        0x00000476:    ee300a01    0...    VADD.F32 s0,s0,s2
+        0x0000047a:    ed1f1a25    ..%.    VLDR     s2,[pc,#-148] ; [0x3e8] = 0x3e99999a
+        0x0000047e:    fe800a41    ..A.    VMINNM.F32 s0,s0,s2
+        0x00000482:    ed8d0a0f    ....    VSTR     s0,[sp,#0x3c]
+        0x00000486:    e004        ..      B        {pc}+0xc ; 0x492
+        0x00000488:    ed1f0a31    ..1.    VLDR     s0,[pc,#-196] ; [0x3c8] = 0
+        0x0000048c:    ed8d0a0f    ....    VSTR     s0,[sp,#0x3c]
+        0x00000490:    e7ff        ..      B        {pc}+0x2 ; 0x492
+        0x00000492:    ed9d0a0f    ....    VLDR     s0,[sp,#0x3c]
+        0x00000496:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000498:    ed800a09    ....    VSTR     s0,[r0,#0x24]
+        0x0000049c:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x0000049e:    ed900a01    ....    VLDR     s0,[r0,#4]
+        0x000004a2:    2000        .       MOVS     r0,#0
+        0x000004a4:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x000004a8:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000004ac:    4601        .F      MOV      r1,r0
+        0x000004ae:    bf18        ..      IT       NE
+        0x000004b0:    2101        .!      MOVNE    r1,#1
+        0x000004b2:    9126        &.      STR      r1,[sp,#0x98]
+        0x000004b4:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x000004b6:    ed910a03    ....    VLDR     s0,[r1,#0xc]
+        0x000004ba:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x000004be:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000004c2:    bfc8        ..      IT       GT
+        0x000004c4:    2001        .       MOVGT    r0,#1
+        0x000004c6:    9025        %.      STR      r0,[sp,#0x94]
+        0x000004c8:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x000004ca:    ed900a01    ....    VLDR     s0,[r0,#4]
+        0x000004ce:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x000004d2:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000004d6:    da09        ..      BGE      {pc}+0x16 ; 0x4ec
+        0x000004d8:    e7ff        ..      B        {pc}+0x2 ; 0x4da
+        0x000004da:    9835        5.      LDR      r0,[sp,#0xd4]
+        0x000004dc:    f642118c    B...    MOV      r1,#0x298c
+        0x000004e0:    4408        .D      ADD      r0,r0,r1
+        0x000004e2:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x000004e6:    ed8d0a0e    ....    VSTR     s0,[sp,#0x38]
+        0x000004ea:    e008        ..      B        {pc}+0x14 ; 0x4fe
+        0x000004ec:    9835        5.      LDR      r0,[sp,#0xd4]
+        0x000004ee:    f6421190    B...    MOV      r1,#0x2990
+        0x000004f2:    4408        .D      ADD      r0,r0,r1
+        0x000004f4:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x000004f8:    ed8d0a0e    ....    VSTR     s0,[sp,#0x38]
+        0x000004fc:    e7ff        ..      B        {pc}+0x2 ; 0x4fe
+        0x000004fe:    ed9d0a0e    ....    VLDR     s0,[sp,#0x38]
+        0x00000502:    ed1f1a50    ..P.    VLDR     s2,[pc,#-320] ; [0x3c4] = 0x3df5c28f
+        0x00000506:    2000        .       MOVS     r0,#0
+        0x00000508:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x0000050c:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000510:    4601        .F      MOV      r1,r0
+        0x00000512:    bfc8        ..      IT       GT
+        0x00000514:    2101        .!      MOVGT    r1,#1
+        0x00000516:    9124        $.      STR      r1,[sp,#0x90]
+        0x00000518:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x0000051a:    ed910a07    ....    VLDR     s0,[r1,#0x1c]
+        0x0000051e:    ed1f1a4d    ..M.    VLDR     s2,[pc,#-308] ; [0x3ec] = 0x3d75c183
+        0x00000522:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000526:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000052a:    900d        ..      STR      r0,[sp,#0x34]
+        0x0000052c:    db18        ..      BLT      {pc}+0x34 ; 0x560
+        0x0000052e:    e7ff        ..      B        {pc}+0x2 ; 0x530
+        0x00000530:    ed9d0a30    ..0.    VLDR     s0,[sp,#0xc0]
+        0x00000534:    2000        .       MOVS     r0,#0
+        0x00000536:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x0000053a:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000053e:    900d        ..      STR      r0,[sp,#0x34]
+        0x00000540:    d00e        ..      BEQ      {pc}+0x20 ; 0x560
+        0x00000542:    e7ff        ..      B        {pc}+0x2 ; 0x544
+        0x00000544:    ed9d0a30    ..0.    VLDR     s0,[sp,#0xc0]
+        0x00000548:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x0000054a:    ed901a01    ....    VLDR     s2,[r0,#4]
+        0x0000054e:    2000        .       MOVS     r0,#0
+        0x00000550:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000554:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000558:    bf18        ..      IT       NE
+        0x0000055a:    2001        .       MOVNE    r0,#1
+        0x0000055c:    900d        ..      STR      r0,[sp,#0x34]
+        0x0000055e:    e7ff        ..      B        {pc}+0x2 ; 0x560
+        0x00000560:    980d        ..      LDR      r0,[sp,#0x34]
+        0x00000562:    f0000001    ....    AND      r0,r0,#1
+        0x00000566:    9023        #.      STR      r0,[sp,#0x8c]
+        0x00000568:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x0000056a:    ed900a09    ....    VLDR     s0,[r0,#0x24]
+        0x0000056e:    2000        .       MOVS     r0,#0
+        0x00000570:    ed1f1a61    ..a.    VLDR     s2,[pc,#-388] ; [0x3f0] = 0x3e999978
+        0x00000574:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000578:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000057c:    900c        ..      STR      r0,[sp,#0x30]
+        0x0000057e:    db0e        ..      BLT      {pc}+0x20 ; 0x59e
+        0x00000580:    e7ff        ..      B        {pc}+0x2 ; 0x582
+        0x00000582:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000584:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000588:    eeb61a00    ....    VMOV.F32 s2,#0.50000000
+        0x0000058c:    2000        .       MOVS     r0,#0
+        0x0000058e:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000592:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000596:    bfa8        ..      IT       GE
+        0x00000598:    2001        .       MOVGE    r0,#1
+        0x0000059a:    900c        ..      STR      r0,[sp,#0x30]
+        0x0000059c:    e7ff        ..      B        {pc}+0x2 ; 0x59e
+        0x0000059e:    980c        ..      LDR      r0,[sp,#0x30]
+        0x000005a0:    f0000001    ....    AND      r0,r0,#1
+        0x000005a4:    9022        ".      STR      r0,[sp,#0x88]
+        0x000005a6:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x000005a8:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x000005ac:    ed901a08    ....    VLDR     s2,[r0,#0x20]
+        0x000005b0:    ed902a10    ...*    VLDR     s4,[r0,#0x40]
+        0x000005b4:    ee311a42    1.B.    VSUB.F32 s2,s2,s4
+        0x000005b8:    ed1f2a72    ..r*    VLDR     s4,[pc,#-456] ; [0x3f4] = 0xb58637bd
+        0x000005bc:    ee311a02    1...    VADD.F32 s2,s2,s4
+        0x000005c0:    2000        .       MOVS     r0,#0
+        0x000005c2:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x000005c6:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000005ca:    bfa8        ..      IT       GE
+        0x000005cc:    2001        .       MOVGE    r0,#1
+        0x000005ce:    9021        !.      STR      r0,[sp,#0x84]
+        0x000005d0:    9826        &.      LDR      r0,[sp,#0x98]
+        0x000005d2:    2800        .(      CMP      r0,#0
+        0x000005d4:    d043        C.      BEQ      {pc}+0x8a ; 0x65e
+        0x000005d6:    e7ff        ..      B        {pc}+0x2 ; 0x5d8
+        0x000005d8:    9825        %.      LDR      r0,[sp,#0x94]
+        0x000005da:    2800        .(      CMP      r0,#0
+        0x000005dc:    d13f        ?.      BNE      {pc}+0x82 ; 0x65e
+        0x000005de:    e7ff        ..      B        {pc}+0x2 ; 0x5e0
+        0x000005e0:    9824        $.      LDR      r0,[sp,#0x90]
+        0x000005e2:    b948        H.      CBNZ     r0,{pc}+0x16 ; 0x5f8
+        0x000005e4:    e7ff        ..      B        {pc}+0x2 ; 0x5e6
+        0x000005e6:    9823        #.      LDR      r0,[sp,#0x8c]
+        0x000005e8:    b930        0.      CBNZ     r0,{pc}+0x10 ; 0x5f8
+        0x000005ea:    e7ff        ..      B        {pc}+0x2 ; 0x5ec
+        0x000005ec:    9822        ".      LDR      r0,[sp,#0x88]
+        0x000005ee:    b918        ..      CBNZ     r0,{pc}+0xa ; 0x5f8
+        0x000005f0:    e7ff        ..      B        {pc}+0x2 ; 0x5f2
+        0x000005f2:    9821        !.      LDR      r0,[sp,#0x84]
+        0x000005f4:    b398        ..      CBZ      r0,{pc}+0x6a ; 0x65e
+        0x000005f6:    e7ff        ..      B        {pc}+0x2 ; 0x5f8
+        0x000005f8:    9835        5.      LDR      r0,[sp,#0xd4]
+        0x000005fa:    f6421184    B...    MOV      r1,#0x2984
+        0x000005fe:    4408        .D      ADD      r0,r0,r1
+        0x00000600:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000604:    eeb00ac0    ....    VABS.F32 s0,s0
+        0x00000608:    ed1f1a85    ....    VLDR     s2,[pc,#-532] ; [0x3f8] = 0x40490fdb
+        0x0000060c:    ee200a01     ...    VMUL.F32 s0,s0,s2
+        0x00000610:    ed1f1a86    ....    VLDR     s2,[pc,#-536] ; [0x3fc] = 0x43200000
+        0x00000614:    ee800a01    ....    VDIV.F32 s0,s0,s2
+        0x00000618:    ed1f1a94    ....    VLDR     s2,[pc,#-592] ; [0x3cc] = 0x3c23d70a
+        0x0000061c:    ee300a01    0...    VADD.F32 s0,s0,s2
+        0x00000620:    ed1f1a89    ....    VLDR     s2,[pc,#-548] ; [0x400] = 0x3ca3d70a
+        0x00000624:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x00000628:    ed8d0a20    .. .    VSTR     s0,[sp,#0x80]
+        0x0000062c:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x0000062e:    ed900a10    ....    VLDR     s0,[r0,#0x40]
+        0x00000632:    ed9d1a20    .. .    VLDR     s2,[sp,#0x80]
+        0x00000636:    fe800a41    ..A.    VMINNM.F32 s0,s0,s2
+        0x0000063a:    ed800a10    ....    VSTR     s0,[r0,#0x40]
+        0x0000063e:    9a32        2.      LDR      r2,[sp,#0xc8]
+        0x00000640:    f24d700a    M..p    MOV      r0,#0xd70a
+        0x00000644:    f6c34023    ..#@    MOVT     r0,#0x3c23
+        0x00000648:    60d0        .`      STR      r0,[r2,#0xc]
+        0x0000064a:    9835        5.      LDR      r0,[sp,#0xd4]
+        0x0000064c:    4408        .D      ADD      r0,r0,r1
+        0x0000064e:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000652:    eeb00ac0    ....    VABS.F32 s0,s0
+        0x00000656:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000658:    ed800a04    ....    VSTR     s0,[r0,#0x10]
+        0x0000065c:    e7ff        ..      B        {pc}+0x2 ; 0x65e
+        0x0000065e:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000660:    ed900a03    ....    VLDR     s0,[r0,#0xc]
+        0x00000664:    2000        .       MOVS     r0,#0
+        0x00000666:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x0000066a:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000066e:    bfc8        ..      IT       GT
+        0x00000670:    2001        .       MOVGT    r0,#1
+        0x00000672:    9025        %.      STR      r0,[sp,#0x94]
+        0x00000674:    9826        &.      LDR      r0,[sp,#0x98]
+        0x00000676:    b978        x.      CBNZ     r0,{pc}+0x22 ; 0x698
+        0x00000678:    e7ff        ..      B        {pc}+0x2 ; 0x67a
+        0x0000067a:    982b        +.      LDR      r0,[sp,#0xac]
+        0x0000067c:    b160        `.      CBZ      r0,{pc}+0x1c ; 0x698
+        0x0000067e:    e7ff        ..      B        {pc}+0x2 ; 0x680
+        0x00000680:    ed9d0a30    ..0.    VLDR     s0,[sp,#0xc0]
+        0x00000684:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x00000688:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000068c:    d104        ..      BNE      {pc}+0xc ; 0x698
+        0x0000068e:    e7ff        ..      B        {pc}+0x2 ; 0x690
+        0x00000690:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x00000692:    2000        .       MOVS     r0,#0
+        0x00000694:    6148        Ha      STR      r0,[r1,#0x14]
+        0x00000696:    e7ff        ..      B        {pc}+0x2 ; 0x698
+        0x00000698:    9826        &.      LDR      r0,[sp,#0x98]
+        0x0000069a:    2800        .(      CMP      r0,#0
+        0x0000069c:    f04080cb    @...    BNE.W    {pc}+0x19a ; 0x836
+        0x000006a0:    e7ff        ..      B        {pc}+0x2 ; 0x6a2
+        0x000006a2:    982a        *.      LDR      r0,[sp,#0xa8]
+        0x000006a4:    2800        .(      CMP      r0,#0
+        0x000006a6:    f00080c6    ....    BEQ.W    {pc}+0x190 ; 0x836
+        0x000006aa:    e7ff        ..      B        {pc}+0x2 ; 0x6ac
+        0x000006ac:    ed9d0a30    ..0.    VLDR     s0,[sp,#0xc0]
+        0x000006b0:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x000006b2:    ed901a05    ....    VLDR     s2,[r0,#0x14]
+        0x000006b6:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x000006ba:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000006be:    f00080ba    ....    BEQ.W    {pc}+0x178 ; 0x836
+        0x000006c2:    e7ff        ..      B        {pc}+0x2 ; 0x6c4
+        0x000006c4:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x000006c6:    2000        .       MOVS     r0,#0
+        0x000006c8:    6008        .`      STR      r0,[r1,#0]
+        0x000006ca:    9830        0.      LDR      r0,[sp,#0xc0]
+        0x000006cc:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x000006ce:    6048        H`      STR      r0,[r1,#4]
+        0x000006d0:    9834        4.      LDR      r0,[sp,#0xd0]
+        0x000006d2:    6800        .h      LDR      r0,[r0,#0]
+        0x000006d4:    2100        .!      MOVS     r1,#0
+        0x000006d6:    f6cb7180    ...q    MOVT     r1,#0xbf80
+        0x000006da:    9108        ..      STR      r1,[sp,#0x20]
+        0x000006dc:    f04f527e    O.~R    MOV      r2,#0x3f800000
+        0x000006e0:    9209        ..      STR      r2,[sp,#0x24]
+        0x000006e2:    f7fffffe    ....    BL       clip ; 0x0 Section #54
+        0x000006e6:    9908        ..      LDR      r1,[sp,#0x20]
+        0x000006e8:    9a09        ..      LDR      r2,[sp,#0x24]
+        0x000006ea:    ee000a10    ....    VMOV     s0,r0
+        0x000006ee:    eeb71a00    ....    VMOV.F32 s2,#1.00000000
+        0x000006f2:    ed8d1a0a    ....    VSTR     s2,[sp,#0x28]
+        0x000006f6:    ee300a01    0...    VADD.F32 s0,s0,s2
+        0x000006fa:    eeb61a00    ....    VMOV.F32 s2,#0.50000000
+        0x000006fe:    ed8d1a0b    ....    VSTR     s2,[sp,#0x2c]
+        0x00000702:    ee200a01     ...    VMUL.F32 s0,s0,s2
+        0x00000706:    eeb21a04    ....    VMOV.F32 s2,#10.00000000
+        0x0000070a:    ee200a01     ...    VMUL.F32 s0,s0,s2
+        0x0000070e:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000710:    ed800a02    ....    VSTR     s0,[r0,#8]
+        0x00000714:    9834        4.      LDR      r0,[sp,#0xd0]
+        0x00000716:    6840        @h      LDR      r0,[r0,#4]
+        0x00000718:    f7fffffe    ....    BL       clip ; 0x0 Section #54
+        0x0000071c:    ed9d2a0a    ...*    VLDR     s4,[sp,#0x28]
+        0x00000720:    ed9d1a0b    ....    VLDR     s2,[sp,#0x2c]
+        0x00000724:    ee000a10    ....    VMOV     s0,r0
+        0x00000728:    ee300a02    0...    VADD.F32 s0,s0,s4
+        0x0000072c:    ee201a01     ...    VMUL.F32 s2,s0,s2
+        0x00000730:    ed9f2abb    ...*    VLDR     s4,[pc,#748] ; [0xa20] = 0x3f4ccccc
+        0x00000734:    ed9f0abb    ....    VLDR     s0,[pc,#748] ; [0xa24] = 0x3f19999a
+        0x00000738:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000073c:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x0000073e:    ed800a08    ....    VSTR     s0,[r0,#0x20]
+        0x00000742:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000744:    ed900a11    ....    VLDR     s0,[r0,#0x44]
+        0x00000748:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x0000074c:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000750:    dd21        !.      BLE      {pc}+0x46 ; 0x796
+        0x00000752:    e7ff        ..      B        {pc}+0x2 ; 0x754
+        0x00000754:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000756:    ed900a08    ....    VLDR     s0,[r0,#0x20]
+        0x0000075a:    ed8d0a07    ....    VSTR     s0,[sp,#0x1c]
+        0x0000075e:    ed900a0e    ....    VLDR     s0,[r0,#0x38]
+        0x00000762:    ed9f1ab1    ....    VLDR     s2,[pc,#708] ; [0xa28] = 0x3f4ccccd
+        0x00000766:    ee200a01     ...    VMUL.F32 s0,s0,s2
+        0x0000076a:    ee100a10    ....    VMOV     r0,s0
+        0x0000076e:    f649119a    I...    MOV      r1,#0x999a
+        0x00000772:    f6c36199    ...a    MOVT     r1,#0x3e99
+        0x00000776:    f2433233    C.32    MOV      r2,#0x3333
+        0x0000077a:    f6c372b3    ...r    MOVT     r2,#0x3fb3
+        0x0000077e:    f7fffffe    ....    BL       clip ; 0x0 Section #54
+        0x00000782:    ed9d0a07    ....    VLDR     s0,[sp,#0x1c]
+        0x00000786:    ee010a10    ....    VMOV     s2,r0
+        0x0000078a:    fe800a41    ..A.    VMINNM.F32 s0,s0,s2
+        0x0000078e:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000790:    ed800a08    ....    VSTR     s0,[r0,#0x20]
+        0x00000794:    e7ff        ..      B        {pc}+0x2 ; 0x796
+        0x00000796:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000798:    ed900a08    ....    VLDR     s0,[r0,#0x20]
+        0x0000079c:    ed9f1aa3    ....    VLDR     s2,[pc,#652] ; [0xa2c] = 0x3ee66666
+        0x000007a0:    ee200a01     ...    VMUL.F32 s0,s0,s2
+        0x000007a4:    ed9f2a9a    ...*    VLDR     s4,[pc,#616] ; [0xa10] = 0x3e4ccccd
+        0x000007a8:    fe800a42    ..B.    VMINNM.F32 s0,s0,s4
+        0x000007ac:    ed800a0f    ....    VSTR     s0,[r0,#0x3c]
+        0x000007b0:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x000007b2:    ed900a08    ....    VLDR     s0,[r0,#0x20]
+        0x000007b6:    ee200a01     ...    VMUL.F32 s0,s0,s2
+        0x000007ba:    eeb51a00    ....    VMOV.F32 s2,#0.25000000
+        0x000007be:    fe800a41    ..A.    VMINNM.F32 s0,s0,s2
+        0x000007c2:    ed800a10    ....    VSTR     s0,[r0,#0x40]
+        0x000007c6:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x000007c8:    ed900a02    ....    VLDR     s0,[r0,#8]
+        0x000007cc:    ed901a0f    ....    VLDR     s2,[r0,#0x3c]
+        0x000007d0:    ed902a10    ...*    VLDR     s4,[r0,#0x40]
+        0x000007d4:    fe812a42    ..B*    VMINNM.F32 s4,s2,s4
+        0x000007d8:    ed9f1a90    ....    VLDR     s2,[pc,#576] ; [0xa1c] = 0x43200000
+        0x000007dc:    ee223a01    "..:    VMUL.F32 s6,s4,s2
+        0x000007e0:    ed9f2a8d    ...*    VLDR     s4,[pc,#564] ; [0xa18] = 0x40490fdb
+        0x000007e4:    ee833a02    ...:    VDIV.F32 s6,s6,s4
+        0x000007e8:    fe800a43    ..C.    VMINNM.F32 s0,s0,s6
+        0x000007ec:    ed800a02    ....    VSTR     s0,[r0,#8]
+        0x000007f0:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x000007f2:    ed900a02    ....    VLDR     s0,[r0,#8]
+        0x000007f6:    ee200a02     ...    VMUL.F32 s0,s0,s4
+        0x000007fa:    ee800a01    ....    VDIV.F32 s0,s0,s2
+        0x000007fe:    ed9f1a7f    ....    VLDR     s2,[pc,#508] ; [0x9fc] = 0x3c23d70a
+        0x00000802:    ee300a01    0...    VADD.F32 s0,s0,s2
+        0x00000806:    ed9f1a8a    ....    VLDR     s2,[pc,#552] ; [0xa30] = 0x3dcccccd
+        0x0000080a:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x0000080e:    ed8d0a1f    ....    VSTR     s0,[sp,#0x7c]
+        0x00000812:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000814:    ed900a0f    ....    VLDR     s0,[r0,#0x3c]
+        0x00000818:    ed9d1a1f    ....    VLDR     s2,[sp,#0x7c]
+        0x0000081c:    fe800a41    ..A.    VMINNM.F32 s0,s0,s2
+        0x00000820:    ed800a0f    ....    VSTR     s0,[r0,#0x3c]
+        0x00000824:    9830        0.      LDR      r0,[sp,#0xc0]
+        0x00000826:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x00000828:    6148        Ha      STR      r0,[r1,#0x14]
+        0x0000082a:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x0000082c:    2000        .       MOVS     r0,#0
+        0x0000082e:    6108        .a      STR      r0,[r1,#0x10]
+        0x00000830:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x00000832:    60c8        .`      STR      r0,[r1,#0xc]
+        0x00000834:    e7ff        ..      B        {pc}+0x2 ; 0x836
+        0x00000836:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000838:    ed900a01    ....    VLDR     s0,[r0,#4]
+        0x0000083c:    2000        .       MOVS     r0,#0
+        0x0000083e:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x00000842:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000846:    bf18        ..      IT       NE
+        0x00000848:    2001        .       MOVNE    r0,#1
+        0x0000084a:    9026        &.      STR      r0,[sp,#0x98]
+        0x0000084c:    9826        &.      LDR      r0,[sp,#0x98]
+        0x0000084e:    b150        P.      CBZ      r0,{pc}+0x18 ; 0x866
+        0x00000850:    e7ff        ..      B        {pc}+0x2 ; 0x852
+        0x00000852:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000854:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000858:    ed9f1a68    ..h.    VLDR     s2,[pc,#416] ; [0x9fc] = 0x3c23d70a
+        0x0000085c:    ee300a01    0...    VADD.F32 s0,s0,s2
+        0x00000860:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x00000864:    e7ff        ..      B        {pc}+0x2 ; 0x866
+        0x00000866:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000868:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000086c:    ed901a0f    ....    VLDR     s2,[r0,#0x3c]
+        0x00000870:    ed9f2a62    ..b*    VLDR     s4,[pc,#392] ; [0x9fc] = 0x3c23d70a
+        0x00000874:    ed8d2a04    ...*    VSTR     s4,[sp,#0x10]
+        0x00000878:    fe811a02    ....    VMAXNM.F32 s2,s2,s4
+        0x0000087c:    ee800a01    ....    VDIV.F32 s0,s0,s2
+        0x00000880:    ee100a10    ....    VMOV     r0,s0
+        0x00000884:    2100        .!      MOVS     r1,#0
+        0x00000886:    9105        ..      STR      r1,[sp,#0x14]
+        0x00000888:    f04f527e    O.~R    MOV      r2,#0x3f800000
+        0x0000088c:    9206        ..      STR      r2,[sp,#0x18]
+        0x0000088e:    f7fffffe    ....    BL       clip ; 0x0 Section #54
+        0x00000892:    ed9d2a04    ...*    VLDR     s4,[sp,#0x10]
+        0x00000896:    9905        ..      LDR      r1,[sp,#0x14]
+        0x00000898:    9a06        ..      LDR      r2,[sp,#0x18]
+        0x0000089a:    901e        ..      STR      r0,[sp,#0x78]
+        0x0000089c:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x0000089e:    ed900a03    ....    VLDR     s0,[r0,#0xc]
+        0x000008a2:    ed901a10    ....    VLDR     s2,[r0,#0x40]
+        0x000008a6:    fe811a02    ....    VMAXNM.F32 s2,s2,s4
+        0x000008aa:    ee800a01    ....    VDIV.F32 s0,s0,s2
+        0x000008ae:    ee100a10    ....    VMOV     r0,s0
+        0x000008b2:    f7fffffe    ....    BL       clip ; 0x0 Section #54
+        0x000008b6:    901d        ..      STR      r0,[sp,#0x74]
+        0x000008b8:    9825        %.      LDR      r0,[sp,#0x94]
+        0x000008ba:    b178        x.      CBZ      r0,{pc}+0x22 ; 0x8dc
+        0x000008bc:    e7ff        ..      B        {pc}+0x2 ; 0x8be
+        0x000008be:    ed9d0a1d    ....    VLDR     s0,[sp,#0x74]
+        0x000008c2:    ed9f1a5c    ..\.    VLDR     s2,[pc,#368] ; [0xa34] = 0x3fc90fdb
+        0x000008c6:    ee200a01     ...    VMUL.F32 s0,s0,s2
+        0x000008ca:    ee100a10    ....    VMOV     r0,s0
+        0x000008ce:    f7fffffe    ....    BL       cosf
+        0x000008d2:    ee000a10    ....    VMOV     s0,r0
+        0x000008d6:    ed8d0a03    ....    VSTR     s0,[sp,#0xc]
+        0x000008da:    e00e        ..      B        {pc}+0x20 ; 0x8fa
+        0x000008dc:    ed9d0a1e    ....    VLDR     s0,[sp,#0x78]
+        0x000008e0:    ed9f1a54    ..T.    VLDR     s2,[pc,#336] ; [0xa34] = 0x3fc90fdb
+        0x000008e4:    ee200a01     ...    VMUL.F32 s0,s0,s2
+        0x000008e8:    ee100a10    ....    VMOV     r0,s0
+        0x000008ec:    f7fffffe    ....    BL       sinf
+        0x000008f0:    ee000a10    ....    VMOV     s0,r0
+        0x000008f4:    ed8d0a03    ....    VSTR     s0,[sp,#0xc]
+        0x000008f8:    e7ff        ..      B        {pc}+0x2 ; 0x8fa
+        0x000008fa:    ed9d0a03    ....    VLDR     s0,[sp,#0xc]
+        0x000008fe:    ed8d0a1c    ....    VSTR     s0,[sp,#0x70]
+        0x00000902:    9825        %.      LDR      r0,[sp,#0x94]
+        0x00000904:    b130        0.      CBZ      r0,{pc}+0x10 ; 0x914
+        0x00000906:    e7ff        ..      B        {pc}+0x2 ; 0x908
+        0x00000908:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x0000090a:    ed900a04    ....    VLDR     s0,[r0,#0x10]
+        0x0000090e:    ed8d0a02    ....    VSTR     s0,[sp,#8]
+        0x00000912:    e005        ..      B        {pc}+0xe ; 0x920
+        0x00000914:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000916:    ed900a02    ....    VLDR     s0,[r0,#8]
+        0x0000091a:    ed8d0a02    ....    VSTR     s0,[sp,#8]
+        0x0000091e:    e7ff        ..      B        {pc}+0x2 ; 0x920
+        0x00000920:    ed9d0a02    ....    VLDR     s0,[sp,#8]
+        0x00000924:    ed9d1a1c    ....    VLDR     s2,[sp,#0x70]
+        0x00000928:    ee200a01     ...    VMUL.F32 s0,s0,s2
+        0x0000092c:    ee200a01     ...    VMUL.F32 s0,s0,s2
+        0x00000930:    ed8d0a1b    ....    VSTR     s0,[sp,#0x6c]
+        0x00000934:    9826        &.      LDR      r0,[sp,#0x98]
+        0x00000936:    b150        P.      CBZ      r0,{pc}+0x18 ; 0x94e
+        0x00000938:    e7ff        ..      B        {pc}+0x2 ; 0x93a
+        0x0000093a:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x0000093c:    ed900a01    ....    VLDR     s0,[r0,#4]
+        0x00000940:    ed9d1a1b    ....    VLDR     s2,[sp,#0x6c]
+        0x00000944:    ee200a01     ...    VMUL.F32 s0,s0,s2
+        0x00000948:    ed8d0a01    ....    VSTR     s0,[sp,#4]
+        0x0000094c:    e004        ..      B        {pc}+0xc ; 0x958
+        0x0000094e:    ed9f0a2a    ..*.    VLDR     s0,[pc,#168] ; [0x9f8] = 0
+        0x00000952:    ed8d0a01    ....    VSTR     s0,[sp,#4]
+        0x00000956:    e7ff        ..      B        {pc}+0x2 ; 0x958
+        0x00000958:    ed9d0a01    ....    VLDR     s0,[sp,#4]
+        0x0000095c:    ed8d0a1a    ....    VSTR     s0,[sp,#0x68]
+        0x00000960:    9926        &.      LDR      r1,[sp,#0x98]
+        0x00000962:    2000        .       MOVS     r0,#0
+        0x00000964:    9000        ..      STR      r0,[sp,#0]
+        0x00000966:    b1b9        ..      CBZ      r1,{pc}+0x32 ; 0x998
+        0x00000968:    e7ff        ..      B        {pc}+0x2 ; 0x96a
+        0x0000096a:    9925        %.      LDR      r1,[sp,#0x94]
+        0x0000096c:    2000        .       MOVS     r0,#0
+        0x0000096e:    9000        ..      STR      r0,[sp,#0]
+        0x00000970:    b191        ..      CBZ      r1,{pc}+0x28 ; 0x998
+        0x00000972:    e7ff        ..      B        {pc}+0x2 ; 0x974
+        0x00000974:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x00000976:    ed900a03    ....    VLDR     s0,[r0,#0xc]
+        0x0000097a:    ed901a10    ....    VLDR     s2,[r0,#0x40]
+        0x0000097e:    ed9f2a25    ..%*    VLDR     s4,[pc,#148] ; [0xa14] = 0xb58637bd
+        0x00000982:    ee311a02    1...    VADD.F32 s2,s2,s4
+        0x00000986:    2000        .       MOVS     r0,#0
+        0x00000988:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x0000098c:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000990:    bfa8        ..      IT       GE
+        0x00000992:    2001        .       MOVGE    r0,#1
+        0x00000994:    9000        ..      STR      r0,[sp,#0]
+        0x00000996:    e7ff        ..      B        {pc}+0x2 ; 0x998
+        0x00000998:    9800        ..      LDR      r0,[sp,#0]
+        0x0000099a:    f0000001    ....    AND      r0,r0,#1
+        0x0000099e:    9019        ..      STR      r0,[sp,#0x64]
+        0x000009a0:    9819        ..      LDR      r0,[sp,#0x64]
+        0x000009a2:    b1b0        ..      CBZ      r0,{pc}+0x30 ; 0x9d2
+        0x000009a4:    e7ff        ..      B        {pc}+0x2 ; 0x9a6
+        0x000009a6:    2000        .       MOVS     r0,#0
+        0x000009a8:    901a        ..      STR      r0,[sp,#0x68]
+        0x000009aa:    9018        ..      STR      r0,[sp,#0x60]
+        0x000009ac:    e7ff        ..      B        {pc}+0x2 ; 0x9ae
+        0x000009ae:    9818        ..      LDR      r0,[sp,#0x60]
+        0x000009b0:    2804        .(      CMP      r0,#4
+        0x000009b2:    dc0a        ..      BGT      {pc}+0x18 ; 0x9ca
+        0x000009b4:    e7ff        ..      B        {pc}+0x2 ; 0x9b6
+        0x000009b6:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x000009b8:    9a18        ..      LDR      r2,[sp,#0x60]
+        0x000009ba:    2000        .       MOVS     r0,#0
+        0x000009bc:    f8410022    A.".    STR      r0,[r1,r2,LSL #2]
+        0x000009c0:    e7ff        ..      B        {pc}+0x2 ; 0x9c2
+        0x000009c2:    9818        ..      LDR      r0,[sp,#0x60]
+        0x000009c4:    3001        .0      ADDS     r0,#1
+        0x000009c6:    9018        ..      STR      r0,[sp,#0x60]
+        0x000009c8:    e7f1        ..      B        {pc}-0x1a ; 0x9ae
+        0x000009ca:    9932        2.      LDR      r1,[sp,#0xc8]
+        0x000009cc:    2000        .       MOVS     r0,#0
+        0x000009ce:    6208        .b      STR      r0,[r1,#0x20]
+        0x000009d0:    e7ff        ..      B        {pc}+0x2 ; 0x9d2
+        0x000009d2:    9825        %.      LDR      r0,[sp,#0x94]
+        0x000009d4:    b168        h.      CBZ      r0,{pc}+0x1e ; 0x9f2
+        0x000009d6:    e7ff        ..      B        {pc}+0x2 ; 0x9d8
+        0x000009d8:    9819        ..      LDR      r0,[sp,#0x64]
+        0x000009da:    b950        P.      CBNZ     r0,{pc}+0x18 ; 0x9f2
+        0x000009dc:    e7ff        ..      B        {pc}+0x2 ; 0x9de
+        0x000009de:    9832        2.      LDR      r0,[sp,#0xc8]
+        0x000009e0:    ed900a03    ....    VLDR     s0,[r0,#0xc]
+        0x000009e4:    ed9f1a05    ....    VLDR     s2,[pc,#20] ; [0x9fc] = 0x3c23d70a
+        0x000009e8:    ee300a01    0...    VADD.F32 s0,s0,s2
+        0x000009ec:    ed800a03    ....    VSTR     s0,[r0,#0xc]
+        0x000009f0:    e7ff        ..      B        {pc}+0x2 ; 0x9f2
+        0x000009f2:    981a        ..      LDR      r0,[sp,#0x68]
+        0x000009f4:    b036        6.      ADD      sp,sp,#0xd8
+        0x000009f6:    bd80        ..      POP      {r7,pc}
+    $d
+        0x000009f8:    00000000    ....    DCD    0
+        0x000009fc:    3c23d70a    ..#<    DCD    1008981770
+        0x00000a00:    3d567750    PwV=    DCD    1029076816
+        0x00000a04:    3d32b8c2    ..2=    DCD    1026734274
+        0x00000a08:    3cf5c076    v..<    DCD    1022738550
+        0x00000a0c:    3ca3d4f1    ...<    DCD    1017369841
+        0x00000a10:    3e4ccccd    ..L>    DCD    1045220557
+        0x00000a14:    b58637bd    .7..    DCD    3045472189
+        0x00000a18:    40490fdb    ..I@    DCD    1078530011
+        0x00000a1c:    43200000    .. C    DCD    1126170624
+        0x00000a20:    3f4ccccc    ..L?    DCD    1061997772
+        0x00000a24:    3f19999a    ...?    DCD    1058642330
+        0x00000a28:    3f4ccccd    ..L?    DCD    1061997773
+        0x00000a2c:    3ee66666    ff.>    DCD    1055286886
+        0x00000a30:    3dcccccd    ...=    DCD    1036831949
+        0x00000a34:    3fc90fdb    ...?    DCD    1070141403
+
+** Section #37 '.rel.text.pulse_step' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 56 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    7 relocations applied to section #36 '.text.pulse_step'
+
+
+** Section #38 '.ARM.exidx.text.pulse_step' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #36 '.text.pulse_step'
+
+
+** Section #39 '.rel.ARM.exidx.text.pulse_step' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #38 '.ARM.exidx.text.pulse_step'
+
+
+** Section #40 '.text.guard_step' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 1328 bytes (alignment 8)
+    Address: 0x00000000
+
+    guard_step
+    [Anonymous symbol #60]
+    $t
+        0x00000000:    b580        ..      PUSH     {r7,lr}
+        0x00000002:    b09a        ..      SUB      sp,sp,#0x68
+        0x00000004:    ee002a10    ...*    VMOV     s0,r2
+        0x00000008:    9019        ..      STR      r0,[sp,#0x64]
+        0x0000000a:    9118        ..      STR      r1,[sp,#0x60]
+        0x0000000c:    9217        ..      STR      r2,[sp,#0x5c]
+        0x0000000e:    9819        ..      LDR      r0,[sp,#0x64]
+        0x00000010:    f64211ec    B...    MOV      r1,#0x29ec
+        0x00000014:    4408        .D      ADD      r0,r0,r1
+        0x00000016:    9016        ..      STR      r0,[sp,#0x58]
+        0x00000018:    9816        ..      LDR      r0,[sp,#0x58]
+        0x0000001a:    f8d00be0    ....    LDR      r0,[r0,#0xbe0]
+        0x0000001e:    bb60        `.      CBNZ     r0,{pc}+0x5c ; 0x7a
+        0x00000020:    e7ff        ..      B        {pc}+0x2 ; 0x22
+        0x00000022:    2000        .       MOVS     r0,#0
+        0x00000024:    9015        ..      STR      r0,[sp,#0x54]
+        0x00000026:    e7ff        ..      B        {pc}+0x2 ; 0x28
+        0x00000028:    9815        ..      LDR      r0,[sp,#0x54]
+        0x0000002a:    2801        .(      CMP      r0,#1
+        0x0000002c:    dc24        $.      BGT      {pc}+0x4c ; 0x78
+        0x0000002e:    e7ff        ..      B        {pc}+0x2 ; 0x30
+        0x00000030:    9818        ..      LDR      r0,[sp,#0x60]
+        0x00000032:    9a15        ..      LDR      r2,[sp,#0x54]
+        0x00000034:    f8500022    P.".    LDR      r0,[r0,r2,LSL #2]
+        0x00000038:    9916        ..      LDR      r1,[sp,#0x58]
+        0x0000003a:    eb010182    ....    ADD      r1,r1,r2,LSL #2
+        0x0000003e:    f8c10bc0    ....    STR      r0,[r1,#0xbc0]
+        0x00000042:    2000        .       MOVS     r0,#0
+        0x00000044:    9014        ..      STR      r0,[sp,#0x50]
+        0x00000046:    e7ff        ..      B        {pc}+0x2 ; 0x48
+        0x00000048:    9814        ..      LDR      r0,[sp,#0x50]
+        0x0000004a:    2895        .(      CMP      r0,#0x95
+        0x0000004c:    dc0f        ..      BGT      {pc}+0x22 ; 0x6e
+        0x0000004e:    e7ff        ..      B        {pc}+0x2 ; 0x50
+        0x00000050:    9818        ..      LDR      r0,[sp,#0x60]
+        0x00000052:    9a15        ..      LDR      r2,[sp,#0x54]
+        0x00000054:    f8500022    P.".    LDR      r0,[r0,r2,LSL #2]
+        0x00000058:    9916        ..      LDR      r1,[sp,#0x58]
+        0x0000005a:    9b14        ..      LDR      r3,[sp,#0x50]
+        0x0000005c:    eb0101c3    ....    ADD      r1,r1,r3,LSL #3
+        0x00000060:    f8410022    A.".    STR      r0,[r1,r2,LSL #2]
+        0x00000064:    e7ff        ..      B        {pc}+0x2 ; 0x66
+        0x00000066:    9814        ..      LDR      r0,[sp,#0x50]
+        0x00000068:    3001        .0      ADDS     r0,#1
+        0x0000006a:    9014        ..      STR      r0,[sp,#0x50]
+        0x0000006c:    e7ec        ..      B        {pc}-0x24 ; 0x48
+        0x0000006e:    e7ff        ..      B        {pc}+0x2 ; 0x70
+        0x00000070:    9815        ..      LDR      r0,[sp,#0x54]
+        0x00000072:    3001        .0      ADDS     r0,#1
+        0x00000074:    9015        ..      STR      r0,[sp,#0x54]
+        0x00000076:    e7d7        ..      B        {pc}-0x4e ; 0x28
+        0x00000078:    e7ff        ..      B        {pc}+0x2 ; 0x7a
+        0x0000007a:    2000        .       MOVS     r0,#0
+        0x0000007c:    9013        ..      STR      r0,[sp,#0x4c]
+        0x0000007e:    e7ff        ..      B        {pc}+0x2 ; 0x80
+        0x00000080:    9813        ..      LDR      r0,[sp,#0x4c]
+        0x00000082:    2801        .(      CMP      r0,#1
+        0x00000084:    f3008167    ..g.    BGT.W    {pc}+0x2d2 ; 0x356
+        0x00000088:    e7ff        ..      B        {pc}+0x2 ; 0x8a
+        0x0000008a:    9818        ..      LDR      r0,[sp,#0x60]
+        0x0000008c:    9913        ..      LDR      r1,[sp,#0x4c]
+        0x0000008e:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x00000092:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000096:    9816        ..      LDR      r0,[sp,#0x58]
+        0x00000098:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x0000009c:    f500603c    ..<`    ADD      r0,r0,#0xbc0
+        0x000000a0:    ed901a00    ....    VLDR     s2,[r0,#0]
+        0x000000a4:    ee300a41    0.A.    VSUB.F32 s0,s0,s2
+        0x000000a8:    ed8d0a12    ....    VSTR     s0,[sp,#0x48]
+        0x000000ac:    9816        ..      LDR      r0,[sp,#0x58]
+        0x000000ae:    9913        ..      LDR      r1,[sp,#0x4c]
+        0x000000b0:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x000000b4:    f60030b8    ...0    ADD      r0,r0,#0xbb8
+        0x000000b8:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x000000bc:    2000        .       MOVS     r0,#0
+        0x000000be:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x000000c2:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000000c6:    9008        ..      STR      r0,[sp,#0x20]
+        0x000000c8:    dc0d        ..      BGT      {pc}+0x1e ; 0xe6
+        0x000000ca:    e7ff        ..      B        {pc}+0x2 ; 0xcc
+        0x000000cc:    ed9d0a12    ....    VLDR     s0,[sp,#0x48]
+        0x000000d0:    ed9f1ade    ....    VLDR     s2,[pc,#888] ; [0x44c] = 0x3c0efa35
+        0x000000d4:    2000        .       MOVS     r0,#0
+        0x000000d6:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x000000da:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000000de:    bfa8        ..      IT       GE
+        0x000000e0:    2001        .       MOVGE    r0,#1
+        0x000000e2:    9008        ..      STR      r0,[sp,#0x20]
+        0x000000e4:    e7ff        ..      B        {pc}+0x2 ; 0xe6
+        0x000000e6:    9808        ..      LDR      r0,[sp,#0x20]
+        0x000000e8:    f0000001    ....    AND      r0,r0,#1
+        0x000000ec:    9011        ..      STR      r0,[sp,#0x44]
+        0x000000ee:    9816        ..      LDR      r0,[sp,#0x58]
+        0x000000f0:    9913        ..      LDR      r1,[sp,#0x4c]
+        0x000000f2:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x000000f6:    f60030b8    ...0    ADD      r0,r0,#0xbb8
+        0x000000fa:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x000000fe:    2000        .       MOVS     r0,#0
+        0x00000100:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x00000104:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000108:    9007        ..      STR      r0,[sp,#0x1c]
+        0x0000010a:    db0d        ..      BLT      {pc}+0x1e ; 0x128
+        0x0000010c:    e7ff        ..      B        {pc}+0x2 ; 0x10e
+        0x0000010e:    ed9d0a12    ....    VLDR     s0,[sp,#0x48]
+        0x00000112:    ed9f1acf    ....    VLDR     s2,[pc,#828] ; [0x450] = 0xbc0efa35
+        0x00000116:    2000        .       MOVS     r0,#0
+        0x00000118:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x0000011c:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000120:    bfd8        ..      IT       LE
+        0x00000122:    2001        .       MOVLE    r0,#1
+        0x00000124:    9007        ..      STR      r0,[sp,#0x1c]
+        0x00000126:    e7ff        ..      B        {pc}+0x2 ; 0x128
+        0x00000128:    9807        ..      LDR      r0,[sp,#0x1c]
+        0x0000012a:    f0000001    ....    AND      r0,r0,#1
+        0x0000012e:    9010        ..      STR      r0,[sp,#0x40]
+        0x00000130:    9811        ..      LDR      r0,[sp,#0x44]
+        0x00000132:    b180        ..      CBZ      r0,{pc}+0x24 ; 0x156
+        0x00000134:    e7ff        ..      B        {pc}+0x2 ; 0x136
+        0x00000136:    9816        ..      LDR      r0,[sp,#0x58]
+        0x00000138:    9913        ..      LDR      r1,[sp,#0x4c]
+        0x0000013a:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x0000013e:    f60030b8    ...0    ADD      r0,r0,#0xbb8
+        0x00000142:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000146:    2001        .       MOVS     r0,#1
+        0x00000148:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x0000014c:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000150:    9006        ..      STR      r0,[sp,#0x18]
+        0x00000152:    db19        ..      BLT      {pc}+0x36 ; 0x188
+        0x00000154:    e7ff        ..      B        {pc}+0x2 ; 0x156
+        0x00000156:    9910        ..      LDR      r1,[sp,#0x40]
+        0x00000158:    2000        .       MOVS     r0,#0
+        0x0000015a:    9005        ..      STR      r0,[sp,#0x14]
+        0x0000015c:    b189        ..      CBZ      r1,{pc}+0x26 ; 0x182
+        0x0000015e:    e7ff        ..      B        {pc}+0x2 ; 0x160
+        0x00000160:    9816        ..      LDR      r0,[sp,#0x58]
+        0x00000162:    9913        ..      LDR      r1,[sp,#0x4c]
+        0x00000164:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x00000168:    f60030b8    ...0    ADD      r0,r0,#0xbb8
+        0x0000016c:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000170:    2000        .       MOVS     r0,#0
+        0x00000172:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x00000176:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000017a:    bfc8        ..      IT       GT
+        0x0000017c:    2001        .       MOVGT    r0,#1
+        0x0000017e:    9005        ..      STR      r0,[sp,#0x14]
+        0x00000180:    e7ff        ..      B        {pc}+0x2 ; 0x182
+        0x00000182:    9805        ..      LDR      r0,[sp,#0x14]
+        0x00000184:    9006        ..      STR      r0,[sp,#0x18]
+        0x00000186:    e7ff        ..      B        {pc}+0x2 ; 0x188
+        0x00000188:    9806        ..      LDR      r0,[sp,#0x18]
+        0x0000018a:    f0000001    ....    AND      r0,r0,#1
+        0x0000018e:    ee000a10    ....    VMOV     s0,r0
+        0x00000192:    eeb80ac0    ....    VCVT.F32.S32 s0,s0
+        0x00000196:    9816        ..      LDR      r0,[sp,#0x58]
+        0x00000198:    f8d01bdc    ....    LDR      r1,[r0,#0xbdc]
+        0x0000019c:    eb0000c1    ....    ADD      r0,r0,r1,LSL #3
+        0x000001a0:    9913        ..      LDR      r1,[sp,#0x4c]
+        0x000001a2:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x000001a6:    f5006096    ...`    ADD      r0,r0,#0x4b0
+        0x000001aa:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x000001ae:    9811        ..      LDR      r0,[sp,#0x44]
+        0x000001b0:    b148        H.      CBZ      r0,{pc}+0x16 ; 0x1c6
+        0x000001b2:    e7ff        ..      B        {pc}+0x2 ; 0x1b4
+        0x000001b4:    9816        ..      LDR      r0,[sp,#0x58]
+        0x000001b6:    9913        ..      LDR      r1,[sp,#0x4c]
+        0x000001b8:    eb000181    ....    ADD      r1,r0,r1,LSL #2
+        0x000001bc:    f04f507e    O.~P    MOV      r0,#0x3f800000
+        0x000001c0:    f8c10bb8    ....    STR      r0,[r1,#0xbb8]
+        0x000001c4:    e00d        ..      B        {pc}+0x1e ; 0x1e2
+        0x000001c6:    9810        ..      LDR      r0,[sp,#0x40]
+        0x000001c8:    b150        P.      CBZ      r0,{pc}+0x18 ; 0x1e0
+        0x000001ca:    e7ff        ..      B        {pc}+0x2 ; 0x1cc
+        0x000001cc:    9816        ..      LDR      r0,[sp,#0x58]
+        0x000001ce:    9913        ..      LDR      r1,[sp,#0x4c]
+        0x000001d0:    eb000181    ....    ADD      r1,r0,r1,LSL #2
+        0x000001d4:    2000        .       MOVS     r0,#0
+        0x000001d6:    f6cb7080    ...p    MOVT     r0,#0xbf80
+        0x000001da:    f8c10bb8    ....    STR      r0,[r1,#0xbb8]
+        0x000001de:    e7ff        ..      B        {pc}+0x2 ; 0x1e0
+        0x000001e0:    e7ff        ..      B        {pc}+0x2 ; 0x1e2
+        0x000001e2:    9811        ..      LDR      r0,[sp,#0x44]
+        0x000001e4:    b918        ..      CBNZ     r0,{pc}+0xa ; 0x1ee
+        0x000001e6:    e7ff        ..      B        {pc}+0x2 ; 0x1e8
+        0x000001e8:    9810        ..      LDR      r0,[sp,#0x40]
+        0x000001ea:    b150        P.      CBZ      r0,{pc}+0x18 ; 0x202
+        0x000001ec:    e7ff        ..      B        {pc}+0x2 ; 0x1ee
+        0x000001ee:    9818        ..      LDR      r0,[sp,#0x60]
+        0x000001f0:    9a13        ..      LDR      r2,[sp,#0x4c]
+        0x000001f2:    f8500022    P.".    LDR      r0,[r0,r2,LSL #2]
+        0x000001f6:    9916        ..      LDR      r1,[sp,#0x58]
+        0x000001f8:    eb010182    ....    ADD      r1,r1,r2,LSL #2
+        0x000001fc:    f8c10bc0    ....    STR      r0,[r1,#0xbc0]
+        0x00000200:    e041        A.      B        {pc}+0x86 ; 0x286
+        0x00000202:    9816        ..      LDR      r0,[sp,#0x58]
+        0x00000204:    9913        ..      LDR      r1,[sp,#0x4c]
+        0x00000206:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x0000020a:    f60030b8    ...0    ADD      r0,r0,#0xbb8
+        0x0000020e:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000212:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x00000216:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000021a:    dd12        ..      BLE      {pc}+0x28 ; 0x242
+        0x0000021c:    e7ff        ..      B        {pc}+0x2 ; 0x21e
+        0x0000021e:    9816        ..      LDR      r0,[sp,#0x58]
+        0x00000220:    9a13        ..      LDR      r2,[sp,#0x4c]
+        0x00000222:    eb000082    ....    ADD      r0,r0,r2,LSL #2
+        0x00000226:    f500603c    ..<`    ADD      r0,r0,#0xbc0
+        0x0000022a:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000022e:    9918        ..      LDR      r1,[sp,#0x60]
+        0x00000230:    eb010182    ....    ADD      r1,r1,r2,LSL #2
+        0x00000234:    ed911a00    ....    VLDR     s2,[r1,#0]
+        0x00000238:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x0000023c:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x00000240:    e020         .      B        {pc}+0x44 ; 0x284
+        0x00000242:    9816        ..      LDR      r0,[sp,#0x58]
+        0x00000244:    9913        ..      LDR      r1,[sp,#0x4c]
+        0x00000246:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x0000024a:    f60030b8    ...0    ADD      r0,r0,#0xbb8
+        0x0000024e:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000252:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x00000256:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000025a:    da12        ..      BGE      {pc}+0x28 ; 0x282
+        0x0000025c:    e7ff        ..      B        {pc}+0x2 ; 0x25e
+        0x0000025e:    9816        ..      LDR      r0,[sp,#0x58]
+        0x00000260:    9a13        ..      LDR      r2,[sp,#0x4c]
+        0x00000262:    eb000082    ....    ADD      r0,r0,r2,LSL #2
+        0x00000266:    f500603c    ..<`    ADD      r0,r0,#0xbc0
+        0x0000026a:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000026e:    9918        ..      LDR      r1,[sp,#0x60]
+        0x00000270:    eb010182    ....    ADD      r1,r1,r2,LSL #2
+        0x00000274:    ed911a00    ....    VLDR     s2,[r1,#0]
+        0x00000278:    fe800a41    ..A.    VMINNM.F32 s0,s0,s2
+        0x0000027c:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x00000280:    e7ff        ..      B        {pc}+0x2 ; 0x282
+        0x00000282:    e7ff        ..      B        {pc}+0x2 ; 0x284
+        0x00000284:    e7ff        ..      B        {pc}+0x2 ; 0x286
+        0x00000286:    9818        ..      LDR      r0,[sp,#0x60]
+        0x00000288:    9a13        ..      LDR      r2,[sp,#0x4c]
+        0x0000028a:    f8500022    P.".    LDR      r0,[r0,r2,LSL #2]
+        0x0000028e:    9916        ..      LDR      r1,[sp,#0x58]
+        0x00000290:    f8d13bdc    ...;    LDR      r3,[r1,#0xbdc]
+        0x00000294:    eb0101c3    ....    ADD      r1,r1,r3,LSL #3
+        0x00000298:    f8410022    A.".    STR      r0,[r1,r2,LSL #2]
+        0x0000029c:    9816        ..      LDR      r0,[sp,#0x58]
+        0x0000029e:    9913        ..      LDR      r1,[sp,#0x4c]
+        0x000002a0:    f8500021    P.!.    LDR      r0,[r0,r1,LSL #2]
+        0x000002a4:    900f        ..      STR      r0,[sp,#0x3c]
+        0x000002a6:    980f        ..      LDR      r0,[sp,#0x3c]
+        0x000002a8:    900e        ..      STR      r0,[sp,#0x38]
+        0x000002aa:    2000        .       MOVS     r0,#0
+        0x000002ac:    900d        ..      STR      r0,[sp,#0x34]
+        0x000002ae:    900c        ..      STR      r0,[sp,#0x30]
+        0x000002b0:    e7ff        ..      B        {pc}+0x2 ; 0x2b2
+        0x000002b2:    980c        ..      LDR      r0,[sp,#0x30]
+        0x000002b4:    2895        .(      CMP      r0,#0x95
+        0x000002b6:    dc34        4.      BGT      {pc}+0x6c ; 0x322
+        0x000002b8:    e7ff        ..      B        {pc}+0x2 ; 0x2ba
+        0x000002ba:    ed9d0a0f    ....    VLDR     s0,[sp,#0x3c]
+        0x000002be:    9816        ..      LDR      r0,[sp,#0x58]
+        0x000002c0:    990c        ..      LDR      r1,[sp,#0x30]
+        0x000002c2:    eb0000c1    ....    ADD      r0,r0,r1,LSL #3
+        0x000002c6:    9913        ..      LDR      r1,[sp,#0x4c]
+        0x000002c8:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x000002cc:    ed901a00    ....    VLDR     s2,[r0,#0]
+        0x000002d0:    fe800a41    ..A.    VMINNM.F32 s0,s0,s2
+        0x000002d4:    ed8d0a0f    ....    VSTR     s0,[sp,#0x3c]
+        0x000002d8:    ed9d0a0e    ....    VLDR     s0,[sp,#0x38]
+        0x000002dc:    9816        ..      LDR      r0,[sp,#0x58]
+        0x000002de:    990c        ..      LDR      r1,[sp,#0x30]
+        0x000002e0:    eb0000c1    ....    ADD      r0,r0,r1,LSL #3
+        0x000002e4:    9913        ..      LDR      r1,[sp,#0x4c]
+        0x000002e6:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x000002ea:    ed901a00    ....    VLDR     s2,[r0,#0]
+        0x000002ee:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x000002f2:    ed8d0a0e    ....    VSTR     s0,[sp,#0x38]
+        0x000002f6:    9816        ..      LDR      r0,[sp,#0x58]
+        0x000002f8:    990c        ..      LDR      r1,[sp,#0x30]
+        0x000002fa:    eb0000c1    ....    ADD      r0,r0,r1,LSL #3
+        0x000002fe:    9913        ..      LDR      r1,[sp,#0x4c]
+        0x00000300:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x00000304:    f5006096    ...`    ADD      r0,r0,#0x4b0
+        0x00000308:    ed901a00    ....    VLDR     s2,[r0,#0]
+        0x0000030c:    ed9d0a0d    ....    VLDR     s0,[sp,#0x34]
+        0x00000310:    ee300a01    0...    VADD.F32 s0,s0,s2
+        0x00000314:    ed8d0a0d    ....    VSTR     s0,[sp,#0x34]
+        0x00000318:    e7ff        ..      B        {pc}+0x2 ; 0x31a
+        0x0000031a:    980c        ..      LDR      r0,[sp,#0x30]
+        0x0000031c:    3001        .0      ADDS     r0,#1
+        0x0000031e:    900c        ..      STR      r0,[sp,#0x30]
+        0x00000320:    e7c7        ..      B        {pc}-0x6e ; 0x2b2
+        0x00000322:    ed9d0a0e    ....    VLDR     s0,[sp,#0x38]
+        0x00000326:    ed9d1a0f    ....    VLDR     s2,[sp,#0x3c]
+        0x0000032a:    ee300a41    0.A.    VSUB.F32 s0,s0,s2
+        0x0000032e:    9816        ..      LDR      r0,[sp,#0x58]
+        0x00000330:    9913        ..      LDR      r1,[sp,#0x4c]
+        0x00000332:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x00000336:    f60030c8    ...0    ADD      r0,r0,#0xbc8
+        0x0000033a:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x0000033e:    980d        ..      LDR      r0,[sp,#0x34]
+        0x00000340:    9916        ..      LDR      r1,[sp,#0x58]
+        0x00000342:    9a13        ..      LDR      r2,[sp,#0x4c]
+        0x00000344:    eb010182    ....    ADD      r1,r1,r2,LSL #2
+        0x00000348:    f8c10bd0    ....    STR      r0,[r1,#0xbd0]
+        0x0000034c:    e7ff        ..      B        {pc}+0x2 ; 0x34e
+        0x0000034e:    9813        ..      LDR      r0,[sp,#0x4c]
+        0x00000350:    3001        .0      ADDS     r0,#1
+        0x00000352:    9013        ..      STR      r0,[sp,#0x4c]
+        0x00000354:    e694        ..      B        {pc}-0x2d4 ; 0x80
+        0x00000356:    9816        ..      LDR      r0,[sp,#0x58]
+        0x00000358:    f60031d8    ...1    ADD      r1,r0,#0xbd8
+        0x0000035c:    ed910a00    ....    VLDR     s0,[r1,#0]
+        0x00000360:    eeb00ac0    ....    VABS.F32 s0,s0
+        0x00000364:    f8d01bdc    ....    LDR      r1,[r0,#0xbdc]
+        0x00000368:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x0000036c:    f5006016    ...`    ADD      r0,r0,#0x960
+        0x00000370:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x00000374:    9816        ..      LDR      r0,[sp,#0x58]
+        0x00000376:    f8d00be0    ....    LDR      r0,[r0,#0xbe0]
+        0x0000037a:    2895        .(      CMP      r0,#0x95
+        0x0000037c:    d807        ..      BHI      {pc}+0x12 ; 0x38e
+        0x0000037e:    e7ff        ..      B        {pc}+0x2 ; 0x380
+        0x00000380:    9916        ..      LDR      r1,[sp,#0x58]
+        0x00000382:    f8d10be0    ....    LDR      r0,[r1,#0xbe0]
+        0x00000386:    3001        .0      ADDS     r0,#1
+        0x00000388:    f8c10be0    ....    STR      r0,[r1,#0xbe0]
+        0x0000038c:    e7ff        ..      B        {pc}+0x2 ; 0x38e
+        0x0000038e:    9916        ..      LDR      r1,[sp,#0x58]
+        0x00000390:    f8d10bdc    ....    LDR      r0,[r1,#0xbdc]
+        0x00000394:    1c43        C.      ADDS     r3,r0,#1
+        0x00000396:    f24810b5    H...    MOV      r0,#0x81b5
+        0x0000039a:    f6c1304e    ..N0    MOVT     r0,#0x1b4e
+        0x0000039e:    fba32000    ...     UMULL    r2,r0,r3,r0
+        0x000003a2:    0900        ..      LSRS     r0,r0,#4
+        0x000003a4:    2296        ."      MOVS     r2,#0x96
+        0x000003a6:    fb003012    ...0    MLS      r0,r0,r2,r3
+        0x000003aa:    f8c10bdc    ....    STR      r0,[r1,#0xbdc]
+        0x000003ae:    2000        .       MOVS     r0,#0
+        0x000003b0:    900b        ..      STR      r0,[sp,#0x2c]
+        0x000003b2:    900a        ..      STR      r0,[sp,#0x28]
+        0x000003b4:    e7ff        ..      B        {pc}+0x2 ; 0x3b6
+        0x000003b6:    980a        ..      LDR      r0,[sp,#0x28]
+        0x000003b8:    2895        .(      CMP      r0,#0x95
+        0x000003ba:    dc13        ..      BGT      {pc}+0x2a ; 0x3e4
+        0x000003bc:    e7ff        ..      B        {pc}+0x2 ; 0x3be
+        0x000003be:    ed9d0a0b    ....    VLDR     s0,[sp,#0x2c]
+        0x000003c2:    9816        ..      LDR      r0,[sp,#0x58]
+        0x000003c4:    990a        ..      LDR      r1,[sp,#0x28]
+        0x000003c6:    eb000081    ....    ADD      r0,r0,r1,LSL #2
+        0x000003ca:    f5006016    ...`    ADD      r0,r0,#0x960
+        0x000003ce:    ed901a00    ....    VLDR     s2,[r0,#0]
+        0x000003d2:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x000003d6:    ed8d0a0b    ....    VSTR     s0,[sp,#0x2c]
+        0x000003da:    e7ff        ..      B        {pc}+0x2 ; 0x3dc
+        0x000003dc:    980a        ..      LDR      r0,[sp,#0x28]
+        0x000003de:    3001        .0      ADDS     r0,#1
+        0x000003e0:    900a        ..      STR      r0,[sp,#0x28]
+        0x000003e2:    e7e8        ..      B        {pc}-0x2c ; 0x3b6
+        0x000003e4:    9816        ..      LDR      r0,[sp,#0x58]
+        0x000003e6:    f8d01be0    ....    LDR      r1,[r0,#0xbe0]
+        0x000003ea:    2000        .       MOVS     r0,#0
+        0x000003ec:    2996        .)      CMP      r1,#0x96
+        0x000003ee:    9004        ..      STR      r0,[sp,#0x10]
+        0x000003f0:    d14c        L.      BNE      {pc}+0x9c ; 0x48c
+        0x000003f2:    e7ff        ..      B        {pc}+0x2 ; 0x3f4
+        0x000003f4:    9816        ..      LDR      r0,[sp,#0x58]
+        0x000003f6:    f60030c8    ...0    ADD      r0,r0,#0xbc8
+        0x000003fa:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x000003fe:    2000        .       MOVS     r0,#0
+        0x00000400:    ed9f1a4a    ..J.    VLDR     s2,[pc,#296] ; [0x52c] = 0x3e32b8c2
+        0x00000404:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000408:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000040c:    9004        ..      STR      r0,[sp,#0x10]
+        0x0000040e:    da3d        =.      BGE      {pc}+0x7e ; 0x48c
+        0x00000410:    e7ff        ..      B        {pc}+0x2 ; 0x412
+        0x00000412:    9816        ..      LDR      r0,[sp,#0x58]
+        0x00000414:    f60030cc    ...0    ADD      r0,r0,#0xbcc
+        0x00000418:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000041c:    2000        .       MOVS     r0,#0
+        0x0000041e:    ed9f1a43    ..C.    VLDR     s2,[pc,#268] ; [0x52c] = 0x3e32b8c2
+        0x00000422:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000426:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000042a:    9004        ..      STR      r0,[sp,#0x10]
+        0x0000042c:    da2e        ..      BGE      {pc}+0x60 ; 0x48c
+        0x0000042e:    e7ff        ..      B        {pc}+0x2 ; 0x430
+        0x00000430:    9816        ..      LDR      r0,[sp,#0x58]
+        0x00000432:    f500603d    ..=`    ADD      r0,r0,#0xbd0
+        0x00000436:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000043a:    eeb11a0c    ....    VMOV.F32 s2,#7.00000000
+        0x0000043e:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000442:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000446:    da14        ..      BGE      {pc}+0x2c ; 0x472
+        0x00000448:    e004        ..      B        {pc}+0xc ; 0x454
+        0x0000044a:    bf00        ..      NOP      
+    __arm_cp.10_3
+    $d
+        0x0000044c:    3c0efa35    5..<    DCD    1007614517
+    __arm_cp.10_4
+        0x00000450:    bc0efa35    5...    DCD    3155098165
+    $t
+        0x00000454:    9816        ..      LDR      r0,[sp,#0x58]
+        0x00000456:    f60030d4    ...0    ADD      r0,r0,#0xbd4
+        0x0000045a:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000045e:    2000        .       MOVS     r0,#0
+        0x00000460:    eeb11a0c    ....    VMOV.F32 s2,#7.00000000
+        0x00000464:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000468:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000046c:    9004        ..      STR      r0,[sp,#0x10]
+        0x0000046e:    db0d        ..      BLT      {pc}+0x1e ; 0x48c
+        0x00000470:    e7ff        ..      B        {pc}+0x2 ; 0x472
+        0x00000472:    ed9d0a0b    ....    VLDR     s0,[sp,#0x2c]
+        0x00000476:    eeb71a00    ....    VMOV.F32 s2,#1.00000000
+        0x0000047a:    2000        .       MOVS     r0,#0
+        0x0000047c:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000480:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000484:    bfc8        ..      IT       GT
+        0x00000486:    2001        .       MOVGT    r0,#1
+        0x00000488:    9004        ..      STR      r0,[sp,#0x10]
+        0x0000048a:    e7ff        ..      B        {pc}+0x2 ; 0x48c
+        0x0000048c:    9804        ..      LDR      r0,[sp,#0x10]
+        0x0000048e:    f0000001    ....    AND      r0,r0,#1
+        0x00000492:    9009        ..      STR      r0,[sp,#0x24]
+        0x00000494:    9909        ..      LDR      r1,[sp,#0x24]
+        0x00000496:    2000        .       MOVS     r0,#0
+        0x00000498:    9003        ..      STR      r0,[sp,#0xc]
+        0x0000049a:    b141        A.      CBZ      r1,{pc}+0x14 ; 0x4ae
+        0x0000049c:    e7ff        ..      B        {pc}+0x2 ; 0x49e
+        0x0000049e:    9816        ..      LDR      r0,[sp,#0x58]
+        0x000004a0:    f8d00be4    ....    LDR      r0,[r0,#0xbe4]
+        0x000004a4:    fab0f080    ....    CLZ      r0,r0
+        0x000004a8:    0940        @.      LSRS     r0,r0,#5
+        0x000004aa:    9003        ..      STR      r0,[sp,#0xc]
+        0x000004ac:    e7ff        ..      B        {pc}+0x2 ; 0x4ae
+        0x000004ae:    9803        ..      LDR      r0,[sp,#0xc]
+        0x000004b0:    f0000001    ....    AND      r0,r0,#1
+        0x000004b4:    9916        ..      LDR      r1,[sp,#0x58]
+        0x000004b6:    f8c10be8    ....    STR      r0,[r1,#0xbe8]
+        0x000004ba:    9a09        ..      LDR      r2,[sp,#0x24]
+        0x000004bc:    9916        ..      LDR      r1,[sp,#0x58]
+        0x000004be:    f8d10be4    ....    LDR      r0,[r1,#0xbe4]
+        0x000004c2:    4310        .C      ORRS     r0,r0,r2
+        0x000004c4:    f8c10be4    ....    STR      r0,[r1,#0xbe4]
+        0x000004c8:    9816        ..      LDR      r0,[sp,#0x58]
+        0x000004ca:    f8d00be4    ....    LDR      r0,[r0,#0xbe4]
+        0x000004ce:    b1e0        ..      CBZ      r0,{pc}+0x3c ; 0x50a
+        0x000004d0:    e7ff        ..      B        {pc}+0x2 ; 0x4d2
+        0x000004d2:    9816        ..      LDR      r0,[sp,#0x58]
+        0x000004d4:    f60030d8    ...0    ADD      r0,r0,#0xbd8
+        0x000004d8:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x000004dc:    ed8d0a01    ....    VSTR     s0,[sp,#4]
+        0x000004e0:    ee100a10    ....    VMOV     r0,s0
+        0x000004e4:    f64c41cd    L..A    MOV      r1,#0xcccd
+        0x000004e8:    f6cb714c    ..Lq    MOVT     r1,#0xbf4c
+        0x000004ec:    f64c42cd    L..B    MOV      r2,#0xcccd
+        0x000004f0:    f6c3724c    ..Lr    MOVT     r2,#0x3f4c
+        0x000004f4:    f7fffffe    ....    BL       clip ; 0x0 Section #54
+        0x000004f8:    ed9d0a01    ....    VLDR     s0,[sp,#4]
+        0x000004fc:    ee010a10    ....    VMOV     s2,r0
+        0x00000500:    ee300a41    0.A.    VSUB.F32 s0,s0,s2
+        0x00000504:    ed8d0a02    ....    VSTR     s0,[sp,#8]
+        0x00000508:    e004        ..      B        {pc}+0xc ; 0x514
+        0x0000050a:    ed9d0a17    ....    VLDR     s0,[sp,#0x5c]
+        0x0000050e:    ed8d0a02    ....    VSTR     s0,[sp,#8]
+        0x00000512:    e7ff        ..      B        {pc}+0x2 ; 0x514
+        0x00000514:    ed9d0a02    ....    VLDR     s0,[sp,#8]
+        0x00000518:    9816        ..      LDR      r0,[sp,#0x58]
+        0x0000051a:    f60030d8    ...0    ADD      r0,r0,#0xbd8
+        0x0000051e:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x00000522:    9816        ..      LDR      r0,[sp,#0x58]
+        0x00000524:    f8d00bd8    ....    LDR      r0,[r0,#0xbd8]
+        0x00000528:    b01a        ..      ADD      sp,sp,#0x68
+        0x0000052a:    bd80        ..      POP      {r7,pc}
+    $d
+        0x0000052c:    3e32b8c2    ..2>    DCD    1043511490
+
+** Section #41 '.rel.text.guard_step' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #40 '.text.guard_step'
+
+
+** Section #42 '.ARM.exidx.text.guard_step' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #40 '.text.guard_step'
+
+
+** Section #43 '.rel.ARM.exidx.text.guard_step' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #42 '.ARM.exidx.text.guard_step'
+
+
+** Section #44 '.text.elu' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 72 bytes (alignment 8)
+    Address: 0x00000000
+
+    elu
+    [Anonymous symbol #67]
+    $t
+        0x00000000:    b580        ..      PUSH     {r7,lr}
+        0x00000002:    b082        ..      SUB      sp,sp,#8
+        0x00000004:    ee000a10    ....    VMOV     s0,r0
+        0x00000008:    9001        ..      STR      r0,[sp,#4]
+        0x0000000a:    ed9d0a01    ....    VLDR     s0,[sp,#4]
+        0x0000000e:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x00000012:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000016:    db05        ..      BLT      {pc}+0xe ; 0x24
+        0x00000018:    e7ff        ..      B        {pc}+0x2 ; 0x1a
+        0x0000001a:    ed9d0a01    ....    VLDR     s0,[sp,#4]
+        0x0000001e:    ed8d0a00    ....    VSTR     s0,[sp,#0]
+        0x00000022:    e00b        ..      B        {pc}+0x1a ; 0x3c
+        0x00000024:    9801        ..      LDR      r0,[sp,#4]
+        0x00000026:    f7fffffe    ....    BL       expf
+        0x0000002a:    ee000a10    ....    VMOV     s0,r0
+        0x0000002e:    eebf1a00    ....    VMOV.F32 s2,#-1.00000000
+        0x00000032:    ee300a01    0...    VADD.F32 s0,s0,s2
+        0x00000036:    ed8d0a00    ....    VSTR     s0,[sp,#0]
+        0x0000003a:    e7ff        ..      B        {pc}+0x2 ; 0x3c
+        0x0000003c:    ed9d0a00    ....    VLDR     s0,[sp,#0]
+        0x00000040:    ee100a10    ....    VMOV     r0,s0
+        0x00000044:    b002        ..      ADD      sp,sp,#8
+        0x00000046:    bd80        ..      POP      {r7,pc}
+
+** Section #45 '.rel.text.elu' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #44 '.text.elu'
+
+
+** Section #46 '.ARM.exidx.text.elu' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #44 '.text.elu'
+
+
+** Section #47 '.rel.ARM.exidx.text.elu' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #46 '.ARM.exidx.text.elu'
+
+
+** Section #48 '.text.__ARM_isfinitef' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 24 bytes (alignment 8)
+    Address: 0x00000000
+
+    __ARM_isfinitef
+    [Anonymous symbol #69]
+    $t
+        0x00000000:    b081        ..      SUB      sp,sp,#4
+        0x00000002:    ee000a10    ....    VMOV     s0,r0
+        0x00000006:    9000        ..      STR      r0,[sp,#0]
+        0x00000008:    9800        ..      LDR      r0,[sp,#0]
+        0x0000000a:    f3c050c7    ...P    UBFX     r0,r0,#23,#8
+        0x0000000e:    38ff        .8      SUBS     r0,r0,#0xff
+        0x00000010:    bf18        ..      IT       NE
+        0x00000012:    2001        .       MOVNE    r0,#1
+        0x00000014:    b001        ..      ADD      sp,sp,#4
+        0x00000016:    4770        pG      BX       lr
+
+** Section #49 '.ARM.exidx.text.__ARM_isfinitef' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #48 '.text.__ARM_isfinitef'
+
+
+** Section #50 '.rel.ARM.exidx.text.__ARM_isfinitef' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #49 '.ARM.exidx.text.__ARM_isfinitef'
+
+
+** Section #51 '.text.__ARM_isfinite' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 30 bytes (alignment 8)
+    Address: 0x00000000
+
+    __ARM_isfinite
+    [Anonymous symbol #71]
+    $t
+        0x00000000:    b082        ..      SUB      sp,sp,#8
+        0x00000002:    ec410b10    A...    VMOV     d0,r0,r1
+        0x00000006:    ed8d0b00    ....    VSTR     d0,[sp,#0]
+        0x0000000a:    9801        ..      LDR      r0,[sp,#4]
+        0x0000000c:    f3c0500a    ...P    UBFX     r0,r0,#20,#11
+        0x00000010:    f24071ff    @..q    MOV      r1,#0x7ff
+        0x00000014:    1a40        @.      SUBS     r0,r0,r1
+        0x00000016:    bf18        ..      IT       NE
+        0x00000018:    2001        .       MOVNE    r0,#1
+        0x0000001a:    b002        ..      ADD      sp,sp,#8
+        0x0000001c:    4770        pG      BX       lr
+
+** Section #52 '.ARM.exidx.text.__ARM_isfinite' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #51 '.text.__ARM_isfinite'
+
+
+** Section #53 '.rel.ARM.exidx.text.__ARM_isfinite' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #52 '.ARM.exidx.text.__ARM_isfinite'
+
+
+** Section #54 '.text.clip' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 84 bytes (alignment 8)
+    Address: 0x00000000
+
+    clip
+    [Anonymous symbol #73]
+    $t
+        0x00000000:    b084        ..      SUB      sp,sp,#0x10
+        0x00000002:    ee002a10    ...*    VMOV     s0,r2
+        0x00000006:    ee001a10    ....    VMOV     s0,r1
+        0x0000000a:    ee000a10    ....    VMOV     s0,r0
+        0x0000000e:    9002        ..      STR      r0,[sp,#8]
+        0x00000010:    9101        ..      STR      r1,[sp,#4]
+        0x00000012:    9200        ..      STR      r2,[sp,#0]
+        0x00000014:    ed9d0a02    ....    VLDR     s0,[sp,#8]
+        0x00000018:    ed9d1a01    ....    VLDR     s2,[sp,#4]
+        0x0000001c:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000020:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000024:    da03        ..      BGE      {pc}+0xa ; 0x2e
+        0x00000026:    e7ff        ..      B        {pc}+0x2 ; 0x28
+        0x00000028:    9801        ..      LDR      r0,[sp,#4]
+        0x0000002a:    9003        ..      STR      r0,[sp,#0xc]
+        0x0000002c:    e00f        ..      B        {pc}+0x22 ; 0x4e
+        0x0000002e:    ed9d0a02    ....    VLDR     s0,[sp,#8]
+        0x00000032:    ed9d1a00    ....    VLDR     s2,[sp,#0]
+        0x00000036:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x0000003a:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000003e:    dd03        ..      BLE      {pc}+0xa ; 0x48
+        0x00000040:    e7ff        ..      B        {pc}+0x2 ; 0x42
+        0x00000042:    9800        ..      LDR      r0,[sp,#0]
+        0x00000044:    9003        ..      STR      r0,[sp,#0xc]
+        0x00000046:    e002        ..      B        {pc}+0x8 ; 0x4e
+        0x00000048:    9802        ..      LDR      r0,[sp,#8]
+        0x0000004a:    9003        ..      STR      r0,[sp,#0xc]
+        0x0000004c:    e7ff        ..      B        {pc}+0x2 ; 0x4e
+        0x0000004e:    9803        ..      LDR      r0,[sp,#0xc]
+        0x00000050:    b004        ..      ADD      sp,sp,#0x10
+        0x00000052:    4770        pG      BX       lr
+
+** Section #55 '.ARM.exidx.text.clip' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #54 '.text.clip'
+
+
+** Section #56 '.rel.ARM.exidx.text.clip' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    1 relocations applied to section #55 '.ARM.exidx.text.clip'
+
+
+** Section #57 '.rodata.OBS_MEAN' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 3200 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #58 '.rodata.OBS_STD' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 3200 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #59 '.rodata.BIAS_0' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 256 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #60 '.rodata.WEIGHT_0' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 204800 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #61 '.rodata.WEIGHT_1' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 65536 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #62 '.rodata.BIAS_1' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 1024 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #63 '.rodata.WEIGHT_2' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 65536 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #64 '.rodata.BIAS_2' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 256 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #65 '.rodata.WEIGHT_3' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 4096 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #66 '.rodata.BIAS_3' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 64 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #67 '.rodata.BIAS_4' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #68 '.rodata.WEIGHT_4' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 128 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #69 '.rodata..L__const.g1_assist_v10_step.scale' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 72 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #70 '.debug_abbrev' (SHT_PROGBITS)
+    Size   : 326 bytes
+
+
+** Section #71 '.debug_info' (SHT_PROGBITS)
+    Size   : 3165 bytes
+
+
+** Section #72 '.rel.debug_info' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 1768 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    221 relocations applied to section #71 '.debug_info'
+
+
+** Section #73 '.debug_ranges' (SHT_PROGBITS)
+    Size   : 128 bytes
+
+
+** Section #74 '.rel.debug_ranges' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 240 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    30 relocations applied to section #73 '.debug_ranges'
+
+
+** Section #75 '.debug_str' (SHT_PROGBITS) [SHF_MERGE + SHF_STRINGS]
+    Size   : 1417 bytes
+
+
+** Section #76 '.comment' (SHT_PROGBITS) [SHF_MERGE + SHF_STRINGS]
+    Size   : 69 bytes
+
+
+** Section #77 '.note.GNU-stack' (SHT_PROGBITS)
+    Size   : 0 bytes
+
+
+** Section #78 '.ARM.attributes' (SHT_ARM_ATTRIBUTES)
+    Size   : 84 bytes
+
+
+** Section #79 '.debug_frame' (SHT_PROGBITS)
+    Size   : 392 bytes (alignment 4)
+
+
+** Section #80 '.rel.debug_frame' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 240 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    30 relocations applied to section #79 '.debug_frame'
+
+
+** Section #81 '.debug_line' (SHT_PROGBITS)
+    Size   : 5179 bytes
+
+
+** Section #82 '.rel.debug_line' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 120 bytes (alignment 4)
+    Symbol table #83 '.symtab'
+    15 relocations applied to section #81 '.debug_line'
+
+
+** Section #83 '.symtab' (SHT_SYMTAB)
+    Size   : 1664 bytes (alignment 4)
+    String table #1 '.strtab'
+    Last local symbol no. 91
+
+

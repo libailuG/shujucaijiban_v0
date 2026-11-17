@@ -1,0 +1,38 @@
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:44)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: JTAG supported
+Info : CMSIS-DAP: SWO-UART supported
+Info : CMSIS-DAP: Atomic commands supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 1 TDO = 1 nTRST = 1 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 500 kHz
+Info : SWD DPIDR 0x2ba01477
+Info : [stm32g4x.cpu] Cortex-M4 r0p1 processor detected
+Info : [stm32g4x.cpu] target has 6 breakpoints, 4 watchpoints
+Info : [stm32g4x.cpu] Examination succeed
+Info : [stm32g4x.cpu] starting gdb server on 3333
+Info : Listening on port 3333 for gdb connections
+GUARD CPUID=0x410fc241 CHIPID=0x20036468
+[stm32g4x.cpu] halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080001f0 msp: 0x20002580
+Info : device idcode = 0x20036468 (STM32G43/G44xx - Rev 'unknown' : 0x2003)
+Info : RDP level 0 (0xAA)
+Info : flash size = 128 KiB
+Info : flash mode : single-bank
+Info : Padding image section 0 at 0x080122a4 with 4 bytes (bank write end alignment)
+Warn : Adding extra erase range, 0x080122a8 .. 0x080127ff
+auto erase enabled
+wrote 41640 bytes from file C:/Users/libai/Desktop/X1/dege_caiji/tmp/dap_motor_diagnosis/motor_reflash_20261112/motor_application.hex in 1.345066s (30.232 KiB/s)
+verified 41636 bytes in 0.339013s (119.937 KiB/s)
+APPLICATION_PROGRAM_AND_VERIFY_OK
+0xe000ed08: 08008000 
+0x20000024: 00000066 
+0x20000024: 0000012e 
+0x200007e4: aaaaaaaa 0000007e 00000000 00000000 00000000 00000000 00000000 00000000 
+0x20000804: 00000000 00000000 00000000 eeeeeeee 
+shutdown command invoked

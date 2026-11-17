@@ -1,0 +1,4 @@
+PASS actual linked ARM: left/right mode2 exactly once, >=10ms after leftTC, no mode2 ACK required, independent fresh mode1 recovery, stale cache rejected, switch2 holds torque/KP0 even after DONE, explicit OFF restores control, early OFF stays zero until recovery, no debug/no zero, rearm edge, timer wrap
+PASS remapped full UART9 ARM integration: data2 motor mode exact equality1 only, legacy mode bits not accepted, data1bit0 zero edge and flash/steady/OFF ACK, data2 actual mode ACK, unrelated data1bits preserved, telemetry order and all zero-sequence regressions
+PASS IMU mode actual ARM: mode2 ACK, Roll/Pitch degrees first then gyroXYZrad/s accelXYZm/s2, yaw excluded, motor torque/KP cleared on entry, quiet hold, mode switches and stale-field cleanup
+PASS control mode1: exact data2=3 ACK, all prior modes transition, targets cleared, mode1 all-zero/KP0 builder, no new zero, quiet hold, exits and unknown values, active zero finishes safely

@@ -1,0 +1,124 @@
+{
+  "backup": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\backups\\zhuban_caiji_before_merge_20261113_134506.zip",
+  "archive_sha256": "7af392d8df669fedfff65aa0007eda8160fff5633d8cda4b9ca60cb8b673bf61",
+  "backed_up_files": 2232,
+  "moves": [
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\control_mode1_monitor",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\control_mode1_monitor"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\motor_simulator",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\motor_simulator"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\work",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\work"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\电机通讯协议_提取说明.txt",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\电机通讯协议_提取说明.txt"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\电机接入准备_核对结果.txt",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\电机接入准备_核对结果.txt"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\battery_adc",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\battery_adc"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\dap_motor_diagnosis",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\dap_motor_diagnosis"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\green_rx_status",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\green_rx_status"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\imu_bdma_before",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\imu_bdma_before"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\imu_tim7_async",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\imu_tim7_async"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\monitor_uart1",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\monitor_uart1"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\motor_2m",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\motor_2m"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\motor_5ms",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\motor_5ms"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\motor_dma_before",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\motor_dma_before"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\motor_rx_idle",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\motor_rx_idle"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\rs485_link_test",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\rs485_link_test"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\uart_reserved2",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\uart_reserved2"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\uart_struct",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\uart_struct"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\uart1_flash",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\uart1_flash"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\pdfs\\zhuban",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\pdfs\\zhuban"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\imu_bdma_keil.log",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\imu_bdma_keil.log"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\imu_bdma_symbols.txt",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\imu_bdma_symbols.txt"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\motor_dma_keil.log",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\motor_dma_keil.log"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\normal_body_angles_keil.log",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\normal_body_angles_keil.log"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\normal_motor_angles_keil.log",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\normal_motor_angles_keil.log"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\test_imu_bdma.py",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\test_imu_bdma.py"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\dege_caiji\\tmp\\uart9_dma_keil.log",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\tmp\\uart9_dma_keil.log"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_troubleshooting_archive",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\zhuban_troubleshooting_archive"
+    },
+    {
+      "source": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\data\\sim2real_v0",
+      "destination": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\data\\sim2real_v0"
+    }
+  ],
+  "verification": "ZIP CRC and SHA256 verified; every moved file SHA256 verified"
+}

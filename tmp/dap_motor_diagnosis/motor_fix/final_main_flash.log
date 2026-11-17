@@ -1,0 +1,52 @@
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:44)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: JTAG supported
+Info : CMSIS-DAP: SWO-UART supported
+Info : CMSIS-DAP: Atomic commands supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 1 TDO = 1 nTRST = 1 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 500 kHz
+Info : SWD DPIDR 0x6ba02477
+Info : [stm32h7x.ap2] Examination succeed
+Info : [stm32h7x.cpu0] Cortex-M7 r1p2 processor detected
+Warn : [stm32h7x.cpu0] Erratum 3092511: Cortex-M7 can halt in an incorrect address when breakpoint and exception occurs simultaneously
+Info : [stm32h7x.cpu0] The erratum 3092511 workaround will resume after an incorrect halt
+Info : [stm32h7x.cpu0] target has 8 breakpoints, 4 watchpoints
+Info : [stm32h7x.cpu0] Examination succeed
+Info : [stm32h7x.ap2] gdb port disabled
+Info : [stm32h7x.cpu0] starting gdb server on 3333
+Info : Listening on port 3333 for gdb connections
+GUARD CPUID=0x411fc272 CHIPID=0x10016483
+[stm32h7x.cpu0] halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x080003b4 msp: 0x20001f90
+Info : Device: STM32H72x/73x
+Info : flash size probed value 1024k
+Info : STM32H7 flash has a single bank
+Info : Bank (0) size is 1024 kb, base address is 0x08000000
+Info : Padding image section 0 at 0x08005b88 with 24 bytes (bank write end alignment)
+Warn : Adding extra erase range, 0x08005ba0 .. 0x0801ffff
+auto erase enabled
+wrote 23456 bytes from file C:/Users/libai/Desktop/X1/imu_caiji/zhuban_caiji/Objects/zhuban_led.hex in 2.152115s (10.644 KiB/s)
+verified 23432 bytes in 0.126243s (181.260 KiB/s)
+0x200006e0: 00000000 00000000 00001000 dddddddd bbbbbbbb 0000007e 00000000 bc88e7b2 
+0x20000700: 30f5c28f 3b9465f4 41c279c0 41b67120 00000000 00000000 00001000 dddddddd 
+0x20000720: bbbbbbbb 0000007e 00000000 bd0c01ea 30f5c28f 3b9465f4 41c2e060 41b67120 
+0x20000740: 00000000 00000000 00001000 dddddddd 30f5c28f 3b9465f4 41c2ad00 41b69da0 
+0x20000760: 00000070 00000080 00001170 
+0x200006b4: 0000005d 0000005d 00001170 00113785 00000001 00000000 00000000 00000000 
+0x200006d4: 00000000 00000000 00000001 
+0x200006e0: 30f5c28f 3b9465f4 41c2ad00 41b67120 00000000 00000000 00001000 dddddddd 
+0x20000700: bbbbbbbb 0000007e 00000000 bd1ab500 30f5c28f 3b9465f4 41c2ad00 41b6ca10 
+0x20000720: 00000000 00000000 00001000 dddddddd 30f5c28f 3b9465f4 41c313b0 41b67120 
+0x20000740: 00000000 00000000 00001000 dddddddd bbbbbbbb 0000007e 00000000 bca64dcc 
+0x20000760: 00000050 00000080 00003750 
+0x200006b4: 00000128 00000128 00003780 0030328b 00000001 00000000 00000000 00000000 
+0x200006d4: 00000000 00000000 00000003 
+0x200005e4: 3e290af9 bc7b2429 3b62de79 3a8b7d79 bbd13c35 3b0b7d79 3e094b09 3fd23ae5 
+0x20000604: 411d84f2 00304b59 00000b8e 00000001 00000001 00000000 
+shutdown command invoked

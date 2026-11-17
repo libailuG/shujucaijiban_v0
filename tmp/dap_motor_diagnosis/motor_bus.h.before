@@ -1,0 +1,21 @@
+#ifndef MOTOR_BUS_H
+#define MOTOR_BUS_H
+#include "motor_protocol.h"
+#define MOTOR_PERIOD_US 5000U
+#define MOTOR_BAUD 2000000UL
+/* Logical left=JP3/USART3/126, right=JP2/USART6/127.
+ * KP is a current coefficient; mode1004 torque is magnetic encoder position.
+ * This build always sends STOP, regardless of debugger edits to tx_frame. */
+typedef struct {
+    MotorFrame tx_frame, rx_frame;
+    uint32_t tx_count, rx_frame_count, rx_byte_count, rx_timestamp_us, rx_valid;
+    uint32_t uart_errors, overflow_count, wrong_id_count, bad_tail_count, busy_skips;
+    /* Milliseconds since any RX byte (including malformed data), not link health.
+     * Counts from init; reset immediately by RX IRQ; saturates at UINT32_MAX. */
+    uint32_t rx_idle_ms;
+} MotorData;
+extern volatile MotorData g_motor_left, g_motor_right;
+void motor_bus_init(void);
+void motor_bus_poll(void);
+int motor_get_feedback(unsigned right, MotorFrame *out);
+#endif

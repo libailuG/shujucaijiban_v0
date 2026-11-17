@@ -1,0 +1,21 @@
+#ifndef BSP_COM_H
+#define BSP_COM_H
+
+#include "main.h"
+#include "usart.h"
+
+#include <stdbool.h>
+
+
+
+
+
+void bsp_com_init(void);
+
+bool bsp_com_send(uint8_t *data, uint16_t size);
+
+void bsp_com_rxcpt_callback(uint8_t *data, uint16_t size);
+
+bool COM1_RX_GetData(uint8_t *data, uint16_t *size);
+
+#endif

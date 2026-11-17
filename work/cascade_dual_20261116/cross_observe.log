@@ -1,0 +1,9 @@
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:44)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Error: CMSIS-DAP command CMD_INFO failed.
+work/cascade_dual_20261116/cross_observe.cfg:8: Error: 
+Traceback (most recent call last):
+  File "work/cascade_dual_20261116/cross_observe.cfg", line 8, in script
+    init

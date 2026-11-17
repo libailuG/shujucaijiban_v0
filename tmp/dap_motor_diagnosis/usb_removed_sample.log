@@ -1,0 +1,37 @@
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:44)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+adapter speed: 500 kHz
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: JTAG supported
+Info : CMSIS-DAP: SWO-UART supported
+Info : CMSIS-DAP: Atomic commands supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 1 TDO = 1 nTRST = 1 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 500 kHz
+Info : SWD DPIDR 0x6ba02477
+Info : [stm32h7x.ap2] Examination succeed
+Info : [stm32h7x.cpu0] Cortex-M7 r1p2 processor detected
+Warn : [stm32h7x.cpu0] Erratum 3092511: Cortex-M7 can halt in an incorrect address when breakpoint and exception occurs simultaneously
+Info : [stm32h7x.cpu0] The erratum 3092511 workaround will resume after an incorrect halt
+Info : [stm32h7x.cpu0] target has 8 breakpoints, 4 watchpoints
+Info : [stm32h7x.cpu0] Examination succeed
+Info : [stm32h7x.ap2] gdb port disabled
+Info : [stm32h7x.cpu0] starting gdb server on 3333
+Info : Listening on port 3333 for gdb connections
+0x20000618: 014ea337 0006aac4 000000f8 000000fd 00000004 000000dd 00000000 
+0x200006b0: 0000c9ca 00007eaa 0017bfe1 0dcd0bc2 00000001 00000001 00000000 00000000 
+0x200006d0: 00000000 00000000 00006969 
+0x200005e0: 3e1eb2b4 bbf4ca62 3edfce76 3b513c35 bbae5cd7 3a8b7d79 3d9ce80a 3fc4bef5 
+0x20000600: 411cfba7 0f68dadf 0003f114 00000001 00000001 00000000 
+0x40004800: 0000002d 00000000 00000000 00000045 
+0x4000481c: 00621090 
+0x20000618: 015526bb 0006aac4 000000f7 000000fd 00000004 000000dd 00000000 
+0x200006b0: 0000cdb6 00007eaa 0017bfe1 0dcd0bc2 00000001 00000001 00000000 00000000 
+0x200006d0: 00000000 00000000 00007d07 
+0x200005e0: 3e1e8396 bc0178c2 3ee43b0b ba8b7d79 bbf41b93 3b8b7d79 3dba538c 3fc9a635 
+0x20000600: 411c85f9 0fb57c0f 000404b1 00000001 00000001 00000000 
+shutdown command invoked

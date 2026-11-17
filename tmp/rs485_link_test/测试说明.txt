@@ -1,0 +1,31 @@
+JP2（左IMU1/USART6）与JP3（右IMU1/USART3）双向对接测试
+实际工程已切换为rs485_link_test_init/poll；motor_bus.c保留但不参与编译。
+原main/build/uvprojx备份于before；本次未烧录、未运行硬件测试。
+
+接线：两口1脚GND互接、2脚A互接、3脚B互接；4脚+5V不连接。两口均不接电机。
+当前升速对比测试：两路均3000000 8N1（BRR46，实际名义2989130.43bps，误差约-0.3623%）。
+此前用户截图确认115200双向有效帧通过，UART/帧/序号/溢出错误均为0；1Mbps、2Mbps已编译，未收到测试结果，本轮3Mbps尚待上板测试。
+通过App/rs485_link_test.h的RS485_LINK_TEST_BAUD统一设置，两路共同使用。
+此前3Mbps测试配置BRR46；此次仅降低测试串口速率，不改时钟树及C6串口。
+GPIO方向：JP2 PC8、JP3 PD10。
+每5ms一个发送时隙，JP2/JP3交替发送，所以每路约100帧/秒；避免两端同时驱动。
+帧48字节：TEST头、来源口号、递增序号、变化测试数据、DONE尾；与电机协议不同。
+固定主循环调度存在抖动；错过时隙不积压补发。方向仅在UART TC后释放。
+现有IMU、电池、按键、C6保持运行；测试不会改变C6数据字段映射。
+
+烧录后Keil Watch加入：
+g_rs485_link_pass：0尚无通过；1仅JP3到JP2收到正确帧；2仅JP2到JP3收到正确帧；3双向均曾通过。
+g_rs485_jp2：tx_count发送完成，rx_count从JP3收到完整正确帧，rx_bytes接收字节总数。
+g_rs485_jp3：tx_count发送完成，rx_count从JP2收到完整正确帧，rx_bytes接收字节总数。
+各结构last_sequence、rx_timestamp_us、last_rx可检查最近收到的数据。
+bad_frame=完整候选帧内容不符，sequence_errors=有效帧序号不连续，uart_errors=串口硬件错误次数；
+error_flags为硬件错误位累计OR（PE=1 FE=2 NE=4 ORE=8），overflows为接收缓冲溢出次数。
+busy_skips表示发送占用而跳过时隙。
+正常连续运行时：两口tx_count/rx_count各约每秒增加100；两方向对端收发计数仅有小幅在途差异；
+上述错误计数应不持续增长。g_rs485_link_pass为历史通过标记，不保证此刻仍连通。
+测试不会对无头噪声逐字节累计bad_frame；因此无有效帧时也要结合rx_bytes/uart_errors观察。
+
+验证：build.ps1严格告警编译通过；实际Keil全编译0错误0警告，日志Objects/rs485_link_test_build.log。
+link_test_unit.c已在Unicorn CortexM7离线验证双向内容检查、分包、坏数据拒绝、序号跳变和丢失重同步。
+这些是软件检查结果，不代表实际485线路已通过。
+恢复电机通信时用before原入口和工程配置，不能保留本测试入口连接电机进行验证。

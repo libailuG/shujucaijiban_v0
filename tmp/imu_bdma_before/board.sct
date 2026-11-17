@@ -1,0 +1,18 @@
+; Shared by Keil and build.ps1. DMA buffer must remain outside DTCM.
+LR_IROM1 0x08000000 0x00100000 {
+  ER_IROM1 0x08000000 0x00100000 {
+    *.o (RESET, +First)
+    *(InRoot$$Sections)
+    .ANY (+RO)
+    .ANY (+XO)
+  }
+  RW_UART9_DMA 0x24000000 0x40 {
+    * (.uart9_dma_tx)
+  }
+  RW_MOTOR_DMA 0x24000040 0x80 {
+    * (.motor_dma_tx)
+  }
+  RW_IRAM1 0x20000000 0x00020000 {
+    .ANY (+RW +ZI)
+  }
+}

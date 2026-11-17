@@ -1,0 +1,192 @@
+#include "stm32h7xx.h"
+#include "imu_bus.h"
+#include "motor_bus.h"
+#define RING_SIZE 512U
+#define RING_MASK (RING_SIZE-1U)
+/* Provisional DE setup margin, verify against fitted XL485 and scope on board.
+ * Nonblocking: never delay the 1ms IMU processing while waiting. */
+#define DE_SETUP_US 2U
+typedef struct {
+    USART_TypeDef *uart;
+    GPIO_TypeDef *gpio;
+    uint32_t de, id;
+    volatile MotorData *data;
+    uint8_t tx[48], ring[RING_SIZE];
+    volatile uint32_t head, tail, epoch, state;
+    uint32_t consumed_epoch, index, de_since;
+    uint32_t idle_sample_us, idle_remainder_us;
+    MotorStream stream;
+} MotorBus;
+volatile MotorData g_motor_left, g_motor_right;
+volatile MotorDiagnostics g_motor_diag_left, g_motor_diag_right;
+volatile MotorRxRecent g_motor_left_rx_recent;
+static MotorBus left={.uart=USART3,.gpio=GPIOD,.de=1U<<10,.id=126,.data=&g_motor_left};
+static MotorBus right={.uart=USART6,.gpio=GPIOC,.de=1U<<8,.id=127,.data=&g_motor_right};
+static uint32_t previous_send, previous_diag;
+static volatile MotorDiagnostics *diagnostics(MotorBus *b) {
+    return b==&left ? &g_motor_diag_left : &g_motor_diag_right;
+}
+static void sample_rx_pin(MotorBus *b, unsigned pin) {
+    volatile MotorDiagnostics *d=diagnostics(b);
+    if(b->state==0U) {
+        ++d->rx_pin_samples;
+        if(!(b->gpio->IDR&(1UL<<pin))) ++d->rx_pin_low_samples;
+    }
+}
+static void pins(GPIO_TypeDef *p,unsigned tx,unsigned rx,unsigned de) {
+    uint32_t pins=(1UL<<tx)|(1UL<<rx)|(1UL<<de);
+    p->BSRR=(1UL<<tx)|(1UL<<(de+16));
+    p->OTYPER &= ~pins;
+    for(unsigned i=0;i<16;i++) if(pins&(1UL<<i)) {
+        p->PUPDR &= ~(3UL<<(2*i));
+        p->OSPEEDR=(p->OSPEEDR&~(3UL<<(2*i)))|(3UL<<(2*i));
+        if(i!=de) p->AFR[i/8]=(p->AFR[i/8]&~(15UL<<(4*(i%8))))|(7UL<<(4*(i%8)));
+        p->MODER=(p->MODER&~(3UL<<(2*i)))|((i==de?1UL:2UL)<<(2*i));
+    }
+}
+static void uart_init(MotorBus *b,IRQn_Type irq) {
+    USART_TypeDef *u=b->uart;
+    u->CR1=0; u->CR2=0; u->CR3=USART_CR3_ONEBIT; u->PRESC=0;
+    /* Retain central RX sampling verified during communication repair. */
+    /* PCLK 137.5MHz /69 = 1,992,753.62 baud (-0.362% at 2Mbps). */
+    u->BRR=(137500000UL+MOTOR_BAUD/2UL)/MOTOR_BAUD;
+    NVIC_SetPriority(irq,6U); /* IMU/I2C priority5 can preempt. */
+    NVIC_ClearPendingIRQ(irq); NVIC_EnableIRQ(irq);
+    u->CR1=USART_CR1_TE|USART_CR1_RE|USART_CR1_RXNEIE_RXFNEIE|USART_CR1_UE;
+}
+void motor_bus_init(void) {
+    RCC->AHB4ENR|=RCC_AHB4ENR_GPIOCEN|RCC_AHB4ENR_GPIODEN;
+    RCC->APB1LENR|=RCC_APB1LENR_USART3EN;
+    RCC->APB2ENR|=RCC_APB2ENR_USART6EN;
+    (void)RCC->APB2ENR;
+    pins(GPIOD,8,9,10); pins(GPIOC,6,7,8);
+    /* Keep UART9's shared group on PCLK2; no PLL/clock-tree changes. */
+    RCC->D2CCIP2R &= ~(RCC_D2CCIP2R_USART28SEL|RCC_D2CCIP2R_USART16910SEL);
+    RCC->APB1LRSTR|=RCC_APB1LRSTR_USART3RST; RCC->APB1LRSTR&=~RCC_APB1LRSTR_USART3RST;
+    RCC->APB2RSTR|=RCC_APB2RSTR_USART6RST; RCC->APB2RSTR&=~RCC_APB2RSTR_USART6RST;
+    left.idle_sample_us=right.idle_sample_us=imu_time_us();
+    left.idle_remainder_us=right.idle_remainder_us=0U;
+    g_motor_left.rx_idle_ms=g_motor_right.rx_idle_ms=0U;
+    uart_init(&left,USART3_IRQn); uart_init(&right,USART6_IRQn);
+    previous_send=imu_time_us();
+}
+static void receive_poll(MotorBus *b) {
+    for(unsigned budget=0;budget<128;budget++) {
+        if(b->consumed_epoch!=b->epoch) {
+            uint32_t saved=__get_PRIMASK(); __disable_irq();
+            b->tail=b->head; b->consumed_epoch=b->epoch;
+            __set_PRIMASK(saved); b->stream.used=0;
+        }
+        uint32_t tail=b->tail;
+        if(tail==b->head) break;
+        __DMB(); uint8_t byte=b->ring[tail]; __DMB();
+        b->tail=(tail+1)&RING_MASK;
+        uint32_t epoch=b->consumed_epoch;
+        MotorFrame f;
+        if(motor_stream_push(&b->stream,byte,&f)) {
+            uint32_t saved=__get_PRIMASK(); __disable_irq();
+            if(epoch==b->epoch) {
+                if(f.motor_id==b->id) {
+                    b->data->rx_frame=f;
+                    b->data->rx_timestamp_us=imu_time_us();
+                    b->data->rx_valid=1; ++b->data->rx_frame_count;
+                } else ++b->data->wrong_id_count;
+            }
+            __set_PRIMASK(saved);
+        }
+    }
+    b->data->bad_tail_count=b->stream.bad_tail;
+}
+static void start_zero_torque_frame(MotorBus *b,uint32_t now) {
+    if(b->state) { ++b->data->busy_skips; return; }
+    MotorFrame f={0}; f.start_flag=0xAAAAAAAAU; f.end_flag=0xEEEEEEEEU;
+    /* 零扭矩使能测试：mode1，扭矩/速度/位置/KP/KD等字段均为0。 */
+    f.motor_id=b->id; f.mode=MOTOR_TORQUE;
+    b->data->tx_frame=f; motor_encode(b->tx,&f);
+    b->index=0; b->uart->ICR=USART_ICR_TCCF;
+    b->gpio->BSRR=b->de; b->de_since=now;
+    __DMB(); b->state=1;
+}
+static void enable_tx(MotorBus *b,uint32_t now) {
+    if(b->state==1 && (uint32_t)(now-b->de_since)>=DE_SETUP_US) {
+        b->state=2; b->uart->CR1|=USART_CR1_TXEIE_TXFNFIE;
+    }
+}
+static void update_rx_idle(MotorBus *b) {
+    /* RX ISR also resets these fields: keep timestamp and accumulator atomic.
+     * Accumulate short deltas so the 32-bit TIM2 wrap does not reset idle time. */
+    uint32_t saved=__get_PRIMASK(); __disable_irq();
+    uint32_t now=imu_time_us(), elapsed=now-b->idle_sample_us;
+    b->idle_sample_us=now;
+    uint32_t remainder=b->idle_remainder_us+elapsed%1000U;
+    uint32_t add_ms=elapsed/1000U+remainder/1000U;
+    b->idle_remainder_us=remainder%1000U;
+    uint32_t idle=b->data->rx_idle_ms;
+    b->data->rx_idle_ms=(add_ms>UINT32_MAX-idle)?UINT32_MAX:idle+add_ms;
+    __set_PRIMASK(saved);
+}
+void motor_bus_poll(void) {
+    receive_poll(&left); receive_poll(&right);
+    update_rx_idle(&left); update_rx_idle(&right);
+    uint32_t now=imu_time_us();
+    if((uint32_t)(now-previous_diag)>=11U) {
+        previous_diag=now; sample_rx_pin(&left,9); sample_rx_pin(&right,7);
+    }
+    if((uint32_t)(now-previous_send)>=MOTOR_PERIOD_US) {
+        previous_send=now; /* Skip missed slots, no catch-up burst. */
+        start_zero_torque_frame(&left,now); start_zero_torque_frame(&right,now);
+    }
+    enable_tx(&left,now); enable_tx(&right,now);
+}
+int motor_get_feedback(unsigned is_right,MotorFrame *out) {
+    volatile MotorData *d=is_right?&g_motor_right:&g_motor_left;
+    if(out==0 || !d->rx_valid) return 0;
+    uint32_t saved=__get_PRIMASK(); __disable_irq();
+    *out=d->rx_frame; __set_PRIMASK(saved); return 1;
+}
+static void uart_irq(MotorBus *b) {
+    USART_TypeDef *u=b->uart; uint32_t s=u->ISR;
+    uint32_t errors=s&(USART_ISR_PE|USART_ISR_FE|USART_ISR_NE|USART_ISR_ORE);
+    if(errors) {
+        u->ICR=USART_ICR_PECF|USART_ICR_FECF|USART_ICR_NECF|USART_ICR_ORECF;
+        ++b->epoch; ++b->data->uart_errors; diagnostics(b)->error_flags_or|=errors;
+    }
+    if(s&USART_ISR_RXNE_RXFNE) {
+        uint8_t byte=(uint8_t)u->RDR; ++b->data->rx_byte_count;
+        if(b==&left) {
+            uint32_t index=g_motor_left_rx_recent.write_index;
+            g_motor_left_rx_recent.bytes[index]=byte;
+            __DMB();
+            g_motor_left_rx_recent.write_index=(index+1U)&(MOTOR_RX_RECENT_SIZE-1U);
+            if(g_motor_left_rx_recent.valid_count<MOTOR_RX_RECENT_SIZE)
+                ++g_motor_left_rx_recent.valid_count;
+            ++g_motor_left_rx_recent.total_count;
+        }
+        volatile MotorDiagnostics *d=diagnostics(b);
+        d->last_rx_byte=byte; if(b->state) ++d->rx_during_tx;
+        /* "Any data" includes bad frames, UART-error bytes and wrong IDs. */
+        b->idle_sample_us=imu_time_us(); b->idle_remainder_us=0U;
+        b->data->rx_idle_ms=0U;
+        if(!errors && b->state==0) {
+            uint32_t head=b->head,next=(head+1)&RING_MASK;
+            if(next==b->tail) { ++b->epoch; ++b->data->overflow_count; }
+            else { b->ring[head]=byte; __DMB(); b->head=next; }
+        }
+    }
+    if((s&USART_ISR_TXE_TXFNF)&&(u->CR1&USART_CR1_TXEIE_TXFNFIE)) {
+        u->TDR=b->tx[b->index++];
+        if(b->index==48) u->CR1=(u->CR1&~USART_CR1_TXEIE_TXFNFIE)|USART_CR1_TCIE;
+    }
+    if((u->ISR&USART_ISR_TC)&&(u->CR1&USART_CR1_TCIE)) {
+        u->CR1&=~USART_CR1_TCIE; u->ICR=USART_ICR_TCCF;
+        b->gpio->BSRR=b->de<<16; /* Only TC means last stop bit is complete. */
+        volatile MotorDiagnostics *d=diagnostics(b);
+        uint32_t elapsed=imu_time_us()-b->de_since;
+        d->last_tx_us=elapsed;
+        if(elapsed>d->max_tx_us) d->max_tx_us=elapsed;
+        ++b->data->tx_count; __DMB(); b->state=0;
+    }
+    __DSB();
+}
+void USART3_IRQHandler(void) { uart_irq(&left); }
+void USART6_IRQHandler(void) { uart_irq(&right); }

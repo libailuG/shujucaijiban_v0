@@ -1,0 +1,52 @@
+static void zero_sequence_poll(uint32_t now)
+{
+    switch (g_motor_zero_state) {
+    case MOTOR_ZERO_QUEUED:
+        /* Drain existing TX and discard pre-zero parser state, not valid counters. */
+        if (!left.state && !right.state) {
+            uint32_t saved = __get_PRIMASK(); __disable_irq();
+            left.tail=left.head; right.tail=right.head;
+            left.stream.used=right.stream.used=0U;
+            __set_PRIMASK(saved);
+            start_motor_command_frame(&left,now,MOTOR_ZERO);
+            g_motor_zero_state=MOTOR_ZERO_LEFT_TX;
+        }
+        break;
+    case MOTOR_ZERO_LEFT_TX:
+        if (!left.state && left.completed_mode==MOTOR_ZERO)
+            g_motor_zero_state=MOTOR_ZERO_GAP;
+        break;
+    case MOTOR_ZERO_GAP:
+        if ((uint32_t)(now-left.completed_us)>=10000U && !right.state) {
+            start_motor_command_frame(&right,now,MOTOR_ZERO);
+            g_motor_zero_state=MOTOR_ZERO_RIGHT_TX;
+        }
+        break;
+    case MOTOR_ZERO_RIGHT_TX:
+        if (!right.state && right.completed_mode==MOTOR_ZERO) {
+            zero_probe_tx[0]=g_motor_left.tx_count; zero_probe_tx[1]=g_motor_right.tx_count;
+            zero_probe_armed=0U;
+            g_motor_zero_state=MOTOR_ZERO_WAIT_FEEDBACK;
+            previous_send=now-MOTOR_PERIOD_US; /* First stationary queries now. */
+        }
+        break;
+    case MOTOR_ZERO_WAIT_FEEDBACK: {
+        MotorBus *buses[2]={&left,&right};
+        for (unsigned i=0;i<2U;++i) {
+            uint32_t bit=1UL<<i;
+            MotorBus *b=buses[i];
+            if (!(zero_probe_armed&bit)) {
+                if (b->completed_mode==MOTOR_TORQUE && b->data->tx_count!=zero_probe_tx[i]) {
+                    zero_probe_rx[i]=b->data->rx_frame_count;
+                    zero_probe_armed|=bit;
+                }
+            } else if (b->data->rx_frame_count!=zero_probe_rx[i] && b->data->rx_frame.mode==MOTOR_TORQUE) {
+                g_motor_zero_recovered|=bit;
+            }
+        }
+        if (g_motor_zero_recovered==3U) g_motor_zero_state=MOTOR_ZERO_DONE;
+        break;
+    }
+    default: break;
+    }
+}

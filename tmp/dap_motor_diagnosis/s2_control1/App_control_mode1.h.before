@@ -1,0 +1,5 @@
+﻿#ifndef CONTROL_MODE1_H
+#define CONTROL_MODE1_H
+/* data2=3时每轮主循环调用；在此模块编写控制模式1，禁止阻塞。 */
+void control_mode1_poll(void);
+#endif

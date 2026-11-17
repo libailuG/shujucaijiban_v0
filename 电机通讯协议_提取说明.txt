@@ -1,0 +1,105 @@
+电机串口通讯协议（从上位机源码提取）
+提取日期：2026-11-11
+来源：C:\Users\libai\Desktop\X1\imu_caiji\zhuban_caiji\ziliao\04_tx_motor_tool_production.py
+范围：上位机串口收发协议。没有运行上位机或向电机发送任何命令。
+
+1. 串口与编码
+默认波特率 3000000，可在界面更改；设备是否支持其他波特率需固件确认。
+serial.Serial 未显式配置数据位、奇偶校验、停止位及流控，沿用 pyserial 默认值，即 8N1，无流控。
+全部多字节字段使用小端序；整数为 uint32，浮点为 IEEE 754 float32。
+上下行均固定 48 字节，不含长度、序号、CRC 或累加和字段。
+上位机用固定位置的帧头和帧尾确认完整帧，不进行数据内容校验。
+
+2. 帧布局（偏移从 0 开始）
+偏移    长度  类型      字段          常规含义
+0       4     uint32    start_flag    下行 0xAAAAAAAA；上行 0xBBBBBBBB
+4       4     uint32    motor_id      电机 ID
+8       4     uint32    mode          命令/状态模式
+12      4     float32   torque        扭矩，N·m
+16      4     float32   speed         角速度，rad/s
+20      4     float32   ang           角度，rad
+24      4     float32   temp_board    主板温度，℃（常规反馈）
+28      4     float32   temp_motor    电机温度，℃（常规反馈）
+32      4     float32   KP            控制参数 KP
+36      4     float32   KD            控制参数 KD
+40      4     uint32    error_flag    错误标志；磁校准时复用为磁值
+44      4     uint32    end_flag      下行 0xEEEEEEEE；上行 0xDDDDDDDD
+
+下行字节头 AA AA AA AA，尾 EE EE EE EE。
+上行字节头 BB BB BB BB，尾 DD DD DD DD。
+Python struct 格式：<III7fII，大小 48 字节。
+特殊命令会复用字段，不能始终按上述常规含义解释。
+
+3. 下行命令（mode 为十进制）
+0：停止控制。除 motor_id 外数据字段全部为 0。
+1：位置/扭矩控制。torque、speed、ang、KP、KD 为界面设定值；其余数据字段为 0。
+2：关节角度零点校准。motor_id 为当前 ID，其余数据字段为 0。
+11：速度控制。speed、KP、KD 为设定值；torque、ang 及其余数据字段为 0。
+1000：FOC 校准。motor_id 为当前 ID，其余数据字段为 0。
+1001：设置电机 ID。motor_id 直接填目标新 ID，其余数据字段为 0。
+      帧中没有单独的旧 ID 字段，多设备时寻址行为无法由上位机确认。
+1002：X 磁校准。error_flag 填磁值（界面限制 0～255），其余数据字段为 0。
+1003：Y 磁校准。error_flag 填磁值（界面限制 0～255），其余数据字段为 0。
+1004：读取关节角度。除 motor_id 外数据字段为 0。
+1005：读取电机电流参数。除 motor_id 外数据字段为 0。
+1006：写入电机电流参数。字段映射：
+      torque = 扭矩系数 torque_k
+      speed = 电流环 Kp
+      ang = 电流环 Ki
+      temp_board = 电流环 Kd
+      temp_motor、KP、KD、error_flag = 0
+
+注意：界面内部 motor_control_enable=2 对应线上 mode=11；线上 mode=2 是零点校准。
+正弦扭矩没有独立命令：仍为 mode=1，上位机逐帧计算 torque=A*sin(2*pi*t/T)，
+speed=0、ang=0，KP/KD 沿用设定值。
+
+4. 反馈与参数读取
+普通反馈按第 2 节解释。上位机显示 speed 时以 speed*30/pi 转换为 rpm，
+角度以 ang*180/pi 转换为度；线上仍使用 rad/s、rad。
+当反馈 mode=1005 时，按以下复用字段读取参数：
+torque -> 扭矩系数；speed -> 电流环 Kp；ang -> 电流环 Ki；temp_board -> 电流环 Kd。
+上位机收到该反馈后退出读取状态，恢复发送 mode=0。
+error_flag 各 bit 含义、其他命令应答及成功/失败判据，源码没有给出。
+
+5. 时序与接收方法
+控制发送定时器周期 10 ms，名义频率 100 Hz；这不是设备反馈频率的证据。
+未启用控制时仍周期发送 mode=0。1004/1005 读取状态也由该定时器周期发送。
+设置 ID、FOC、零点、磁校准、写参数由回调发送一帧，随后恢复周期发送。
+关闭串口和退出程序前会尝试发送一帧停止命令。
+接收时累积串口字节流，搜索 BB BB BB BB，够 48 字节后检查偏移 44 的
+DD DD DD DD，成功才解包；需要处理半包、粘包及错位，不能假定一次 read 是一帧。
+
+6. 最小 Python 编解码示例（不打开串口）
+import struct
+
+FMT = '<III7fII'
+def pack_command(motor_id, mode=0, torque=0.0, speed=0.0, ang=0.0,
+                 temp_board=0.0, temp_motor=0.0, KP=0.0, KD=0.0, error_flag=0):
+    return struct.pack(FMT, 0xAAAAAAAA, motor_id, mode, torque, speed, ang,
+                       temp_board, temp_motor, KP, KD, error_flag, 0xEEEEEEEE)
+
+def unpack_feedback(frame):
+    if len(frame) != 48:
+        raise ValueError('反馈帧长度必须为48字节')
+    values = struct.unpack(FMT, frame)
+    if values[0] != 0xBBBBBBBB or values[-1] != 0xDDDDDDDD:
+        raise ValueError('反馈帧头或帧尾错误')
+    names = ('motor_id', 'mode', 'torque', 'speed', 'ang', 'temp_board',
+             'temp_motor', 'KP', 'KD', 'error_flag')
+    return dict(zip(names, values[1:-1]))
+
+示例：ID=1 的停止帧（每行 16 字节，共 48 字节）
+AA AA AA AA 01 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 EE EE EE EE
+
+7. 源码依据与边界
+串口默认波特率：211～217 行；串口打开：2575 行附近。
+字节序与定长帧编解码：StructDefinition，2195 行附近。
+收发结构：create_send_struct / create_receive_struct，2902～2947 行。
+命令回调：3088～3221 行；周期控制映射：3236～3288 行；周期：3337～3339 行。
+参数反馈映射：1115 行附近；单位：界面字段与1135行附近的显示转换。
+本说明只提取上述 Python 源码，未依据同目录《数据采集板.pdf》推断电机物理接口。
+无法确认：TTL/RS485/其他电气接口、针脚、终端电阻、固件支持的 ID 上限、
+控制增益公式与单位、各控制量限幅、超时停机机制、校准耗时、参数掉电保存、
+角度为电机端还是减速器输出端、反馈频率及错误位定义。需固件或厂家协议补充。

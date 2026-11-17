@@ -1,0 +1,1 @@
+PASS actual linked ARM: left/right mode2 exactly once, >=10ms after leftTC, no mode2 ACK required, independent fresh mode1 recovery, stale cache rejected, switch2 holds torque/KP0 even after DONE, explicit OFF restores control, early OFF stays zero until recovery, no debug/no zero, rearm edge, timer wrap

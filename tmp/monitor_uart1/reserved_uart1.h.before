@@ -1,0 +1,9 @@
+#ifndef RESERVED_UART1_H
+#define RESERVED_UART1_H
+#include <stdint.h>
+#define RESERVED_UART1_BAUD 921600UL
+#define RESERVED_UART1_TX_PERIOD_US 1000000UL
+void reserved_uart1_init(void);
+void reserved_uart1_poll(void);
+extern volatile uint32_t g_uart1_tx_count;
+#endif

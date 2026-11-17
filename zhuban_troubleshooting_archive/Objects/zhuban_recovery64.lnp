@@ -1,0 +1,8 @@
+--cpu Cortex-M7 --fpu=SoftVFP
+".\objects\main.o"
+".\objects\system_stm32h7xx.o"
+".\objects\startup_stm32h723xx.o"
+--strict --scatter ".\Objects\zhuban_recovery64.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\zhuban_recovery64.map" -o .\Objects\zhuban_recovery64.axf

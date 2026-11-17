@@ -1,0 +1,62 @@
+{
+  "status": "9个聊天已在项目列表核验归入；4个聊天迁移接口返回成功但列表归属仍为空：当前整理聊天、预留串口2发送方式、初始化预留串口1、单片机频率与空间；四元数聊天仍被caiji目录访问授权confirmation_required阻止。",
+  "target": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji",
+  "threads": [
+    {
+      "id": "01a1d368-7793-7982-a57c-8d65436c8230",
+      "title": "和这个项目C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji相关的任务和…"
+    },
+    {
+      "id": "01a1d2a4-c6b4-76f3-adb8-924167e732b4",
+      "title": "控制模式1监测上位机"
+    },
+    {
+      "id": "01a1ce9f-2710-7701-8b84-0ca93c8a9b1e",
+      "title": "增加控制模式1空入口 data2=3"
+    },
+    {
+      "id": "01a1cf2f-6cda-7150-9708-d23e62a780ed",
+      "title": "预留串口2 这个是什么什么方式发送的？"
+    },
+    {
+      "id": "01a1cf28-f7b5-7e02-b01e-6b4f00b3124a",
+      "title": "初始化预留串口1 比特率为921600 ，先定时上发 hello_world"
+    },
+    {
+      "id": "01a1cef6-a5fe-7e72-bed8-37d67ca9ee86",
+      "title": "分析 data 目录中的 sim2reak"
+    },
+    {
+      "id": "01a1cef8-ea77-7490-ab93-b777ca69d0b6",
+      "title": "这个imu能输出四元数吗？"
+    },
+    {
+      "id": "01a1cee8-8570-7073-8f2b-50bc5a68cf77",
+      "title": "现在单片机的频率是多少？以及使用了多少空间"
+    },
+    {
+      "id": "01a1c9c0-d5b8-7dc1-b4f8-0f5582bb3d21",
+      "title": "DAP后台修复电机反馈接收"
+    },
+    {
+      "id": "01a1c899-402b-7651-a32b-69135b8f52ca",
+      "title": "分析电机协议并准备主板接入"
+    },
+    {
+      "id": "01a1c995-729e-79f3-900e-4b61e671b75c",
+      "title": "PyQt电机串口模拟器"
+    },
+    {
+      "id": "01a1c37b-8a94-7ae0-8906-e4e2f6a48652",
+      "title": "分析 C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji"
+    },
+    {
+      "id": "01a1c872-b97c-7ad1-a3de-3b4c1531c147",
+      "title": "排查 DAP 调试数据不更新"
+    },
+    {
+      "id": "01a1c848-3364-7671-b6eb-778e7ceececd",
+      "title": "C:\\Users\\libai\\Desktop\\X1\\imu_caiji\\zhuban_caiji\\ziliao 这个目…"
+    }
+  ]
+}

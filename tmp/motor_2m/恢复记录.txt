@@ -1,0 +1,10 @@
+2026-11-11：根据用户对接实测结论，当前板卡2Mbps可通信，3Mbps不能通信。
+实际工程已删除App/rs485_link_test.c/h及相关工程引用，main恢复motor_bus_init/poll。
+两路电机串口统一MOTOR_BAUD=2000000，BRR69，8N1；周期仍5000us。
+左电机126=JP3/USART3/PD8 TX/PD9 RX/PD10方向；右电机127=JP2/USART6/PC6 TX/PC7 RX/PC8方向。
+两路独立连接电机，不再保持JP2和JP3的测试对接线。
+只发mode0停止帧、数据参数全零，接收反馈；不启用运动控制、改ID或校准。
+原IMU、电池、按键、C6逻辑保持。
+注意：本次只更改主板波特率，未修改电机固件或电机端配置；电机端也必须使用2Mbps才可通信。
+Keil全编译0错误0警告；实际工程Objects/motor_2Mbps_build.log。
+未烧录，未声称已完成2Mbps电机联调。旧测试产物仅在workspace tmp中留作历史，实际工程不再包含测试代码。

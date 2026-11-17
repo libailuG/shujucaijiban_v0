@@ -1,0 +1,13 @@
+Dependencies for Project 'zhuban_recovery64', Target 'Zhuban_Recovery64': (DO NOT MODIFY !)
+CompilerVersion: 6240000::V6.24::ARMCLANG
+F (.\App\main.c)(0x6AF295D3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx -DBOARD_USE_550MHZ="0"-o ./objects/main.o -MMD)
+I (Drivers\CMSIS\Device\stm32h7xx.h)(0x6AF29074)
+I (Drivers\CMSIS\Device\stm32h723xx.h)(0x6AF29073)
+I (Drivers\CMSIS\Core\core_cm7.h)(0x6AEA90FA)
+I (Drivers\CMSIS\Device\system_stm32h7xx.h)(0x6AF29075)
+F (.\Startup\system_stm32h7xx.c)(0x6AF29336)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx -DBOARD_USE_550MHZ="0"-o ./objects/system_stm32h7xx.o -MMD)
+I (Drivers\CMSIS\Device\stm32h7xx.h)(0x6AF29074)
+I (Drivers\CMSIS\Device\stm32h723xx.h)(0x6AF29073)
+I (Drivers\CMSIS\Core\core_cm7.h)(0x6AEA90FA)
+I (Drivers\CMSIS\Device\system_stm32h7xx.h)(0x6AF29075)
+F (.\Startup\startup_stm32h723xx.s)(0x6AF29075)(--cpu Cortex-M7 --fpu=SoftVFP -g --diag_suppress=A1950W -I .\App -I .\Drivers\CMSIS\Device -I .\Drivers\CMSIS\Core--pd "__UVISION_VERSION SETA 543"--pd "STM32H723xx SETA 1"--pd "STM32H723xx SETA 1"--pd "BOARD_USE_550MHZ SETA 0"--list .\listings\startup_stm32h723xx.lst--xref -o .\objects\startup_stm32h723xx.o--depend .\objects\startup_stm32h723xx.d)

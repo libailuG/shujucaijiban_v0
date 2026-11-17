@@ -1,0 +1,7 @@
+*** Using Compiler 'V6.24', folder: 'C:\Users\libai\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Zhuban_LED'
+linking...
+Program Size: Code=25288 RO-data=832 RW-data=1372 ZI-data=6868  
+FromELF: creating hex file...
+".\Objects\zhuban_led.axf" - 0 Error(s), 0 Warning(s).
+Build Time Elapsed:  00:00:01

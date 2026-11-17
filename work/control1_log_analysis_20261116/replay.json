@@ -1,0 +1,139 @@
+{
+  "compared_frames": 4016,
+  "method": "Reconstruct latest 10x6 history and current 5 IMU fields; replay current FP32 weights; compare predicted command with next recorded previous-command field.",
+  "mae_nm": [
+    0.0013062346260994673,
+    0.0012176110176369548
+  ],
+  "max_abs_error_nm": [
+    0.7617865800857544,
+    1.75775945186615
+  ],
+  "p99_abs_error_nm": [
+    1.9073486328125e-06,
+    1.430511474609375e-06
+  ],
+  "fraction_both_errors_below_0_01_nm": 0.9972609561752988,
+  "largest_errors": [
+    {
+      "current_s_nominal": 16.38,
+      "pred_nm": [
+        -0.22304324805736542,
+        1.75775945186615
+      ],
+      "next_recorded_previous_nm": [
+        0.0,
+        0.0
+      ],
+      "error_nm": [
+        -0.22304324805736542,
+        1.75775945186615
+      ]
+    },
+    {
+      "current_s_nominal": 16.4,
+      "pred_nm": [
+        0.6754747629165649,
+        1.0972075462341309
+      ],
+      "next_recorded_previous_nm": [
+        0.0,
+        0.0
+      ],
+      "error_nm": [
+        0.6754747629165649,
+        1.0972075462341309
+      ]
+    },
+    {
+      "current_s_nominal": 16.42,
+      "pred_nm": [
+        0.7617865800857544,
+        0.04450426250696182
+      ],
+      "next_recorded_previous_nm": [
+        0.0,
+        0.0
+      ],
+      "error_nm": [
+        0.7617865800857544,
+        0.04450426250696182
+      ]
+    },
+    {
+      "current_s_nominal": 16.48,
+      "pred_nm": [
+        -0.6720551252365112,
+        -0.19515976309776306
+      ],
+      "next_recorded_previous_nm": [
+        0.0,
+        0.0
+      ],
+      "error_nm": [
+        -0.6720551252365112,
+        -0.19515976309776306
+      ]
+    },
+    {
+      "current_s_nominal": 16.56,
+      "pred_nm": [
+        0.6302797794342041,
+        -0.35838231444358826
+      ],
+      "next_recorded_previous_nm": [
+        0.0,
+        0.0
+      ],
+      "error_nm": [
+        0.6302797794342041,
+        -0.35838231444358826
+      ]
+    },
+    {
+      "current_s_nominal": 16.5,
+      "pred_nm": [
+        -0.6089941263198853,
+        -0.1302240639925003
+      ],
+      "next_recorded_previous_nm": [
+        0.0,
+        0.0
+      ],
+      "error_nm": [
+        -0.6089941263198853,
+        -0.1302240639925003
+      ]
+    },
+    {
+      "current_s_nominal": 16.58,
+      "pred_nm": [
+        0.5481273531913757,
+        -0.3205031454563141
+      ],
+      "next_recorded_previous_nm": [
+        0.0,
+        0.0
+      ],
+      "error_nm": [
+        0.5481273531913757,
+        -0.3205031454563141
+      ]
+    },
+    {
+      "current_s_nominal": 16.54,
+      "pred_nm": [
+        0.4919584095478058,
+        -0.22091440856456757
+      ],
+      "next_recorded_previous_nm": [
+        0.0,
+        0.0
+      ],
+      "error_nm": [
+        0.4919584095478058,
+        -0.22091440856456757
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+﻿#include "control_mode1.h"
+
+/* 控制模式1（UART9 data2=3，不是电机协议mode）：独立空入口。
+ * 当前不执行控制算法，不写目标或输出；进入时由既有接收路径退出扭矩调试，
+ * 电机保持mode1全控制字段0。已开始的置零流程仍由原状态机安全完成。
+ * 上行data2回执3，其余字段暂沿用普通模式反馈，不增加协议字段。
+ */
+/* sim2real_v0 接入约定（用户确认，仅在控制模式1内部适配）：
+ * 公共电机接口保留原始数值和符号，不做本算法的坐标变换。
+ * [0]穿戴者左JP3/USART3/ID126，[1]右JP2/USART6/ID127。
+ * 常规反馈ang为输出关节端rad、speed为rad/s，控制扭矩为输出关节端Nm；
+ * 与模型单位一致，不再换算角度制、rpm或齿比，特殊参数命令不作为运动反馈。
+ * 编码器角度0对应模型机械零点，encoder_zero_rad=[0,0]。
+ * 左正转下落=大腿向后（伸展）；右正转上升=大腿向前（屈髋）。
+ * 编码器与扭矩正方向同向，模型两侧均以向后伸展为正：
+ * encoder_sign=[+1,-1]，motor_sign=[+1,-1]；
+ * q_model=[ang_left,-ang_right]，qd_model=[speed_left,-speed_right]；
+ * driver_joint_nm=[active_model_nm_left,-active_model_nm_right]。
+ * IMU输入使用已校正机身系A（X前、Y左、Z上），模型B为X右、Y前、Z上。
+ * 将A作为部署接口传感器系S时，quat_sb=[0.7071067812,0,0,-0.7071067812]，
+ * quat_wb=quat_ws*quat_sb，gyro_B=transpose(R_sb)*gyro_S=[-gyro_A.y,gyro_A.x,gyro_A.z]。
+ * quat_ws须为该机身系到Z向上世界系的Hamilton wxyz，不能混入原始传感器系姿态。
+ * 机身角速度已为rad/s、姿态角为rad，不重复转换或直接互换roll/pitch名称。
+ * 此处仅记录接入约定，尚未执行算法、配置部署库或改变电机输出。
+ */
+void control_mode1_poll(void)
+{
+}
+

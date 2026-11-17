@@ -1,0 +1,8 @@
+2026-11-12 read-only DAP verification after hardware-FP build.
+Initial bulk read had CMSIS-DAP command mismatches; incomplete dump was NOT treated as image validation. Retried at100kHz, obtained first262144bytes, then separate4096byte tail at500kHz. Combined data matches all265328 populated HEX bytes in Objects/zhuban_led.hex, zero mismatches.
+No halt, reset, flash write, runtime register write, remote injection or motion command was performed. CPU running at completion.
+CPACR=0x00f00000; selftest_ok=1; accepted UART mode3; zero stateDONE6/switch0.
+60 live (not coherently halted) diagnostic samples: statusOK0=33, WARMUP1=24, BAD_INPUT(-1)=3. ticks9917->9966.
+last_compute_us max6289 (6.289ms), warmup min26us. Prior software-FP observed29.162ms. Full inference now fits20ms period; no board worst-case guarantee from this short capture.
+Observed actual motor TX mode1: examples left-0.0607151Nm/right-1.2439494Nm with KP10 each; other captures torque0/KP0 during warmup/reset. UART mode3 data8/9 carried matching commands at corresponding sample; angles data4/5 in degrees. Fields/frames sampled at different instants can differ.
+Conclusion: hardware FP and network inference produce nonzero commands on hardware; compute timing blocker resolved in sampled workload. Intermittent BAD_INPUT/re-warmup remains; exact input/timing guard responsible is not isolated by this read-only capture, so sustained control is not yet verified stable.

@@ -1,0 +1,1 @@
+PASS actual ARM: startup default off, UART9 bit0 opens/closes mode3 torque, zero/KP0 when off, signed paired torque/KP10 when on, bad-frame rejection, event hold, exit/reentry, bit3 priority, mode1 zero edge preserved; no mode3 zero event

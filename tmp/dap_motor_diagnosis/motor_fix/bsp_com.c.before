@@ -1,0 +1,196 @@
+#include "bsp_com.h"
+#include "ota_protocol.h"
+
+
+#include <string.h>
+#include <stdint.h>
+#include <stdbool.h>
+
+#include "usart.h"
+
+#define BSP_COM_RS485_RX_TIMEOUT_US 63000
+
+/*
+这里COM 通信口使用RS485 从机 ，不会主动发送数据，只有在收到主机的请求后才会发送数据
+*/
+
+
+#define COM1_RX_BUFFER_SIZE 256
+#define COM1_TX_BUFFER_SIZE 256
+
+
+
+static uint8_t  COM1_RX_Buffer_tmp[COM1_RX_BUFFER_SIZE];
+
+ uint8_t  COM1_RX_Buffer[COM1_RX_BUFFER_SIZE];
+static volatile uint32_t COM1_Rx_Count = 0;
+ uint8_t  COM1_TX_Buffer[COM1_TX_BUFFER_SIZE];
+static volatile bool COM1_TxCptflag = true;
+static bool COM1_OTA_ResetAck;
+
+
+
+
+
+void bsp_com_init(void)
+{
+	
+	 UART1_RS485_R;
+	//使能DMA 接收
+   HAL_UARTEx_ReceiveToIdle_DMA(&huart1,COM1_RX_Buffer,COM1_RX_BUFFER_SIZE);
+}
+
+
+
+bool bsp_com_send(uint8_t *data, uint16_t size)
+{
+		if(!COM1_TxCptflag)
+		{
+			return false;
+		}
+		if((data == 0) || (size == 0) || (size > COM1_TX_BUFFER_SIZE))
+		{
+			return false;
+		}
+    //从用户缓冲区拷贝数据到DMA发送缓冲区，防止用户缓冲区被修改导致发送数据错误
+    memcpy(COM1_TX_Buffer, data, size);
+
+		COM1_OTA_ResetAck = size == 9U && data[0] == OTA_FRAME_HEADER_0 &&
+        data[1] == OTA_FRAME_HEADER_1 && data[3] == OTA_MASTER_ID &&
+        data[4] == 2U && data[5] == 5U && data[6] == 0U;
+        COM1_TxCptflag =false;
+		
+		/* 发送前将RS485芯片切换到发送模式。 */
+    UART1_RS485_W;
+    //开启DMA发送
+		if(HAL_UART_Transmit_DMA(&huart1,COM1_TX_Buffer, size) != HAL_OK)
+		{
+			COM1_TxCptflag = true;
+			return false;
+		}
+		return true;
+		
+}
+
+
+
+
+
+void COM1_RX_ClearData(void)
+{
+    COM1_Rx_Count = 0;
+}
+
+
+
+bool COM1_RX_GetData(uint8_t *data, uint16_t *size)
+{
+    if(COM1_Rx_Count > 0)
+    {
+        memcpy(data, COM1_RX_Buffer_tmp, COM1_Rx_Count);
+        *size = COM1_Rx_Count;
+			  COM1_RX_ClearData();
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}   
+
+
+void COM1_ReSet()
+{
+		
+	   HAL_UARTEx_ReceiveToIdle_DMA(&huart1,COM1_RX_Buffer,COM1_RX_BUFFER_SIZE);
+}
+
+
+
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t size)
+{
+		if(huart->Instance != USART1)
+		{
+			return;
+		}
+
+	    //从DMA接收缓冲区拷贝数据到用户缓冲区，防止收到的第二帧数据覆盖第一帧数据
+    memcpy(COM1_RX_Buffer_tmp,COM1_RX_Buffer, size);
+    COM1_Rx_Count = size;
+
+    //开启下一次DMA接收
+	 HAL_UARTEx_ReceiveToIdle_DMA(&huart1,COM1_RX_Buffer,COM1_RX_BUFFER_SIZE);
+}
+
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
+{
+		if(huart->Instance == USART1)
+		{
+			
+			 /* 应答帧发送完成，立即切回接收模式。 */
+        UART1_RS485_R;
+			COM1_TxCptflag = true;
+            if (COM1_OTA_ResetAck) ota_response_sent();
+		}
+}
+	
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
+{		
+		if (huart->Instance == USART1) // 替换为目标串口
+    {
+        uint32_t error_code = HAL_UART_GetError(huart);
+
+            __HAL_UART_CLEAR_FLAG(huart, UART_CLEAR_PEF | UART_CLEAR_FEF | 
+                                         UART_CLEAR_NEF | UART_CLEAR_OREF | 
+                                         UART_CLEAR_IDLEF);
+            (void)huart->Instance->RDR;
+    
+
+        // 2. 强行终止异常的 DMA 接收
+        HAL_UART_AbortReceive(huart);
+
+        // 3. 重置内部错误码与接收状态机
+        huart->ErrorCode = HAL_UART_ERROR_NONE;
+        huart->RxState = HAL_UART_STATE_READY;
+        huart->gState = HAL_UART_STATE_READY;
+
+        // 4. 清理缓冲区并重新开启不定长 DMA 接收
+        memset(COM1_RX_Buffer, 0, COM1_RX_BUFFER_SIZE);
+        HAL_UARTEx_ReceiveToIdle_DMA(&huart1,COM1_RX_Buffer,COM1_RX_BUFFER_SIZE);;
+        
+        // 5. 关闭不需要触发中断的 DMA 半传输中断（避免多余进入 RxEventCallback）
+        __HAL_DMA_DISABLE_IT(huart->hdmarx, DMA_IT_HT);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

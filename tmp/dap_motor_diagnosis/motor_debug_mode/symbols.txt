@@ -1,0 +1,891 @@
+
+========================================================================
+
+** ELF Header Information
+
+    File Name: C:\Users\libai\Desktop\X1\imu_caiji\zhuban_caiji\Objects\zhuban_led.axf
+
+    Machine class: ELFCLASS32 (32-bit)
+    Data encoding: ELFDATA2LSB (Little endian)
+    Header version: EV_CURRENT (Current version)
+    Operating System ABI: none
+    ABI Version: 0
+    File Type: ET_EXEC (Executable) (2)
+    Machine: EM_ARM (ARM)
+
+    Image Entry point: 0x080002cd
+    Flags: EF_ARM_HASENTRY + EF_ARM_ABI_FLOAT_SOFT (0x05000202)
+
+    ARM ELF revision: 5 (ABI version 2)
+
+    Conforms to Soft float procedure-call standard
+
+    Built with
+    Component: Arm Compiler for Embedded 6.24 Tool: armasm [5f371400]
+    Component: Arm Compiler for Embedded 6.24 Tool: armlink [5f371500]
+
+    Header size: 52 bytes (0x34)
+    Program header entry size: 32 bytes (0x20)
+    Section header entry size: 40 bytes (0x28)
+
+    Program header entries: 1
+    Section header entries: 15
+
+    Program header offset: 133056 (0x000207c0)
+    Section header offset: 133088 (0x000207e0)
+
+    Section header string table index: 14
+
+========================================================================
+
+** Program header #0 (PT_LOAD) [PF_X + PF_W + PF_R + PF_ARM_ENTRY]
+    Size : 32024 bytes (23992 bytes in file)
+    Virtual address: 0x08000000 (Alignment 8)
+
+
+========================================================================
+
+** Section #1 'ER_IROM1' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 23936 bytes (alignment 8)
+    Address: 0x08000000
+
+
+** Section #2 'RW_IRAM1' (SHT_PROGBITS) [SHF_ALLOC + SHF_WRITE]
+    Size   : 56 bytes (alignment 8)
+    Address: 0x20000000
+
+
+** Section #3 'RW_IRAM1' (SHT_NOBITS) [SHF_ALLOC + SHF_WRITE]
+    Size   : 6728 bytes (alignment 8)
+    Address: 0x20000550
+
+
+** Section #4 '.debug_abbrev' (SHT_PROGBITS)
+    Size   : 3743 bytes
+
+
+** Section #5 '.debug_frame' (SHT_PROGBITS)
+    Size   : 4648 bytes
+
+
+** Section #6 '.debug_info' (SHT_PROGBITS)
+    Size   : 34775 bytes
+
+
+** Section #7 '.debug_line' (SHT_PROGBITS)
+    Size   : 15545 bytes
+
+
+** Section #8 '.debug_ranges' (SHT_PROGBITS)
+    Size   : 912 bytes
+
+
+** Section #9 '.debug_str' (SHT_PROGBITS)
+    Size   : 25398 bytes
+
+
+** Section #10 '.symtab' (SHT_SYMTAB)
+    Size   : 11600 bytes (alignment 4)
+    String table #11 '.strtab'
+    Last local symbol no. 369
+
+    Symbol table .symtab (724 symbols, 369 local)
+
+      #  Symbol Name                Value      Bind  Sec  Type  Vis  Size
+    ========================================================================
+
+      1  $d.realdata                0x08000000   Lc    1   --   De 
+      2  $t                         0x080002cc   Lc    1   --   De 
+      3  $d                         0x08000328   Lc    1   --   De 
+      4  $t                         0x08000330   Lc    1   --   De 
+      5  $d                         0x080003de   Lc    1   --   De 
+      6  $t                         0x080003fc   Lc    1   --   De 
+      7  $d                         0x080005f4   Lc    1   --   De 
+      8  $t                         0x080005f8   Lc    1   --   De 
+      9  $d                         0x08000660   Lc    1   --   De 
+     10  $t                         0x08000664   Lc    1   --   De 
+     11  $d                         0x080006c8   Lc    1   --   De 
+     12  $t                         0x080006cc   Lc    1   --   De 
+     13  $d                         0x08004c38   Lc    1   --   De 
+     14  $t                         0x08004c48   Lc    1   --   De 
+     15  $d                         0x08004d46   Lc    1   --   De 
+     16  $t                         0x08004d6c   Lc    1   --   De 
+     17  $d                         0x08004fc2   Lc    1   --   De 
+     18  $t                         0x08005010   Lc    1   --   De 
+     19  $d                         0x08005158   Lc    1   --   De 
+     20  $t                         0x0800518c   Lc    1   --   De 
+     21  $d                         0x080052de   Lc    1   --   De 
+     22  $t                         0x08005314   Lc    1   --   De 
+     23  $d                         0x08005388   Lc    1   --   De 
+     24  $t                         0x0800538c   Lc    1   --   De 
+     25  $d                         0x08005464   Lc    1   --   De 
+     26  $t                         0x08005468   Lc    1   --   De 
+     27  $d                         0x08005470   Lc    1   --   De 
+     28  $t                         0x08005474   Lc    1   --   De 
+     29  $d                         0x080055a8   Lc    1   --   De 
+     30  $t                         0x080055ec   Lc    1   --   De 
+     31  $d                         0x08005630   Lc    1   --   De 
+     32  $t                         0x08005634   Lc    1   --   De 
+     33  $d                         0x08005660   Lc    1   --   De 
+     34  $t                         0x08005664   Lc    1   --   De 
+     35  $d                         0x080056bc   Lc    1   --   De 
+     36  $t                         0x080056c0   Lc    1   --   De 
+     37  $d                         0x080056f0   Lc    1   --   De 
+     38  $t                         0x080056f4   Lc    1   --   De 
+     39  $d                         0x080057b4   Lc    1   --   De 
+     40  $t                         0x080057b8   Lc    1   --   De 
+     41  $d                         0x0800581c   Lc    1   --   De 
+     42  $t                         0x08005820   Lc    1   --   De 
+     43  $d                         0x080058fc   Lc    1   --   De 
+     44  $t                         0x08005900   Lc    1   --   De 
+     45  $d                         0x0800599a   Lc    1   --   De 
+     46  $t                         0x0800599e   Lc    1   --   De 
+     47  $d                         0x08005a20   Lc    1   --   De 
+     48  $t                         0x08005a24   Lc    1   --   De 
+     49  $d                         0x08005ab8   Lc    1   --   De 
+     50  $t                         0x08005b18   Lc    1   --   De 
+     51  $d                         0x08005b44   Lc    1   --   De 
+     52  $t                         0x08005b48   Lc    1   --   De 
+     53  $d                         0x08005c28   Lc    1   --   De 
+     54  $t                         0x08005c2c   Lc    1   --   De 
+     55  $d.realdata                0x08005d14   Lc    1   --   De 
+     56  $d.realdata                0x20000000   Lc    2   --   De 
+     57  main.c                     0x00000000   Lc  Abs  File  De 
+     58  buttons_scan_1ms           0x08001541   Lc    1  Code  De   0xba
+     59  buttons_init               0x080014e9   Lc    1  Code  De   0x58
+     60  SysTick_Config             0x08000a19   Lc    1  Code  De   0x52
+     61  led_timer_init             0x08002541   Lc    1  Code  De   0xb4
+     62  __NVIC_SetPriority         0x08001021   Lc    1  Code  De   0x42
+     63  __NVIC_ClearPendingIRQ     0x08000e41   Lc    1  Code  De   0x30
+     64  __NVIC_EnableIRQ           0x08000f31   Lc    1  Code  De   0x30
+     65  green_on                   0x20000008   Lc    2  Data  De   0x1
+     66  button_debounce_ms         0x200005b4   Lc    3  Data  De   0x3
+     67  system_stm32h7xx.c         0x00000000   Lc  Abs  File  De 
+     68  wait_bits                  0x08004961   Lc    1  Code  De   0x42
+     69  Startup\startup_stm32h723xx.s
+                                    0x00000000   Lc  Abs  File  De 
+     70  STACK                      0x20000f98   Lc    3  Sect  De   0x1000
+     71  Stack_Mem                  0x20000f98   Lc    3  Data  De   0x1000
+     72  __initial_sp               0x20001f98   Lc    3  Data  De 
+     73  HEAP                       0x20000d98   Lc    3  Sect  De   0x200
+     74  Heap_Mem                   0x20000d98   Lc    3  Data  De   0x200
+     75  RESET                      0x08000000   Lc    1  Sect  De   0x2cc
+     76  .text                      0x080003b4   Lc    1  Sect  De   0x48
+     77  imu.c                      0x00000000   Lc  Abs  File  De 
+     78  sample_timer_init          0x08004121   Lc    1  Code  De   0xa4
+     79  start_sensor               0x08004311   Lc    1  Code  De   0xd0
+     80  __NVIC_SetPriority         0x08001069   Lc    1  Code  De   0x42
+     81  __NVIC_ClearPendingIRQ     0x08000e71   Lc    1  Code  De   0x30
+     82  __NVIC_EnableIRQ           0x08000f61   Lc    1  Code  De   0x30
+     83  stream_enabled             0x20000d58   Lc    3  Data  De   0x4
+     84  sensor                     0x20000d38   Lc    3  Data  De   0x1c
+     85  retry_at                   0x200008c8   Lc    3  Data  De   0x4
+     86  ready                      0x200008c0   Lc    3  Data  De   0x4
+     87  have_previous              0x2000088c   Lc    3  Data  De   0x4
+     88  consecutive_errors         0x200005b8   Lc    3  Data  De   0x4
+     89  previous_read              0x200008a4   Lc    3  Data  De   0x4
+     90  .L__const.start_sensor.bus 0x08005d34   Lc    1  Data  De   0x10
+     91  imu_bus.c                  0x00000000   Lc  Abs  File  De 
+     92  peripheral_enable          0x080034b1   Lc    1  Code  De   0x32
+     93  __NVIC_SetPriority         0x080010b1   Lc    1  Code  De   0x42
+     94  __NVIC_ClearPendingIRQ     0x08000ea1   Lc    1  Code  De   0x30
+     95  __NVIC_EnableIRQ           0x08000f91   Lc    1  Code  De   0x30
+     96  sample_complete            0x08004079   Lc    1  Code  De   0x5c
+     97  begin                      0x08001491   Lc    1  Code  De   0x56
+     98  wait_flag                  0x080049f1   Lc    1  Code  De   0x66
+     99  finish                     0x08001781   Lc    1  Code  De   0x64
+    100  sample_active              0x20000d14   Lc    3  Data  De   0x4
+    101  sample_started             0x20000d34   Lc    3  Data  De   0x4
+    102  sample_done                0x20000d28   Lc    3  Data  De   0x4
+    103  sample_address             0x20000d18   Lc    3  Data  De   0x1
+    104  sample_phase               0x20000d2d   Lc    3  Data  De   0x1
+    105  sample_index               0x20000d2c   Lc    3  Data  De   0x1
+    106  sample_bytes               0x20000d19   Lc    3  Data  De   0xc
+    107  sample_result              0x20000d30   Lc    3  Data  De   0x4
+    108  icm_imu_i2c.c              0x00000000   Lc  Abs  File  De 
+    109  address_valid              0x08001189   Lc    1  Code  De   0x2e
+    110  model_from_id              0x08002ed9   Lc    1  Code  De   0x3e
+    111  read_regs                  0x08003761   Lc    1  Code  De   0x4e
+    112  model_valid                0x08002f19   Lc    1  Code  De   0x36
+    113  reset_and_wait             0x08003f41   Lc    1  Code  De   0x138
+    114  update_bits                0x08004849   Lc    1  Code  De   0x5a
+    115  configure_42688_interface  0x08001601   Lc    1  Code  De   0xdc
+    116  write_reg                  0x08004a59   Lc    1  Code  De   0x44
+    117  signed_be16                0x080041c9   Lc    1  Code  De   0x36
+    118  mahony.c                   0x00000000   Lc  Abs  File  De 
+    119  limit                      0x080025f9   Lc    1  Code  De   0x46
+    120  initialized                0x20000890   Lc    3  Data  De   0x4
+    121  integral                   0x20000894   Lc    3  Data  De   0xc
+    122  q                          0x200008b0   Lc    3  Data  De   0x10
+    123  battery.c                  0x00000000   Lc  Abs  File  De 
+    124  wait_bits                  0x080049a9   Lc    1  Code  De   0x48
+    125  fail                       0x08001749   Lc    1  Code  De   0x32
+    126  publish                    0x080035d9   Lc    1  Code  De   0x184
+    127  active                     0x200005b0   Lc    3  Data  De   0x4
+    128  ready                      0x200008c4   Lc    3  Data  De   0x4
+    129  started_at                 0x20000d54   Lc    3  Data  De   0x4
+    130  publish.boundary           0x08005d44   Lc    1  Data  De   0xc
+    131  publish.half_period        0x08005d50   Lc    1  Data  De   0x10
+    132  reserved_uart2.c           0x00000000   Lc  Abs  File  De 
+    133  __NVIC_SetPriority         0x080010f9   Lc    1  Code  De   0x42
+    134  __NVIC_ClearPendingIRQ     0x08000ed1   Lc    1  Code  De   0x30
+    135  __NVIC_EnableIRQ           0x08000fc1   Lc    1  Code  De   0x30
+    136  receive_poll               0x080037b1   Lc    1  Code  De   0x1c4
+    137  td_mcu_encode              0x080044a1   Lc    1  Code  De   0x9a
+    138  mcu_uart_stream_push       0x08002d99   Lc    1  Code  De   0x13a
+    139  td_mcu_decode              0x080043e1   Lc    1  Code  De   0xc0
+    140  td_mcu_get_u32             0x08004559   Lc    1  Code  De   0xc
+    141  td_mcu_get_float           0x08004541   Lc    1  Code  De   0x18
+    142  td_mcu_put_u32             0x08004581   Lc    1  Code  De   0x28
+    143  td_mcu_put_float           0x08004569   Lc    1  Code  De   0x18
+    144  tx_index                   0x20000d90   Lc    3  Data  De   0x4
+    145  tx_busy                    0x20000d8c   Lc    3  Data  De   0x4
+    146  consumed_epoch             0x200005bc   Lc    3  Data  De   0x4
+    147  rx_epoch                   0x200008cc   Lc    3  Data  De   0x4
+    148  rx_tail                    0x20000d10   Lc    3  Data  De   0x4
+    149  rx_head                    0x200008d0   Lc    3  Data  De   0x4
+    150  rx_stream                  0x20000cd4   Lc    3  Data  De   0x3c
+    151  previous_send              0x200008a8   Lc    3  Data  De   0x4
+    152  tx_buffer                  0x20000d5c   Lc    3  Data  De   0x30
+    153  rx_ring                    0x200008d4   Lc    3  Data  De   0x400
+    154  motor_bus.c                0x00000000   Lc  Abs  File  De 
+    155  __ARM_isfinitef            0x08000e29   Lc    1  Code  De   0x14
+    156  __ARM_isfinite             0x08000e09   Lc    1  Code  De   0x1a
+    157  pins                       0x080034e9   Lc    1  Code  De   0xf0
+    158  uart_init                  0x080045a9   Lc    1  Code  De   0x50
+    159  receive_poll               0x08003979   Lc    1  Code  De   0x176
+    160  update_rx_idle             0x080048a9   Lc    1  Code  De   0xb6
+    161  sample_rx_pin              0x080040d9   Lc    1  Code  De   0x42
+    162  start_motor_command_frame  0x08004201   Lc    1  Code  De   0x10a
+    163  enable_tx                  0x08001709   Lc    1  Code  De   0x3c
+    164  uart_irq                   0x080045f9   Lc    1  Code  De   0x24e
+    165  __NVIC_SetPriority         0x08001141   Lc    1  Code  De   0x42
+    166  __NVIC_ClearPendingIRQ     0x08000f01   Lc    1  Code  De   0x30
+    167  __NVIC_EnableIRQ           0x08000ff1   Lc    1  Code  De   0x30
+    168  motor_stream_push          0x080033f9   Lc    1  Code  De   0xa2
+    169  motor_u32                  0x080034a1   Lc    1  Code  De   0xc
+    170  motor_decode               0x080031e9   Lc    1  Code  De   0xa8
+    171  diagnostics                0x080016e1   Lc    1  Code  De   0x28
+    172  motor_encode               0x08003291   Lc    1  Code  De   0x98
+    173  motor_put                  0x080033c9   Lc    1  Code  De   0x2e
+    174  right                      0x200002ac   Lc    2  Data  De   0x2a0
+    175  left                       0x2000000c   Lc    2  Data  De   0x2a0
+    176  previous_send              0x200008ac   Lc    3  Data  De   0x4
+    177  previous_diag              0x200008a0   Lc    3  Data  De   0x4
+    178  dc.s                       0x00000000   Lc  Abs  File  De 
+    179  ../clib/memcpset.s         0x00000000   Lc  Abs  File  De 
+    180  .text                      0x080003fc   Lc    1  Sect  De   0x84
+    181  ../clib/memcpset.s         0x00000000   Lc  Abs  File  De 
+    182  .text                      0x08000480   Lc    1  Sect  De   0x4e
+    183  ../clib/heapaux.c          0x00000000   Lc  Abs  File  De 
+    184  .text                      0x080004ce   Lc    1  Sect  De 
+    185  ../clib/angel/startup.s    0x00000000   Lc  Abs  File  De 
+    186  !!!main                    0x080002cc   Lc    1  Sect  De   0x8
+    187  ../fplib/f2d.s             0x00000000   Lc  Abs  File  De 
+    188  x$fpl$f2d                  0x0800534c   Lc    1  Sect  De   0x56
+    189  ../fplib/faddsub.s         0x00000000   Lc  Abs  File  De 
+    190  x$fpl$fadd                 0x080053a4   Lc    1  Sect  De   0xc4
+    191  _fadd1                     0x080053b3   Lc    1  Code  De 
+    192  x$fpl$frsb                 0x08005a24   Lc    1  Sect  De   0x14
+    193  x$fpl$fsub                 0x08005b48   Lc    1  Sect  De   0xea
+    194  _fsub1                     0x08005b57   Lc    1  Code  De 
+    195  ../fplib/fcmp.s            0x00000000   Lc  Abs  File  De 
+    196  x$fpl$fcmp                 0x08005474   Lc    1  Sect  De   0x54
+    197  ../fplib/fdiv.s            0x00000000   Lc  Abs  File  De 
+    198  x$fpl$fdiv                 0x080054e0   Lc    1  Sect  De   0x184
+    199  _fdiv1                     0x080054e1   Lc    1  Code  De 
+    200  ../fplib/fflt.s            0x00000000   Lc  Abs  File  De 
+    201  x$fpl$ffltu                0x08005734   Lc    1  Sect  De   0x26
+    202  x$fpl$fflt                 0x08005704   Lc    1  Sect  De   0x30
+    203  ../fplib/fmul.s            0x00000000   Lc  Abs  File  De 
+    204  x$fpl$fmul                 0x0800582c   Lc    1  Sect  De   0x102
+    205  ../mathlib/asinf.c         0x00000000   Lc  Abs  File  De 
+    206  i.asinf                    0x08004c48   Lc    1  Sect  De 
+    207  ../mathlib/atan2f.c        0x00000000   Lc  Abs  File  De 
+    208  i.atan2f                   0x08004d6c   Lc    1  Sect  De 
+    209  ../mathlib/cosf.c          0x00000000   Lc  Abs  File  De 
+    210  i.cosf                     0x08005010   Lc    1  Sect  De 
+    211  ../mathlib/sinf.c          0x00000000   Lc  Abs  File  De 
+    212  i.sinf                     0x0800518c   Lc    1  Sect  De 
+    213  ../mathlib/sqrtf.c         0x00000000   Lc  Abs  File  De 
+    214  i.sqrtf                    0x08005314   Lc    1  Sect  De 
+    215  ../clib/angel/kernel.s     0x00000000   Lc  Abs  File  De 
+    216  .ARM.Collect$$rtentry$$00000000
+                                    0x08000394   Lc    1  Sect  De 
+    217  ../clib/fenv.c             0x00000000   Lc  Abs  File  De 
+    218  .text                      0x080004d4   Lc    1  Sect  De 
+    219  ../clib/memcpset.s         0x00000000   Lc  Abs  File  De 
+    220  .text                      0x080004ea   Lc    1  Sect  De   0x8a
+    221  ../clib/memcpset.s         0x00000000   Lc  Abs  File  De 
+    222  .text                      0x08000574   Lc    1  Sect  De   0x7a
+    223  ../fplib/dretinf.s         0x00000000   Lc  Abs  File  De 
+    224  x$fpl$dretinf              0x08005340   Lc    1  Sect  De   0xc
+    225  ../fplib/feqf.s            0x00000000   Lc  Abs  File  De 
+    226  x$fpl$feqf                 0x08005664   Lc    1  Sect  De   0x68
+    227  ../fplib/ffix.s            0x00000000   Lc  Abs  File  De 
+    228  x$fpl$ffix                 0x080056cc   Lc    1  Sect  De   0x36
+    229  ../fplib/fgeqf.s           0x00000000   Lc  Abs  File  De 
+    230  x$fpl$fgeqf                0x0800575c   Lc    1  Sect  De   0x68
+    231  ../fplib/fleqf.s           0x00000000   Lc  Abs  File  De 
+    232  x$fpl$fleqf                0x080057c4   Lc    1  Sect  De   0x68
+    233  ../fplib/fnaninf.s         0x00000000   Lc  Abs  File  De 
+    234  x$fpl$fnaninf              0x0800592e   Lc    1  Sect  De   0x8c
+    235  ../fplib/fretinf.s         0x00000000   Lc  Abs  File  De 
+    236  x$fpl$fretinf              0x080059ba   Lc    1  Sect  De   0xa
+    237  ../fplib/frnd.s            0x00000000   Lc  Abs  File  De 
+    238  x$fpl$frnd                 0x080059c4   Lc    1  Sect  De   0x60
+    239  ../fplib/fsqrt.s           0x00000000   Lc  Abs  File  De 
+    240  x$fpl$fsqrt                0x08005a38   Lc    1  Sect  De   0x110
+    241  ../fplib/scalbnf.s         0x00000000   Lc  Abs  File  De 
+    242  x$fpl$scalbnf              0x08005c96   Lc    1  Sect  De   0x4c
+    243  ../fplib/usenofp.s         0x00000000   Lc  Abs  File  De 
+    244  x$fpl$usenofp              0x08005d12   Lc    1  Sect  De 
+    245  ../mathlib/fpclassifyf.c   0x00000000   Lc  Abs  File  De 
+    246  i.__ARM_fpclassifyf        0x08004a9c   Lc    1  Sect  De 
+    247  ../mathlib/funder.c        0x00000000   Lc  Abs  File  De 
+    248  i.__mathlib_flt_infnan     0x08004ac2   Lc    1  Sect  De 
+    249  i.__mathlib_flt_infnan2    0x08004ac8   Lc    1  Sect  De 
+    250  i.__mathlib_flt_invalid    0x08004acc   Lc    1  Sect  De 
+    251  i.__mathlib_flt_underflow  0x08004ad4   Lc    1  Sect  De 
+    252  ../mathlib/rredf.c         0x00000000   Lc  Abs  File  De 
+    253  i.__mathlib_rredf2         0x08004ae0   Lc    1  Sect  De 
+    254  .constdata                 0x08005d14   Lc    1  Sect  De   0x20
+    255  twooverpi                  0x08005d14   Lc    1  Data  De   0x20
+    256  ../clib/angel/kernel.s     0x00000000   Lc  Abs  File  De 
+    257  .ARM.Collect$$rtentry$$00000002
+                                    0x08000394   Lc    1  Sect  De 
+    258  .ARM.Collect$$rtentry$$00000009
+                                    0x0800039a   Lc    1  Sect  De 
+    259  .ARM.Collect$$rtentry$$0000000A
+                                    0x0800039a   Lc    1  Sect  De   0x4
+    260  .ARM.Collect$$rtentry$$0000000C
+                                    0x0800039e   Lc    1  Sect  De 
+    261  .ARM.Collect$$rtentry$$0000000D
+                                    0x0800039e   Lc    1  Sect  De   0x8
+    262  ../clib/angel/kernel.s     0x00000000   Lc  Abs  File  De 
+    263  .ARM.Collect$$rtentry$$00000004
+                                    0x08000394   Lc    1  Sect  De   0x6
+    264  ../clib/angel/rt.s         0x00000000   Lc  Abs  File  De 
+    265  ../clib/angel/rt.s         0x00000000   Lc  Abs  File  De 
+    266  .text                      0x080005f0   Lc    1  Sect  De   0x8
+    267  ../clib/memcpset.s         0x00000000   Lc  Abs  File  De 
+    268  .text                      0x080005f8   Lc    1  Sect  De   0x64
+    269  ../fplib/fcheck1.s         0x00000000   Lc  Abs  File  De 
+    270  x$fpl$fcheck1              0x08005468   Lc    1  Sect  De   0xc
+    271  ../fplib/fcmpi.s           0x00000000   Lc  Abs  File  De 
+    272  x$fpl$fcmpinf              0x080054c8   Lc    1  Sect  De   0x18
+    273  ../clib/angel/sys.s        0x00000000   Lc  Abs  File  De 
+    274  .text                      0x0800065c   Lc    1  Sect  De   0x8
+    275  .bss                       0x20000550   Lc    3  Sect  De   0x60
+    276  ../clib/angel/sys.s        0x00000000   Lc  Abs  File  De 
+    277  .text                      0x08000664   Lc    1  Sect  De   0x4a
+    278  ../clib/stdlib.c           0x00000000   Lc  Abs  File  De 
+    279  .text                      0x080006ae   Lc    1  Sect  De 
+    280  ../clib/angel/boardlib.s   0x00000000   Lc  Abs  File  De 
+    281  ../clib/angel/boardlib.s   0x00000000   Lc  Abs  File  De 
+    282  ../clib/angel/boardlib.s   0x00000000   Lc  Abs  File  De 
+    283  ../clib/libinit.s          0x00000000   Lc  Abs  File  De 
+    284  .ARM.Collect$$libinit$$00000000
+                                    0x0800038c   Lc    1  Sect  De   0x2
+    285  ../fplib/retnan.s          0x00000000   Lc  Abs  File  De 
+    286  x$fpl$retnan               0x08005c32   Lc    1  Sect  De   0x64
+    287  ../clib/angel/kernel.s     0x00000000   Lc  Abs  File  De 
+    288  .ARM.Collect$$rtexit$$00000000
+                                    0x080003a6   Lc    1  Sect  De   0x2
+    289  ../clib/libinit.s          0x00000000   Lc  Abs  File  De 
+    290  .ARM.Collect$$libinit$$00000002
+                                    0x0800038e   Lc    1  Sect  De 
+    291  .ARM.Collect$$libinit$$00000004
+                                    0x0800038e   Lc    1  Sect  De 
+    292  .ARM.Collect$$libinit$$00000006
+                                    0x0800038e   Lc    1  Sect  De 
+    293  .ARM.Collect$$libinit$$0000000C
+                                    0x0800038e   Lc    1  Sect  De 
+    294  .ARM.Collect$$libinit$$0000000E
+                                    0x0800038e   Lc    1  Sect  De 
+    295  .ARM.Collect$$libinit$$00000010
+                                    0x0800038e   Lc    1  Sect  De 
+    296  .ARM.Collect$$libinit$$00000013
+                                    0x0800038e   Lc    1  Sect  De 
+    297  .ARM.Collect$$libinit$$00000015
+                                    0x0800038e   Lc    1  Sect  De 
+    298  .ARM.Collect$$libinit$$00000017
+                                    0x0800038e   Lc    1  Sect  De 
+    299  .ARM.Collect$$libinit$$00000019
+                                    0x0800038e   Lc    1  Sect  De 
+    300  .ARM.Collect$$libinit$$0000001B
+                                    0x0800038e   Lc    1  Sect  De 
+    301  .ARM.Collect$$libinit$$0000001D
+                                    0x0800038e   Lc    1  Sect  De 
+    302  .ARM.Collect$$libinit$$0000001F
+                                    0x0800038e   Lc    1  Sect  De 
+    303  .ARM.Collect$$libinit$$00000021
+                                    0x0800038e   Lc    1  Sect  De 
+    304  .ARM.Collect$$libinit$$00000023
+                                    0x0800038e   Lc    1  Sect  De 
+    305  .ARM.Collect$$libinit$$00000025
+                                    0x0800038e   Lc    1  Sect  De 
+    306  .ARM.Collect$$libinit$$00000027
+                                    0x0800038e   Lc    1  Sect  De 
+    307  .ARM.Collect$$libinit$$0000002E
+                                    0x0800038e   Lc    1  Sect  De 
+    308  .ARM.Collect$$libinit$$00000030
+                                    0x0800038e   Lc    1  Sect  De 
+    309  .ARM.Collect$$libinit$$00000032
+                                    0x0800038e   Lc    1  Sect  De 
+    310  .ARM.Collect$$libinit$$00000034
+                                    0x0800038e   Lc    1  Sect  De 
+    311  .ARM.Collect$$libinit$$00000035
+                                    0x0800038e   Lc    1  Sect  De   0x2
+    312  ../fplib/trapv.s           0x00000000   Lc  Abs  File  De 
+    313  x$fpl$trapveneer           0x08005ce2   Lc    1  Sect  De   0x30
+    314  ../clib/angel/kernel.s     0x00000000   Lc  Abs  File  De 
+    315  .ARM.Collect$$rtexit$$00000002
+                                    0x080003a8   Lc    1  Sect  De 
+    316  .ARM.Collect$$rtexit$$00000003
+                                    0x080003a8   Lc    1  Sect  De   0x4
+    317  .ARM.Collect$$rtexit$$00000004
+                                    0x080003ac   Lc    1  Sect  De   0x6
+    318  ../clib/armsys.c           0x00000000   Lc  Abs  File  De 
+    319  ../clib/armsys.c           0x00000000   Lc  Abs  File  De 
+    320  ../fplib/fpinit.s          0x00000000   Lc  Abs  File  De 
+    321  ../clib/angel/sysapp.c     0x00000000   Lc  Abs  File  De 
+    322  .text                      0x080006c0   Lc    1  Sect  De 
+    323  ../clib/angel/sysapp.c     0x00000000   Lc  Abs  File  De 
+    324  ../clib/angel/boardlib.s   0x00000000   Lc  Abs  File  De 
+    325  ../clib/armsys.c           0x00000000   Lc  Abs  File  De 
+    326  ../clib/armsys.c           0x00000000   Lc  Abs  File  De 
+    327  ../clib/libinit.s          0x00000000   Lc  Abs  File  De 
+    328  .ARM.Collect$$libshutdown$$00000000
+                                    0x08000390   Lc    1  Sect  De   0x2
+    329  ../fplib/fpinit_empty.s    0x00000000   Lc  Abs  File  De 
+    330  ../clib/angel/sysapp.c     0x00000000   Lc  Abs  File  De 
+    331  ../clib/angel/sysapp.c     0x00000000   Lc  Abs  File  De 
+    332  ../clib/angel/sys.s        0x00000000   Lc  Abs  File  De 
+    333  .text                      0x080006cc   Lc    1  Sect  De   0x2
+    334  ../clib/angel/sys.s        0x00000000   Lc  Abs  File  De 
+    335  .text                      0x080006ce   Lc    1  Sect  De 
+    336  ../clib/heapalloc.c        0x00000000   Lc  Abs  File  De 
+    337  ../clib/signal.c           0x00000000   Lc  Abs  File  De 
+    338  ../clib/signal.c           0x00000000   Lc  Abs  File  De 
+    339  ../clib/libinit.s          0x00000000   Lc  Abs  File  De 
+    340  .ARM.Collect$$libshutdown$$00000002
+                                    0x08000392   Lc    1  Sect  De 
+    341  .ARM.Collect$$libshutdown$$00000004
+                                    0x08000392   Lc    1  Sect  De 
+    342  .ARM.Collect$$libshutdown$$00000007
+                                    0x08000392   Lc    1  Sect  De 
+    343  .ARM.Collect$$libshutdown$$0000000A
+                                    0x08000392   Lc    1  Sect  De 
+    344  .ARM.Collect$$libshutdown$$0000000C
+                                    0x08000392   Lc    1  Sect  De 
+    345  .ARM.Collect$$libshutdown$$0000000F
+                                    0x08000392   Lc    1  Sect  De 
+    346  .ARM.Collect$$libshutdown$$00000010
+                                    0x08000392   Lc    1  Sect  De   0x2
+    347  ../clib/angel/rt.s         0x00000000   Lc  Abs  File  De 
+    348  ../clib/signal.c           0x00000000   Lc  Abs  File  De 
+    349  ../clib/signal.c           0x00000000   Lc  Abs  File  De 
+    350  ../clib/signal.c           0x00000000   Lc  Abs  File  De 
+    351  ../clib/signal.c           0x00000000   Lc  Abs  File  De 
+    352  ../clib/angel/sysapp.c     0x00000000   Lc  Abs  File  De 
+    353  ../clib/angel/sysapp.c     0x00000000   Lc  Abs  File  De 
+    354  ../clib/signal.s           0x00000000   Lc  Abs  File  De 
+    355  ../clib/signal.c           0x00000000   Lc  Abs  File  De 
+    356  ../clib/signal.c           0x00000000   Lc  Abs  File  De 
+    357  ../clib/signal.c           0x00000000   Lc  Abs  File  De 
+    358  ../clib/signal.c           0x00000000   Lc  Abs  File  De 
+    359  ../clib/signal.c           0x00000000   Lc  Abs  File  De 
+    360  ../clib/signal.c           0x00000000   Lc  Abs  File  De 
+    361  ../clib/signal.c           0x00000000   Lc  Abs  File  De 
+    362  ../clib/signal.c           0x00000000   Lc  Abs  File  De 
+    363  ../clib/angel/dczerorl.s   0x00000000   Lc  Abs  File  De 
+    364  !!dczerorl                 0x08000330   Lc    1  Sect  De   0x3a
+    365  ../clib/angel/scatter.s    0x00000000   Lc  Abs  File  De 
+    366  !!!scatter                 0x080002d4   Lc    1  Sect  De   0x5c
+    367  !!handler_null             0x0800036c   Lc    1  Sect  De   0x2
+    368  ../clib/angel/handlers.s   0x00000000   Lc  Abs  File  De 
+    369  !!handler_zi               0x08000370   Lc    1  Sect  De   0x1c
+    370  BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$PE$PLD8$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$~IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$IEEEX$EBA8$UX$STANDARDLIB$REQ8$PRES8$EABIv2
+                                    0x00000000   Gb  Abs   --   Hi 
+    371  __fp_init_empty            0x00000000   Gb  Abs   --   Hi 
+    372  __Vectors_Size             0x000002cc   Gb  Abs   --   Hi 
+    373  __Vectors                  0x08000000   Gb    1  Data  Hi   0x4
+    374  __Vectors_End              0x080002cc   Gb    1  Data  Hi 
+    375  __main                     0x080002cd   Gb    1  Code  Hi   0x8
+    376  __scatterload              0x080002d5   Gb    1  Code  Hi 
+    377  __scatterload_rt2          0x080002d5   Gb    1  Code  Hi   0x54
+    378  __scatterload_rt2_thumb_only
+                                    0x080002d5   Gb    1  Code  Hi 
+    379  __scatterload_loop         0x080002df   Gb    1  Code  Hi 
+    380  __decompress               0x08000331   Gb    1  Code  Hi   0x3a
+    381  __decompress0              0x08000331   Gb    1  Code  Hi 
+    382  __scatterload_null         0x0800036d   Gb    1  Code  Hi   0x2
+    383  __scatterload_zeroinit     0x08000371   Gb    1  Code  Hi   0x1c
+    384  __rt_lib_init              0x0800038d   Gb    1  Code  De 
+    385  __rt_lib_init_alloca_1     0x0800038f   Gb    1  Code  Hi 
+    386  __rt_lib_init_argv_1       0x0800038f   Gb    1  Code  Hi 
+    387  __rt_lib_init_atexit_1     0x0800038f   Gb    1  Code  Hi 
+    388  __rt_lib_init_clock_1      0x0800038f   Gb    1  Code  Hi 
+    389  __rt_lib_init_cpp_1        0x0800038f   Gb    1  Code  Hi 
+    390  __rt_lib_init_exceptions_1 0x0800038f   Gb    1  Code  Hi 
+    391  __rt_lib_init_fp_1         0x0800038f   Gb    1  Code  Hi 
+    392  __rt_lib_init_fp_trap_1    0x0800038f   Gb    1  Code  Hi 
+    393  __rt_lib_init_getenv_1     0x0800038f   Gb    1  Code  Hi 
+    394  __rt_lib_init_heap_1       0x0800038f   Gb    1  Code  Hi 
+    395  __rt_lib_init_lc_collate_1 0x0800038f   Gb    1  Code  Hi 
+    396  __rt_lib_init_lc_ctype_1   0x0800038f   Gb    1  Code  Hi 
+    397  __rt_lib_init_lc_monetary_1
+                                    0x0800038f   Gb    1  Code  Hi 
+    398  __rt_lib_init_lc_numeric_1 0x0800038f   Gb    1  Code  Hi 
+    399  __rt_lib_init_lc_time_1    0x0800038f   Gb    1  Code  Hi 
+    400  __rt_lib_init_preinit_1    0x0800038f   Gb    1  Code  Hi 
+    401  __rt_lib_init_rand_1       0x0800038f   Gb    1  Code  Hi 
+    402  __rt_lib_init_relocate_pie_1
+                                    0x0800038f   Gb    1  Code  Hi 
+    403  __rt_lib_init_return       0x0800038f   Gb    1  Code  Hi 
+    404  __rt_lib_init_signal_1     0x0800038f   Gb    1  Code  Hi 
+    405  __rt_lib_init_stdio_1      0x0800038f   Gb    1  Code  Hi 
+    406  __rt_lib_init_user_alloc_1 0x0800038f   Gb    1  Code  Hi 
+    407  __rt_lib_shutdown          0x08000391   Gb    1  Code  De 
+    408  __rt_lib_shutdown_cpp_1    0x08000393   Gb    1  Code  Hi 
+    409  __rt_lib_shutdown_fp_trap_1
+                                    0x08000393   Gb    1  Code  Hi 
+    410  __rt_lib_shutdown_heap_1   0x08000393   Gb    1  Code  Hi 
+    411  __rt_lib_shutdown_return   0x08000393   Gb    1  Code  Hi 
+    412  __rt_lib_shutdown_signal_1 0x08000393   Gb    1  Code  Hi 
+    413  __rt_lib_shutdown_stdio_1  0x08000393   Gb    1  Code  Hi 
+    414  __rt_lib_shutdown_user_alloc_1
+                                    0x08000393   Gb    1  Code  Hi 
+    415  __rt_entry                 0x08000395   Gb    1  Code  Hi 
+    416  __rt_entry_presh_1         0x08000395   Gb    1  Code  Hi 
+    417  __rt_entry_sh              0x08000395   Gb    1  Code  Hi 
+    418  __rt_entry_li              0x0800039b   Gb    1  Code  Hi 
+    419  __rt_entry_postsh_1        0x0800039b   Gb    1  Code  Hi 
+    420  __rt_entry_main            0x0800039f   Gb    1  Code  Hi 
+    421  __rt_entry_postli_1        0x0800039f   Gb    1  Code  Hi 
+    422  __rt_exit                  0x080003a7   Gb    1  Code  De 
+    423  __rt_exit_ls               0x080003a9   Gb    1  Code  Hi 
+    424  __rt_exit_prels_1          0x080003a9   Gb    1  Code  Hi 
+    425  __rt_exit_exit             0x080003ad   Gb    1  Code  Hi 
+    426  Reset_Handler              0x080003b5   Wk    1  Code  Hi   0xc
+    427  NMI_Handler                0x080003c1   Wk    1  Code  Hi   0x2
+    428  HardFault_Handler          0x080003c3   Wk    1  Code  Hi   0x2
+    429  MemManage_Handler          0x080003c5   Wk    1  Code  Hi   0x2
+    430  BusFault_Handler           0x080003c7   Wk    1  Code  Hi   0x2
+    431  UsageFault_Handler         0x080003c9   Wk    1  Code  Hi   0x2
+    432  SVC_Handler                0x080003cb   Wk    1  Code  Hi   0x2
+    433  DebugMon_Handler           0x080003cd   Wk    1  Code  Hi   0x2
+    434  PendSV_Handler             0x080003cf   Wk    1  Code  Hi   0x2
+    435  ADC3_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    436  ADC_IRQHandler             0x080003d3   Wk    1  Code  Hi 
+    437  BDMA_Channel0_IRQHandler   0x080003d3   Wk    1  Code  Hi 
+    438  BDMA_Channel1_IRQHandler   0x080003d3   Wk    1  Code  Hi 
+    439  BDMA_Channel2_IRQHandler   0x080003d3   Wk    1  Code  Hi 
+    440  BDMA_Channel3_IRQHandler   0x080003d3   Wk    1  Code  Hi 
+    441  BDMA_Channel4_IRQHandler   0x080003d3   Wk    1  Code  Hi 
+    442  BDMA_Channel5_IRQHandler   0x080003d3   Wk    1  Code  Hi 
+    443  BDMA_Channel6_IRQHandler   0x080003d3   Wk    1  Code  Hi 
+    444  BDMA_Channel7_IRQHandler   0x080003d3   Wk    1  Code  Hi 
+    445  CEC_IRQHandler             0x080003d3   Wk    1  Code  Hi 
+    446  COMP1_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    447  CORDIC_IRQHandler          0x080003d3   Wk    1  Code  Hi 
+    448  CRS_IRQHandler             0x080003d3   Wk    1  Code  Hi 
+    449  DCMI_PSSI_IRQHandler       0x080003d3   Wk    1  Code  Hi 
+    450  DFSDM1_FLT0_IRQHandler     0x080003d3   Wk    1  Code  Hi 
+    451  DFSDM1_FLT1_IRQHandler     0x080003d3   Wk    1  Code  Hi 
+    452  DFSDM1_FLT2_IRQHandler     0x080003d3   Wk    1  Code  Hi 
+    453  DFSDM1_FLT3_IRQHandler     0x080003d3   Wk    1  Code  Hi 
+    454  DMA1_Stream0_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    455  DMA1_Stream1_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    456  DMA1_Stream2_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    457  DMA1_Stream3_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    458  DMA1_Stream4_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    459  DMA1_Stream5_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    460  DMA1_Stream6_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    461  DMA1_Stream7_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    462  DMA2D_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    463  DMA2_Stream0_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    464  DMA2_Stream1_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    465  DMA2_Stream2_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    466  DMA2_Stream3_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    467  DMA2_Stream4_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    468  DMA2_Stream5_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    469  DMA2_Stream6_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    470  DMA2_Stream7_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    471  DMAMUX1_OVR_IRQHandler     0x080003d3   Wk    1  Code  Hi 
+    472  DMAMUX2_OVR_IRQHandler     0x080003d3   Wk    1  Code  Hi 
+    473  DTS_IRQHandler             0x080003d3   Wk    1  Code  Hi 
+    474  ECC_IRQHandler             0x080003d3   Wk    1  Code  Hi 
+    475  ETH_IRQHandler             0x080003d3   Wk    1  Code  Hi 
+    476  ETH_WKUP_IRQHandler        0x080003d3   Wk    1  Code  Hi 
+    477  EXTI0_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    478  EXTI15_10_IRQHandler       0x080003d3   Wk    1  Code  Hi 
+    479  EXTI1_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    480  EXTI2_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    481  EXTI3_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    482  EXTI4_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    483  EXTI9_5_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    484  FDCAN1_IT0_IRQHandler      0x080003d3   Wk    1  Code  Hi 
+    485  FDCAN1_IT1_IRQHandler      0x080003d3   Wk    1  Code  Hi 
+    486  FDCAN2_IT0_IRQHandler      0x080003d3   Wk    1  Code  Hi 
+    487  FDCAN2_IT1_IRQHandler      0x080003d3   Wk    1  Code  Hi 
+    488  FDCAN3_IT0_IRQHandler      0x080003d3   Wk    1  Code  Hi 
+    489  FDCAN3_IT1_IRQHandler      0x080003d3   Wk    1  Code  Hi 
+    490  FDCAN_CAL_IRQHandler       0x080003d3   Wk    1  Code  Hi 
+    491  FLASH_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    492  FMAC_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    493  FMC_IRQHandler             0x080003d3   Wk    1  Code  Hi 
+    494  FPU_IRQHandler             0x080003d3   Wk    1  Code  Hi 
+    495  HSEM1_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    496  I2C1_ER_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    497  I2C1_EV_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    498  I2C2_ER_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    499  I2C2_EV_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    500  I2C3_ER_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    501  I2C3_EV_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    502  I2C5_ER_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    503  I2C5_EV_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    504  LPTIM1_IRQHandler          0x080003d3   Wk    1  Code  Hi 
+    505  LPTIM2_IRQHandler          0x080003d3   Wk    1  Code  Hi 
+    506  LPTIM3_IRQHandler          0x080003d3   Wk    1  Code  Hi 
+    507  LPTIM4_IRQHandler          0x080003d3   Wk    1  Code  Hi 
+    508  LPTIM5_IRQHandler          0x080003d3   Wk    1  Code  Hi 
+    509  LPUART1_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    510  LTDC_ER_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    511  LTDC_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    512  MDIOS_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    513  MDIOS_WKUP_IRQHandler      0x080003d3   Wk    1  Code  Hi 
+    514  MDMA_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    515  OCTOSPI1_IRQHandler        0x080003d3   Wk    1  Code  Hi 
+    516  OCTOSPI2_IRQHandler        0x080003d3   Wk    1  Code  Hi 
+    517  OTG_HS_EP1_IN_IRQHandler   0x080003d3   Wk    1  Code  Hi 
+    518  OTG_HS_EP1_OUT_IRQHandler  0x080003d3   Wk    1  Code  Hi 
+    519  OTG_HS_IRQHandler          0x080003d3   Wk    1  Code  Hi 
+    520  OTG_HS_WKUP_IRQHandler     0x080003d3   Wk    1  Code  Hi 
+    521  PVD_AVD_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    522  RCC_IRQHandler             0x080003d3   Wk    1  Code  Hi 
+    523  RNG_IRQHandler             0x080003d3   Wk    1  Code  Hi 
+    524  RTC_Alarm_IRQHandler       0x080003d3   Wk    1  Code  Hi 
+    525  RTC_WKUP_IRQHandler        0x080003d3   Wk    1  Code  Hi 
+    526  SAI1_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    527  SAI4_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    528  SDMMC1_IRQHandler          0x080003d3   Wk    1  Code  Hi 
+    529  SDMMC2_IRQHandler          0x080003d3   Wk    1  Code  Hi 
+    530  SPDIF_RX_IRQHandler        0x080003d3   Wk    1  Code  Hi 
+    531  SPI1_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    532  SPI2_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    533  SPI3_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    534  SPI4_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    535  SPI5_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    536  SPI6_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    537  SWPMI1_IRQHandler          0x080003d3   Wk    1  Code  Hi 
+    538  TAMP_STAMP_IRQHandler      0x080003d3   Wk    1  Code  Hi 
+    539  TIM15_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    540  TIM16_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    541  TIM17_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    542  TIM1_BRK_IRQHandler        0x080003d3   Wk    1  Code  Hi 
+    543  TIM1_CC_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    544  TIM1_TRG_COM_IRQHandler    0x080003d3   Wk    1  Code  Hi 
+    545  TIM1_UP_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    546  TIM23_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    547  TIM24_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    548  TIM2_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    549  TIM3_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    550  TIM4_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    551  TIM5_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    552  TIM8_BRK_TIM12_IRQHandler  0x080003d3   Wk    1  Code  Hi 
+    553  TIM8_CC_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    554  TIM8_TRG_COM_TIM14_IRQHandler
+                                    0x080003d3   Wk    1  Code  Hi 
+    555  TIM8_UP_TIM13_IRQHandler   0x080003d3   Wk    1  Code  Hi 
+    556  UART4_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    557  UART5_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    558  UART7_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    559  UART8_IRQHandler           0x080003d3   Wk    1  Code  Hi 
+    560  USART10_IRQHandler         0x080003d3   Wk    1  Code  Hi 
+    561  USART1_IRQHandler          0x080003d3   Wk    1  Code  Hi 
+    562  USART2_IRQHandler          0x080003d3   Wk    1  Code  Hi 
+    563  WAKEUP_PIN_IRQHandler      0x080003d3   Wk    1  Code  Hi 
+    564  WWDG_IRQHandler            0x080003d3   Wk    1  Code  Hi 
+    565  __user_initial_stackheap   0x080003d5   Gb    1  Code  Hi 
+    566  __aeabi_memmove            0x080003fd   Gb    1  Code  De 
+    567  __rt_memmove               0x080003fd   Gb    1  Code  De   0x84
+    568  __memmove_lastfew          0x0800045d   Gb    1  Code  De 
+    569  __aeabi_memclr4            0x08000481   Gb    1  Code  De 
+    570  __aeabi_memclr8            0x08000481   Gb    1  Code  De 
+    571  __rt_memclr_w              0x08000481   Gb    1  Code  De 
+    572  _memset_w                  0x08000485   Gb    1  Code  De   0x4a
+    573  __use_two_region_memory    0x080004cf   Gb    1  Code  Hi   0x2
+    574  __rt_heap_escrow$2region   0x080004d1   Gb    1  Code  De   0x2
+    575  __rt_heap_expand$2region   0x080004d3   Gb    1  Code  De   0x2
+    576  __read_errno               0x080004d5   Gb    1  Code  De   0xa
+    577  __set_errno                0x080004df   Gb    1  Code  De   0xc
+    578  __aeabi_memcpy             0x080004eb   Gb    1  Code  De 
+    579  __rt_memcpy                0x080004eb   Gb    1  Code  De   0x8a
+    580  _memcpy_lastbytes          0x08000551   Gb    1  Code  De 
+    581  __aeabi_memmove4           0x08000575   Gb    1  Code  De 
+    582  __aeabi_memmove8           0x08000575   Gb    1  Code  De 
+    583  __rt_memmove_w             0x08000575   Gb    1  Code  De   0x7a
+    584  __memmove_aligned          0x0800059b   Gb    1  Code  De 
+    585  __memmove_lastfew_aligned  0x080005d3   Gb    1  Code  De 
+    586  __aeabi_errno_addr         0x080005f1   Gb    1  Code  De   0x8
+    587  __errno$intlibspace        0x080005f1   Gb    1  Code  De 
+    588  __rt_errno_addr$intlibspace
+                                    0x080005f1   Gb    1  Code  De 
+    589  __aeabi_memcpy4            0x080005f9   Gb    1  Code  De 
+    590  __aeabi_memcpy8            0x080005f9   Gb    1  Code  De 
+    591  __rt_memcpy_w              0x080005f9   Gb    1  Code  De   0x64
+    592  _memcpy_lastbytes_aligned  0x08000641   Gb    1  Code  De 
+    593  __user_libspace            0x0800065d   Wk    1  Code  De   0x8
+    594  __user_perproc_libspace    0x0800065d   Wk    1  Code  De 
+    595  __user_perthread_libspace  0x0800065d   Wk    1  Code  De 
+    596  __user_setup_stackheap     0x08000665   Gb    1  Code  De   0x4a
+    597  exit                       0x080006af   Gb    1  Code  De   0x12
+    598  _sys_exit                  0x080006c1   Gb    1  Code  De   0x8
+    599  __I$use$semihosting        0x080006cd   Gb    1  Code  Hi 
+    600  __use_no_semihosting_swi   0x080006cd   Gb    1  Code  Hi   0x2
+    601  __semihosting_library_function
+                                    0x080006cf   Gb    1  Code  Hi 
+    602  BoardClock_Config550MHz    0x080006d1   Gb    1  Code  Hi   0x188
+    603  ExitRun0Mode               0x08000859   Gb    1  Code  Hi   0x28
+    604  I2C4_ER_IRQHandler         0x08000881   Gb    1  Code  Hi   0x8
+    605  I2C4_EV_IRQHandler         0x08000889   Gb    1  Code  Hi   0x18e
+    606  SysTick_Handler            0x08000a71   Gb    1  Code  Hi   0x8
+    607  SystemCoreClockUpdate      0x08000a79   Gb    1  Code  Hi   0x74
+    608  SystemInit                 0x08000af1   Gb    1  Code  Hi   0xa8
+    609  TIM6_DAC_IRQHandler        0x08000b99   Gb    1  Code  Hi   0x4c
+    610  TIM7_IRQHandler            0x08000be9   Gb    1  Code  Hi   0x44
+    611  UART9_IRQHandler           0x08000c31   Gb    1  Code  Hi   0x1b6
+    612  USART3_IRQHandler          0x08000de9   Gb    1  Code  Hi   0x10
+    613  USART6_IRQHandler          0x08000df9   Gb    1  Code  Hi   0x10
+    614  battery_init               0x080011b9   Gb    1  Code  Hi   0x1d2
+    615  battery_poll               0x08001391   Gb    1  Code  Hi   0xfc
+    616  icm_imu_decode_motion      0x080017e9   Gb    1  Code  Hi   0x114
+    617  icm_imu_init               0x08001901   Gb    1  Code  Hi   0x284
+    618  imu_bus_cancel_sample      0x08001b89   Gb    1  Code  Hi   0x58
+    619  imu_bus_init               0x08001be1   Gb    1  Code  Hi   0xe0
+    620  imu_bus_read               0x08001cc1   Gb    1  Code  Hi   0x12e
+    621  imu_bus_recover            0x08001df1   Gb    1  Code  Hi   0x160
+    622  imu_bus_schedule_sample    0x08001f51   Gb    1  Code  Hi   0xd8
+    623  imu_bus_take_sample        0x08002029   Gb    1  Code  Hi   0xa6
+    624  imu_bus_write              0x080020d1   Gb    1  Code  Hi   0xa2
+    625  imu_delay_us               0x08002179   Gb    1  Code  Hi   0x26
+    626  imu_get_data               0x080021a1   Gb    1  Code  Hi   0x80
+    627  imu_init                   0x08002221   Gb    1  Code  Hi   0x28
+    628  imu_poll                   0x08002249   Gb    1  Code  Hi   0x2e4
+    629  imu_time_us                0x08002531   Gb    1  Code  Hi   0xa
+    630  mahony_reset               0x08002641   Gb    1  Code  Hi   0x38
+    631  mahony_update              0x08002679   Gb    1  Code  Hi   0x610
+    632  main                       0x08002c89   Gb    1  Code  Hi   0x10a
+    633  motor_bus_init             0x08002f51   Gb    1  Code  Hi   0xfe
+    634  motor_bus_poll             0x08003051   Gb    1  Code  Hi   0xd2
+    635  motor_debug_set_command    0x08003129   Gb    1  Code  Hi   0xba
+    636  motor_get_feedback         0x08003329   Gb    1  Code  Hi   0xa0
+    637  reserved_uart2_init        0x08003af1   Gb    1  Code  Hi   0x2bc
+    638  reserved_uart2_poll        0x08003db1   Gb    1  Code  Hi   0x18e
+    639  __ARM_fpclassifyf          0x08004a9d   Gb    1  Code  De   0x26
+    640  __mathlib_flt_infnan       0x08004ac3   Gb    1  Code  De   0x6
+    641  __mathlib_flt_infnan2      0x08004ac9   Gb    1  Code  De   0x4
+    642  __mathlib_flt_invalid      0x08004acd   Gb    1  Code  De   0x8
+    643  __mathlib_flt_underflow    0x08004ad5   Gb    1  Code  De   0xa
+    644  __mathlib_rredf2           0x08004ae1   Gb    1  Code  De   0x158
+    645  asinf                      0x08004c49   Gb    1  Code  De   0xfe
+    646  atan2f                     0x08004d6d   Gb    1  Code  De   0x256
+    647  cosf                       0x08005011   Gb    1  Code  De   0x148
+    648  sinf                       0x0800518d   Gb    1  Code  De   0x152
+    649  sqrtf                      0x08005315   Gb    1  Code  De   0x2c
+    650  __fpl_dretinf              0x08005341   Gb    1  Code  De   0xc
+    651  __aeabi_f2d                0x0800534d   Gb    1  Code  De 
+    652  _f2d                       0x0800534d   Gb    1  Code  De   0x56
+    653  __aeabi_fadd               0x080053a5   Gb    1  Code  De 
+    654  _fadd                      0x080053a5   Gb    1  Code  De   0xc4
+    655  __fpl_fcheck_NaN1          0x08005469   Gb    1  Code  Hi   0x6
+    656  __aeabi_fcmpeq             0x08005475   Gb    1  Code  De 
+    657  _feq                       0x08005475   Gb    1  Code  De   0xe
+    658  _fneq                      0x08005483   Gb    1  Code  De   0xe
+    659  __aeabi_fcmpgt             0x08005491   Gb    1  Code  De 
+    660  _fgr                       0x08005491   Gb    1  Code  De   0xe
+    661  __aeabi_fcmpge             0x0800549f   Gb    1  Code  De 
+    662  _fgeq                      0x0800549f   Gb    1  Code  De   0xe
+    663  __aeabi_fcmple             0x080054ad   Gb    1  Code  De 
+    664  _fleq                      0x080054ad   Gb    1  Code  De   0xe
+    665  __aeabi_fcmplt             0x080054bb   Gb    1  Code  De 
+    666  _fls                       0x080054bb   Gb    1  Code  De   0xe
+    667  __fpl_fcmp_Inf             0x080054c9   Gb    1  Code  De   0x18
+    668  __aeabi_fdiv               0x080054e1   Gb    1  Code  De 
+    669  _fdiv                      0x080054e1   Gb    1  Code  De   0x180
+    670  __aeabi_cfcmpeq            0x08005665   Gb    1  Code  De 
+    671  _fcmpeq                    0x08005665   Gb    1  Code  De   0x68
+    672  __aeabi_f2iz               0x080056cd   Gb    1  Code  De 
+    673  _ffix                      0x080056cd   Gb    1  Code  De   0x36
+    674  __aeabi_i2f                0x08005705   Gb    1  Code  De 
+    675  _fflt                      0x08005705   Gb    1  Code  De   0x30
+    676  __aeabi_ui2f               0x08005735   Gb    1  Code  De 
+    677  _ffltu                     0x08005735   Gb    1  Code  De   0x26
+    678  _fcmpge                    0x0800575d   Gb    1  Code  De   0x68
+    679  __aeabi_cfcmple            0x080057c5   Gb    1  Code  De 
+    680  _fcmple                    0x080057c5   Gb    1  Code  De   0x68
+    681  __fpl_fcmple_InfNaN        0x08005817   Gb    1  Code  Pr 
+    682  __aeabi_fmul               0x0800582d   Gb    1  Code  De 
+    683  _fmul                      0x0800582d   Gb    1  Code  De   0x102
+    684  __fpl_fnaninf              0x0800592f   Gb    1  Code  De   0x8c
+    685  __fpl_fretinf              0x080059bb   Gb    1  Code  De   0xa
+    686  _frnd                      0x080059c5   Gb    1  Code  De   0x60
+    687  __aeabi_frsub              0x08005a25   Gb    1  Code  De 
+    688  _frsb                      0x08005a25   Gb    1  Code  De   0x14
+    689  _fsqrt                     0x08005a39   Gb    1  Code  De   0x110
+    690  __aeabi_fsub               0x08005b49   Gb    1  Code  De 
+    691  _fsub                      0x08005b49   Gb    1  Code  De   0xea
+    692  __fpl_return_NaN           0x08005c33   Gb    1  Code  Hi   0x64
+    693  __ARM_scalbnf              0x08005c97   Gb    1  Code  De   0x4c
+    694  __fpl_cmpreturn            0x08005ce3   Gb    1  Code  Hi   0x30
+    695  __I$use$fp                 0x08005d12   Gb    1   --   Hi 
+    696  Region$$Table$$Base        0x08005d60   Gb    1   --   Hi 
+    697  Region$$Table$$Limit       0x08005d80   Gb    1   --   Hi 
+    698  SystemCoreClock            0x20000000   Gb    2  Data  Hi   0x4
+    699  SystemD2Clock              0x20000004   Gb    2  Data  Hi   0x4
+    700  __libspace_start           0x20000550   Gb    3  Data  De   0x60
+    701  __temporary_stack_top$libspace
+                                    0x200005b0   Gb    3  Data  De 
+    702  g_battery_data             0x200005c0   Gb    3  Data  Hi   0x20
+    703  g_button_state             0x200005e0   Gb    3  Data  Hi   0x4
+    704  g_imu_data                 0x200005e4   Gb    3  Data  Hi   0x38
+    705  g_motor_debug_mode         0x2000061c   Gb    3  Data  Hi   0x4
+    706  g_motor_debug_reject_count 0x20000620   Gb    3  Data  Hi   0x4
+    707  g_motor_debug_torque_left  0x20000624   Gb    3  Data  Hi   0x4
+    708  g_motor_debug_torque_right 0x20000628   Gb    3  Data  Hi   0x4
+    709  g_motor_diag_left          0x2000062c   Gb    3  Data  Hi   0x1c
+    710  g_motor_diag_right         0x20000648   Gb    3  Data  Hi   0x1c
+    711  g_motor_left               0x20000664   Gb    3  Data  Hi   0x8c
+    712  g_motor_left_rx_recent     0x200006f0   Gb    3  Data  Hi   0x8c
+    713  g_motor_right              0x2000077c   Gb    3  Data  Hi   0x8c
+    714  g_uart2_error_count        0x20000808   Gb    3  Data  Hi   0x4
+    715  g_uart2_last_rx            0x2000080c   Gb    3  Data  Hi   0x4
+    716  g_uart2_rx_bad_tail_count  0x20000810   Gb    3  Data  Hi   0x4
+    717  g_uart2_rx_count           0x20000814   Gb    3  Data  Hi   0x4
+    718  g_uart2_rx_frame           0x20000818   Gb    3  Data  Hi   0x30
+    719  g_uart2_rx_frame_count     0x20000848   Gb    3  Data  Hi   0x4
+    720  g_uart2_rx_overflow_count  0x2000084c   Gb    3  Data  Hi   0x4
+    721  g_uart2_rx_timestamp_us    0x20000850   Gb    3  Data  Hi   0x4
+    722  g_uart2_rx_valid           0x20000854   Gb    3  Data  Hi   0x4
+    723  g_uart2_tx_count           0x20000858   Gb    3  Data  Hi   0x4
+    724  g_uart2_tx_frame           0x2000085c   Gb    3  Data  Hi   0x30
+
+
+** Section #11 '.strtab' (SHT_STRTAB)
+    Size   : 10732 bytes
+
+
+** Section #12 '.note' (SHT_NOTE)
+    Size   : 28 bytes (alignment 4)
+
+
+** Section #13 '.comment' (SHT_PROGBITS)
+    Size   : 1488 bytes
+
+
+** Section #14 '.shstrtab' (SHT_STRTAB)
+    Size   : 136 bytes
+
+

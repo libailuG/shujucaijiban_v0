@@ -1,0 +1,3 @@
+已按用户明确选择完成：不加入500ms超时。以真实代码、README、build.log、test.log、flash.log为准。
+开关1=data1.bit0。上行4/5角度、6/7角速度、8/9实际扭矩；下行8/9目标扭矩。
+打开mode1+KP5，关闭mode1零扭矩+KP0；无消息保持最后有效指令，禁止mode0。

@@ -1,0 +1,35 @@
+双电机通信首版，2026-11-11
+
+已加入实际工程：C:\Users\libai\Desktop\X1\imu_caiji\zhuban_caiji\zhuban_led.uvprojx
+新增App/motor_bus.c、motor_bus.h、motor_protocol.h；main初始化后主循环调用poll。
+build.ps1和uvprojx均加入新模块。原有改动前文件保存在本目录before。
+
+左126：JP3/USART3，PD8 TX/PD9 RX AF7，PD10方向。
+右127：JP2/USART6，PC6 TX/PC7 RX AF7，PC8方向。
+3Mbps 8N1，PCLK137.5MHz BRR46，实际名义2.98913Mbps。
+主循环按5000us周期同时调度两路；属于名义200Hz，存在主循环调度抖动，错过时不补发积压帧。
+每帧固定mode0，其余数据零；调试器修改tx_frame也不会启用运动。
+设置ID等模式编号保留在协议枚举中，本版本没有开放执行接口。
+接收保留原始字段，mode1004 torque含义为磁编位置，不在此版本自动换算。
+
+观测变量g_motor_left/g_motor_right：
+tx_frame最近构造的发送帧；rx_frame最近收到且ID正确的反馈；
+tx_count发送完成次数；rx_frame_count反馈次数；rx_byte_count收到字节数；
+rx_timestamp_us最近反馈时间；rx_valid表示曾收到有效反馈，不表示实时在线；
+uart_errors/overflow_count/wrong_id_count/bad_tail_count/busy_skips为诊断计数。
+motor_get_feedback(0,&frame)读取左反馈，参数1读取右反馈；返回0表示尚无反馈。
+无断线停机、故障恢复、自动校准或C6控制映射。
+
+RS485采用GPIO方向、非阻塞2us发送使能预留时间及UART TC中断切回接收。
+2us为首版暂定裕量，仍需结合实装XL485及示波器验证，尚未测量电机应答延迟。
+RX每路512字节中断环形缓冲，主循环每次最多消费128字节。
+中断优先级6低于IMU/I2C的5；错误及溢出使解析器重新同步，不跨已知丢字节拼帧。
+实测需检查UART错误/溢出计数，以判断IMU中断抢占下的3Mbps突发接收能力。
+
+验证：
+1. 暂存工程build.ps1的-Wall -Wextra -Werror完整编译通过。
+2. 实际工程Keil全编译：0错误0警告，日志Objects/motor_5ms_build.log。
+3. 实际ARM编译的纯协议测试在Unicorn CortexM7运行通过：停止帧黄金字节、
+   非对齐编解码、负载字位保持、方向帧拒绝、所有分包点、连续帧、重复头及坏尾恢复。
+测试源protocol_test.c，运行器run_protocol_test.py；无串口依赖或实际发送。
+本次没有烧录。周期精度、实际收发和IMU/C6并行表现尚未上板验证。

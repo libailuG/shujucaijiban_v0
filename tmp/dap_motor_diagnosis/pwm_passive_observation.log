@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\libai\Desktop\X1\dege_caiji\tmp\dap_motor_diagnosis\motor_hid_relay.py", line 12, in <module>
+    if h==W.HANDLE(-1).value: raise C.WinError(C.get_last_error())
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] ϵͳ�Ҳ���ָ�����ļ���

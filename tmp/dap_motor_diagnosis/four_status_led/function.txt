@@ -1,0 +1,60 @@
+/* 蓝灯 PG14（低电平亮）的四路状态显示说明：
+ * 每轮：快速闪3下 -> 灭1秒 -> 左电机 -> 右电机 -> 板载IMU -> ESP32-C6
+ *       -> 灭2秒 -> 下一轮。看到三连闪后，第一组就是左电机。
+ * 起始标记：每次亮100ms，两次之间灭100ms；第三次亮后灭1000ms。
+ * 状态组：正常亮500ms，异常/未收到有效数据亮100ms，组间灭300ms；
+ *         C6组结束直接灭2000ms。每组开始时取状态，组内亮时长不变。
+ * 正常判据：有效反馈/采样持续更新；左/右电机超时200ms，IMU超时100ms，
+ *           C6超时500ms（预设，若C6实际发送更慢需同步调整）。
+ * 错误字节、零散字节不刷新状态；只看有效帧/成功采样计数及时间戳。
+ * 使用非阻塞状态机，不延时、不影响通信；绿灯电量和红灯用途不变。
+ * Watch: g_link_led_status bit0左/bit1右/bit2IMU/bit3C6，1表示近期有效；
+ *        g_link_led_phase=0..5起始标记，6/8/10/12分别为四组亮灯阶段，
+ *        7/9/11为组间隔，13为轮末间隔；g_link_led_on=1表示蓝灯亮。
+ */
+#define LINK_MOTOR_TIMEOUT_US 200000U
+#define LINK_IMU_TIMEOUT_US   100000U
+#define LINK_C6_TIMEOUT_US    500000U
+volatile uint32_t g_link_led_status, g_link_led_phase, g_link_led_on;
+static void link_status_led_poll(void)
+{
+    static uint32_t seen[4], stamp[4], fresh, phase_since, phase_duration;
+    static uint8_t started;
+    uint32_t now = imu_time_us();
+    uint32_t counts[4] = {g_motor_left.rx_frame_count, g_motor_right.rx_frame_count,
+        g_imu_data.sample_count, g_uart2_rx_frame_count};
+    uint32_t timestamps[4] = {g_motor_left.rx_timestamp_us, g_motor_right.rx_timestamp_us,
+        g_imu_data.timestamp_us, g_uart2_rx_timestamp_us};
+    uint32_t valid[4] = {g_motor_left.rx_valid, g_motor_right.rx_valid,
+        g_imu_data.valid, g_uart2_rx_valid};
+    static const uint32_t timeout[4] = {LINK_MOTOR_TIMEOUT_US, LINK_MOTOR_TIMEOUT_US,
+        LINK_IMU_TIMEOUT_US, LINK_C6_TIMEOUT_US};
+    for (unsigned i = 0; i < 4U; ++i) {
+        uint32_t bit = 1UL << i;
+        if (counts[i] != seen[i]) {
+            seen[i] = counts[i]; stamp[i] = timestamps[i]; fresh |= bit;
+        }
+        /* 超时后锁定为异常，直到新数据到达，避免TIM2回绕后旧数据假恢复。 */
+        if (!valid[i] || (uint32_t)(now - stamp[i]) >= timeout[i]) fresh &= ~bit;
+    }
+    g_link_led_status = fresh;
+    if (started && (uint32_t)(now - phase_since) < phase_duration) return;
+    uint32_t phase = started ? (g_link_led_phase + 1U) % 14U : 0U;
+    started = 1U; g_link_led_phase = phase; phase_since = now;
+    uint32_t on = 0U;
+    if (phase < 5U) {
+        on = (phase & 1U) == 0U; phase_duration = 100000U;
+    } else if (phase == 5U) {
+        phase_duration = 1000000U;
+    } else if (phase == 13U) {
+        phase_duration = 2000000U;
+    } else if ((phase & 1U) == 0U) {
+        unsigned channel = (phase - 6U) / 2U;
+        on = 1U; phase_duration = (fresh & (1UL << channel)) ? 500000U : 100000U;
+    } else {
+        phase_duration = 300000U;
+    }
+    g_link_led_on = on;
+    GPIOG->BSRR = on ? (BLUE_LED << 16) : BLUE_LED;
+}
+

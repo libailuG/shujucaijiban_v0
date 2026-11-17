@@ -1,0 +1,11 @@
+#ifndef MOTOR_DEBUG_MODE_H
+#define MOTOR_DEBUG_MODE_H
+#include "mcu_uart_protocol.h"
+/* 电机调试：左右角度[度]、速度rad/s、实际扭矩Nm；目标由data8/9给定。 */
+/* Event-based remote: hold accepted command until explicit switch1 OFF. */
+extern volatile uint32_t g_motor_debug_mode, g_motor_debug_reject_count;
+extern volatile float g_motor_debug_torque_left, g_motor_debug_torque_right;
+void motor_debug_mode_fill_feedback(volatile td_mcu_frame_t *frame);
+int motor_debug_set_command(uint32_t enabled, float left_torque, float right_torque);
+#endif
+

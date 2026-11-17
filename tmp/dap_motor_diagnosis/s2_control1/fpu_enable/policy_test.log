@@ -1,0 +1,3 @@
+PASS: network selftest, warmup, zero posture, joint signs, torque output signs/limit, stale feedback, exit/re-entry, period faults, zero inhibit, NaN
+PASS: nonzero body tilt, gyro axis mapping, velocity signs, actual motor mode1 torque/KP frame builder
+PASS: full UART9 mode3 data8/9 output command telemetry and stale-feedback zero telemetry

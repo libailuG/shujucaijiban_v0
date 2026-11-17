@@ -1,0 +1,20 @@
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:44)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Warn : DEPRECATED: auto-selecting transport "swd (dapdirect)". Use 'transport select swd' to suppress this message.
+Info : STLINK V2J46S7 (API v2) VID:PID 0483:3748
+Info : Target voltage: 3.227913
+Info : clock speed 100 kHz
+Info : SWD DPIDR 0x6ba02477
+Info : [stm32h7x.ap2] Examination succeed
+Error: [stm32h7x.cpu0] Cortex-M CPUID: 0x0 is unrecognized
+Error: [stm32h7x.cpu0] Examination failed
+Warn : target stm32h7x.cpu0 examination failed
+Info : [stm32h7x.ap2] gdb port disabled
+Info : [stm32h7x.cpu0] gdb port disabled
+AP2_ID
+0x10016483 0x700000 0x0
+AP0_CPUID
+Error: Target not examined yet
+failed to read memory

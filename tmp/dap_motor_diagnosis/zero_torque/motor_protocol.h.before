@@ -1,0 +1,48 @@
+#ifndef MOTOR_PROTOCOL_H
+#define MOTOR_PROTOCOL_H
+#include <stdint.h>
+#include <stddef.h>
+#include <string.h>
+#include <float.h>
+#define MOTOR_FRAME_SIZE 48U
+typedef struct {
+    uint32_t start_flag, motor_id, mode;
+    float torque, speed, ang, temp_board, temp_motor, KP, KD;
+    uint32_t error_flag, end_flag;
+} MotorFrame;
+typedef char motor_layout[(sizeof(MotorFrame)==48 && offsetof(MotorFrame,error_flag)==40 &&
+    offsetof(MotorFrame,KP)==32 && sizeof(float)==4 && FLT_MANT_DIG==24) ? 1 : -1];
+enum { MOTOR_STOP=0, MOTOR_POSITION=1, MOTOR_ZERO=2, MOTOR_SPEED=11,
+    MOTOR_FOC=1000, MOTOR_SET_ID=1001, MOTOR_MAG_X=1002, MOTOR_MAG_Y=1003,
+    MOTOR_READ_ENCODER=1004, MOTOR_READ_CURRENT=1005, MOTOR_WRITE_CURRENT=1006 };
+static inline uint32_t motor_u32(const uint8_t *p) {
+    return (uint32_t)p[0]|((uint32_t)p[1]<<8)|((uint32_t)p[2]<<16)|((uint32_t)p[3]<<24);
+}
+static inline void motor_put(uint8_t *p,uint32_t v) {
+    for(unsigned i=0;i<4;i++) p[i]=(uint8_t)(v>>(8*i));
+}
+/* Explicit LE words; memcpy preserves float bits without unaligned accesses. */
+static inline void motor_encode(uint8_t out[48],const MotorFrame *f) {
+    uint32_t words[12]; memcpy(words,f,48);
+    words[0]=0xAAAAAAAAU; words[11]=0xEEEEEEEEU;
+    for(unsigned i=0;i<12;i++) motor_put(out+4*i,words[i]);
+}
+static inline int motor_decode(MotorFrame *f,const uint8_t in[48]) {
+    uint32_t words[12];
+    if(motor_u32(in)!=0xBBBBBBBBU || motor_u32(in+44)!=0xDDDDDDDDU) return 0;
+    for(unsigned i=0;i<12;i++) words[i]=motor_u32(in+4*i);
+    memcpy(f,words,48); return 1;
+}
+typedef struct { uint8_t bytes[48]; unsigned used; uint32_t bad_tail; } MotorStream;
+static inline int motor_stream_push(MotorStream *s,uint8_t byte,MotorFrame *f) {
+    s->bytes[s->used++]=byte;
+    while(s->used>=4 && motor_u32(s->bytes)!=0xBBBBBBBBU) {
+        --s->used; memmove(s->bytes,s->bytes+1,s->used);
+    }
+    if(s->used<48) return 0;
+    if(motor_decode(f,s->bytes)) { s->used=0; return 1; }
+    ++s->bad_tail;
+    s->used=47; memmove(s->bytes,s->bytes+1,47);
+    return 0;
+}
+#endif

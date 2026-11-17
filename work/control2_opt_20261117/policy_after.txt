@@ -1,0 +1,2736 @@
+
+========================================================================
+
+** ELF Header Information
+
+    File Name: firmware/Objects/g1_assist_v10_policy.o
+
+    Machine class: ELFCLASS32 (32-bit)
+    Data encoding: ELFDATA2LSB (Little endian)
+    Header version: EV_CURRENT (Current version)
+    Operating System ABI: none
+    ABI Version: 0
+    File Type: ET_REL (Relocatable object) (1)
+    Machine: EM_ARM (ARM)
+
+    Entry offset (in SHF_ENTRYSECT section): 0x00000000
+    Flags: None (0x05000000)
+
+    ARM ELF revision: 5 (ABI version 2)
+
+    Header size: 52 bytes (0x34)
+    Program header entry size: 0 bytes (0x0)
+    Section header entry size: 40 bytes (0x28)
+
+    Program header entries: 0
+    Section header entries: 53
+
+    Program header offset: 0 (0x00000000)
+    Section header offset: 385156 (0x0005e084)
+
+    Section header string table index: 1
+
+========================================================================
+
+** Section #1 '.strtab' (SHT_STRTAB)
+    Size   : 1320 bytes
+
+
+** Section #2 '.text' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 0 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #3 '.text.g1_assist_v10_history_reset' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 194 bytes (alignment 8)
+    Address: 0x00000000
+
+    [Anonymous symbol #2]
+    $t
+    g1_assist_v10_history_reset
+        0x00000000:    b118        ..      CBZ      r0,{pc}+0xa ; 0xa
+        0x00000002:    2900        .)      CMP      r1,#0
+        0x00000004:    bf18        ..      IT       NE
+        0x00000006:    2a00        .*      CMPNE    r2,#0
+        0x00000008:    d100        ..      BNE      {pc}+0x4 ; 0xc
+        0x0000000a:    4770        pG      BX       lr
+        0x0000000c:    b510        ..      PUSH     {r4,lr}
+        0x0000000e:    f04f0c00    O...    MOV      r12,#0
+        0x00000012:    f04f0e00    O...    MOV      lr,#0
+        0x00000016:    bf00        ..      NOP      
+        0x00000018:    eb00030e    ....    ADD      r3,r0,lr
+        0x0000001c:    680c        .h      LDR      r4,[r1,#0]
+        0x0000001e:    f840400e    @..@    STR      r4,[r0,lr]
+        0x00000022:    f10e0e28    ..(.    ADD      lr,lr,#0x28
+        0x00000026:    6814        .h      LDR      r4,[r2,#0]
+        0x00000028:    f8c340c8    ...@    STR      r4,[r3,#0xc8]
+        0x0000002c:    f8c3c190    ....    STR      r12,[r3,#0x190]
+        0x00000030:    f1be0fc8    ....    CMP      lr,#0xc8
+        0x00000034:    684c        Lh      LDR      r4,[r1,#4]
+        0x00000036:    605c        \`      STR      r4,[r3,#4]
+        0x00000038:    6854        Th      LDR      r4,[r2,#4]
+        0x0000003a:    f8c340cc    ...@    STR      r4,[r3,#0xcc]
+        0x0000003e:    f8c3c194    ....    STR      r12,[r3,#0x194]
+        0x00000042:    680c        .h      LDR      r4,[r1,#0]
+        0x00000044:    609c        .`      STR      r4,[r3,#8]
+        0x00000046:    6814        .h      LDR      r4,[r2,#0]
+        0x00000048:    f8c340d0    ...@    STR      r4,[r3,#0xd0]
+        0x0000004c:    f8c3c198    ....    STR      r12,[r3,#0x198]
+        0x00000050:    684c        Lh      LDR      r4,[r1,#4]
+        0x00000052:    60dc        .`      STR      r4,[r3,#0xc]
+        0x00000054:    6854        Th      LDR      r4,[r2,#4]
+        0x00000056:    f8c340d4    ...@    STR      r4,[r3,#0xd4]
+        0x0000005a:    f8c3c19c    ....    STR      r12,[r3,#0x19c]
+        0x0000005e:    680c        .h      LDR      r4,[r1,#0]
+        0x00000060:    611c        .a      STR      r4,[r3,#0x10]
+        0x00000062:    6814        .h      LDR      r4,[r2,#0]
+        0x00000064:    f8c340d8    ...@    STR      r4,[r3,#0xd8]
+        0x00000068:    f8c3c1a0    ....    STR      r12,[r3,#0x1a0]
+        0x0000006c:    684c        Lh      LDR      r4,[r1,#4]
+        0x0000006e:    615c        \a      STR      r4,[r3,#0x14]
+        0x00000070:    6854        Th      LDR      r4,[r2,#4]
+        0x00000072:    f8c340dc    ...@    STR      r4,[r3,#0xdc]
+        0x00000076:    f8c3c1a4    ....    STR      r12,[r3,#0x1a4]
+        0x0000007a:    680c        .h      LDR      r4,[r1,#0]
+        0x0000007c:    619c        .a      STR      r4,[r3,#0x18]
+        0x0000007e:    6814        .h      LDR      r4,[r2,#0]
+        0x00000080:    f8c340e0    ...@    STR      r4,[r3,#0xe0]
+        0x00000084:    f8c3c1a8    ....    STR      r12,[r3,#0x1a8]
+        0x00000088:    684c        Lh      LDR      r4,[r1,#4]
+        0x0000008a:    61dc        .a      STR      r4,[r3,#0x1c]
+        0x0000008c:    6854        Th      LDR      r4,[r2,#4]
+        0x0000008e:    f8c340e4    ...@    STR      r4,[r3,#0xe4]
+        0x00000092:    f8c3c1ac    ....    STR      r12,[r3,#0x1ac]
+        0x00000096:    680c        .h      LDR      r4,[r1,#0]
+        0x00000098:    621c        .b      STR      r4,[r3,#0x20]
+        0x0000009a:    6814        .h      LDR      r4,[r2,#0]
+        0x0000009c:    f8c340e8    ...@    STR      r4,[r3,#0xe8]
+        0x000000a0:    f8c3c1b0    ....    STR      r12,[r3,#0x1b0]
+        0x000000a4:    684c        Lh      LDR      r4,[r1,#4]
+        0x000000a6:    625c        \b      STR      r4,[r3,#0x24]
+        0x000000a8:    6854        Th      LDR      r4,[r2,#4]
+        0x000000aa:    f8c340ec    ...@    STR      r4,[r3,#0xec]
+        0x000000ae:    f8c3c1b4    ....    STR      r12,[r3,#0x1b4]
+        0x000000b2:    d1b1        ..      BNE      {pc}-0x9a ; 0x18
+        0x000000b4:    f5007016    ...p    ADD      r0,r0,#0x258
+        0x000000b8:    f640212c    @.,!    MOV      r1,#0xa2c
+        0x000000bc:    f7fffffe    ....    BL       __aeabi_memclr4
+        0x000000c0:    bd10        ..      POP      {r4,pc}
+
+** Section #4 '.rel.text.g1_assist_v10_history_reset' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    1 relocations applied to section #3 '.text.g1_assist_v10_history_reset'
+
+
+** Section #5 '.ARM.exidx.text.g1_assist_v10_history_reset' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #3 '.text.g1_assist_v10_history_reset'
+
+
+** Section #6 '.rel.ARM.exidx.text.g1_assist_v10_history_reset' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    1 relocations applied to section #5 '.ARM.exidx.text.g1_assist_v10_history_reset'
+
+
+** Section #7 '.text.g1_assist_v10_history_append' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 316 bytes (alignment 8)
+    Address: 0x00000000
+
+    [Anonymous symbol #4]
+    $t
+    g1_assist_v10_history_append
+        0x00000000:    2800        .(      CMP      r0,#0
+        0x00000002:    bf18        ..      IT       NE
+        0x00000004:    2900        .)      CMPNE    r1,#0
+        0x00000006:    d101        ..      BNE      {pc}+0x6 ; 0xc
+        0x00000008:    4770        pG      BX       lr
+        0x0000000a:    bf00        ..      NOP      
+        0x0000000c:    2a00        .*      CMP      r2,#0
+        0x0000000e:    bf18        ..      IT       NE
+        0x00000010:    2b00        .+      CMPNE    r3,#0
+        0x00000012:    d0f9        ..      BEQ      {pc}-0xa ; 0x8
+        0x00000014:    b570        p.      PUSH     {r4-r6,lr}
+        0x00000016:    f8d0cc80    ....    LDR      r12,[r0,#0xc80]
+        0x0000001a:    680c        .h      LDR      r4,[r1,#0]
+        0x0000001c:    f8dde010    ....    LDR      lr,[sp,#0x10]
+        0x00000020:    eb0005cc    ....    ADD      r5,r0,r12,LSL #3
+        0x00000024:    f840403c    @.<@    STR      r4,[r0,r12,LSL #3]
+        0x00000028:    6814        .h      LDR      r4,[r2,#0]
+        0x0000002a:    f8c540c8    ...@    STR      r4,[r5,#0xc8]
+        0x0000002e:    681c        .h      LDR      r4,[r3,#0]
+        0x00000030:    f8c54190    ...A    STR      r4,[r5,#0x190]
+        0x00000034:    2468        h$      MOVS     r4,#0x68
+        0x00000036:    684e        Nh      LDR      r6,[r1,#4]
+        0x00000038:    fb0c0104    ....    MLA      r1,r12,r4,r0
+        0x0000003c:    606e        n`      STR      r6,[r5,#4]
+        0x0000003e:    6852        Rh      LDR      r2,[r2,#4]
+        0x00000040:    f8c520cc    ...     STR      r2,[r5,#0xcc]
+        0x00000044:    685a        Zh      LDR      r2,[r3,#4]
+        0x00000046:    f8c52194    ...!    STR      r2,[r5,#0x194]
+        0x0000004a:    f8de2000    ...     LDR      r2,[lr,#0]
+        0x0000004e:    f248561f    H..V    MOV      r6,#0x851f
+        0x00000052:    f8c12258    ..X"    STR      r2,[r1,#0x258]
+        0x00000056:    f10c0301    ....    ADD      r3,r12,#1
+        0x0000005a:    f8de2004    ...     LDR      r2,[lr,#4]
+        0x0000005e:    f8c1225c    ..\"    STR      r2,[r1,#0x25c]
+        0x00000062:    f8de2008    ...     LDR      r2,[lr,#8]
+        0x00000066:    f8c12260    ..`"    STR      r2,[r1,#0x260]
+        0x0000006a:    f8de200c    ...     LDR      r2,[lr,#0xc]
+        0x0000006e:    f8c12264    ..d"    STR      r2,[r1,#0x264]
+        0x00000072:    f8de2010    ...     LDR      r2,[lr,#0x10]
+        0x00000076:    f8c12268    ..h"    STR      r2,[r1,#0x268]
+        0x0000007a:    f8de2014    ...     LDR      r2,[lr,#0x14]
+        0x0000007e:    f8c1226c    ..l"    STR      r2,[r1,#0x26c]
+        0x00000082:    f8de2018    ...     LDR      r2,[lr,#0x18]
+        0x00000086:    f8c12270    ..p"    STR      r2,[r1,#0x270]
+        0x0000008a:    f8de201c    ...     LDR      r2,[lr,#0x1c]
+        0x0000008e:    f8c12274    ..t"    STR      r2,[r1,#0x274]
+        0x00000092:    f8de2020    ..      LDR      r2,[lr,#0x20]
+        0x00000096:    f8c12278    ..x"    STR      r2,[r1,#0x278]
+        0x0000009a:    f8de2024    ..$     LDR      r2,[lr,#0x24]
+        0x0000009e:    f8c1227c    ..|"    STR      r2,[r1,#0x27c]
+        0x000000a2:    f8de2028    ..(     LDR      r2,[lr,#0x28]
+        0x000000a6:    f8c12280    ..."    STR      r2,[r1,#0x280]
+        0x000000aa:    f8de202c    ..,     LDR      r2,[lr,#0x2c]
+        0x000000ae:    f8c12284    ..."    STR      r2,[r1,#0x284]
+        0x000000b2:    f8de2030    ..0     LDR      r2,[lr,#0x30]
+        0x000000b6:    f8c12288    ..."    STR      r2,[r1,#0x288]
+        0x000000ba:    f8de2034    ..4     LDR      r2,[lr,#0x34]
+        0x000000be:    f8c1228c    ..."    STR      r2,[r1,#0x28c]
+        0x000000c2:    f8de2038    ..8     LDR      r2,[lr,#0x38]
+        0x000000c6:    f8c12290    ..."    STR      r2,[r1,#0x290]
+        0x000000ca:    f8de203c    ..<     LDR      r2,[lr,#0x3c]
+        0x000000ce:    f8c12294    ..."    STR      r2,[r1,#0x294]
+        0x000000d2:    f8de2040    ..@     LDR      r2,[lr,#0x40]
+        0x000000d6:    f8c12298    ..."    STR      r2,[r1,#0x298]
+        0x000000da:    f8de2044    ..D     LDR      r2,[lr,#0x44]
+        0x000000de:    f8c1229c    ..."    STR      r2,[r1,#0x29c]
+        0x000000e2:    f8de2048    ..H     LDR      r2,[lr,#0x48]
+        0x000000e6:    f8c122a0    ..."    STR      r2,[r1,#0x2a0]
+        0x000000ea:    f8de204c    ..L     LDR      r2,[lr,#0x4c]
+        0x000000ee:    f8c122a4    ..."    STR      r2,[r1,#0x2a4]
+        0x000000f2:    f8de2050    ..P     LDR      r2,[lr,#0x50]
+        0x000000f6:    f8c122a8    ..."    STR      r2,[r1,#0x2a8]
+        0x000000fa:    f8de2054    ..T     LDR      r2,[lr,#0x54]
+        0x000000fe:    f8c122ac    ..."    STR      r2,[r1,#0x2ac]
+        0x00000102:    f8de2058    ..X     LDR      r2,[lr,#0x58]
+        0x00000106:    f8c122b0    ..."    STR      r2,[r1,#0x2b0]
+        0x0000010a:    f8de205c    ..\     LDR      r2,[lr,#0x5c]
+        0x0000010e:    f8c122b4    ..."    STR      r2,[r1,#0x2b4]
+        0x00000112:    f2c516eb    ....    MOVT     r6,#0x51eb
+        0x00000116:    f8de2060    ..`     LDR      r2,[lr,#0x60]
+        0x0000011a:    f8c122b8    ..."    STR      r2,[r1,#0x2b8]
+        0x0000011e:    fba32606    ...&    UMULL    r2,r6,r3,r6
+        0x00000122:    2519        .%      MOVS     r5,#0x19
+        0x00000124:    f8de2064    ..d     LDR      r2,[lr,#0x64]
+        0x00000128:    08f6        ..      LSRS     r6,r6,#3
+        0x0000012a:    f8c122bc    ..."    STR      r2,[r1,#0x2bc]
+        0x0000012e:    fb063115    ...1    MLS      r1,r6,r5,r3
+        0x00000132:    f8c01c80    ....    STR      r1,[r0,#0xc80]
+        0x00000136:    e8bd4070    ..p@    POP      {r4-r6,lr}
+        0x0000013a:    4770        pG      BX       lr
+
+** Section #8 '.ARM.exidx.text.g1_assist_v10_history_append' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #7 '.text.g1_assist_v10_history_append'
+
+
+** Section #9 '.rel.ARM.exidx.text.g1_assist_v10_history_append' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    1 relocations applied to section #8 '.ARM.exidx.text.g1_assist_v10_history_append'
+
+
+** Section #10 '.text.g1_assist_v10_history_build_observation' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 550 bytes (alignment 8)
+    Address: 0x00000000
+
+    [Anonymous symbol #6]
+    $t
+    g1_assist_v10_history_build_observation
+        0x00000000:    2800        .(      CMP      r0,#0
+        0x00000002:    bf18        ..      IT       NE
+        0x00000004:    2900        .)      CMPNE    r1,#0
+        0x00000006:    d101        ..      BNE      {pc}+0x6 ; 0xc
+        0x00000008:    4770        pG      BX       lr
+        0x0000000a:    bf00        ..      NOP      
+        0x0000000c:    e92d4ff0    -..O    PUSH     {r4-r11,lr}
+        0x00000010:    b08e        ..      SUB      sp,sp,#0x38
+        0x00000012:    f8d08c80    ....    LDR      r8,[r0,#0xc80]
+        0x00000016:    4602        .F      MOV      r2,r0
+        0x00000018:    2068        h       MOVS     r0,#0x68
+        0x0000001a:    f24f59d8    O..Y    MOV      r9,#0xf5d8
+        0x0000001e:    fb082c00    ...,    MLA      r12,r8,r0,r2
+        0x00000022:    f6cf79ff    ...y    MOVT     r9,#0xffff
+        0x00000026:    f5017bc8    ...{    ADD      r11,r1,#0x190
+        0x0000002a:    f06f0a07    o...    MVN      r10,#7
+        0x0000002e:    464b        KF      MOV      r3,r9
+        0x00000030:    f50c702f    ../p    ADD      r0,r12,#0x2bc
+        0x00000034:    900d        ..      STR      r0,[sp,#0x34]
+        0x00000036:    f50c702d    ..-p    ADD      r0,r12,#0x2b4
+        0x0000003a:    900c        ..      STR      r0,[sp,#0x30]
+        0x0000003c:    f50c702b    ..+p    ADD      r0,r12,#0x2ac
+        0x00000040:    900b        ..      STR      r0,[sp,#0x2c]
+        0x00000042:    f50c7029    ..)p    ADD      r0,r12,#0x2a4
+        0x00000046:    900a        ..      STR      r0,[sp,#0x28]
+        0x00000048:    f50c7027    ..'p    ADD      r0,r12,#0x29c
+        0x0000004c:    9009        ..      STR      r0,[sp,#0x24]
+        0x0000004e:    f50c7025    ..%p    ADD      r0,r12,#0x294
+        0x00000052:    9008        ..      STR      r0,[sp,#0x20]
+        0x00000054:    f50c7023    ..#p    ADD      r0,r12,#0x28c
+        0x00000058:    9007        ..      STR      r0,[sp,#0x1c]
+        0x0000005a:    f50c7021    ..!p    ADD      r0,r12,#0x284
+        0x0000005e:    9006        ..      STR      r0,[sp,#0x18]
+        0x00000060:    f50c701f    ...p    ADD      r0,r12,#0x27c
+        0x00000064:    9005        ..      STR      r0,[sp,#0x14]
+        0x00000066:    f50c701d    ...p    ADD      r0,r12,#0x274
+        0x0000006a:    9004        ..      STR      r0,[sp,#0x10]
+        0x0000006c:    f50c701b    ...p    ADD      r0,r12,#0x26c
+        0x00000070:    9003        ..      STR      r0,[sp,#0xc]
+        0x00000072:    eb0200c8    ....    ADD      r0,r2,r8,LSL #3
+        0x00000076:    9002        ..      STR      r0,[sp,#8]
+        0x00000078:    f50c7019    ...p    ADD      r0,r12,#0x264
+        0x0000007c:    9001        ..      STR      r0,[sp,#4]
+        0x0000007e:    f50c7017    ...p    ADD      r0,r12,#0x25c
+        0x00000082:    9000        ..      STR      r0,[sp,#0]
+        0x00000084:    f248501f    H..P    MOV      r0,#0x851f
+        0x00000088:    f06f02c7    o...    MVN      r2,#0xc7
+        0x0000008c:    f2c510eb    ....    MOVT     r0,#0x51eb
+        0x00000090:    eb010e03    ....    ADD      lr,r1,r3
+        0x00000094:    fba80700    ....    UMULL    r0,r7,r8,r0
+        0x00000098:    9802        ..      LDR      r0,[sp,#8]
+        0x0000009a:    f1080801    ....    ADD      r8,r8,#1
+        0x0000009e:    08fe        ..      LSRS     r6,r7,#3
+        0x000000a0:    fb060002    ....    MLA      r0,r6,r2,r0
+        0x000000a4:    eb01020a    ....    ADD      r2,r1,r10
+        0x000000a8:    fb06c709    ....    MLA      r7,r6,r9,r12
+        0x000000ac:    4450        PD      ADD      r0,r0,r10
+        0x000000ae:    f10a0a08    ....    ADD      r10,r10,#8
+        0x000000b2:    441f        .D      ADD      r7,r7,r3
+        0x000000b4:    6885        .h      LDR      r5,[r0,#8]
+        0x000000b6:    6095        .`      STR      r5,[r2,#8]
+        0x000000b8:    f8d050d0    ...P    LDR      r5,[r0,#0xd0]
+        0x000000bc:    f8c250d0    ...P    STR      r5,[r2,#0xd0]
+        0x000000c0:    f8d05198    ...Q    LDR      r5,[r0,#0x198]
+        0x000000c4:    f8c25198    ...Q    STR      r5,[r2,#0x198]
+        0x000000c8:    68c5        .h      LDR      r5,[r0,#0xc]
+        0x000000ca:    60d5        .`      STR      r5,[r2,#0xc]
+        0x000000cc:    9d00        ..      LDR      r5,[sp,#0]
+        0x000000ce:    f8d040d4    ...@    LDR      r4,[r0,#0xd4]
+        0x000000d2:    fb065509    ...U    MLA      r5,r6,r9,r5
+        0x000000d6:    f8c240d4    ...@    STR      r4,[r2,#0xd4]
+        0x000000da:    f8d0019c    ....    LDR      r0,[r0,#0x19c]
+        0x000000de:    f8c2019c    ....    STR      r0,[r2,#0x19c]
+        0x000000e2:    18ec        ..      ADDS     r4,r5,r3
+        0x000000e4:    eb0b0003    ....    ADD      r0,r11,r3
+        0x000000e8:    f8d72c80    ...,    LDR      r2,[r7,#0xc80]
+        0x000000ec:    f8ce2c80    ...,    STR      r2,[lr,#0xc80]
+        0x000000f0:    9a01        ..      LDR      r2,[sp,#4]
+        0x000000f2:    f8d44a28    ..(J    LDR      r4,[r4,#0xa28]
+        0x000000f6:    fb062209    ..."    MLA      r2,r6,r9,r2
+        0x000000fa:    f8c04af4    ...J    STR      r4,[r0,#0xaf4]
+        0x000000fe:    f8d74c88    ...L    LDR      r4,[r7,#0xc88]
+        0x00000102:    f8ce4c88    ...L    STR      r4,[lr,#0xc88]
+        0x00000106:    9c03        ..      LDR      r4,[sp,#0xc]
+        0x00000108:    441a        .D      ADD      r2,r2,r3
+        0x0000010a:    fb064409    ...D    MLA      r4,r6,r9,r4
+        0x0000010e:    f8d22a28    ..(*    LDR      r2,[r2,#0xa28]
+        0x00000112:    f8c02afc    ...*    STR      r2,[r0,#0xafc]
+        0x00000116:    441c        .D      ADD      r4,r4,r3
+        0x00000118:    f8d72c90    ...,    LDR      r2,[r7,#0xc90]
+        0x0000011c:    f8ce2c90    ...,    STR      r2,[lr,#0xc90]
+        0x00000120:    9a04        ..      LDR      r2,[sp,#0x10]
+        0x00000122:    fb062209    ..."    MLA      r2,r6,r9,r2
+        0x00000126:    f8d44a28    ..(J    LDR      r4,[r4,#0xa28]
+        0x0000012a:    f8c04b04    ...K    STR      r4,[r0,#0xb04]
+        0x0000012e:    f8d74c98    ...L    LDR      r4,[r7,#0xc98]
+        0x00000132:    f8ce4c98    ...L    STR      r4,[lr,#0xc98]
+        0x00000136:    9c05        ..      LDR      r4,[sp,#0x14]
+        0x00000138:    441a        .D      ADD      r2,r2,r3
+        0x0000013a:    fb064409    ...D    MLA      r4,r6,r9,r4
+        0x0000013e:    f8d22a28    ..(*    LDR      r2,[r2,#0xa28]
+        0x00000142:    f8c02b0c    ...+    STR      r2,[r0,#0xb0c]
+        0x00000146:    441c        .D      ADD      r4,r4,r3
+        0x00000148:    f8d72ca0    ...,    LDR      r2,[r7,#0xca0]
+        0x0000014c:    f8ce2ca0    ...,    STR      r2,[lr,#0xca0]
+        0x00000150:    9a06        ..      LDR      r2,[sp,#0x18]
+        0x00000152:    fb062209    ..."    MLA      r2,r6,r9,r2
+        0x00000156:    f8d44a28    ..(J    LDR      r4,[r4,#0xa28]
+        0x0000015a:    f8c04b14    ...K    STR      r4,[r0,#0xb14]
+        0x0000015e:    f8d74ca8    ...L    LDR      r4,[r7,#0xca8]
+        0x00000162:    f8ce4ca8    ...L    STR      r4,[lr,#0xca8]
+        0x00000166:    9c07        ..      LDR      r4,[sp,#0x1c]
+        0x00000168:    441a        .D      ADD      r2,r2,r3
+        0x0000016a:    fb064409    ...D    MLA      r4,r6,r9,r4
+        0x0000016e:    f8d22a28    ..(*    LDR      r2,[r2,#0xa28]
+        0x00000172:    f8c02b1c    ...+    STR      r2,[r0,#0xb1c]
+        0x00000176:    441c        .D      ADD      r4,r4,r3
+        0x00000178:    f8d72cb0    ...,    LDR      r2,[r7,#0xcb0]
+        0x0000017c:    f8ce2cb0    ...,    STR      r2,[lr,#0xcb0]
+        0x00000180:    9a08        ..      LDR      r2,[sp,#0x20]
+        0x00000182:    fb062209    ..."    MLA      r2,r6,r9,r2
+        0x00000186:    f8d44a28    ..(J    LDR      r4,[r4,#0xa28]
+        0x0000018a:    f8c04b24    ..$K    STR      r4,[r0,#0xb24]
+        0x0000018e:    f8d74cb8    ...L    LDR      r4,[r7,#0xcb8]
+        0x00000192:    f8ce4cb8    ...L    STR      r4,[lr,#0xcb8]
+        0x00000196:    9c09        ..      LDR      r4,[sp,#0x24]
+        0x00000198:    441a        .D      ADD      r2,r2,r3
+        0x0000019a:    fb064409    ...D    MLA      r4,r6,r9,r4
+        0x0000019e:    f8d22a28    ..(*    LDR      r2,[r2,#0xa28]
+        0x000001a2:    f8c02b2c    ..,+    STR      r2,[r0,#0xb2c]
+        0x000001a6:    441c        .D      ADD      r4,r4,r3
+        0x000001a8:    f8d72cc0    ...,    LDR      r2,[r7,#0xcc0]
+        0x000001ac:    f8ce2cc0    ...,    STR      r2,[lr,#0xcc0]
+        0x000001b0:    9a0a        ..      LDR      r2,[sp,#0x28]
+        0x000001b2:    fb062209    ..."    MLA      r2,r6,r9,r2
+        0x000001b6:    f8d44a28    ..(J    LDR      r4,[r4,#0xa28]
+        0x000001ba:    f8c04b34    ..4K    STR      r4,[r0,#0xb34]
+        0x000001be:    f8d74cc8    ...L    LDR      r4,[r7,#0xcc8]
+        0x000001c2:    f8ce4cc8    ...L    STR      r4,[lr,#0xcc8]
+        0x000001c6:    9c0b        ..      LDR      r4,[sp,#0x2c]
+        0x000001c8:    441a        .D      ADD      r2,r2,r3
+        0x000001ca:    fb064409    ...D    MLA      r4,r6,r9,r4
+        0x000001ce:    f8d22a28    ..(*    LDR      r2,[r2,#0xa28]
+        0x000001d2:    f8c02b3c    ..<+    STR      r2,[r0,#0xb3c]
+        0x000001d6:    441c        .D      ADD      r4,r4,r3
+        0x000001d8:    f8d72cd0    ...,    LDR      r2,[r7,#0xcd0]
+        0x000001dc:    f8ce2cd0    ...,    STR      r2,[lr,#0xcd0]
+        0x000001e0:    9a0c        ..      LDR      r2,[sp,#0x30]
+        0x000001e2:    fb062209    ..."    MLA      r2,r6,r9,r2
+        0x000001e6:    f8d44a28    ..(J    LDR      r4,[r4,#0xa28]
+        0x000001ea:    f8c04b44    ..DK    STR      r4,[r0,#0xb44]
+        0x000001ee:    f8d74cd8    ...L    LDR      r4,[r7,#0xcd8]
+        0x000001f2:    f8ce4cd8    ...L    STR      r4,[lr,#0xcd8]
+        0x000001f6:    9c0d        ..      LDR      r4,[sp,#0x34]
+        0x000001f8:    441a        .D      ADD      r2,r2,r3
+        0x000001fa:    fb064409    ...D    MLA      r4,r6,r9,r4
+        0x000001fe:    f8d22a28    ..(*    LDR      r2,[r2,#0xa28]
+        0x00000202:    f8c02b4c    ..L+    STR      r2,[r0,#0xb4c]
+        0x00000206:    18e2        ..      ADDS     r2,r4,r3
+        0x00000208:    f8d74ce0    ...L    LDR      r4,[r7,#0xce0]
+        0x0000020c:    f8ce4ce0    ...L    STR      r4,[lr,#0xce0]
+        0x00000210:    3368        h3      ADDS     r3,r3,#0x68
+        0x00000212:    f8d22a28    ..(*    LDR      r2,[r2,#0xa28]
+        0x00000216:    f8c02b54    ..T+    STR      r2,[r0,#0xb54]
+        0x0000021a:    f47faf33    ..3.    BNE      {pc}-0x196 ; 0x84
+        0x0000021e:    b00e        ..      ADD      sp,sp,#0x38
+        0x00000220:    e8bd4ff0    ...O    POP      {r4-r11,lr}
+        0x00000224:    4770        pG      BX       lr
+
+** Section #11 '.ARM.exidx.text.g1_assist_v10_history_build_observation' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #10 '.text.g1_assist_v10_history_build_observation'
+
+
+** Section #12 '.rel.ARM.exidx.text.g1_assist_v10_history_build_observation' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    1 relocations applied to section #11 '.ARM.exidx.text.g1_assist_v10_history_build_observation'
+
+
+** Section #13 '.text.g1_assist_v10_policy_forward' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 2220 bytes (alignment 8)
+    Address: 0x00000000
+
+    [Anonymous symbol #8]
+    $t
+    g1_assist_v10_policy_forward
+        0x00000000:    2800        .(      CMP      r0,#0
+        0x00000002:    bf18        ..      IT       NE
+        0x00000004:    2900        .)      CMPNE    r1,#0
+        0x00000006:    d101        ..      BNE      {pc}+0x6 ; 0xc
+        0x00000008:    4770        pG      BX       lr
+        0x0000000a:    bf00        ..      NOP      
+        0x0000000c:    e92d4ff0    -..O    PUSH     {r4-r11,lr}
+        0x00000010:    b081        ..      SUB      sp,sp,#4
+        0x00000012:    ed2d8b02    -...    VPUSH    {d8}
+        0x00000016:    b082        ..      SUB      sp,sp,#8
+        0x00000018:    4615        .F      MOV      r5,r2
+        0x0000001a:    2a00        .*      CMP      r2,#0
+        0x0000001c:    f00083db    ....    BEQ.W    {pc}+0x7ba ; 0x7d6
+        0x00000020:    f2400c00    @...    MOVW     r12,#:LOWER16: OBS_MEAN
+        0x00000024:    f2400e00    @...    MOVW     lr,#:LOWER16: OBS_STD
+        0x00000028:    f5056980    ...i    ADD      r9,r5,#0x400
+        0x0000002c:    f2054a14    ...J    ADD      r10,r5,#0x414
+        0x00000030:    2200        ."      MOVS     r2,#0
+        0x00000032:    f2c00c00    ....    MOVT     r12,#:UPPER16: OBS_MEAN
+        0x00000036:    f2c00e00    ....    MOVT     lr,#:UPPER16: OBS_STD
+        0x0000003a:    ed9f0aee    ....    VLDR     s0,[pc,#952] ; [0x3f4] = 0x3c23d70a
+        0x0000003e:    9101        ..      STR      r1,[sp,#4]
+        0x00000040:    1886        ..      ADDS     r6,r0,r2
+        0x00000042:    eb0c0402    ....    ADD      r4,r12,r2
+        0x00000046:    eb0e0302    ....    ADD      r3,lr,r2
+        0x0000004a:    18a9        ..      ADDS     r1,r5,r2
+        0x0000004c:    ed961a00    ....    VLDR     s2,[r6,#0]
+        0x00000050:    ed942a00    ...*    VLDR     s4,[r4,#0]
+        0x00000054:    ee311a42    1.B.    VSUB.F32 s2,s2,s4
+        0x00000058:    ed932a00    ...*    VLDR     s4,[r3,#0]
+        0x0000005c:    ee322a00    2..*    VADD.F32 s4,s4,s0
+        0x00000060:    f5016780    ...g    ADD      r7,r1,#0x400
+        0x00000064:    ed943a01    ...:    VLDR     s6,[r4,#4]
+        0x00000068:    ed944a02    ...J    VLDR     s8,[r4,#8]
+        0x0000006c:    ed945a03    ...Z    VLDR     s10,[r4,#0xc]
+        0x00000070:    ed936a01    ...j    VLDR     s12,[r3,#4]
+        0x00000074:    ee811a02    ....    VDIV.F32 s2,s2,s4
+        0x00000078:    ed937a02    ...z    VLDR     s14,[r3,#8]
+        0x0000007c:    ed932a03    ...*    VLDR     s4,[r3,#0xc]
+        0x00000080:    ed871a00    ....    VSTR     s2,[r7,#0]
+        0x00000084:    ed961a01    ....    VLDR     s2,[r6,#4]
+        0x00000088:    eb0a0b02    ....    ADD      r11,r10,r2
+        0x0000008c:    ee311a43    1.C.    VSUB.F32 s2,s2,s6
+        0x00000090:    f5016781    ...g    ADD      r7,r1,#0x408
+        0x00000094:    ee363a00    6..:    VADD.F32 s6,s12,s0
+        0x00000098:    3228        (2      ADDS     r2,r2,#0x28
+        0x0000009a:    ee322a00    2..*    VADD.F32 s4,s4,s0
+        0x0000009e:    f5b26f48    ..Ho    CMP      r2,#0xc80
+        0x000000a2:    ee811a03    ....    VDIV.F32 s2,s2,s6
+        0x000000a6:    ed0b1a04    ....    VSTR     s2,[r11,#-0x10]
+        0x000000aa:    ee373a00    7..:    VADD.F32 s6,s14,s0
+        0x000000ae:    ed961a02    ....    VLDR     s2,[r6,#8]
+        0x000000b2:    ee311a44    1.D.    VSUB.F32 s2,s2,s8
+        0x000000b6:    ee811a03    ....    VDIV.F32 s2,s2,s6
+        0x000000ba:    ed871a00    ....    VSTR     s2,[r7,#0]
+        0x000000be:    f5016782    ...g    ADD      r7,r1,#0x410
+        0x000000c2:    ed961a03    ....    VLDR     s2,[r6,#0xc]
+        0x000000c6:    ee311a45    1.E.    VSUB.F32 s2,s2,s10
+        0x000000ca:    ee811a02    ....    VDIV.F32 s2,s2,s4
+        0x000000ce:    ed0b1a02    ....    VSTR     s2,[r11,#-8]
+        0x000000d2:    ed961a04    ....    VLDR     s2,[r6,#0x10]
+        0x000000d6:    ed942a04    ...*    VLDR     s4,[r4,#0x10]
+        0x000000da:    ee311a42    1.B.    VSUB.F32 s2,s2,s4
+        0x000000de:    ed932a04    ...*    VLDR     s4,[r3,#0x10]
+        0x000000e2:    ee322a00    2..*    VADD.F32 s4,s4,s0
+        0x000000e6:    ee811a02    ....    VDIV.F32 s2,s2,s4
+        0x000000ea:    ed871a00    ....    VSTR     s2,[r7,#0]
+        0x000000ee:    f5016783    ...g    ADD      r7,r1,#0x418
+        0x000000f2:    ed961a05    ....    VLDR     s2,[r6,#0x14]
+        0x000000f6:    ed942a05    ...*    VLDR     s4,[r4,#0x14]
+        0x000000fa:    ee311a42    1.B.    VSUB.F32 s2,s2,s4
+        0x000000fe:    ed932a05    ...*    VLDR     s4,[r3,#0x14]
+        0x00000102:    ee322a00    2..*    VADD.F32 s4,s4,s0
+        0x00000106:    f5016184    ...a    ADD      r1,r1,#0x420
+        0x0000010a:    ee811a02    ....    VDIV.F32 s2,s2,s4
+        0x0000010e:    ed8b1a00    ....    VSTR     s2,[r11,#0]
+        0x00000112:    ed961a06    ....    VLDR     s2,[r6,#0x18]
+        0x00000116:    ed942a06    ...*    VLDR     s4,[r4,#0x18]
+        0x0000011a:    ee311a42    1.B.    VSUB.F32 s2,s2,s4
+        0x0000011e:    ed932a06    ...*    VLDR     s4,[r3,#0x18]
+        0x00000122:    ee322a00    2..*    VADD.F32 s4,s4,s0
+        0x00000126:    ee811a02    ....    VDIV.F32 s2,s2,s4
+        0x0000012a:    ed871a00    ....    VSTR     s2,[r7,#0]
+        0x0000012e:    ed961a07    ....    VLDR     s2,[r6,#0x1c]
+        0x00000132:    ed942a07    ...*    VLDR     s4,[r4,#0x1c]
+        0x00000136:    ee311a42    1.B.    VSUB.F32 s2,s2,s4
+        0x0000013a:    ed932a07    ...*    VLDR     s4,[r3,#0x1c]
+        0x0000013e:    ee322a00    2..*    VADD.F32 s4,s4,s0
+        0x00000142:    ee811a02    ....    VDIV.F32 s2,s2,s4
+        0x00000146:    ed8b1a02    ....    VSTR     s2,[r11,#8]
+        0x0000014a:    ed961a08    ....    VLDR     s2,[r6,#0x20]
+        0x0000014e:    ed942a08    ...*    VLDR     s4,[r4,#0x20]
+        0x00000152:    ee311a42    1.B.    VSUB.F32 s2,s2,s4
+        0x00000156:    ed932a08    ...*    VLDR     s4,[r3,#0x20]
+        0x0000015a:    ee322a00    2..*    VADD.F32 s4,s4,s0
+        0x0000015e:    ee811a02    ....    VDIV.F32 s2,s2,s4
+        0x00000162:    ed811a00    ....    VSTR     s2,[r1,#0]
+        0x00000166:    ed961a09    ....    VLDR     s2,[r6,#0x24]
+        0x0000016a:    ed942a09    ...*    VLDR     s4,[r4,#0x24]
+        0x0000016e:    ee311a42    1.B.    VSUB.F32 s2,s2,s4
+        0x00000172:    ed932a09    ...*    VLDR     s4,[r3,#0x24]
+        0x00000176:    ee322a00    2..*    VADD.F32 s4,s4,s0
+        0x0000017a:    ee811a02    ....    VDIV.F32 s2,s2,s4
+        0x0000017e:    ed8b1a04    ....    VSTR     s2,[r11,#0x10]
+        0x00000182:    f47faf5d    ..].    BNE      {pc}-0x142 ; 0x40
+        0x00000186:    f2400200    @...    MOVW     r2,#:LOWER16: WEIGHT_0
+        0x0000018a:    f2054024    ..$@    ADD      r0,r5,#0x424
+        0x0000018e:    f04f0c00    O...    MOV      r12,#0
+        0x00000192:    f2c00200    ....    MOVT     r2,#:UPPER16: WEIGHT_0
+        0x00000196:    ed9f0a98    ....    VLDR     s0,[pc,#608] ; [0x3f8] = 0
+        0x0000019a:    bf00        ..      NOP      
+        0x0000019c:    eeb01a40    ..@.    VMOV.F32 s2,s0
+        0x000001a0:    2300        .#      MOVS     r3,#0
+        0x000001a2:    bf00        ..      NOP      
+        0x000001a4:    18ee        ..      ADDS     r6,r5,r3
+        0x000001a6:    18d7        ..      ADDS     r7,r2,r3
+        0x000001a8:    f5066480    ...d    ADD      r4,r6,#0x400
+        0x000001ac:    f5066181    ...a    ADD      r1,r6,#0x408
+        0x000001b0:    ed973a00    ...:    VLDR     s6,[r7,#0]
+        0x000001b4:    ed942a00    ...*    VLDR     s4,[r4,#0]
+        0x000001b8:    18c4        ..      ADDS     r4,r0,r3
+        0x000001ba:    ee031a02    ....    VMLA.F32 s2,s6,s4
+        0x000001be:    ed972a01    ...*    VLDR     s4,[r7,#4]
+        0x000001c2:    ed143a08    ...:    VLDR     s6,[r4,#-0x20]
+        0x000001c6:    3340        @3      ADDS     r3,r3,#0x40
+        0x000001c8:    f5b36f48    ..Ho    CMP      r3,#0xc80
+        0x000001cc:    ee021a03    ....    VMLA.F32 s2,s4,s6
+        0x000001d0:    ed972a02    ...*    VLDR     s4,[r7,#8]
+        0x000001d4:    ed913a00    ...:    VLDR     s6,[r1,#0]
+        0x000001d8:    f5066182    ...a    ADD      r1,r6,#0x410
+        0x000001dc:    ee021a03    ....    VMLA.F32 s2,s4,s6
+        0x000001e0:    ed972a03    ...*    VLDR     s4,[r7,#0xc]
+        0x000001e4:    ed143a06    ...:    VLDR     s6,[r4,#-0x18]
+        0x000001e8:    ee021a03    ....    VMLA.F32 s2,s4,s6
+        0x000001ec:    ed972a04    ...*    VLDR     s4,[r7,#0x10]
+        0x000001f0:    ed913a00    ...:    VLDR     s6,[r1,#0]
+        0x000001f4:    f5066183    ...a    ADD      r1,r6,#0x418
+        0x000001f8:    ee021a03    ....    VMLA.F32 s2,s4,s6
+        0x000001fc:    ed972a05    ...*    VLDR     s4,[r7,#0x14]
+        0x00000200:    ed143a04    ...:    VLDR     s6,[r4,#-0x10]
+        0x00000204:    ee021a03    ....    VMLA.F32 s2,s4,s6
+        0x00000208:    ed972a06    ...*    VLDR     s4,[r7,#0x18]
+        0x0000020c:    ed913a00    ...:    VLDR     s6,[r1,#0]
+        0x00000210:    f5066184    ...a    ADD      r1,r6,#0x420
+        0x00000214:    ee021a03    ....    VMLA.F32 s2,s4,s6
+        0x00000218:    ed972a07    ...*    VLDR     s4,[r7,#0x1c]
+        0x0000021c:    ed143a02    ...:    VLDR     s6,[r4,#-8]
+        0x00000220:    ee021a03    ....    VMLA.F32 s2,s4,s6
+        0x00000224:    ed972a08    ...*    VLDR     s4,[r7,#0x20]
+        0x00000228:    ed913a00    ...:    VLDR     s6,[r1,#0]
+        0x0000022c:    f5066185    ...a    ADD      r1,r6,#0x428
+        0x00000230:    ee021a03    ....    VMLA.F32 s2,s4,s6
+        0x00000234:    ed972a09    ...*    VLDR     s4,[r7,#0x24]
+        0x00000238:    ed943a00    ...:    VLDR     s6,[r4,#0]
+        0x0000023c:    ee021a03    ....    VMLA.F32 s2,s4,s6
+        0x00000240:    ed972a0a    ...*    VLDR     s4,[r7,#0x28]
+        0x00000244:    ed913a00    ...:    VLDR     s6,[r1,#0]
+        0x00000248:    f5066186    ...a    ADD      r1,r6,#0x430
+        0x0000024c:    ee021a03    ....    VMLA.F32 s2,s4,s6
+        0x00000250:    ed942a02    ...*    VLDR     s4,[r4,#8]
+        0x00000254:    ed973a0b    ...:    VLDR     s6,[r7,#0x2c]
+        0x00000258:    ee031a02    ....    VMLA.F32 s2,s6,s4
+        0x0000025c:    ed972a0c    ...*    VLDR     s4,[r7,#0x30]
+        0x00000260:    ed913a00    ...:    VLDR     s6,[r1,#0]
+        0x00000264:    f5066187    ...a    ADD      r1,r6,#0x438
+        0x00000268:    ee021a03    ....    VMLA.F32 s2,s4,s6
+        0x0000026c:    ed942a04    ...*    VLDR     s4,[r4,#0x10]
+        0x00000270:    ed973a0d    ...:    VLDR     s6,[r7,#0x34]
+        0x00000274:    ee031a02    ....    VMLA.F32 s2,s6,s4
+        0x00000278:    ed972a0e    ...*    VLDR     s4,[r7,#0x38]
+        0x0000027c:    ed913a00    ...:    VLDR     s6,[r1,#0]
+        0x00000280:    ee021a03    ....    VMLA.F32 s2,s4,s6
+        0x00000284:    ed942a06    ...*    VLDR     s4,[r4,#0x18]
+        0x00000288:    ed973a0f    ...:    VLDR     s6,[r7,#0x3c]
+        0x0000028c:    ee031a02    ....    VMLA.F32 s2,s6,s4
+        0x00000290:    d188        ..      BNE      {pc}-0xec ; 0x1a4
+        0x00000292:    eb05018c    ....    ADD      r1,r5,r12,LSL #2
+        0x00000296:    f10c0c01    ....    ADD      r12,r12,#1
+        0x0000029a:    f1bc0f40    ..@.    CMP      r12,#0x40
+        0x0000029e:    f5026248    ..Hb    ADD      r2,r2,#0xc80
+        0x000002a2:    ed811a00    ....    VSTR     s2,[r1,#0]
+        0x000002a6:    f47faf79    ..y.    BNE      {pc}-0x10a ; 0x19c
+        0x000002aa:    eebf8a00    ....    VMOV.F32 s16,#-1.00000000
+        0x000002ae:    f2400600    @...    MOVW     r6,#:LOWER16: WEIGHT_1
+        0x000002b2:    f2400a00    @...    MOVW     r10,#:LOWER16: BIAS_1
+        0x000002b6:    f1050820    .. .    ADD      r8,r5,#0x20
+        0x000002ba:    2400        .$      MOVS     r4,#0
+        0x000002bc:    f2c00600    ....    MOVT     r6,#:UPPER16: WEIGHT_1
+        0x000002c0:    f2c00a00    ....    MOVT     r10,#:UPPER16: BIAS_1
+        0x000002c4:    e00a        ..      B        {pc}+0x18 ; 0x2dc
+        0x000002c6:    bf00        ..      NOP      
+        0x000002c8:    eb090084    ....    ADD      r0,r9,r4,LSL #2
+        0x000002cc:    3401        .4      ADDS     r4,#1
+        0x000002ce:    f5b47f80    ....    CMP      r4,#0x100
+        0x000002d2:    f5067680    ...v    ADD      r6,r6,#0x100
+        0x000002d6:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x000002da:    d07d        }.      BEQ      {pc}+0xfe ; 0x3d8
+        0x000002dc:    eb0a0084    ....    ADD      r0,r10,r4,LSL #2
+        0x000002e0:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x000002e4:    2000        .       MOVS     r0,#0
+        0x000002e6:    bf00        ..      NOP      
+        0x000002e8:    1831        1.      ADDS     r1,r6,r0
+        0x000002ea:    182a        *.      ADDS     r2,r5,r0
+        0x000002ec:    eb080300    ....    ADD      r3,r8,r0
+        0x000002f0:    3040        @0      ADDS     r0,r0,#0x40
+        0x000002f2:    ed911a00    ....    VLDR     s2,[r1,#0]
+        0x000002f6:    ed922a00    ...*    VLDR     s4,[r2,#0]
+        0x000002fa:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000002fe:    ed911a01    ....    VLDR     s2,[r1,#4]
+        0x00000302:    ed922a01    ...*    VLDR     s4,[r2,#4]
+        0x00000306:    f5b07f80    ....    CMP      r0,#0x100
+        0x0000030a:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000030e:    ed911a02    ....    VLDR     s2,[r1,#8]
+        0x00000312:    ed922a02    ...*    VLDR     s4,[r2,#8]
+        0x00000316:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000031a:    ed911a03    ....    VLDR     s2,[r1,#0xc]
+        0x0000031e:    ed922a03    ...*    VLDR     s4,[r2,#0xc]
+        0x00000322:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000326:    ed911a04    ....    VLDR     s2,[r1,#0x10]
+        0x0000032a:    ed922a04    ...*    VLDR     s4,[r2,#0x10]
+        0x0000032e:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000332:    ed911a05    ....    VLDR     s2,[r1,#0x14]
+        0x00000336:    ed922a05    ...*    VLDR     s4,[r2,#0x14]
+        0x0000033a:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000033e:    ed911a06    ....    VLDR     s2,[r1,#0x18]
+        0x00000342:    ed922a06    ...*    VLDR     s4,[r2,#0x18]
+        0x00000346:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000034a:    ed911a07    ....    VLDR     s2,[r1,#0x1c]
+        0x0000034e:    ed132a01    ...*    VLDR     s4,[r3,#-4]
+        0x00000352:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000356:    ed931a00    ....    VLDR     s2,[r3,#0]
+        0x0000035a:    ed912a08    ...*    VLDR     s4,[r1,#0x20]
+        0x0000035e:    ee020a01    ....    VMLA.F32 s0,s4,s2
+        0x00000362:    ed911a09    ....    VLDR     s2,[r1,#0x24]
+        0x00000366:    ed922a09    ...*    VLDR     s4,[r2,#0x24]
+        0x0000036a:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000036e:    ed911a0a    ....    VLDR     s2,[r1,#0x28]
+        0x00000372:    ed922a0a    ...*    VLDR     s4,[r2,#0x28]
+        0x00000376:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000037a:    ed911a0b    ....    VLDR     s2,[r1,#0x2c]
+        0x0000037e:    ed922a0b    ...*    VLDR     s4,[r2,#0x2c]
+        0x00000382:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000386:    ed911a0c    ....    VLDR     s2,[r1,#0x30]
+        0x0000038a:    ed922a0c    ...*    VLDR     s4,[r2,#0x30]
+        0x0000038e:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000392:    ed911a0d    ....    VLDR     s2,[r1,#0x34]
+        0x00000396:    ed922a0d    ...*    VLDR     s4,[r2,#0x34]
+        0x0000039a:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000039e:    ed911a0e    ....    VLDR     s2,[r1,#0x38]
+        0x000003a2:    ed922a0e    ...*    VLDR     s4,[r2,#0x38]
+        0x000003a6:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000003aa:    ed911a0f    ....    VLDR     s2,[r1,#0x3c]
+        0x000003ae:    ed922a0f    ...*    VLDR     s4,[r2,#0x3c]
+        0x000003b2:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000003b6:    d197        ..      BNE      {pc}-0xce ; 0x2e8
+        0x000003b8:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x000003bc:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000003c0:    f6bfaf82    ....    BGE.W    {pc}-0xf8 ; 0x2c8
+        0x000003c4:    ee100a10    ....    VMOV     r0,s0
+        0x000003c8:    f7fffffe    ....    BL       expf
+        0x000003cc:    ee000a10    ....    VMOV     s0,r0
+        0x000003d0:    ee300a08    0...    VADD.F32 s0,s0,s16
+        0x000003d4:    e778        x.      B        {pc}-0x10c ; 0x2c8
+        0x000003d6:    bf00        ..      NOP      
+        0x000003d8:    f2400600    @...    MOVW     r6,#:LOWER16: WEIGHT_2
+        0x000003dc:    f2400b00    @...    MOVW     r11,#:LOWER16: BIAS_2
+        0x000003e0:    f2054404    ...D    ADD      r4,r5,#0x404
+        0x000003e4:    f04f0a00    O...    MOV      r10,#0
+        0x000003e8:    f2c00600    ....    MOVT     r6,#:UPPER16: WEIGHT_2
+        0x000003ec:    f2c00b00    ....    MOVT     r11,#:UPPER16: BIAS_2
+        0x000003f0:    e010        ..      B        {pc}+0x24 ; 0x414
+        0x000003f2:    bf00        ..      NOP      
+    __arm_cp.3_37
+    $d
+        0x000003f4:    3c23d70a    ..#<    DCD    1008981770
+    __arm_cp.3_38
+        0x000003f8:    00000000    ....    DCD    0
+    $t
+        0x000003fc:    eb05008a    ....    ADD      r0,r5,r10,LSL #2
+        0x00000400:    f10a0a01    ....    ADD      r10,r10,#1
+        0x00000404:    f1ba0f40    ..@.    CMP      r10,#0x40
+        0x00000408:    f5066680    ...f    ADD      r6,r6,#0x400
+        0x0000040c:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x00000410:    f000808c    ....    BEQ.W    {pc}+0x11c ; 0x52c
+        0x00000414:    eb0b008a    ....    ADD      r0,r11,r10,LSL #2
+        0x00000418:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000041c:    2000        .       MOVS     r0,#0
+        0x0000041e:    bf00        ..      NOP      
+        0x00000420:    182a        *.      ADDS     r2,r5,r0
+        0x00000422:    1831        1.      ADDS     r1,r6,r0
+        0x00000424:    f5026380    ...c    ADD      r3,r2,#0x400
+        0x00000428:    f5026781    ...g    ADD      r7,r2,#0x408
+        0x0000042c:    ed912a00    ...*    VLDR     s4,[r1,#0]
+        0x00000430:    ed931a00    ....    VLDR     s2,[r3,#0]
+        0x00000434:    1823        #.      ADDS     r3,r4,r0
+        0x00000436:    ee020a01    ....    VMLA.F32 s0,s4,s2
+        0x0000043a:    ed911a01    ....    VLDR     s2,[r1,#4]
+        0x0000043e:    ed932a00    ...*    VLDR     s4,[r3,#0]
+        0x00000442:    3040        @0      ADDS     r0,r0,#0x40
+        0x00000444:    f5b06f80    ...o    CMP      r0,#0x400
+        0x00000448:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000044c:    ed911a02    ....    VLDR     s2,[r1,#8]
+        0x00000450:    ed972a00    ...*    VLDR     s4,[r7,#0]
+        0x00000454:    f5026782    ...g    ADD      r7,r2,#0x410
+        0x00000458:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000045c:    ed911a03    ....    VLDR     s2,[r1,#0xc]
+        0x00000460:    ed932a02    ...*    VLDR     s4,[r3,#8]
+        0x00000464:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000468:    ed911a04    ....    VLDR     s2,[r1,#0x10]
+        0x0000046c:    ed972a00    ...*    VLDR     s4,[r7,#0]
+        0x00000470:    f5026783    ...g    ADD      r7,r2,#0x418
+        0x00000474:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000478:    ed931a04    ....    VLDR     s2,[r3,#0x10]
+        0x0000047c:    ed912a05    ...*    VLDR     s4,[r1,#0x14]
+        0x00000480:    ee020a01    ....    VMLA.F32 s0,s4,s2
+        0x00000484:    ed911a06    ....    VLDR     s2,[r1,#0x18]
+        0x00000488:    ed972a00    ...*    VLDR     s4,[r7,#0]
+        0x0000048c:    f5026784    ...g    ADD      r7,r2,#0x420
+        0x00000490:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000494:    ed931a06    ....    VLDR     s2,[r3,#0x18]
+        0x00000498:    ed912a07    ...*    VLDR     s4,[r1,#0x1c]
+        0x0000049c:    ee020a01    ....    VMLA.F32 s0,s4,s2
+        0x000004a0:    ed911a08    ....    VLDR     s2,[r1,#0x20]
+        0x000004a4:    ed972a00    ...*    VLDR     s4,[r7,#0]
+        0x000004a8:    f5026785    ...g    ADD      r7,r2,#0x428
+        0x000004ac:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000004b0:    ed911a09    ....    VLDR     s2,[r1,#0x24]
+        0x000004b4:    ed932a08    ...*    VLDR     s4,[r3,#0x20]
+        0x000004b8:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000004bc:    ed911a0a    ....    VLDR     s2,[r1,#0x28]
+        0x000004c0:    ed972a00    ...*    VLDR     s4,[r7,#0]
+        0x000004c4:    f5026786    ...g    ADD      r7,r2,#0x430
+        0x000004c8:    f5026287    ...b    ADD      r2,r2,#0x438
+        0x000004cc:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000004d0:    ed911a0b    ....    VLDR     s2,[r1,#0x2c]
+        0x000004d4:    ed932a0a    ...*    VLDR     s4,[r3,#0x28]
+        0x000004d8:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000004dc:    ed911a0c    ....    VLDR     s2,[r1,#0x30]
+        0x000004e0:    ed972a00    ...*    VLDR     s4,[r7,#0]
+        0x000004e4:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000004e8:    ed911a0d    ....    VLDR     s2,[r1,#0x34]
+        0x000004ec:    ed932a0c    ...*    VLDR     s4,[r3,#0x30]
+        0x000004f0:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000004f4:    ed911a0e    ....    VLDR     s2,[r1,#0x38]
+        0x000004f8:    ed922a00    ...*    VLDR     s4,[r2,#0]
+        0x000004fc:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000500:    ed911a0f    ....    VLDR     s2,[r1,#0x3c]
+        0x00000504:    ed932a0e    ...*    VLDR     s4,[r3,#0x38]
+        0x00000508:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000050c:    d188        ..      BNE      {pc}-0xec ; 0x420
+        0x0000050e:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x00000512:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000516:    f6bfaf71    ..q.    BGE      {pc}-0x11a ; 0x3fc
+        0x0000051a:    ee100a10    ....    VMOV     r0,s0
+        0x0000051e:    f7fffffe    ....    BL       expf
+        0x00000522:    ee000a10    ....    VMOV     s0,r0
+        0x00000526:    ee300a08    0...    VADD.F32 s0,s0,s16
+        0x0000052a:    e767        g.      B        {pc}-0x12e ; 0x3fc
+        0x0000052c:    f2400600    @...    MOVW     r6,#:LOWER16: WEIGHT_3
+        0x00000530:    2400        .$      MOVS     r4,#0
+        0x00000532:    f2c00600    ....    MOVT     r6,#:UPPER16: WEIGHT_3
+        0x00000536:    f20f2aac    ...*    ADR.W    r10,{pc}+0x2ae ; 0x7e4
+        0x0000053a:    e008        ..      B        {pc}+0x14 ; 0x54e
+        0x0000053c:    eb090084    ....    ADD      r0,r9,r4,LSL #2
+        0x00000540:    3401        .4      ADDS     r4,#1
+        0x00000542:    2c10        .,      CMP      r4,#0x10
+        0x00000544:    f5067680    ...v    ADD      r6,r6,#0x100
+        0x00000548:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x0000054c:    d07a        z.      BEQ      {pc}+0xf8 ; 0x644
+        0x0000054e:    eb0a0084    ....    ADD      r0,r10,r4,LSL #2
+        0x00000552:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000556:    2000        .       MOVS     r0,#0
+        0x00000558:    1831        1.      ADDS     r1,r6,r0
+        0x0000055a:    182a        *.      ADDS     r2,r5,r0
+        0x0000055c:    eb080300    ....    ADD      r3,r8,r0
+        0x00000560:    3040        @0      ADDS     r0,r0,#0x40
+        0x00000562:    ed911a00    ....    VLDR     s2,[r1,#0]
+        0x00000566:    ed922a00    ...*    VLDR     s4,[r2,#0]
+        0x0000056a:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000056e:    ed911a01    ....    VLDR     s2,[r1,#4]
+        0x00000572:    ed922a01    ...*    VLDR     s4,[r2,#4]
+        0x00000576:    f5b07f80    ....    CMP      r0,#0x100
+        0x0000057a:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000057e:    ed911a02    ....    VLDR     s2,[r1,#8]
+        0x00000582:    ed922a02    ...*    VLDR     s4,[r2,#8]
+        0x00000586:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000058a:    ed911a03    ....    VLDR     s2,[r1,#0xc]
+        0x0000058e:    ed922a03    ...*    VLDR     s4,[r2,#0xc]
+        0x00000592:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000596:    ed911a04    ....    VLDR     s2,[r1,#0x10]
+        0x0000059a:    ed922a04    ...*    VLDR     s4,[r2,#0x10]
+        0x0000059e:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000005a2:    ed911a05    ....    VLDR     s2,[r1,#0x14]
+        0x000005a6:    ed922a05    ...*    VLDR     s4,[r2,#0x14]
+        0x000005aa:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000005ae:    ed911a06    ....    VLDR     s2,[r1,#0x18]
+        0x000005b2:    ed922a06    ...*    VLDR     s4,[r2,#0x18]
+        0x000005b6:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000005ba:    ed911a07    ....    VLDR     s2,[r1,#0x1c]
+        0x000005be:    ed132a01    ...*    VLDR     s4,[r3,#-4]
+        0x000005c2:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000005c6:    ed931a00    ....    VLDR     s2,[r3,#0]
+        0x000005ca:    ed912a08    ...*    VLDR     s4,[r1,#0x20]
+        0x000005ce:    ee020a01    ....    VMLA.F32 s0,s4,s2
+        0x000005d2:    ed911a09    ....    VLDR     s2,[r1,#0x24]
+        0x000005d6:    ed922a09    ...*    VLDR     s4,[r2,#0x24]
+        0x000005da:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000005de:    ed911a0a    ....    VLDR     s2,[r1,#0x28]
+        0x000005e2:    ed922a0a    ...*    VLDR     s4,[r2,#0x28]
+        0x000005e6:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000005ea:    ed911a0b    ....    VLDR     s2,[r1,#0x2c]
+        0x000005ee:    ed922a0b    ...*    VLDR     s4,[r2,#0x2c]
+        0x000005f2:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000005f6:    ed911a0c    ....    VLDR     s2,[r1,#0x30]
+        0x000005fa:    ed922a0c    ...*    VLDR     s4,[r2,#0x30]
+        0x000005fe:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000602:    ed911a0d    ....    VLDR     s2,[r1,#0x34]
+        0x00000606:    ed922a0d    ...*    VLDR     s4,[r2,#0x34]
+        0x0000060a:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000060e:    ed911a0e    ....    VLDR     s2,[r1,#0x38]
+        0x00000612:    ed922a0e    ...*    VLDR     s4,[r2,#0x38]
+        0x00000616:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000061a:    ed911a0f    ....    VLDR     s2,[r1,#0x3c]
+        0x0000061e:    ed922a0f    ...*    VLDR     s4,[r2,#0x3c]
+        0x00000622:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000626:    d197        ..      BNE      {pc}-0xce ; 0x558
+        0x00000628:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x0000062c:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000630:    da84        ..      BGE      {pc}-0xf4 ; 0x53c
+        0x00000632:    ee100a10    ....    VMOV     r0,s0
+        0x00000636:    f7fffffe    ....    BL       expf
+        0x0000063a:    ee000a10    ....    VMOV     s0,r0
+        0x0000063e:    ee300a08    0...    VADD.F32 s0,s0,s16
+        0x00000642:    e77b        {.      B        {pc}-0x106 ; 0x53c
+        0x00000644:    ed991a00    ....    VLDR     s2,[r9,#0]
+        0x00000648:    ed9f2a76    ..v*    VLDR     s4,[pc,#472] ; [0x824] = 0xbe35d77b
+        0x0000064c:    ed9f0a76    ..v.    VLDR     s0,[pc,#472] ; [0x828] = 0x3e229c14
+        0x00000650:    9801        ..      LDR      r0,[sp,#4]
+        0x00000652:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000656:    ed991a01    ....    VLDR     s2,[r9,#4]
+        0x0000065a:    ed9f2a74    ..t*    VLDR     s4,[pc,#464] ; [0x82c] = 0x3e440d1c
+        0x0000065e:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000662:    ed991a02    ....    VLDR     s2,[r9,#8]
+        0x00000666:    ed9f2a72    ..r*    VLDR     s4,[pc,#456] ; [0x830] = 0xbe261099
+        0x0000066a:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000066e:    ed991a03    ....    VLDR     s2,[r9,#0xc]
+        0x00000672:    ed9f2a70    ..p*    VLDR     s4,[pc,#448] ; [0x834] = 0x3da9550e
+        0x00000676:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000067a:    ed991a04    ....    VLDR     s2,[r9,#0x10]
+        0x0000067e:    ed9f2a6e    ..n*    VLDR     s4,[pc,#440] ; [0x838] = 0xbd93ab1a
+        0x00000682:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000686:    ed991a05    ....    VLDR     s2,[r9,#0x14]
+        0x0000068a:    ed9f2a6c    ..l*    VLDR     s4,[pc,#432] ; [0x83c] = 0xbe3b6017
+        0x0000068e:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000692:    ed991a06    ....    VLDR     s2,[r9,#0x18]
+        0x00000696:    ed9f2a6a    ..j*    VLDR     s4,[pc,#424] ; [0x840] = 0x3da9230a
+        0x0000069a:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000069e:    ed991a07    ....    VLDR     s2,[r9,#0x1c]
+        0x000006a2:    ed9f2a68    ..h*    VLDR     s4,[pc,#416] ; [0x844] = 0x3e1579ea
+        0x000006a6:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000006aa:    ed991a08    ....    VLDR     s2,[r9,#0x20]
+        0x000006ae:    ed9f2a66    ..f*    VLDR     s4,[pc,#408] ; [0x848] = 0x3cef33b6
+        0x000006b2:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000006b6:    ed991a09    ....    VLDR     s2,[r9,#0x24]
+        0x000006ba:    ed9f2a64    ..d*    VLDR     s4,[pc,#400] ; [0x84c] = 0xbe30d6ad
+        0x000006be:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000006c2:    ed991a0a    ....    VLDR     s2,[r9,#0x28]
+        0x000006c6:    ed9f2a62    ..b*    VLDR     s4,[pc,#392] ; [0x850] = 0xbd9f63ff
+        0x000006ca:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000006ce:    ed991a0b    ....    VLDR     s2,[r9,#0x2c]
+        0x000006d2:    ed9f2a60    ..`*    VLDR     s4,[pc,#384] ; [0x854] = 0xbe009dbf
+        0x000006d6:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000006da:    ed991a0c    ....    VLDR     s2,[r9,#0x30]
+        0x000006de:    ed9f2a5e    ..^*    VLDR     s4,[pc,#376] ; [0x858] = 0xbde7861e
+        0x000006e2:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000006e6:    ed991a0d    ....    VLDR     s2,[r9,#0x34]
+        0x000006ea:    ed9f2a5c    ..\*    VLDR     s4,[pc,#368] ; [0x85c] = 0x3dd1c2be
+        0x000006ee:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000006f2:    ed991a0e    ....    VLDR     s2,[r9,#0x38]
+        0x000006f6:    ed9f2a5a    ..Z*    VLDR     s4,[pc,#360] ; [0x860] = 0xbd0694b6
+        0x000006fa:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000006fe:    ed991a0f    ....    VLDR     s2,[r9,#0x3c]
+        0x00000702:    ed9f2a58    ..X*    VLDR     s4,[pc,#352] ; [0x864] = 0x3dc5c602
+        0x00000706:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000070a:    ed9f2a57    ..W*    VLDR     s4,[pc,#348] ; [0x868] = 0xbe0b66e5
+        0x0000070e:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x00000712:    ed9f0a56    ..V.    VLDR     s0,[pc,#344] ; [0x86c] = 0xbe490ff5
+        0x00000716:    ed991a00    ....    VLDR     s2,[r9,#0]
+        0x0000071a:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000071e:    ed991a01    ....    VLDR     s2,[r9,#4]
+        0x00000722:    ed9f2a53    ..S*    VLDR     s4,[pc,#332] ; [0x870] = 0xbcfb9c5b
+        0x00000726:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000072a:    ed991a02    ....    VLDR     s2,[r9,#8]
+        0x0000072e:    ed9f2a51    ..Q*    VLDR     s4,[pc,#324] ; [0x874] = 0xbe29de64
+        0x00000732:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000736:    ed991a03    ....    VLDR     s2,[r9,#0xc]
+        0x0000073a:    ed9f2a4f    ..O*    VLDR     s4,[pc,#316] ; [0x878] = 0xbe32587c
+        0x0000073e:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000742:    ed991a04    ....    VLDR     s2,[r9,#0x10]
+        0x00000746:    ed9f2a4d    ..M*    VLDR     s4,[pc,#308] ; [0x87c] = 0x3dc4591e
+        0x0000074a:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000074e:    ed991a05    ....    VLDR     s2,[r9,#0x14]
+        0x00000752:    ed9f2a4b    ..K*    VLDR     s4,[pc,#300] ; [0x880] = 0xbd30a3ae
+        0x00000756:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000075a:    ed991a06    ....    VLDR     s2,[r9,#0x18]
+        0x0000075e:    ed9f2a49    ..I*    VLDR     s4,[pc,#292] ; [0x884] = 0x3e48fc5a
+        0x00000762:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000766:    ed991a07    ....    VLDR     s2,[r9,#0x1c]
+        0x0000076a:    ed9f2a47    ..G*    VLDR     s4,[pc,#284] ; [0x888] = 0x3d00b2bb
+        0x0000076e:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000772:    ed991a08    ....    VLDR     s2,[r9,#0x20]
+        0x00000776:    ed9f2a45    ..E*    VLDR     s4,[pc,#276] ; [0x88c] = 0x3d8d8a62
+        0x0000077a:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000077e:    ed991a09    ....    VLDR     s2,[r9,#0x24]
+        0x00000782:    ed9f2a43    ..C*    VLDR     s4,[pc,#268] ; [0x890] = 0xbe53b98f
+        0x00000786:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x0000078a:    ed991a0a    ....    VLDR     s2,[r9,#0x28]
+        0x0000078e:    ed9f2a41    ..A*    VLDR     s4,[pc,#260] ; [0x894] = 0x3e0e19ab
+        0x00000792:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x00000796:    ed991a0b    ....    VLDR     s2,[r9,#0x2c]
+        0x0000079a:    ed9f2a3f    ..?*    VLDR     s4,[pc,#252] ; [0x898] = 0xbde16246
+        0x0000079e:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000007a2:    ed991a0c    ....    VLDR     s2,[r9,#0x30]
+        0x000007a6:    ed9f2a3d    ..=*    VLDR     s4,[pc,#244] ; [0x89c] = 0x3df97709
+        0x000007aa:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000007ae:    ed991a0d    ....    VLDR     s2,[r9,#0x34]
+        0x000007b2:    ed9f2a3b    ..;*    VLDR     s4,[pc,#236] ; [0x8a0] = 0xbe55bca5
+        0x000007b6:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000007ba:    ed991a0e    ....    VLDR     s2,[r9,#0x38]
+        0x000007be:    ed9f2a39    ..9*    VLDR     s4,[pc,#228] ; [0x8a4] = 0x3b7b8651
+        0x000007c2:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000007c6:    ed991a0f    ....    VLDR     s2,[r9,#0x3c]
+        0x000007ca:    ed9f2a37    ..7*    VLDR     s4,[pc,#220] ; [0x8a8] = 0x3e183b68
+        0x000007ce:    ee010a02    ....    VMLA.F32 s0,s2,s4
+        0x000007d2:    ed800a01    ....    VSTR     s0,[r0,#4]
+        0x000007d6:    b002        ..      ADD      sp,sp,#8
+        0x000007d8:    ecbd8b02    ....    VPOP     {d8}
+        0x000007dc:    b001        ..      ADD      sp,sp,#4
+        0x000007de:    e8bd4ff0    ...O    POP      {r4-r11,lr}
+        0x000007e2:    4770        pG      BX       lr
+    BIAS_3
+    $d
+        0x000007e4:    3d52e102    ..R=    DCD    1028841730
+        0x000007e8:    3d60e16e    n.`=    DCD    1029759342
+        0x000007ec:    3cb84ef0    .N.<    DCD    1018711792
+        0x000007f0:    bde2331a    .3..    DCD    3185718042
+        0x000007f4:    bd1f5dbe    .]..    DCD    3172949438
+        0x000007f8:    3cf1b795    ...<    DCD    1022474133
+        0x000007fc:    3d41930f    ..A=    DCD    1027707663
+        0x00000800:    bd95f4e0    ....    DCD    3180721376
+        0x00000804:    bae7759e    .u..    DCD    3135731102
+        0x00000808:    bd61aafb    ..a.    DCD    3177294587
+        0x0000080c:    3d36cf8c    ..6=    DCD    1027002252
+        0x00000810:    3b01506b    kP.;    DCD    989941867
+        0x00000814:    3db17e6c    l~.=    DCD    1035042412
+        0x00000818:    3cd4a6ee    ...<    DCD    1020569326
+        0x0000081c:    bdf6861c    ....    DCD    3187050012
+        0x00000820:    bcd10a71    q...    DCD    3167816305
+        0x00000824:    be35d77b    {.5.    DCD    3191199611
+        0x00000828:    3e229c14    ..">    DCD    1042455572
+        0x0000082c:    3e440d1c    ..D>    DCD    1044647196
+        0x00000830:    be261099    ..&.    DCD    3190165657
+        0x00000834:    3da9550e    .U.=    DCD    1034507534
+        0x00000838:    bd93ab1a    ....    DCD    3180571418
+        0x0000083c:    be3b6017    .`;.    DCD    3191562263
+        0x00000840:    3da9230a    .#.=    DCD    1034494730
+        0x00000844:    3e1579ea    .y.>    DCD    1041594858
+        0x00000848:    3cef33b6    .3.<    DCD    1022309302
+        0x0000084c:    be30d6ad    ..0.    DCD    3190871725
+        0x00000850:    bd9f63ff    .c..    DCD    3181339647
+        0x00000854:    be009dbf    ....    DCD    3187711423
+        0x00000858:    bde7861e    ....    DCD    3186066974
+        0x0000085c:    3dd1c2be    ...=    DCD    1037157054
+        0x00000860:    bd0694b6    ....    DCD    3171325110
+        0x00000864:    3dc5c602    ...=    DCD    1036371458
+        0x00000868:    be0b66e5    .f..    DCD    3188418277
+        0x0000086c:    be490ff5    ..I.    DCD    3192459253
+        0x00000870:    bcfb9c5b    [...    DCD    3170606171
+        0x00000874:    be29de64    d.).    DCD    3190414948
+        0x00000878:    be32587c    |X2.    DCD    3190970492
+        0x0000087c:    3dc4591e    .Y.=    DCD    1036278046
+        0x00000880:    bd30a3ae    ..0.    DCD    3174081454
+        0x00000884:    3e48fc5a    Z.H>    DCD    1044970586
+        0x00000888:    3d00b2bb    ...=    DCD    1023455931
+        0x0000088c:    3d8d8a62    b..=    DCD    1032686178
+        0x00000890:    be53b98f    ..S.    DCD    3193158031
+        0x00000894:    3e0e19ab    ...>    DCD    1041111467
+        0x00000898:    bde16246    Fb..    DCD    3185664582
+        0x0000089c:    3df97709    .w.=    DCD    1039759113
+        0x000008a0:    be55bca5    ..U.    DCD    3193289893
+        0x000008a4:    3b7b8651    Q.{;    DCD    997951057
+        0x000008a8:    3e183b68    h;.>    DCD    1041775464
+
+** Section #14 '.rel.text.g1_assist_v10_policy_forward' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 152 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    19 relocations applied to section #13 '.text.g1_assist_v10_policy_forward'
+
+
+** Section #15 '.ARM.exidx.text.g1_assist_v10_policy_forward' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #13 '.text.g1_assist_v10_policy_forward'
+
+
+** Section #16 '.rel.ARM.exidx.text.g1_assist_v10_policy_forward' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    1 relocations applied to section #15 '.ARM.exidx.text.g1_assist_v10_policy_forward'
+
+
+** Section #17 '.text.g1_assist_v10_stop' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 58 bytes (alignment 8)
+    Address: 0x00000000
+
+    [Anonymous symbol #24]
+    $t
+    g1_assist_v10_stop
+        0x00000000:    2900        .)      CMP      r1,#0
+        0x00000002:    bf1c        ..      ITT      NE
+        0x00000004:    2200        ."      MOVNE    r2,#0
+        0x00000006:    e9c12200    ..."    STRDNE   r2,r2,[r1,#0]
+        0x0000000a:    2800        .(      CMP      r0,#0
+        0x0000000c:    bf08        ..      IT       EQ
+        0x0000000e:    4770        pG      BXEQ     lr
+        0x00000010:    b510        ..      PUSH     {r4,lr}
+        0x00000012:    f64211e4    B...    MOV      r1,#0x29e4
+        0x00000016:    f64213ec    B...    MOV      r3,#0x29ec
+        0x0000001a:    2200        ."      MOVS     r2,#0
+        0x0000001c:    4604        .F      MOV      r4,r0
+        0x0000001e:    5042        BP      STR      r2,[r0,r1]
+        0x00000020:    18c2        ..      ADDS     r2,r0,r3
+        0x00000022:    f64031ec    @..1    MOV      r1,#0xbec
+        0x00000026:    4610        .F      MOV      r0,r2
+        0x00000028:    f7fffffe    ....    BL       __aeabi_memclr4
+        0x0000002c:    f6421084    B...    MOV      r0,#0x2984
+        0x00000030:    2160        `!      MOVS     r1,#0x60
+        0x00000032:    4420         D      ADD      r0,r0,r4
+        0x00000034:    f7fffffe    ....    BL       __aeabi_memclr4
+        0x00000038:    bd10        ..      POP      {r4,pc}
+
+** Section #18 '.rel.text.g1_assist_v10_stop' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 16 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    2 relocations applied to section #17 '.text.g1_assist_v10_stop'
+
+
+** Section #19 '.ARM.exidx.text.g1_assist_v10_stop' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #17 '.text.g1_assist_v10_stop'
+
+
+** Section #20 '.rel.ARM.exidx.text.g1_assist_v10_stop' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    1 relocations applied to section #19 '.ARM.exidx.text.g1_assist_v10_stop'
+
+
+** Section #21 '.text.g1_assist_v10_reset' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 248 bytes (alignment 8)
+    Address: 0x00000000
+
+    [Anonymous symbol #26]
+    $t
+    g1_assist_v10_reset
+        0x00000000:    b1d0        ..      CBZ      r0,{pc}+0x38 ; 0x38
+        0x00000002:    b5f0        ..      PUSH     {r4-r7,lr}
+        0x00000004:    b081        ..      SUB      sp,sp,#4
+        0x00000006:    4604        .F      MOV      r4,r0
+        0x00000008:    f64210ec    B...    MOV      r0,#0x29ec
+        0x0000000c:    460e        .F      MOV      r6,r1
+        0x0000000e:    4420         D      ADD      r0,r0,r4
+        0x00000010:    f64031ec    @..1    MOV      r1,#0xbec
+        0x00000014:    4615        .F      MOV      r5,r2
+        0x00000016:    f7fffffe    ....    BL       __aeabi_memclr4
+        0x0000001a:    f6421084    B...    MOV      r0,#0x2984
+        0x0000001e:    2164        d!      MOVS     r1,#0x64
+        0x00000020:    4420         D      ADD      r0,r0,r4
+        0x00000022:    f7fffffe    ....    BL       __aeabi_memclr4
+        0x00000026:    f04f30ff    O..0    MOV      r0,#0xffffffff
+        0x0000002a:    2e00        ..      CMP      r6,#0
+        0x0000002c:    bf18        ..      IT       NE
+        0x0000002e:    2d00        .-      CMPNE    r5,#0
+        0x00000030:    d106        ..      BNE      {pc}+0x10 ; 0x40
+        0x00000032:    b001        ..      ADD      sp,sp,#4
+        0x00000034:    bdf0        ..      POP      {r4-r7,pc}
+        0x00000036:    bf00        ..      NOP      
+        0x00000038:    f04f30ff    O..0    MOV      r0,#0xffffffff
+        0x0000003c:    4770        pG      BX       lr
+        0x0000003e:    bf00        ..      NOP      
+        0x00000040:    f64210e4    B...    MOV      r0,#0x29e4
+        0x00000044:    2100        .!      MOVS     r1,#0
+        0x00000046:    1827        '.      ADDS     r7,r4,r0
+        0x00000048:    2000        .       MOVS     r0,#0
+        0x0000004a:    bf00        ..      NOP      
+        0x0000004c:    1862        b.      ADDS     r2,r4,r1
+        0x0000004e:    6833        3h      LDR      r3,[r6,#0]
+        0x00000050:    5063        cP      STR      r3,[r4,r1]
+        0x00000052:    3128        (1      ADDS     r1,r1,#0x28
+        0x00000054:    682b        +h      LDR      r3,[r5,#0]
+        0x00000056:    f8c230c8    ...0    STR      r3,[r2,#0xc8]
+        0x0000005a:    f8c20190    ....    STR      r0,[r2,#0x190]
+        0x0000005e:    29c8        .)      CMP      r1,#0xc8
+        0x00000060:    6873        sh      LDR      r3,[r6,#4]
+        0x00000062:    6053        S`      STR      r3,[r2,#4]
+        0x00000064:    686b        kh      LDR      r3,[r5,#4]
+        0x00000066:    f8c230cc    ...0    STR      r3,[r2,#0xcc]
+        0x0000006a:    f8c20194    ....    STR      r0,[r2,#0x194]
+        0x0000006e:    6833        3h      LDR      r3,[r6,#0]
+        0x00000070:    6093        .`      STR      r3,[r2,#8]
+        0x00000072:    682b        +h      LDR      r3,[r5,#0]
+        0x00000074:    f8c230d0    ...0    STR      r3,[r2,#0xd0]
+        0x00000078:    f8c20198    ....    STR      r0,[r2,#0x198]
+        0x0000007c:    6873        sh      LDR      r3,[r6,#4]
+        0x0000007e:    60d3        .`      STR      r3,[r2,#0xc]
+        0x00000080:    686b        kh      LDR      r3,[r5,#4]
+        0x00000082:    f8c230d4    ...0    STR      r3,[r2,#0xd4]
+        0x00000086:    f8c2019c    ....    STR      r0,[r2,#0x19c]
+        0x0000008a:    6833        3h      LDR      r3,[r6,#0]
+        0x0000008c:    6113        .a      STR      r3,[r2,#0x10]
+        0x0000008e:    682b        +h      LDR      r3,[r5,#0]
+        0x00000090:    f8c230d8    ...0    STR      r3,[r2,#0xd8]
+        0x00000094:    f8c201a0    ....    STR      r0,[r2,#0x1a0]
+        0x00000098:    6873        sh      LDR      r3,[r6,#4]
+        0x0000009a:    6153        Sa      STR      r3,[r2,#0x14]
+        0x0000009c:    686b        kh      LDR      r3,[r5,#4]
+        0x0000009e:    f8c230dc    ...0    STR      r3,[r2,#0xdc]
+        0x000000a2:    f8c201a4    ....    STR      r0,[r2,#0x1a4]
+        0x000000a6:    6833        3h      LDR      r3,[r6,#0]
+        0x000000a8:    6193        .a      STR      r3,[r2,#0x18]
+        0x000000aa:    682b        +h      LDR      r3,[r5,#0]
+        0x000000ac:    f8c230e0    ...0    STR      r3,[r2,#0xe0]
+        0x000000b0:    f8c201a8    ....    STR      r0,[r2,#0x1a8]
+        0x000000b4:    6873        sh      LDR      r3,[r6,#4]
+        0x000000b6:    61d3        .a      STR      r3,[r2,#0x1c]
+        0x000000b8:    686b        kh      LDR      r3,[r5,#4]
+        0x000000ba:    f8c230e4    ...0    STR      r3,[r2,#0xe4]
+        0x000000be:    f8c201ac    ....    STR      r0,[r2,#0x1ac]
+        0x000000c2:    6833        3h      LDR      r3,[r6,#0]
+        0x000000c4:    6213        .b      STR      r3,[r2,#0x20]
+        0x000000c6:    682b        +h      LDR      r3,[r5,#0]
+        0x000000c8:    f8c230e8    ...0    STR      r3,[r2,#0xe8]
+        0x000000cc:    f8c201b0    ....    STR      r0,[r2,#0x1b0]
+        0x000000d0:    6873        sh      LDR      r3,[r6,#4]
+        0x000000d2:    6253        Sb      STR      r3,[r2,#0x24]
+        0x000000d4:    686b        kh      LDR      r3,[r5,#4]
+        0x000000d6:    f8c230ec    ...0    STR      r3,[r2,#0xec]
+        0x000000da:    f8c201b4    ....    STR      r0,[r2,#0x1b4]
+        0x000000de:    d1b5        ..      BNE      {pc}-0x92 ; 0x4c
+        0x000000e0:    f5047016    ...p    ADD      r0,r4,#0x258
+        0x000000e4:    f640212c    @.,!    MOV      r1,#0xa2c
+        0x000000e8:    f7fffffe    ....    BL       __aeabi_memclr4
+        0x000000ec:    2001        .       MOVS     r0,#1
+        0x000000ee:    e9c70000    ....    STRD     r0,r0,[r7,#0]
+        0x000000f2:    2000        .       MOVS     r0,#0
+        0x000000f4:    b001        ..      ADD      sp,sp,#4
+        0x000000f6:    bdf0        ..      POP      {r4-r7,pc}
+
+** Section #22 '.rel.text.g1_assist_v10_reset' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 24 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    3 relocations applied to section #21 '.text.g1_assist_v10_reset'
+
+
+** Section #23 '.ARM.exidx.text.g1_assist_v10_reset' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #21 '.text.g1_assist_v10_reset'
+
+
+** Section #24 '.rel.ARM.exidx.text.g1_assist_v10_reset' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    1 relocations applied to section #23 '.ARM.exidx.text.g1_assist_v10_reset'
+
+
+** Section #25 '.text.g1_assist_v10_step' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
+    Size   : 4688 bytes (alignment 8)
+    Address: 0x00000000
+
+    [Anonymous symbol #28]
+    $t
+    g1_assist_v10_step
+        0x00000000:    e92d4ff0    -..O    PUSH     {r4-r11,lr}
+        0x00000004:    b081        ..      SUB      sp,sp,#4
+        0x00000006:    ed2d8b0a    -...    VPUSH    {d8-d12}
+        0x0000000a:    b0a0        ..      SUB      sp,sp,#0x80
+        0x0000000c:    4604        .F      MOV      r4,r0
+        0x0000000e:    f8dd90d0    ....    LDR      r9,[sp,#0xd0]
+        0x00000012:    2800        .(      CMP      r0,#0
+        0x00000014:    bf18        ..      IT       NE
+        0x00000016:    f1b90f00    ....    CMPNE    r9,#0
+        0x0000001a:    d107        ..      BNE      {pc}+0x12 ; 0x2c
+        0x0000001c:    f1b90f00    ....    CMP      r9,#0
+        0x00000020:    bf1c        ..      ITT      NE
+        0x00000022:    2000        .       MOVNE    r0,#0
+        0x00000024:    e9c90000    ....    STRDNE   r0,r0,[r9,#0]
+        0x00000028:    b984        ..      CBNZ     r4,{pc}+0x24 ; 0x4c
+        0x0000002a:    e01c        ..      B        {pc}+0x3c ; 0x66
+        0x0000002c:    f04f0000    O...    MOV      r0,#0
+        0x00000030:    f8c90000    ....    STR      r0,[r9,#0]
+        0x00000034:    f8c90004    ....    STR      r0,[r9,#4]
+        0x00000038:    b1f3        ..      CBZ      r3,{pc}+0x40 ; 0x78
+        0x0000003a:    f6421084    B...    MOV      r0,#0x2984
+        0x0000003e:    1827        '.      ADDS     r7,r4,r0
+        0x00000040:    6e38        8n      LDR      r0,[r7,#0x60]
+        0x00000042:    b1c8        ..      CBZ      r0,{pc}+0x36 ; 0x78
+        0x00000044:    2900        .)      CMP      r1,#0
+        0x00000046:    bf18        ..      IT       NE
+        0x00000048:    2a00        .*      CMPNE    r2,#0
+        0x0000004a:    d129        ).      BNE      {pc}+0x56 ; 0xa0
+        0x0000004c:    f64210ec    B...    MOV      r0,#0x29ec
+        0x00000050:    f64031ec    @..1    MOV      r1,#0xbec
+        0x00000054:    4420         D      ADD      r0,r0,r4
+        0x00000056:    f7fffffe    ....    BL       __aeabi_memclr4
+        0x0000005a:    f6421084    B...    MOV      r0,#0x2984
+        0x0000005e:    2164        d!      MOVS     r1,#0x64
+        0x00000060:    4420         D      ADD      r0,r0,r4
+        0x00000062:    f7fffffe    ....    BL       __aeabi_memclr4
+        0x00000066:    f04f30ff    O..0    MOV      r0,#0xffffffff
+        0x0000006a:    b020         .      ADD      sp,sp,#0x80
+        0x0000006c:    ecbd8b0a    ....    VPOP     {d8-d12}
+        0x00000070:    b001        ..      ADD      sp,sp,#4
+        0x00000072:    e8bd8ff0    ....    POP      {r4-r11,pc}
+        0x00000076:    bf00        ..      NOP      
+        0x00000078:    f64210ec    B...    MOV      r0,#0x29ec
+        0x0000007c:    f64031ec    @..1    MOV      r1,#0xbec
+        0x00000080:    4420         D      ADD      r0,r0,r4
+        0x00000082:    f7fffffe    ....    BL       __aeabi_memclr4
+        0x00000086:    f6421084    B...    MOV      r0,#0x2984
+        0x0000008a:    2164        d!      MOVS     r1,#0x64
+        0x0000008c:    4420         D      ADD      r0,r0,r4
+        0x0000008e:    f7fffffe    ....    BL       __aeabi_memclr4
+        0x00000092:    2001        .       MOVS     r0,#1
+        0x00000094:    b020         .      ADD      sp,sp,#0x80
+        0x00000096:    ecbd8b0a    ....    VPOP     {d8-d12}
+        0x0000009a:    b001        ..      ADD      sp,sp,#4
+        0x0000009c:    e8bd8ff0    ....    POP      {r4-r11,pc}
+        0x000000a0:    6e78        xn      LDR      r0,[r7,#0x64]
+        0x000000a2:    4688        .F      MOV      r8,r1
+        0x000000a4:    2800        .(      CMP      r0,#0
+        0x000000a6:    d053        S.      BEQ      {pc}+0xaa ; 0x150
+        0x000000a8:    2000        .       MOVS     r0,#0
+        0x000000aa:    2300        .#      MOVS     r3,#0
+        0x000000ac:    18e5        ..      ADDS     r5,r4,r3
+        0x000000ae:    680e        .h      LDR      r6,[r1,#0]
+        0x000000b0:    50e6        .P      STR      r6,[r4,r3]
+        0x000000b2:    3328        (3      ADDS     r3,r3,#0x28
+        0x000000b4:    6816        .h      LDR      r6,[r2,#0]
+        0x000000b6:    f8c560c8    ...`    STR      r6,[r5,#0xc8]
+        0x000000ba:    f8c50190    ....    STR      r0,[r5,#0x190]
+        0x000000be:    2bc8        .+      CMP      r3,#0xc8
+        0x000000c0:    684e        Nh      LDR      r6,[r1,#4]
+        0x000000c2:    606e        n`      STR      r6,[r5,#4]
+        0x000000c4:    6856        Vh      LDR      r6,[r2,#4]
+        0x000000c6:    f8c560cc    ...`    STR      r6,[r5,#0xcc]
+        0x000000ca:    f8c50194    ....    STR      r0,[r5,#0x194]
+        0x000000ce:    680e        .h      LDR      r6,[r1,#0]
+        0x000000d0:    60ae        .`      STR      r6,[r5,#8]
+        0x000000d2:    6816        .h      LDR      r6,[r2,#0]
+        0x000000d4:    f8c560d0    ...`    STR      r6,[r5,#0xd0]
+        0x000000d8:    f8c50198    ....    STR      r0,[r5,#0x198]
+        0x000000dc:    684e        Nh      LDR      r6,[r1,#4]
+        0x000000de:    60ee        .`      STR      r6,[r5,#0xc]
+        0x000000e0:    6856        Vh      LDR      r6,[r2,#4]
+        0x000000e2:    f8c560d4    ...`    STR      r6,[r5,#0xd4]
+        0x000000e6:    f8c5019c    ....    STR      r0,[r5,#0x19c]
+        0x000000ea:    680e        .h      LDR      r6,[r1,#0]
+        0x000000ec:    612e        .a      STR      r6,[r5,#0x10]
+        0x000000ee:    6816        .h      LDR      r6,[r2,#0]
+        0x000000f0:    f8c560d8    ...`    STR      r6,[r5,#0xd8]
+        0x000000f4:    f8c501a0    ....    STR      r0,[r5,#0x1a0]
+        0x000000f8:    684e        Nh      LDR      r6,[r1,#4]
+        0x000000fa:    616e        na      STR      r6,[r5,#0x14]
+        0x000000fc:    6856        Vh      LDR      r6,[r2,#4]
+        0x000000fe:    f8c560dc    ...`    STR      r6,[r5,#0xdc]
+        0x00000102:    f8c501a4    ....    STR      r0,[r5,#0x1a4]
+        0x00000106:    680e        .h      LDR      r6,[r1,#0]
+        0x00000108:    61ae        .a      STR      r6,[r5,#0x18]
+        0x0000010a:    6816        .h      LDR      r6,[r2,#0]
+        0x0000010c:    f8c560e0    ...`    STR      r6,[r5,#0xe0]
+        0x00000110:    f8c501a8    ....    STR      r0,[r5,#0x1a8]
+        0x00000114:    684e        Nh      LDR      r6,[r1,#4]
+        0x00000116:    61ee        .a      STR      r6,[r5,#0x1c]
+        0x00000118:    6856        Vh      LDR      r6,[r2,#4]
+        0x0000011a:    f8c560e4    ...`    STR      r6,[r5,#0xe4]
+        0x0000011e:    f8c501ac    ....    STR      r0,[r5,#0x1ac]
+        0x00000122:    680e        .h      LDR      r6,[r1,#0]
+        0x00000124:    622e        .b      STR      r6,[r5,#0x20]
+        0x00000126:    6816        .h      LDR      r6,[r2,#0]
+        0x00000128:    f8c560e8    ...`    STR      r6,[r5,#0xe8]
+        0x0000012c:    f8c501b0    ....    STR      r0,[r5,#0x1b0]
+        0x00000130:    684e        Nh      LDR      r6,[r1,#4]
+        0x00000132:    626e        nb      STR      r6,[r5,#0x24]
+        0x00000134:    6856        Vh      LDR      r6,[r2,#4]
+        0x00000136:    f8c560ec    ...`    STR      r6,[r5,#0xec]
+        0x0000013a:    f8c501b4    ....    STR      r0,[r5,#0x1b4]
+        0x0000013e:    d1b5        ..      BNE      {pc}-0x92 ; 0xac
+        0x00000140:    f5047016    ...p    ADD      r0,r4,#0x258
+        0x00000144:    f640212c    @.,!    MOV      r1,#0xa2c
+        0x00000148:    4616        .F      MOV      r6,r2
+        0x0000014a:    f7fffffe    ....    BL       __aeabi_memclr4
+        0x0000014e:    e0ae        ..      B        {pc}+0x160 ; 0x2ae
+        0x00000150:    ed970a04    ....    VLDR     s0,[r7,#0x10]
+        0x00000154:    ed9f3aba    ...:    VLDR     s6,[pc,#744] ; [0x440] = 0x3fb33333
+        0x00000158:    ee800a03    ....    VDIV.F32 s0,s0,s6
+        0x0000015c:    eeb24a04    ...J    VMOV.F32 s8,#10.00000000
+        0x00000160:    ed8d0a04    ....    VSTR     s0,[sp,#0x10]
+        0x00000164:    eeb10a00    ....    VMOV.F32 s0,#4.00000000
+        0x00000168:    ed971a06    ....    VLDR     s2,[r7,#0x18]
+        0x0000016c:    ed972a07    ...*    VLDR     s4,[r7,#0x1c]
+        0x00000170:    ee811a04    ....    VDIV.F32 s2,s2,s8
+        0x00000174:    ed975a08    ...Z    VLDR     s10,[r7,#0x20]
+        0x00000178:    ed8d1a06    ....    VSTR     s2,[sp,#0x18]
+        0x0000017c:    ee221a00    "...    VMUL.F32 s2,s4,s0
+        0x00000180:    ed8d1a07    ....    VSTR     s2,[sp,#0x1c]
+        0x00000184:    ee851a04    ....    VDIV.F32 s2,s10,s8
+        0x00000188:    ed8d1a08    ....    VSTR     s2,[sp,#0x20]
+        0x0000018c:    ed971a0b    ....    VLDR     s2,[r7,#0x2c]
+        0x00000190:    ed9f2ae8    ...*    VLDR     s4,[pc,#928] ; [0x534] = 0x3d75c28f
+        0x00000194:    ed974a0c    ...J    VLDR     s8,[r7,#0x30]
+        0x00000198:    ee811a02    ....    VDIV.F32 s2,s2,s4
+        0x0000019c:    ed972a0d    ...*    VLDR     s4,[r7,#0x34]
+        0x000001a0:    ed8d1a0b    ....    VSTR     s2,[sp,#0x2c]
+        0x000001a4:    ee841a03    ....    VDIV.F32 s2,s8,s6
+        0x000001a8:    eeb73a08    ...:    VMOV.F32 s6,#1.50000000
+        0x000001ac:    ed8d1a0c    ....    VSTR     s2,[sp,#0x30]
+        0x000001b0:    ed9f1ae1    ....    VLDR     s2,[pc,#900] ; [0x538] = 0x3e99999a
+        0x000001b4:    6978        xi      LDR      r0,[r7,#0x14]
+        0x000001b6:    ee821a01    ....    VDIV.F32 s2,s4,s2
+        0x000001ba:    ed972a10    ...*    VLDR     s4,[r7,#0x40]
+        0x000001be:    ed8d1a0d    ....    VSTR     s2,[sp,#0x34]
+        0x000001c2:    ee821a03    ....    VDIV.F32 s2,s4,s6
+        0x000001c6:    ed8d1a10    ....    VSTR     s2,[sp,#0x40]
+        0x000001ca:    ed971a12    ....    VLDR     s2,[r7,#0x48]
+        0x000001ce:    ed9f4adb    ...J    VLDR     s8,[pc,#876] ; [0x53c] = 0x3f99999a
+        0x000001d2:    ed972a13    ...*    VLDR     s4,[r7,#0x4c]
+        0x000001d6:    ed973a14    ...:    VLDR     s6,[r7,#0x50]
+        0x000001da:    ee811a04    ....    VDIV.F32 s2,s2,s8
+        0x000001de:    ed9f4ad8    ...J    VLDR     s8,[pc,#864] ; [0x540] = 0x3e4ccccd
+        0x000001e2:    ed8d1a12    ....    VSTR     s2,[sp,#0x48]
+        0x000001e6:    ee821a04    ....    VDIV.F32 s2,s4,s8
+        0x000001ea:    9005        ..      STR      r0,[sp,#0x14]
+        0x000001ec:    ee230a00    #...    VMUL.F32 s0,s6,s0
+        0x000001f0:    ed8d1a13    ....    VSTR     s2,[sp,#0x4c]
+        0x000001f4:    ed8d0a14    ....    VSTR     s0,[sp,#0x50]
+        0x000001f8:    ed970a16    ....    VLDR     s0,[r7,#0x58]
+        0x000001fc:    ed9f1ad1    ....    VLDR     s2,[pc,#836] ; [0x544] = 0x3dcccccd
+        0x00000200:    ed972a17    ...*    VLDR     s4,[r7,#0x5c]
+        0x00000204:    e9d70309    ....    LDRD     r0,r3,[r7,#0x24]
+        0x00000208:    e9cd0309    ....    STRD     r0,r3,[sp,#0x24]
+        0x0000020c:    6c78        xl      LDR      r0,[r7,#0x44]
+        0x0000020e:    9011        ..      STR      r0,[sp,#0x44]
+        0x00000210:    6d78        xm      LDR      r0,[r7,#0x54]
+        0x00000212:    9015        ..      STR      r0,[sp,#0x54]
+        0x00000214:    ee800a01    ....    VDIV.F32 s0,s0,s2
+        0x00000218:    eeb13a0c    ...:    VMOV.F32 s6,#7.00000000
+        0x0000021c:    e9d70302    ....    LDRD     r0,r3,[r7,#8]
+        0x00000220:    9016        ..      STR      r0,[sp,#0x58]
+        0x00000222:    f5076043    ..C`    ADD      r0,r7,#0xc30
+        0x00000226:    ed8d0a0e    ....    VSTR     s0,[sp,#0x38]
+        0x0000022a:    ee820a01    ....    VDIV.F32 s0,s4,s2
+        0x0000022e:    9317        ..      STR      r3,[sp,#0x5c]
+        0x00000230:    f6074334    ..4C    ADD      r3,r7,#0xc34
+        0x00000234:    ed8d0a0f    ....    VSTR     s0,[sp,#0x3c]
+        0x00000238:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000023c:    ed9f1ac2    ....    VLDR     s2,[pc,#776] ; [0x548] = 0x3e32b8c2
+        0x00000240:    ed932a00    ...*    VLDR     s4,[r3,#0]
+        0x00000244:    ee800a01    ....    VDIV.F32 s0,s0,s2
+        0x00000248:    f6074038    ..8@    ADD      r0,r7,#0xc38
+        0x0000024c:    ed8d0a18    ....    VSTR     s0,[sp,#0x60]
+        0x00000250:    ee820a01    ....    VDIV.F32 s0,s4,s2
+        0x00000254:    ed8d0a19    ....    VSTR     s0,[sp,#0x64]
+        0x00000258:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x0000025c:    f607403c    ..<@    ADD      r0,r7,#0xc3c
+        0x00000260:    ee800a03    ....    VDIV.F32 s0,s0,s6
+        0x00000264:    f6074348    ..HC    ADD      r3,r7,#0xc48
+        0x00000268:    ed8d0a1a    ....    VSTR     s0,[sp,#0x68]
+        0x0000026c:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000270:    f607404c    ..L@    ADD      r0,r7,#0xc4c
+        0x00000274:    ed931a00    ....    VLDR     s2,[r3,#0]
+        0x00000278:    ee800a03    ....    VDIV.F32 s0,s0,s6
+        0x0000027c:    ed902a00    ...*    VLDR     s4,[r0,#0]
+        0x00000280:    eeb81a41    ..A.    VCVT.F32.U32 s2,s2
+        0x00000284:    ed8d0a1b    ....    VSTR     s0,[sp,#0x6c]
+        0x00000288:    eeb80a42    ..B.    VCVT.F32.U32 s0,s4
+        0x0000028c:    ed8d0a1c    ....    VSTR     s0,[sp,#0x70]
+        0x00000290:    ed9f0aae    ....    VLDR     s0,[pc,#696] ; [0x54c] = 0x43160000
+        0x00000294:    f6421084    B...    MOV      r0,#0x2984
+        0x00000298:    ee810a00    ....    VDIV.F32 s0,s2,s0
+        0x0000029c:    1823        #.      ADDS     r3,r4,r0
+        0x0000029e:    a804        ..      ADD      r0,sp,#0x10
+        0x000002a0:    9000        ..      STR      r0,[sp,#0]
+        0x000002a2:    4620         F      MOV      r0,r4
+        0x000002a4:    ed8d0a1d    ....    VSTR     s0,[sp,#0x74]
+        0x000002a8:    4616        .F      MOV      r6,r2
+        0x000002aa:    f7fffffe    ....    BL       g1_assist_v10_history_append ; 0x0 Section #7
+        0x000002ae:    f6415104    A..Q    MOV      r1,#0x1d04
+        0x000002b2:    2000        .       MOVS     r0,#0
+        0x000002b4:    1865        e.      ADDS     r5,r4,r1
+        0x000002b6:    6678        xf      STR      r0,[r7,#0x64]
+        0x000002b8:    4620         F      MOV      r0,r4
+        0x000002ba:    4629        )F      MOV      r1,r5
+        0x000002bc:    f7fffffe    ....    BL       g1_assist_v10_history_build_observation ; 0x0 Section #10
+        0x000002c0:    f6044284    ...B    ADD      r2,r4,#0xc84
+        0x000002c4:    a91e        ..      ADD      r1,sp,#0x78
+        0x000002c6:    4628        (F      MOV      r0,r5
+        0x000002c8:    f7fffffe    ....    BL       g1_assist_v10_policy_forward ; 0x0 Section #13
+        0x000002cc:    ed960a00    ....    VLDR     s0,[r6,#0]
+        0x000002d0:    ed972a02    ...*    VLDR     s4,[r7,#8]
+        0x000002d4:    ee300a42    0.B.    VSUB.F32 s0,s0,s4
+        0x000002d8:    ed9f1a9d    ....    VLDR     s2,[pc,#628] ; [0x550] = 0x3e9122d0
+        0x000002dc:    ed973a03    ...:    VLDR     s6,[r7,#0xc]
+        0x000002e0:    ee002a01    ...*    VMLA.F32 s4,s0,s2
+        0x000002e4:    ed872a02    ...*    VSTR     s4,[r7,#8]
+        0x000002e8:    ed960a01    ....    VLDR     s0,[r6,#4]
+        0x000002ec:    ee300a43    0.C.    VSUB.F32 s0,s0,s6
+        0x000002f0:    ee003a01    ...:    VMLA.F32 s6,s0,s2
+        0x000002f4:    ed9f1a97    ....    VLDR     s2,[pc,#604] ; [0x554] = 0xbdf5c28f
+        0x000002f8:    ed873a03    ...:    VSTR     s6,[r7,#0xc]
+        0x000002fc:    ee320a43    2.C.    VSUB.F32 s0,s4,s6
+        0x00000300:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000304:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000308:    da0a        ..      BGE      {pc}+0x18 ; 0x320
+        0x0000030a:    ed9f1a93    ....    VLDR     s2,[pc,#588] ; [0x558] = 0xbda3d70a
+        0x0000030e:    eeb42a41    ..A*    VCMP.F32 s4,s2
+        0x00000312:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000316:    da03        ..      BGE      {pc}+0xa ; 0x320
+        0x00000318:    eebf0a00    ....    VMOV.F32 s0,#-1.00000000
+        0x0000031c:    4640        @F      MOV      r0,r8
+        0x0000031e:    e017        ..      B        {pc}+0x32 ; 0x350
+        0x00000320:    ed9f1a8e    ....    VLDR     s2,[pc,#568] ; [0x55c] = 0x3df5c28f
+        0x00000324:    4640        @F      MOV      r0,r8
+        0x00000326:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x0000032a:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000032e:    dd0d        ..      BLE      {pc}+0x1e ; 0x34c
+        0x00000330:    ed9f0a89    ....    VLDR     s0,[pc,#548] ; [0x558] = 0xbda3d70a
+        0x00000334:    eeb71a00    ....    VMOV.F32 s2,#1.00000000
+        0x00000338:    eeb40a43    ..C.    VCMP.F32 s0,s6
+        0x0000033c:    ed9f0a88    ....    VLDR     s0,[pc,#544] ; [0x560] = 0
+        0x00000340:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000344:    fe310a00    1...    VSELGT.F32 s0,s2,s0
+        0x00000348:    e002        ..      B        {pc}+0x8 ; 0x350
+        0x0000034a:    bf00        ..      NOP      
+        0x0000034c:    ed9f0a84    ....    VLDR     s0,[pc,#528] ; [0x560] = 0
+        0x00000350:    ed974a0a    ...J    VLDR     s8,[r7,#0x28]
+        0x00000354:    eeb40a44    ..D.    VCMP.F32 s0,s8
+        0x00000358:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000035c:    d008        ..      BEQ      {pc}+0x14 ; 0x370
+        0x0000035e:    ed905a00    ...Z    VLDR     s10,[r0,#0]
+        0x00000362:    ed875a0e    ...Z    VSTR     s10,[r7,#0x38]
+        0x00000366:    ed906a01    ...j    VLDR     s12,[r0,#4]
+        0x0000036a:    ed876a0f    ...j    VSTR     s12,[r7,#0x3c]
+        0x0000036e:    e003        ..      B        {pc}+0xa ; 0x378
+        0x00000370:    ed975a0e    ...Z    VLDR     s10,[r7,#0x38]
+        0x00000374:    ed976a0f    ...j    VLDR     s12,[r7,#0x3c]
+        0x00000378:    ed977a10    ...z    VLDR     s14,[r7,#0x40]
+        0x0000037c:    ed9f1a79    ..y.    VLDR     s2,[pc,#484] ; [0x564] = 0x3c23d70a
+        0x00000380:    ee377a01    7..z    VADD.F32 s14,s14,s2
+        0x00000384:    eef70a08    ....    VMOV.F32 s1,#1.50000000
+        0x00000388:    edd01a00    ....    VLDR     s3,[r0,#0]
+        0x0000038c:    ee355a61    5.aZ    VSUB.F32 s10,s10,s3
+        0x00000390:    ed875a16    ...Z    VSTR     s10,[r7,#0x58]
+        0x00000394:    fe875a60    ..`Z    VMINNM.F32 s10,s14,s1
+        0x00000398:    ed907a01    ...z    VLDR     s14,[r0,#4]
+        0x0000039c:    f1070058    ..X.    ADD      r0,r7,#0x58
+        0x000003a0:    ee366a47    6.Gj    VSUB.F32 s12,s12,s14
+        0x000003a4:    ed9f7a70    ..pz    VLDR     s14,[pc,#448] ; [0x568] = 0x3fbffff8
+        0x000003a8:    eeb45a47    ..GZ    VCMP.F32 s10,s14
+        0x000003ac:    ed876a17    ...j    VSTR     s12,[r7,#0x5c]
+        0x000003b0:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000003b4:    ed875a10    ...Z    VSTR     s10,[r7,#0x40]
+        0x000003b8:    da3a        :.      BGE      {pc}+0x78 ; 0x430
+        0x000003ba:    ed976a11    ...j    VLDR     s12,[r7,#0x44]
+        0x000003be:    eeb56a40    ..@j    VCMP.F32 s12,#0.0
+        0x000003c2:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000003c6:    d03d        =.      BEQ      {pc}+0x7e ; 0x444
+        0x000003c8:    edd71a15    ....    VLDR     s3,[r7,#0x54]
+        0x000003cc:    ed9f7a67    ..gz    VLDR     s14,[pc,#412] ; [0x56c] = 0x3d32b8c2
+        0x000003d0:    eef51a40    ..@.    VCMP.F32 s3,#0.0
+        0x000003d4:    2200        ."      MOVS     r2,#0
+        0x000003d6:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000003da:    f04f0101    O...    MOV      r1,#1
+        0x000003de:    dd35        5.      BLE      {pc}+0x6e ; 0x44c
+        0x000003e0:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x000003e4:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000003e8:    bf1c        ..      ITT      NE
+        0x000003ea:    eeb40a46    ..F.    VCMPNE.F32 s0,s12
+        0x000003ee:    eef1fa10    ....    VMRSNE   APSR_nzcv,FPSCR
+        0x000003f2:    d02b        +.      BEQ      {pc}+0x5a ; 0x44c
+        0x000003f4:    eef62a00    ...*    VMOV.F32 s5,#0.50000000
+        0x000003f8:    edd71a12    ....    VLDR     s3,[r7,#0x48]
+        0x000003fc:    ee612aa2    a..*    VMUL.F32 s5,s3,s5
+        0x00000400:    eeb45a62    ..bZ    VCMP.F32 s10,s5
+        0x00000404:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000408:    db20         .      BLT      {pc}+0x44 ; 0x44c
+        0x0000040a:    ee217aa0    !..z    VMUL.F32 s14,s3,s1
+        0x0000040e:    eddf0a57    ..W.    VLDR     s1,[pc,#348] ; [0x56c] = 0x3d32b8c2
+        0x00000412:    eeb45a47    ..GZ    VCMP.F32 s10,s14
+        0x00000416:    ed9f7a56    ..Vz    VLDR     s14,[pc,#344] ; [0x570] = 0x3d1d466e
+        0x0000041a:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000041e:    bfd8        ..      IT       LE
+        0x00000420:    2201        ."      MOVLE    r2,#1
+        0x00000422:    07d1        ..      LSLS     r1,r2,#31
+        0x00000424:    f04f0101    O...    MOV      r1,#1
+        0x00000428:    fe007a87    ...z    VSELEQ.F32 s14,s1,s14
+        0x0000042c:    e00e        ..      B        {pc}+0x20 ; 0x44c
+        0x0000042e:    bf00        ..      NOP      
+        0x00000430:    2100        .!      MOVS     r1,#0
+        0x00000432:    6479        yd      STR      r1,[r7,#0x44]
+        0x00000434:    6579        ye      STR      r1,[r7,#0x54]
+        0x00000436:    ed9f7a4f    ..Oz    VLDR     s14,[pc,#316] ; [0x574] = 0x3d567750
+        0x0000043a:    ed9f6a49    ..Ij    VLDR     s12,[pc,#292] ; [0x560] = 0
+        0x0000043e:    e004        ..      B        {pc}+0xc ; 0x44a
+    __arm_cp.6_35
+    $d
+        0x00000440:    3fb33333    33.?    DCD    1068708659
+    $t
+        0x00000444:    ed9f7a4b    ..Kz    VLDR     s14,[pc,#300] ; [0x574] = 0x3d567750
+        0x00000448:    2100        .!      MOVS     r1,#0
+        0x0000044a:    2200        ."      MOVS     r2,#0
+        0x0000044c:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x00000450:    2300        .#      MOVS     r3,#0
+        0x00000452:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000456:    bfa8        ..      IT       GE
+        0x00000458:    2301        .#      MOVGE    r3,#1
+        0x0000045a:    ee377a07    7..z    VADD.F32 s14,s14,s14
+        0x0000045e:    eb000383    ....    ADD      r3,r0,r3,LSL #2
+        0x00000462:    eeb40a44    ..D.    VCMP.F32 s0,s8
+        0x00000466:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000046a:    f04f0000    O...    MOV      r0,#0
+        0x0000046e:    edd30a00    ....    VLDR     s1,[r3,#0]
+        0x00000472:    d109        ..      BNE      {pc}+0x16 ; 0x488
+        0x00000474:    ed971a0b    ....    VLDR     s2,[r7,#0x2c]
+        0x00000478:    ed9f4a3a    ..:J    VLDR     s8,[pc,#232] ; [0x564] = 0x3c23d70a
+        0x0000047c:    ee311a04    1...    VADD.F32 s2,s2,s8
+        0x00000480:    ed9f4a2c    ..,J    VLDR     s8,[pc,#176] ; [0x534] = 0x3d75c28f
+        0x00000484:    fe811a44    ..D.    VMINNM.F32 s2,s2,s8
+        0x00000488:    07d2        ..      LSLS     r2,r2,#31
+        0x0000048a:    ed9f4a3b    ..;J    VLDR     s8,[pc,#236] ; [0x578] = 0x3ca3d4f1
+        0x0000048e:    eddf1a3b    ..;.    VLDR     s3,[pc,#236] ; [0x57c] = 0x3cf5c076
+        0x00000492:    f04f0200    O...    MOV      r2,#0
+        0x00000496:    fe014a84    ...J    VSELEQ.F32 s8,s3,s8
+        0x0000049a:    2300        .#      MOVS     r3,#0
+        0x0000049c:    eeb41a44    ..D.    VCMP.F32 s2,s8
+        0x000004a0:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000004a4:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x000004a8:    bfa8        ..      IT       GE
+        0x000004aa:    2201        ."      MOVGE    r2,#1
+        0x000004ac:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000004b0:    bf18        ..      IT       NE
+        0x000004b2:    2301        .#      MOVNE    r3,#1
+        0x000004b4:    eef40a47    ..G.    VCMP.F32 s1,s14
+        0x000004b8:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000004bc:    bfa8        ..      IT       GE
+        0x000004be:    2001        .       MOVGE    r0,#1
+        0x000004c0:    401a        .@      ANDS     r2,r2,r3
+        0x000004c2:    ed870a0a    ....    VSTR     s0,[r7,#0x28]
+        0x000004c6:    ea020c00    ....    AND      r12,r2,r0
+        0x000004ca:    ed871a0b    ....    VSTR     s2,[r7,#0x2c]
+        0x000004ce:    f1bc0f01    ....    CMP      r12,#1
+        0x000004d2:    d15e        ^.      BNE      {pc}+0xc0 ; 0x592
+        0x000004d4:    2000        .       MOVS     r0,#0
+        0x000004d6:    eeb40a46    ..F.    VCMP.F32 s0,s12
+        0x000004da:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000004de:    bf08        ..      IT       EQ
+        0x000004e0:    2001        .       MOVEQ    r0,#1
+        0x000004e2:    f0810101    ....    EOR      r1,r1,#1
+        0x000004e6:    4308        .C      ORRS     r0,r0,r1
+        0x000004e8:    d14a        J.      BNE      {pc}+0x98 ; 0x580
+        0x000004ea:    ed9f7a15    ...z    VLDR     s14,[pc,#84] ; [0x540] = 0x3e4ccccd
+        0x000004ee:    eeb45a47    ..GZ    VCMP.F32 s10,s14
+        0x000004f2:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000004f6:    db43        C.      BLT      {pc}+0x8a ; 0x580
+        0x000004f8:    ed9f7a10    ...z    VLDR     s14,[pc,#64] ; [0x53c] = 0x3f99999a
+        0x000004fc:    eeb45a47    ..GZ    VCMP.F32 s10,s14
+        0x00000500:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000504:    dc3c        <.      BGT      {pc}+0x7c ; 0x580
+        0x00000506:    ed976a15    ...j    VLDR     s12,[r7,#0x54]
+        0x0000050a:    eeb56a40    ..@j    VCMP.F32 s12,#0.0
+        0x0000050e:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000512:    dd09        ..      BLE      {pc}+0x16 ; 0x528
+        0x00000514:    eeb66a00    ...j    VMOV.F32 s12,#0.50000000
+        0x00000518:    ed977a12    ...z    VLDR     s14,[r7,#0x48]
+        0x0000051c:    ee277a06    '..z    VMUL.F32 s14,s14,s12
+        0x00000520:    ee057a06    ...z    VMLA.F32 s14,s10,s12
+        0x00000524:    eeb05a47    ..GZ    VMOV.F32 s10,s14
+        0x00000528:    ed875a12    ...Z    VSTR     s10,[r7,#0x48]
+        0x0000052c:    f04f507e    O.~P    MOV      r0,#0x3f800000
+        0x00000530:    6578        xe      STR      r0,[r7,#0x54]
+        0x00000532:    e02a        *.      B        {pc}+0x58 ; 0x58a
+    __arm_cp.6_36
+    $d
+        0x00000534:    3d75c28f    ..u=    DCD    1031127695
+    __arm_cp.6_37
+        0x00000538:    3e99999a    ...>    DCD    1050253722
+    __arm_cp.6_38
+        0x0000053c:    3f99999a    ...?    DCD    1067030938
+    __arm_cp.6_39
+        0x00000540:    3e4ccccd    ..L>    DCD    1045220557
+    __arm_cp.6_40
+        0x00000544:    3dcccccd    ...=    DCD    1036831949
+        0x00000548:    3e32b8c2    ..2>    DCD    1043511490
+    __arm_cp.6_42
+        0x0000054c:    43160000    ...C    DCD    1125515264
+    __arm_cp.6_43
+        0x00000550:    3e9122d0    .".>    DCD    1049699024
+    __arm_cp.6_44
+        0x00000554:    bdf5c28f    ....    DCD    3186999951
+    __arm_cp.6_45
+        0x00000558:    bda3d70a    ....    DCD    3181631242
+    __arm_cp.6_46
+        0x0000055c:    3df5c28f    ...=    DCD    1039516303
+        0x00000560:    00000000    ....    DCD    0
+    __arm_cp.6_48
+        0x00000564:    3c23d70a    ..#<    DCD    1008981770
+    __arm_cp.6_49
+        0x00000568:    3fbffff8    ...?    DCD    1069547512
+    __arm_cp.6_50
+        0x0000056c:    3d32b8c2    ..2=    DCD    1026734274
+    __arm_cp.6_51
+        0x00000570:    3d1d466e    nF.=    DCD    1025328750
+    __arm_cp.6_52
+        0x00000574:    3d567750    PwV=    DCD    1029076816
+    __arm_cp.6_53
+        0x00000578:    3ca3d4f1    ...<    DCD    1017369841
+    __arm_cp.6_54
+        0x0000057c:    3cf5c076    v..<    DCD    1022738550
+    $t
+        0x00000580:    eeb40a46    ..F.    VCMP.F32 s0,s12
+        0x00000584:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000588:    d003        ..      BEQ      {pc}+0xa ; 0x592
+        0x0000058a:    2000        .       MOVS     r0,#0
+        0x0000058c:    6438        8d      STR      r0,[r7,#0x40]
+        0x0000058e:    ed870a11    ....    VSTR     s0,[r7,#0x44]
+        0x00000592:    eeb02ac2    ...*    VABS.F32 s4,s4
+        0x00000596:    f1070a10    ....    ADD      r10,r7,#0x10
+        0x0000059a:    eeb03ac3    ...:    VABS.F32 s6,s6
+        0x0000059e:    fe822a03    ...*    VMAXNM.F32 s4,s4,s6
+        0x000005a2:    ed9f3abf    ...:    VLDR     s6,[pc,#764] ; [0x8a0] = 0x3d23d70a
+        0x000005a6:    eeb42a43    ..C*    VCMP.F32 s4,s6
+        0x000005aa:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000005ae:    da0b        ..      BGE      {pc}+0x1a ; 0x5c8
+        0x000005b0:    ed972a0d    ...*    VLDR     s4,[r7,#0x34]
+        0x000005b4:    ed1f3a15    ...:    VLDR     s6,[pc,#-84] ; [0x564] = 0x3c23d70a
+        0x000005b8:    ee322a03    2..*    VADD.F32 s4,s4,s6
+        0x000005bc:    ed1f3a22    ..":    VLDR     s6,[pc,#-136] ; [0x538] = 0x3e99999a
+        0x000005c0:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x000005c4:    e002        ..      B        {pc}+0x8 ; 0x5cc
+        0x000005c6:    bf00        ..      NOP      
+        0x000005c8:    ed1f2a1b    ...*    VLDR     s4,[pc,#-108] ; [0x560] = 0
+        0x000005cc:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x000005d0:    2200        ."      MOVS     r2,#0
+        0x000005d2:    ed97aa07    ....    VLDR     s20,[r7,#0x1c]
+        0x000005d6:    2100        .!      MOVS     r1,#0
+        0x000005d8:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000005dc:    bf18        ..      IT       NE
+        0x000005de:    2201        ."      MOVNE    r2,#1
+        0x000005e0:    eeb5aa40    ..@.    VCMP.F32 s20,#0.0
+        0x000005e4:    ed979a05    ....    VLDR     s18,[r7,#0x14]
+        0x000005e8:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000005ec:    eeb59a40    ..@.    VCMP.F32 s18,#0.0
+        0x000005f0:    ed9f3aac    ...:    VLDR     s6,[pc,#688] ; [0x8a4] = 0x3d75c183
+        0x000005f4:    bfc8        ..      IT       GT
+        0x000005f6:    2101        .!      MOVGT    r1,#1
+        0x000005f8:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000005fc:    f04f050c    O...    MOV      r5,#0xc
+        0x00000600:    eeb41a43    ..C.    VCMP.F32 s2,s6
+        0x00000604:    f04f0300    O...    MOV      r3,#0
+        0x00000608:    f04f0600    O...    MOV      r6,#0
+        0x0000060c:    ed9f3aa6    ...:    VLDR     s6,[pc,#664] ; [0x8a8] = 0x3e999978
+        0x00000610:    f04f0000    O...    MOV      r0,#0
+        0x00000614:    bfb8        ..      IT       LT
+        0x00000616:    2508        .%      MOVLT    r5,#8
+        0x00000618:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000061c:    bfa8        ..      IT       GE
+        0x0000061e:    2301        .#      MOVGE    r3,#1
+        0x00000620:    eeb40a49    ..I.    VCMP.F32 s0,s18
+        0x00000624:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000628:    bf18        ..      IT       NE
+        0x0000062a:    2601        .&      MOVNE    r6,#1
+        0x0000062c:    eeb42a43    ..C*    VCMP.F32 s4,s6
+        0x00000630:    ed872a0d    ...*    VSTR     s4,[r7,#0x34]
+        0x00000634:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000638:    db09        ..      BLT      {pc}+0x16 ; 0x64e
+        0x0000063a:    eeb62a00    ...*    VMOV.F32 s4,#0.50000000
+        0x0000063e:    ed9a3a00    ...:    VLDR     s6,[r10,#0]
+        0x00000642:    eeb43a42    ..B:    VCMP.F32 s6,s4
+        0x00000646:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000064a:    bfa8        ..      IT       GE
+        0x0000064c:    2001        .       MOVGE    r0,#1
+        0x0000064e:    eeb59a40    ..@.    VCMP.F32 s18,#0.0
+        0x00000652:    ed97ba14    ....    VLDR     s22,[r7,#0x50]
+        0x00000656:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000065a:    d046        F.      BEQ      {pc}+0x90 ; 0x6ea
+        0x0000065c:    eeb5aa40    ..@.    VCMP.F32 s20,#0.0
+        0x00000660:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000664:    dc41        A.      BGT      {pc}+0x86 ; 0x6ea
+        0x00000666:    1979        y.      ADDS     r1,r7,r5
+        0x00000668:    ed1f3a44    ..D:    VLDR     s6,[pc,#-272] ; [0x55c] = 0x3df5c28f
+        0x0000066c:    401a        .@      ANDS     r2,r2,r3
+        0x0000066e:    ed912a00    ...*    VLDR     s4,[r1,#0]
+        0x00000672:    2100        .!      MOVS     r1,#0
+        0x00000674:    eeb42a43    ..C*    VCMP.F32 s4,s6
+        0x00000678:    4032        2@      ANDS     r2,r2,r6
+        0x0000067a:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000067e:    bfc8        ..      IT       GT
+        0x00000680:    2101        .!      MOVGT    r1,#1
+        0x00000682:    4311        .C      ORRS     r1,r1,r2
+        0x00000684:    4308        .C      ORRS     r0,r0,r1
+        0x00000686:    2100        .!      MOVS     r1,#0
+        0x00000688:    07c0        ..      LSLS     r0,r0,#31
+        0x0000068a:    d10e        ..      BNE      {pc}+0x20 ; 0x6aa
+        0x0000068c:    ed972a0c    ...*    VLDR     s4,[r7,#0x30]
+        0x00000690:    ed9f3a86    ...:    VLDR     s6,[pc,#536] ; [0x8ac] = 0xb58637bd
+        0x00000694:    ee322a4b    2.K*    VSUB.F32 s4,s4,s22
+        0x00000698:    ee322a03    2..*    VADD.F32 s4,s4,s6
+        0x0000069c:    ed973a04    ...:    VLDR     s6,[r7,#0x10]
+        0x000006a0:    eeb43a42    ..B:    VCMP.F32 s6,s4
+        0x000006a4:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000006a8:    db1f        ..      BLT      {pc}+0x42 ; 0x6ea
+        0x000006aa:    ed972a00    ...*    VLDR     s4,[r7,#0]
+        0x000006ae:    ed9f3a80    ...:    VLDR     s6,[pc,#512] ; [0x8b0] = 0x40490fdb
+        0x000006b2:    eeb02ac2    ...*    VABS.F32 s4,s4
+        0x000006b6:    ed9f5a7f    ...Z    VLDR     s10,[pc,#508] ; [0x8b4] = 0x43200000
+        0x000006ba:    ed1faa56    ..V.    VLDR     s20,[pc,#-344] ; [0x564] = 0x3c23d70a
+        0x000006be:    f24d700a    M..p    MOV      r0,#0xd70a
+        0x000006c2:    2101        .!      MOVS     r1,#1
+        0x000006c4:    f6c34023    ..#@    MOVT     r0,#0x3c23
+        0x000006c8:    ee223a03    "..:    VMUL.F32 s6,s4,s6
+        0x000006cc:    61f8        .a      STR      r0,[r7,#0x1c]
+        0x000006ce:    ed872a08    ...*    VSTR     s4,[r7,#0x20]
+        0x000006d2:    ee833a05    ...:    VDIV.F32 s6,s6,s10
+        0x000006d6:    ed9f5a78    ..xZ    VLDR     s10,[pc,#480] ; [0x8b8] = 0x3ca3d70a
+        0x000006da:    ee333a0a    3..:    VADD.F32 s6,s6,s20
+        0x000006de:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x000006e2:    fe8bba43    ..C.    VMINNM.F32 s22,s22,s6
+        0x000006e6:    ed87ba14    ....    VSTR     s22,[r7,#0x50]
+        0x000006ea:    eeb41a44    ..D.    VCMP.F32 s2,s8
+        0x000006ee:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000006f2:    db0a        ..      BLT      {pc}+0x18 ; 0x70a
+        0x000006f4:    eeb59a40    ..@.    VCMP.F32 s18,#0.0
+        0x000006f8:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000006fc:    bf01        ..      ITTTT    EQ
+        0x000006fe:    eeb50a40    ..@.    VCMPEQ.F32 s0,#0.0
+        0x00000702:    eef1fa10    ....    VMRSEQ   APSR_nzcv,FPSCR
+        0x00000706:    2000        .       MOVEQ    r0,#0
+        0x00000708:    6278        xb      STREQ    r0,[r7,#0x24]
+        0x0000070a:    2000        .       MOVS     r0,#0
+        0x0000070c:    eeb59a40    ..@.    VCMP.F32 s18,#0.0
+        0x00000710:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000714:    bf18        ..      IT       NE
+        0x00000716:    2001        .       MOVNE    r0,#1
+        0x00000718:    f08c0201    ....    EOR      r2,r12,#1
+        0x0000071c:    4310        .C      ORRS     r0,r0,r2
+        0x0000071e:    d17d        }.      BNE      {pc}+0xfe ; 0x81c
+        0x00000720:    ed971a09    ....    VLDR     s2,[r7,#0x24]
+        0x00000724:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x00000728:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000072c:    d076        v.      BEQ      {pc}+0xf0 ; 0x81c
+        0x0000072e:    eeb71a00    ....    VMOV.F32 s2,#1.00000000
+        0x00000732:    ed9d3a1f    ...:    VLDR     s6,[sp,#0x7c]
+        0x00000736:    eebf4a00    ...J    VMOV.F32 s8,#-1.00000000
+        0x0000073a:    ed9d2a1e    ...*    VLDR     s4,[sp,#0x78]
+        0x0000073e:    ed9f5a5f    .._Z    VLDR     s10,[pc,#380] ; [0x8bc] = 0x3f4ccccc
+        0x00000742:    2000        .       MOVS     r0,#0
+        0x00000744:    fe833a41    ..A:    VMINNM.F32 s6,s6,s2
+        0x00000748:    6138        8a      STR      r0,[r7,#0x10]
+        0x0000074a:    fe822a41    ..A*    VMINNM.F32 s4,s4,s2
+        0x0000074e:    ed870a05    ....    VSTR     s0,[r7,#0x14]
+        0x00000752:    fe833a04    ...:    VMAXNM.F32 s6,s6,s8
+        0x00000756:    fe822a04    ...*    VMAXNM.F32 s4,s4,s8
+        0x0000075a:    eeb64a00    ...J    VMOV.F32 s8,#0.50000000
+        0x0000075e:    ee333a01    3..:    VADD.F32 s6,s6,s2
+        0x00000762:    ee321a01    2...    VADD.F32 s2,s4,s2
+        0x00000766:    ed9f2a56    ..V*    VLDR     s4,[pc,#344] ; [0x8c0] = 0x3f19999a
+        0x0000076a:    ee233a04    #..:    VMUL.F32 s6,s6,s8
+        0x0000076e:    ee211a04    !...    VMUL.F32 s2,s2,s8
+        0x00000772:    eeb24a04    ...J    VMOV.F32 s8,#10.00000000
+        0x00000776:    ee032a05    ...*    VMLA.F32 s4,s6,s10
+        0x0000077a:    ed973a15    ...:    VLDR     s6,[r7,#0x54]
+        0x0000077e:    ee211a04    !...    VMUL.F32 s2,s2,s8
+        0x00000782:    eeb53a40    ..@:    VCMP.F32 s6,#0.0
+        0x00000786:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000078a:    ed872a0c    ...*    VSTR     s4,[r7,#0x30]
+        0x0000078e:    dd11        ..      BLE      {pc}+0x26 ; 0x7b4
+        0x00000790:    ed973a12    ...:    VLDR     s6,[r7,#0x48]
+        0x00000794:    ed9f4a4b    ..KJ    VLDR     s8,[pc,#300] ; [0x8c4] = 0x3f4ccccd
+        0x00000798:    ee233a04    #..:    VMUL.F32 s6,s6,s8
+        0x0000079c:    ed1f4ad8    ...J    VLDR     s8,[pc,#-864] ; [0x440] = 0x3fb33333
+        0x000007a0:    fe833a44    ..D:    VMINNM.F32 s6,s6,s8
+        0x000007a4:    ed1f4a9c    ...J    VLDR     s8,[pc,#-624] ; [0x538] = 0x3e99999a
+        0x000007a8:    fe833a04    ...:    VMAXNM.F32 s6,s6,s8
+        0x000007ac:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x000007b0:    ed872a0c    ...*    VSTR     s4,[r7,#0x30]
+        0x000007b4:    ed9f3a44    ..D:    VLDR     s6,[pc,#272] ; [0x8c8] = 0x3ee66666
+        0x000007b8:    eeb09a40    ..@.    VMOV.F32 s18,s0
+        0x000007bc:    ee222a03    "..*    VMUL.F32 s4,s4,s6
+        0x000007c0:    eeb53a00    ...:    VMOV.F32 s6,#0.25000000
+        0x000007c4:    ed1f4aa2    ...J    VLDR     s8,[pc,#-648] ; [0x540] = 0x3e4ccccd
+        0x000007c8:    ed870a09    ....    VSTR     s0,[r7,#0x24]
+        0x000007cc:    ed9f5a38    ..8Z    VLDR     s10,[pc,#224] ; [0x8b0] = 0x40490fdb
+        0x000007d0:    fe824a44    ..DJ    VMINNM.F32 s8,s4,s8
+        0x000007d4:    ed1faa9e    ....    VLDR     s20,[pc,#-632] ; [0x560] = 0
+        0x000007d8:    fe82ba43    ..C.    VMINNM.F32 s22,s4,s6
+        0x000007dc:    ed9f3a35    ..5:    VLDR     s6,[pc,#212] ; [0x8b4] = 0x43200000
+        0x000007e0:    ed87ba14    ....    VSTR     s22,[r7,#0x50]
+        0x000007e4:    e9c70007    ....    STRD     r0,r0,[r7,#0x1c]
+        0x000007e8:    fe842a4b    ..K*    VMINNM.F32 s4,s8,s22
+        0x000007ec:    ee222a03    "..*    VMUL.F32 s4,s4,s6
+        0x000007f0:    ee822a05    ...*    VDIV.F32 s4,s4,s10
+        0x000007f4:    fe811a42    ..B.    VMINNM.F32 s2,s2,s4
+        0x000007f8:    ed871a06    ....    VSTR     s2,[r7,#0x18]
+        0x000007fc:    ee212a05    !..*    VMUL.F32 s4,s2,s10
+        0x00000800:    ee822a03    ...*    VDIV.F32 s4,s4,s6
+        0x00000804:    ed1f3aa9    ...:    VLDR     s6,[pc,#-676] ; [0x564] = 0x3c23d70a
+        0x00000808:    ee322a03    2..*    VADD.F32 s4,s4,s6
+        0x0000080c:    ed1f3ab3    ...:    VLDR     s6,[pc,#-716] ; [0x544] = 0x3dcccccd
+        0x00000810:    fe822a03    ...*    VMAXNM.F32 s4,s4,s6
+        0x00000814:    fe841a42    ..B.    VMINNM.F32 s2,s8,s4
+        0x00000818:    ed871a13    ....    VSTR     s2,[r7,#0x4c]
+        0x0000081c:    eeb59a40    ..@.    VCMP.F32 s18,#0.0
+        0x00000820:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000824:    d007        ..      BEQ      {pc}+0x12 ; 0x836
+        0x00000826:    ed9a0a00    ....    VLDR     s0,[r10,#0]
+        0x0000082a:    ed1f1ab2    ....    VLDR     s2,[pc,#-712] ; [0x564] = 0x3c23d70a
+        0x0000082e:    ee300a01    0...    VADD.F32 s0,s0,s2
+        0x00000832:    ed8a0a00    ....    VSTR     s0,[r10,#0]
+        0x00000836:    2900        .)      CMP      r1,#0
+        0x00000838:    d048        H.      BEQ      {pc}+0x94 ; 0x8cc
+        0x0000083a:    ed1fcab6    ....    VLDR     s24,[pc,#-728] ; [0x564] = 0x3c23d70a
+        0x0000083e:    eeb71a00    ....    VMOV.F32 s2,#1.00000000
+        0x00000842:    fe8b0a0c    ....    VMAXNM.F32 s0,s22,s24
+        0x00000846:    ed1f8aba    ....    VLDR     s16,[pc,#-744] ; [0x560] = 0
+        0x0000084a:    ee8a0a00    ....    VDIV.F32 s0,s20,s0
+        0x0000084e:    fe800a41    ..A.    VMINNM.F32 s0,s0,s2
+        0x00000852:    ed9f1ad5    ....    VLDR     s2,[pc,#852] ; [0xba8] = 0x3fc90fdb
+        0x00000856:    fe800a08    ....    VMAXNM.F32 s0,s0,s16
+        0x0000085a:    ee200a01     ...    VMUL.F32 s0,s0,s2
+        0x0000085e:    ee100a10    ....    VMOV     r0,s0
+        0x00000862:    f7fffffe    ....    BL       cosf
+        0x00000866:    eeb59a40    ..@.    VCMP.F32 s18,#0.0
+        0x0000086a:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x0000086e:    d012        ..      BEQ      {pc}+0x28 ; 0x896
+        0x00000870:    ed9f0a0e    ....    VLDR     s0,[pc,#56] ; [0x8ac] = 0xb58637bd
+        0x00000874:    ee3b0a00    ;...    VADD.F32 s0,s22,s0
+        0x00000878:    eeb4aa40    ..@.    VCMP.F32 s20,s0
+        0x0000087c:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000880:    da4e        N.      BGE      {pc}+0xa0 ; 0x920
+        0x00000882:    ee000a10    ....    VMOV     s0,r0
+        0x00000886:    ed971a08    ....    VLDR     s2,[r7,#0x20]
+        0x0000088a:    ee201a01     ...    VMUL.F32 s2,s0,s2
+        0x0000088e:    ee200a01     ...    VMUL.F32 s0,s0,s2
+        0x00000892:    ee298a00    )...    VMUL.F32 s16,s18,s0
+        0x00000896:    ee3a0a0c    :...    VADD.F32 s0,s20,s24
+        0x0000089a:    ed870a07    ....    VSTR     s0,[r7,#0x1c]
+        0x0000089e:    e049        I.      B        {pc}+0x96 ; 0x934
+    __arm_cp.6_55
+    $d
+        0x000008a0:    3d23d70a    ..#=    DCD    1025758986
+    __arm_cp.6_56
+        0x000008a4:    3d75c183    ..u=    DCD    1031127427
+    __arm_cp.6_57
+        0x000008a8:    3e999978    x..>    DCD    1050253688
+    __arm_cp.6_58
+        0x000008ac:    b58637bd    .7..    DCD    3045472189
+    __arm_cp.6_59
+        0x000008b0:    40490fdb    ..I@    DCD    1078530011
+    __arm_cp.6_60
+        0x000008b4:    43200000    .. C    DCD    1126170624
+    __arm_cp.6_61
+        0x000008b8:    3ca3d70a    ...<    DCD    1017370378
+    __arm_cp.6_62
+        0x000008bc:    3f4ccccc    ..L?    DCD    1061997772
+    __arm_cp.6_63
+        0x000008c0:    3f19999a    ...?    DCD    1058642330
+        0x000008c4:    3f4ccccd    ..L?    DCD    1061997773
+    __arm_cp.6_65
+        0x000008c8:    3ee66666    ff.>    DCD    1055286886
+    $t
+        0x000008cc:    ed970a13    ....    VLDR     s0,[r7,#0x4c]
+        0x000008d0:    ed1f1adc    ....    VLDR     s2,[pc,#-880] ; [0x564] = 0x3c23d70a
+        0x000008d4:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x000008d8:    ed971a04    ....    VLDR     s2,[r7,#0x10]
+        0x000008dc:    ed1f8ae0    ....    VLDR     s16,[pc,#-896] ; [0x560] = 0
+        0x000008e0:    ee810a00    ....    VDIV.F32 s0,s2,s0
+        0x000008e4:    eeb71a00    ....    VMOV.F32 s2,#1.00000000
+        0x000008e8:    fe800a41    ..A.    VMINNM.F32 s0,s0,s2
+        0x000008ec:    ed9f1aae    ....    VLDR     s2,[pc,#696] ; [0xba8] = 0x3fc90fdb
+        0x000008f0:    fe800a08    ....    VMAXNM.F32 s0,s0,s16
+        0x000008f4:    ee200a01     ...    VMUL.F32 s0,s0,s2
+        0x000008f8:    ee100a10    ....    VMOV     r0,s0
+        0x000008fc:    f7fffffe    ....    BL       sinf
+        0x00000900:    eeb59a40    ..@.    VCMP.F32 s18,#0.0
+        0x00000904:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000908:    d014        ..      BEQ      {pc}+0x2c ; 0x934
+        0x0000090a:    ee000a10    ....    VMOV     s0,r0
+        0x0000090e:    ed971a06    ....    VLDR     s2,[r7,#0x18]
+        0x00000912:    ee201a01     ...    VMUL.F32 s2,s0,s2
+        0x00000916:    ee200a01     ...    VMUL.F32 s0,s0,s2
+        0x0000091a:    ee298a00    )...    VMUL.F32 s16,s18,s0
+        0x0000091e:    e009        ..      B        {pc}+0x16 ; 0x934
+        0x00000920:    ed1f8af1    ....    VLDR     s16,[pc,#-964] ; [0x560] = 0
+        0x00000924:    2000        .       MOVS     r0,#0
+        0x00000926:    e9ca0000    ....    STRD     r0,r0,[r10,#0]
+        0x0000092a:    e9ca0002    ....    STRD     r0,r0,[r10,#8]
+        0x0000092e:    f8ca0010    ....    STR      r0,[r10,#0x10]
+        0x00000932:    6338        8c      STR      r0,[r7,#0x30]
+        0x00000934:    f8d70c48    ..H.    LDR      r0,[r7,#0xc48]
+        0x00000938:    f1070b68    ..h.    ADD      r11,r7,#0x68
+        0x0000093c:    2800        .(      CMP      r0,#0
+        0x0000093e:    f6074e28    ..(N    ADD      lr,r7,#0xc28
+        0x00000942:    9001        ..      STR      r0,[sp,#4]
+        0x00000944:    f04080ce    @...    BNE.W    {pc}+0x1a0 ; 0xae4
+        0x00000948:    f64220d4    B..     MOV      r0,#0x2ad4
+        0x0000094c:    f64f3150    O.P1    MOV      r1,#0xfb50
+        0x00000950:    ed980a00    ....    VLDR     s0,[r8,#0]
+        0x00000954:    4420         D      ADD      r0,r0,r4
+        0x00000956:    f6cf71ff    ...q    MOVT     r1,#0xffff
+        0x0000095a:    ed8e0a00    ....    VSTR     s0,[lr,#0]
+        0x0000095e:    bf00        ..      NOP      
+        0x00000960:    1843        C.      ADDS     r3,r0,r1
+        0x00000962:    31f0        .1      ADDS     r1,r1,#0xf0
+        0x00000964:    f5036680    ...f    ADD      r6,r3,#0x400
+        0x00000968:    f5036581    ...e    ADD      r5,r3,#0x408
+        0x0000096c:    ed830af2    ....    VSTR     s0,[r3,#0x3c8]
+        0x00000970:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x00000974:    f5036682    ...f    ADD      r6,r3,#0x410
+        0x00000978:    ed850a00    ....    VSTR     s0,[r5,#0]
+        0x0000097c:    f5036583    ...e    ADD      r5,r3,#0x418
+        0x00000980:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x00000984:    f5036684    ...f    ADD      r6,r3,#0x420
+        0x00000988:    ed850a00    ....    VSTR     s0,[r5,#0]
+        0x0000098c:    f5036585    ...e    ADD      r5,r3,#0x428
+        0x00000990:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x00000994:    f5036686    ...f    ADD      r6,r3,#0x430
+        0x00000998:    ed850a00    ....    VSTR     s0,[r5,#0]
+        0x0000099c:    f5036587    ...e    ADD      r5,r3,#0x438
+        0x000009a0:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x000009a4:    f5036688    ...f    ADD      r6,r3,#0x440
+        0x000009a8:    ed850a00    ....    VSTR     s0,[r5,#0]
+        0x000009ac:    f5036589    ...e    ADD      r5,r3,#0x448
+        0x000009b0:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x000009b4:    f503668a    ...f    ADD      r6,r3,#0x450
+        0x000009b8:    ed850a00    ....    VSTR     s0,[r5,#0]
+        0x000009bc:    f503658b    ...e    ADD      r5,r3,#0x458
+        0x000009c0:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x000009c4:    f503668c    ...f    ADD      r6,r3,#0x460
+        0x000009c8:    ed850a00    ....    VSTR     s0,[r5,#0]
+        0x000009cc:    f503658d    ...e    ADD      r5,r3,#0x468
+        0x000009d0:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x000009d4:    f503668e    ...f    ADD      r6,r3,#0x470
+        0x000009d8:    ed830af4    ....    VSTR     s0,[r3,#0x3d0]
+        0x000009dc:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x000009e0:    f503668f    ...f    ADD      r6,r3,#0x478
+        0x000009e4:    ed830af6    ....    VSTR     s0,[r3,#0x3d8]
+        0x000009e8:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x000009ec:    f5036690    ...f    ADD      r6,r3,#0x480
+        0x000009f0:    ed830af8    ....    VSTR     s0,[r3,#0x3e0]
+        0x000009f4:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x000009f8:    f5036691    ...f    ADD      r6,r3,#0x488
+        0x000009fc:    ed830afa    ....    VSTR     s0,[r3,#0x3e8]
+        0x00000a00:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x00000a04:    f5036692    ...f    ADD      r6,r3,#0x490
+        0x00000a08:    ed830afc    ....    VSTR     s0,[r3,#0x3f0]
+        0x00000a0c:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x00000a10:    f5036693    ...f    ADD      r6,r3,#0x498
+        0x00000a14:    ed830afe    ....    VSTR     s0,[r3,#0x3f8]
+        0x00000a18:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x00000a1c:    f5036694    ...f    ADD      r6,r3,#0x4a0
+        0x00000a20:    ed850a00    ....    VSTR     s0,[r5,#0]
+        0x00000a24:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x00000a28:    f5036695    ...f    ADD      r6,r3,#0x4a8
+        0x00000a2c:    f5036396    ...c    ADD      r3,r3,#0x4b0
+        0x00000a30:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x00000a34:    ed830a00    ....    VSTR     s0,[r3,#0]
+        0x00000a38:    d192        ..      BNE      {pc}-0xd8 ; 0x960
+        0x00000a3a:    f607402c    ..,@    ADD      r0,r7,#0xc2c
+        0x00000a3e:    ed980a01    ....    VLDR     s0,[r8,#4]
+        0x00000a42:    2100        .!      MOVS     r1,#0
+        0x00000a44:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x00000a48:    f6422068    B.h     MOV      r0,#0x2a68
+        0x00000a4c:    4420         D      ADD      r0,r0,r4
+        0x00000a4e:    bf00        ..      NOP      
+        0x00000a50:    1866        f.      ADDS     r6,r4,r1
+        0x00000a52:    1843        C.      ADDS     r3,r0,r1
+        0x00000a54:    f5065528    ..(U    ADD      r5,r6,#0x2a00
+        0x00000a58:    31f0        .1      ADDS     r1,r1,#0xf0
+        0x00000a5a:    f5b16f96    ...o    CMP      r1,#0x4b0
+        0x00000a5e:    ed030a1e    ....    VSTR     s0,[r3,#-0x78]
+        0x00000a62:    ed850a00    ....    VSTR     s0,[r5,#0]
+        0x00000a66:    f5065529    ..)U    ADD      r5,r6,#0x2a40
+        0x00000a6a:    ed030a1c    ....    VSTR     s0,[r3,#-0x70]
+        0x00000a6e:    ed850a00    ....    VSTR     s0,[r5,#0]
+        0x00000a72:    f506552a    ..*U    ADD      r5,r6,#0x2a80
+        0x00000a76:    f506562b    ..+V    ADD      r6,r6,#0x2ac0
+        0x00000a7a:    ed030a18    ....    VSTR     s0,[r3,#-0x60]
+        0x00000a7e:    ed030a16    ....    VSTR     s0,[r3,#-0x58]
+        0x00000a82:    ed030a14    ....    VSTR     s0,[r3,#-0x50]
+        0x00000a86:    ed030a12    ....    VSTR     s0,[r3,#-0x48]
+        0x00000a8a:    ed030a10    ....    VSTR     s0,[r3,#-0x40]
+        0x00000a8e:    ed030a0e    ....    VSTR     s0,[r3,#-0x38]
+        0x00000a92:    ed030a0c    ....    VSTR     s0,[r3,#-0x30]
+        0x00000a96:    ed030a08    ....    VSTR     s0,[r3,#-0x20]
+        0x00000a9a:    ed030a06    ....    VSTR     s0,[r3,#-0x18]
+        0x00000a9e:    ed030a04    ....    VSTR     s0,[r3,#-0x10]
+        0x00000aa2:    ed030a02    ....    VSTR     s0,[r3,#-8]
+        0x00000aa6:    ed830a00    ....    VSTR     s0,[r3,#0]
+        0x00000aaa:    ed830a02    ....    VSTR     s0,[r3,#8]
+        0x00000aae:    ed830a04    ....    VSTR     s0,[r3,#0x10]
+        0x00000ab2:    ed850a00    ....    VSTR     s0,[r5,#0]
+        0x00000ab6:    ed830a08    ....    VSTR     s0,[r3,#0x20]
+        0x00000aba:    ed830a0a    ....    VSTR     s0,[r3,#0x28]
+        0x00000abe:    ed830a0c    ....    VSTR     s0,[r3,#0x30]
+        0x00000ac2:    ed830a0e    ....    VSTR     s0,[r3,#0x38]
+        0x00000ac6:    ed830a10    ....    VSTR     s0,[r3,#0x40]
+        0x00000aca:    ed830a12    ....    VSTR     s0,[r3,#0x48]
+        0x00000ace:    ed830a14    ....    VSTR     s0,[r3,#0x50]
+        0x00000ad2:    ed860a00    ....    VSTR     s0,[r6,#0]
+        0x00000ad6:    ed830a18    ....    VSTR     s0,[r3,#0x60]
+        0x00000ada:    ed830a1a    ....    VSTR     s0,[r3,#0x68]
+        0x00000ade:    ed830a1c    ....    VSTR     s0,[r3,#0x70]
+        0x00000ae2:    d1b5        ..      BNE      {pc}-0x92 ; 0xa50
+        0x00000ae4:    f5076042    ..B`    ADD      r0,r7,#0xc20
+        0x00000ae8:    ed980a00    ....    VLDR     s0,[r8,#0]
+        0x00000aec:    ed9e1a00    ....    VLDR     s2,[lr,#0]
+        0x00000af0:    2100        .!      MOVS     r1,#0
+        0x00000af2:    ee303a41    0.A:    VSUB.F32 s6,s0,s2
+        0x00000af6:    ed902a00    ...*    VLDR     s4,[r0,#0]
+        0x00000afa:    eeb52a40    ..@*    VCMP.F32 s4,#0.0
+        0x00000afe:    ed9f0ac4    ....    VLDR     s0,[pc,#784] ; [0xe10] = 0x3c0efa35
+        0x00000b02:    2300        .#      MOVS     r3,#0
+        0x00000b04:    f8cda008    ....    STR      r10,[sp,#8]
+        0x00000b08:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000b0c:    bfd8        ..      IT       LE
+        0x00000b0e:    2101        .!      MOVLE    r1,#1
+        0x00000b10:    eeb43a40    ..@:    VCMP.F32 s6,s0
+        0x00000b14:    2600        .&      MOVS     r6,#0
+        0x00000b16:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000b1a:    bfa8        ..      IT       GE
+        0x00000b1c:    2301        .#      MOVGE    r3,#1
+        0x00000b1e:    eeb52a40    ..@*    VCMP.F32 s4,#0.0
+        0x00000b22:    ed9f1abc    ....    VLDR     s2,[pc,#752] ; [0xe14] = 0xbc0efa35
+        0x00000b26:    400b        .@      ANDS     r3,r3,r1
+        0x00000b28:    2100        .!      MOVS     r1,#0
+        0x00000b2a:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000b2e:    bfb8        ..      IT       LT
+        0x00000b30:    2601        .&      MOVLT    r6,#1
+        0x00000b32:    eeb43a41    ..A:    VCMP.F32 s6,s2
+        0x00000b36:    2500        .%      MOVS     r5,#0
+        0x00000b38:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000b3c:    bfc8        ..      IT       GT
+        0x00000b3e:    2101        .!      MOVGT    r1,#1
+        0x00000b40:    eeb52a40    ..@*    VCMP.F32 s4,#0.0
+        0x00000b44:    ea030206    ....    AND      r2,r3,r6
+        0x00000b48:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000b4c:    ea410106    A...    ORR      r1,r1,r6
+        0x00000b50:    bfc8        ..      IT       GT
+        0x00000b52:    2501        .%      MOVGT    r5,#1
+        0x00000b54:    07ce        ..      LSLS     r6,r1,#31
+        0x00000b56:    f642619c    B..a    MOV      r1,#0x2e9c
+        0x00000b5a:    bf18        ..      IT       NE
+        0x00000b5c:    4615        .F      MOVNE    r5,r2
+        0x00000b5e:    f8d7cc44    ..D.    LDR      r12,[r7,#0xc44]
+        0x00000b62:    4421        !D      ADD      r1,r1,r4
+        0x00000b64:    432a        *C      ORRS     r2,r2,r5
+        0x00000b66:    f5076543    ..Ce    ADD      r5,r7,#0xc30
+        0x00000b6a:    f0020201    ....    AND      r2,r2,#1
+        0x00000b6e:    eb010acc    ....    ADD      r10,r1,r12,LSL #3
+        0x00000b72:    ee022a10    ...*    VMOV     s4,r2
+        0x00000b76:    9503        ..      STR      r5,[sp,#0xc]
+        0x00000b78:    f6074538    ..8E    ADD      r5,r7,#0xc38
+        0x00000b7c:    eeb82a42    ..B*    VCVT.F32.U32 s4,s4
+        0x00000b80:    ed8a2a00    ...*    VSTR     s4,[r10,#0]
+        0x00000b84:    b993        ..      CBNZ     r3,{pc}+0x28 ; 0xbac
+        0x00000b86:    b18e        ..      CBZ      r6,{pc}+0x26 ; 0xbac
+        0x00000b88:    ed902a00    ...*    VLDR     s4,[r0,#0]
+        0x00000b8c:    eeb52a40    ..@*    VCMP.F32 s4,#0.0
+        0x00000b90:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000b94:    f34082f8    @...    BLE.W    {pc}+0x5f4 ; 0x1188
+        0x00000b98:    ed9e2a00    ...*    VLDR     s4,[lr,#0]
+        0x00000b9c:    ed983a00    ...:    VLDR     s6,[r8,#0]
+        0x00000ba0:    fe822a03    ...*    VMAXNM.F32 s4,s4,s6
+        0x00000ba4:    e00d        ..      B        {pc}+0x1e ; 0xbc2
+        0x00000ba6:    bf00        ..      NOP      
+    __arm_cp.6_66
+    $d
+        0x00000ba8:    3fc90fdb    ...?    DCD    1070141403
+    $t
+        0x00000bac:    eeb72a00    ...*    VMOV.F32 s4,#1.00000000
+        0x00000bb0:    eebf3a00    ...:    VMOV.F32 s6,#-1.00000000
+        0x00000bb4:    2b00        .+      CMP      r3,#0
+        0x00000bb6:    fe032a02    ...*    VSELEQ.F32 s4,s6,s4
+        0x00000bba:    ed802a00    ...*    VSTR     s4,[r0,#0]
+        0x00000bbe:    ed982a00    ...*    VLDR     s4,[r8,#0]
+        0x00000bc2:    ed8e2a00    ...*    VSTR     s4,[lr,#0]
+        0x00000bc6:    f8d80000    ....    LDR      r0,[r8,#0]
+        0x00000bca:    f84b003c    K.<.    STR      r0,[r11,r12,LSL #3]
+        0x00000bce:    ed9b3a00    ...:    VLDR     s6,[r11,#0]
+        0x00000bd2:    f642609c    B..`    MOV      r0,#0x2e9c
+        0x00000bd6:    eeb04a43    ..CJ    VMOV.F32 s8,s6
+        0x00000bda:    1822        ".      ADDS     r2,r4,r0
+        0x00000bdc:    ed9f2a8e    ...*    VLDR     s4,[pc,#568] ; [0xe18] = 0
+        0x00000be0:    2000        .       MOVS     r0,#0
+        0x00000be2:    bf00        ..      NOP      
+        0x00000be4:    1813        ..      ADDS     r3,r2,r0
+        0x00000be6:    3078        x0      ADDS     r0,r0,#0x78
+        0x00000be8:    f5a36196    ...a    SUB      r1,r3,#0x4b0
+        0x00000bec:    f5b06f96    ...o    CMP      r0,#0x4b0
+        0x00000bf0:    ed915a00    ...Z    VLDR     s10,[r1,#0]
+        0x00000bf4:    f5a36195    ...a    SUB      r1,r3,#0x4a8
+        0x00000bf8:    fe844a45    ..EJ    VMINNM.F32 s8,s8,s10
+        0x00000bfc:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x00000c00:    ed935a00    ...Z    VLDR     s10,[r3,#0]
+        0x00000c04:    ee322a05    2..*    VADD.F32 s4,s4,s10
+        0x00000c08:    ed915a00    ...Z    VLDR     s10,[r1,#0]
+        0x00000c0c:    fe844a45    ..EJ    VMINNM.F32 s8,s8,s10
+        0x00000c10:    f5a36194    ...a    SUB      r1,r3,#0x4a0
+        0x00000c14:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x00000c18:    ed935a02    ...Z    VLDR     s10,[r3,#8]
+        0x00000c1c:    ee322a05    2..*    VADD.F32 s4,s4,s10
+        0x00000c20:    ed915a00    ...Z    VLDR     s10,[r1,#0]
+        0x00000c24:    fe844a45    ..EJ    VMINNM.F32 s8,s8,s10
+        0x00000c28:    f5a36193    ...a    SUB      r1,r3,#0x498
+        0x00000c2c:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x00000c30:    ed935a04    ...Z    VLDR     s10,[r3,#0x10]
+        0x00000c34:    ee322a05    2..*    VADD.F32 s4,s4,s10
+        0x00000c38:    ed915a00    ...Z    VLDR     s10,[r1,#0]
+        0x00000c3c:    fe844a45    ..EJ    VMINNM.F32 s8,s8,s10
+        0x00000c40:    f5a36192    ...a    SUB      r1,r3,#0x490
+        0x00000c44:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x00000c48:    ed935a06    ...Z    VLDR     s10,[r3,#0x18]
+        0x00000c4c:    ee322a05    2..*    VADD.F32 s4,s4,s10
+        0x00000c50:    ed915a00    ...Z    VLDR     s10,[r1,#0]
+        0x00000c54:    fe844a45    ..EJ    VMINNM.F32 s8,s8,s10
+        0x00000c58:    f5a36191    ...a    SUB      r1,r3,#0x488
+        0x00000c5c:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x00000c60:    ed935a08    ...Z    VLDR     s10,[r3,#0x20]
+        0x00000c64:    ee322a05    2..*    VADD.F32 s4,s4,s10
+        0x00000c68:    ed915a00    ...Z    VLDR     s10,[r1,#0]
+        0x00000c6c:    fe844a45    ..EJ    VMINNM.F32 s8,s8,s10
+        0x00000c70:    f5a36190    ...a    SUB      r1,r3,#0x480
+        0x00000c74:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x00000c78:    ed935a0a    ...Z    VLDR     s10,[r3,#0x28]
+        0x00000c7c:    ee322a05    2..*    VADD.F32 s4,s4,s10
+        0x00000c80:    ed915a00    ...Z    VLDR     s10,[r1,#0]
+        0x00000c84:    fe844a45    ..EJ    VMINNM.F32 s8,s8,s10
+        0x00000c88:    f5a3618f    ...a    SUB      r1,r3,#0x478
+        0x00000c8c:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x00000c90:    ed935a0c    ...Z    VLDR     s10,[r3,#0x30]
+        0x00000c94:    ee322a05    2..*    VADD.F32 s4,s4,s10
+        0x00000c98:    ed915a00    ...Z    VLDR     s10,[r1,#0]
+        0x00000c9c:    fe844a45    ..EJ    VMINNM.F32 s8,s8,s10
+        0x00000ca0:    f5a3618e    ...a    SUB      r1,r3,#0x470
+        0x00000ca4:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x00000ca8:    ed935a0e    ...Z    VLDR     s10,[r3,#0x38]
+        0x00000cac:    ee322a05    2..*    VADD.F32 s4,s4,s10
+        0x00000cb0:    ed915a00    ...Z    VLDR     s10,[r1,#0]
+        0x00000cb4:    fe844a45    ..EJ    VMINNM.F32 s8,s8,s10
+        0x00000cb8:    f5a3618d    ...a    SUB      r1,r3,#0x468
+        0x00000cbc:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x00000cc0:    ed935a10    ...Z    VLDR     s10,[r3,#0x40]
+        0x00000cc4:    ee322a05    2..*    VADD.F32 s4,s4,s10
+        0x00000cc8:    ed915a00    ...Z    VLDR     s10,[r1,#0]
+        0x00000ccc:    fe844a45    ..EJ    VMINNM.F32 s8,s8,s10
+        0x00000cd0:    f5a3618c    ...a    SUB      r1,r3,#0x460
+        0x00000cd4:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x00000cd8:    ed935a12    ...Z    VLDR     s10,[r3,#0x48]
+        0x00000cdc:    ee322a05    2..*    VADD.F32 s4,s4,s10
+        0x00000ce0:    ed915a00    ...Z    VLDR     s10,[r1,#0]
+        0x00000ce4:    fe844a45    ..EJ    VMINNM.F32 s8,s8,s10
+        0x00000ce8:    f5a3618b    ...a    SUB      r1,r3,#0x458
+        0x00000cec:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x00000cf0:    ed935a14    ...Z    VLDR     s10,[r3,#0x50]
+        0x00000cf4:    ee322a05    2..*    VADD.F32 s4,s4,s10
+        0x00000cf8:    ed915a00    ...Z    VLDR     s10,[r1,#0]
+        0x00000cfc:    fe844a45    ..EJ    VMINNM.F32 s8,s8,s10
+        0x00000d00:    f5a3618a    ...a    SUB      r1,r3,#0x450
+        0x00000d04:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x00000d08:    ed935a16    ...Z    VLDR     s10,[r3,#0x58]
+        0x00000d0c:    ee322a05    2..*    VADD.F32 s4,s4,s10
+        0x00000d10:    ed915a00    ...Z    VLDR     s10,[r1,#0]
+        0x00000d14:    fe844a45    ..EJ    VMINNM.F32 s8,s8,s10
+        0x00000d18:    f5a36189    ...a    SUB      r1,r3,#0x448
+        0x00000d1c:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x00000d20:    ed935a18    ...Z    VLDR     s10,[r3,#0x60]
+        0x00000d24:    ee322a05    2..*    VADD.F32 s4,s4,s10
+        0x00000d28:    ed915a00    ...Z    VLDR     s10,[r1,#0]
+        0x00000d2c:    fe844a45    ..EJ    VMINNM.F32 s8,s8,s10
+        0x00000d30:    f5a36188    ...a    SUB      r1,r3,#0x440
+        0x00000d34:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x00000d38:    ed935a1a    ...Z    VLDR     s10,[r3,#0x68]
+        0x00000d3c:    ee322a05    2..*    VADD.F32 s4,s4,s10
+        0x00000d40:    ed915a00    ...Z    VLDR     s10,[r1,#0]
+        0x00000d44:    fe844a45    ..EJ    VMINNM.F32 s8,s8,s10
+        0x00000d48:    fe833a05    ...:    VMAXNM.F32 s6,s6,s10
+        0x00000d4c:    ed935a1c    ...Z    VLDR     s10,[r3,#0x70]
+        0x00000d50:    ee322a05    2..*    VADD.F32 s4,s4,s10
+        0x00000d54:    f47faf46    ..F.    BNE      {pc}-0x170 ; 0xbe4
+        0x00000d58:    9803        ..      LDR      r0,[sp,#0xc]
+        0x00000d5a:    ee333a44    3.D:    VSUB.F32 s6,s6,s8
+        0x00000d5e:    ed852a00    ...*    VSTR     s4,[r5,#0]
+        0x00000d62:    f6074224    ..$B    ADD      r2,r7,#0xc24
+        0x00000d66:    ed803a00    ...:    VSTR     s6,[r0,#0]
+        0x00000d6a:    f607402c    ..,@    ADD      r0,r7,#0xc2c
+        0x00000d6e:    ed982a01    ...*    VLDR     s4,[r8,#4]
+        0x00000d72:    ed924a00    ...J    VLDR     s8,[r2,#0]
+        0x00000d76:    ed903a00    ...:    VLDR     s6,[r0,#0]
+        0x00000d7a:    eeb54a40    ..@J    VCMP.F32 s8,#0.0
+        0x00000d7e:    ee322a43    2.C*    VSUB.F32 s4,s4,s6
+        0x00000d82:    2300        .#      MOVS     r3,#0
+        0x00000d84:    2600        .&      MOVS     r6,#0
+        0x00000d86:    2100        .!      MOVS     r1,#0
+        0x00000d88:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000d8c:    bfd8        ..      IT       LE
+        0x00000d8e:    2301        .#      MOVLE    r3,#1
+        0x00000d90:    eeb42a40    ..@*    VCMP.F32 s4,s0
+        0x00000d94:    46ae        .F      MOV      lr,r5
+        0x00000d96:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000d9a:    bfa8        ..      IT       GE
+        0x00000d9c:    2601        .&      MOVGE    r6,#1
+        0x00000d9e:    eeb54a40    ..@J    VCMP.F32 s8,#0.0
+        0x00000da2:    2500        .%      MOVS     r5,#0
+        0x00000da4:    4033        3@      ANDS     r3,r3,r6
+        0x00000da6:    2600        .&      MOVS     r6,#0
+        0x00000da8:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000dac:    bfb8        ..      IT       LT
+        0x00000dae:    2101        .!      MOVLT    r1,#1
+        0x00000db0:    eeb42a41    ..A*    VCMP.F32 s4,s2
+        0x00000db4:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000db8:    bfc8        ..      IT       GT
+        0x00000dba:    2601        .&      MOVGT    r6,#1
+        0x00000dbc:    eeb54a40    ..@J    VCMP.F32 s8,#0.0
+        0x00000dc0:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000dc4:    ea460601    F...    ORR      r6,r6,r1
+        0x00000dc8:    ea010103    ....    AND      r1,r1,r3
+        0x00000dcc:    bfc8        ..      IT       GT
+        0x00000dce:    2501        .%      MOVGT    r5,#1
+        0x00000dd0:    07f6        ..      LSLS     r6,r6,#31
+        0x00000dd2:    bf18        ..      IT       NE
+        0x00000dd4:    460d        .F      MOVNE    r5,r1
+        0x00000dd6:    ea410105    A...    ORR      r1,r1,r5
+        0x00000dda:    f0010101    ....    AND      r1,r1,#1
+        0x00000dde:    ee001a10    ....    VMOV     s0,r1
+        0x00000de2:    eeb80a40    ..@.    VCVT.F32.U32 s0,s0
+        0x00000de6:    ed8a0a01    ....    VSTR     s0,[r10,#4]
+        0x00000dea:    b9bb        ..      CBNZ     r3,{pc}+0x32 ; 0xe1c
+        0x00000dec:    b1b6        ..      CBZ      r6,{pc}+0x30 ; 0xe1c
+        0x00000dee:    ed920a00    ....    VLDR     s0,[r2,#0]
+        0x00000df2:    f8dda008    ....    LDR      r10,[sp,#8]
+        0x00000df6:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x00000dfa:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00000dfe:    f34081d1    @...    BLE.W    {pc}+0x3a6 ; 0x11a4
+        0x00000e02:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x00000e06:    ed981a01    ....    VLDR     s2,[r8,#4]
+        0x00000e0a:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x00000e0e:    e012        ..      B        {pc}+0x28 ; 0xe36
+    __arm_cp.6_67
+    $d
+        0x00000e10:    3c0efa35    5..<    DCD    1007614517
+    __arm_cp.6_68
+        0x00000e14:    bc0efa35    5...    DCD    3155098165
+        0x00000e18:    00000000    ....    DCD    0
+    $t
+        0x00000e1c:    eeb70a00    ....    VMOV.F32 s0,#1.00000000
+        0x00000e20:    eebf1a00    ....    VMOV.F32 s2,#-1.00000000
+        0x00000e24:    2b00        .+      CMP      r3,#0
+        0x00000e26:    f8dda008    ....    LDR      r10,[sp,#8]
+        0x00000e2a:    fe010a00    ....    VSELEQ.F32 s0,s2,s0
+        0x00000e2e:    ed820a00    ....    VSTR     s0,[r2,#0]
+        0x00000e32:    ed980a01    ....    VLDR     s0,[r8,#4]
+        0x00000e36:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x00000e3a:    eb0b00cc    ....    ADD      r0,r11,r12,LSL #3
+        0x00000e3e:    f8d81004    ....    LDR      r1,[r8,#4]
+        0x00000e42:    ed1f0a0b    ....    VLDR     s0,[pc,#-44] ; [0xe18] = 0
+        0x00000e46:    6041        A`      STR      r1,[r0,#4]
+        0x00000e48:    f64260a0    B..`    MOV      r0,#0x2ea0
+        0x00000e4c:    ed971a1b    ....    VLDR     s2,[r7,#0x6c]
+        0x00000e50:    1821        !.      ADDS     r1,r4,r0
+        0x00000e52:    eeb02a41    ..A*    VMOV.F32 s4,s2
+        0x00000e56:    2000        .       MOVS     r0,#0
+        0x00000e58:    180a        ..      ADDS     r2,r1,r0
+        0x00000e5a:    f5a26396    ...c    SUB      r3,r2,#0x4b0
+        0x00000e5e:    f5a26591    ...e    SUB      r5,r2,#0x488
+        0x00000e62:    ed933a00    ...:    VLDR     s6,[r3,#0]
+        0x00000e66:    f5a26395    ...c    SUB      r3,r2,#0x4a8
+        0x00000e6a:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x00000e6e:    fe811a03    ....    VMAXNM.F32 s2,s2,s6
+        0x00000e72:    ed923a00    ...:    VLDR     s6,[r2,#0]
+        0x00000e76:    ee300a03    0...    VADD.F32 s0,s0,s6
+        0x00000e7a:    ed933a00    ...:    VLDR     s6,[r3,#0]
+        0x00000e7e:    1823        #.      ADDS     r3,r4,r0
+        0x00000e80:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x00000e84:    f5035628    ..(V    ADD      r6,r3,#0x2a00
+        0x00000e88:    fe811a03    ....    VMAXNM.F32 s2,s2,s6
+        0x00000e8c:    ed923a02    ...:    VLDR     s6,[r2,#8]
+        0x00000e90:    3078        x0      ADDS     r0,r0,#0x78
+        0x00000e92:    ee300a03    0...    VADD.F32 s0,s0,s6
+        0x00000e96:    ed963a00    ...:    VLDR     s6,[r6,#0]
+        0x00000e9a:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x00000e9e:    f5a26693    ...f    SUB      r6,r2,#0x498
+        0x00000ea2:    fe811a03    ....    VMAXNM.F32 s2,s2,s6
+        0x00000ea6:    ed923a04    ...:    VLDR     s6,[r2,#0x10]
+        0x00000eaa:    ee300a03    0...    VADD.F32 s0,s0,s6
+        0x00000eae:    ed963a00    ...:    VLDR     s6,[r6,#0]
+        0x00000eb2:    f5a26692    ...f    SUB      r6,r2,#0x490
+        0x00000eb6:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x00000eba:    fe811a03    ....    VMAXNM.F32 s2,s2,s6
+        0x00000ebe:    ed923a06    ...:    VLDR     s6,[r2,#0x18]
+        0x00000ec2:    ee300a03    0...    VADD.F32 s0,s0,s6
+        0x00000ec6:    ed963a00    ...:    VLDR     s6,[r6,#0]
+        0x00000eca:    f503563b    ..;V    ADD      r6,r3,#0x2ec0
+        0x00000ece:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x00000ed2:    fe811a03    ....    VMAXNM.F32 s2,s2,s6
+        0x00000ed6:    ed953a00    ...:    VLDR     s6,[r5,#0]
+        0x00000eda:    ed964a00    ...J    VLDR     s8,[r6,#0]
+        0x00000ede:    f5a26690    ...f    SUB      r6,r2,#0x480
+        0x00000ee2:    ee300a04    0...    VADD.F32 s0,s0,s8
+        0x00000ee6:    f5b06f96    ...o    CMP      r0,#0x4b0
+        0x00000eea:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x00000eee:    fe811a03    ....    VMAXNM.F32 s2,s2,s6
+        0x00000ef2:    ed923a0a    ...:    VLDR     s6,[r2,#0x28]
+        0x00000ef6:    ee300a03    0...    VADD.F32 s0,s0,s6
+        0x00000efa:    ed963a00    ...:    VLDR     s6,[r6,#0]
+        0x00000efe:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x00000f02:    f5a2668f    ...f    SUB      r6,r2,#0x478
+        0x00000f06:    fe811a03    ....    VMAXNM.F32 s2,s2,s6
+        0x00000f0a:    ed923a0c    ...:    VLDR     s6,[r2,#0x30]
+        0x00000f0e:    ee300a03    0...    VADD.F32 s0,s0,s6
+        0x00000f12:    ed963a00    ...:    VLDR     s6,[r6,#0]
+        0x00000f16:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x00000f1a:    f5a2668e    ...f    SUB      r6,r2,#0x470
+        0x00000f1e:    fe811a03    ....    VMAXNM.F32 s2,s2,s6
+        0x00000f22:    ed923a0e    ...:    VLDR     s6,[r2,#0x38]
+        0x00000f26:    ee300a03    0...    VADD.F32 s0,s0,s6
+        0x00000f2a:    ed963a00    ...:    VLDR     s6,[r6,#0]
+        0x00000f2e:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x00000f32:    f5a2668d    ...f    SUB      r6,r2,#0x468
+        0x00000f36:    fe811a03    ....    VMAXNM.F32 s2,s2,s6
+        0x00000f3a:    ed923a10    ...:    VLDR     s6,[r2,#0x40]
+        0x00000f3e:    ee300a03    0...    VADD.F32 s0,s0,s6
+        0x00000f42:    ed963a00    ...:    VLDR     s6,[r6,#0]
+        0x00000f46:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x00000f4a:    f5035629    ..)V    ADD      r6,r3,#0x2a40
+        0x00000f4e:    fe811a03    ....    VMAXNM.F32 s2,s2,s6
+        0x00000f52:    ed923a12    ...:    VLDR     s6,[r2,#0x48]
+        0x00000f56:    ee300a03    0...    VADD.F32 s0,s0,s6
+        0x00000f5a:    ed963a00    ...:    VLDR     s6,[r6,#0]
+        0x00000f5e:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x00000f62:    f5a2668b    ...f    SUB      r6,r2,#0x458
+        0x00000f66:    fe811a03    ....    VMAXNM.F32 s2,s2,s6
+        0x00000f6a:    ed923a14    ...:    VLDR     s6,[r2,#0x50]
+        0x00000f6e:    ee300a03    0...    VADD.F32 s0,s0,s6
+        0x00000f72:    ed963a00    ...:    VLDR     s6,[r6,#0]
+        0x00000f76:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x00000f7a:    f5a2668a    ...f    SUB      r6,r2,#0x450
+        0x00000f7e:    fe811a03    ....    VMAXNM.F32 s2,s2,s6
+        0x00000f82:    ed923a16    ...:    VLDR     s6,[r2,#0x58]
+        0x00000f86:    ee300a03    0...    VADD.F32 s0,s0,s6
+        0x00000f8a:    f503533c    ..<S    ADD      r3,r3,#0x2f00
+        0x00000f8e:    ed963a00    ...:    VLDR     s6,[r6,#0]
+        0x00000f92:    f5a26689    ...f    SUB      r6,r2,#0x448
+        0x00000f96:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x00000f9a:    fe811a03    ....    VMAXNM.F32 s2,s2,s6
+        0x00000f9e:    ed933a00    ...:    VLDR     s6,[r3,#0]
+        0x00000fa2:    ee300a03    0...    VADD.F32 s0,s0,s6
+        0x00000fa6:    ed963a00    ...:    VLDR     s6,[r6,#0]
+        0x00000faa:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x00000fae:    f5a26388    ...c    SUB      r3,r2,#0x440
+        0x00000fb2:    fe811a03    ....    VMAXNM.F32 s2,s2,s6
+        0x00000fb6:    ed923a1a    ...:    VLDR     s6,[r2,#0x68]
+        0x00000fba:    ee300a03    0...    VADD.F32 s0,s0,s6
+        0x00000fbe:    ed933a00    ...:    VLDR     s6,[r3,#0]
+        0x00000fc2:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x00000fc6:    fe811a03    ....    VMAXNM.F32 s2,s2,s6
+        0x00000fca:    ed923a1c    ...:    VLDR     s6,[r2,#0x70]
+        0x00000fce:    ee300a03    0...    VADD.F32 s0,s0,s6
+        0x00000fd2:    f47faf41    ..A.    BNE      {pc}-0x17a ; 0xe58
+        0x00000fd6:    f607483c    ..<H    ADD      r8,r7,#0xc3c
+        0x00000fda:    f5076144    ..Da    ADD      r1,r7,#0xc40
+        0x00000fde:    eb04008c    ....    ADD      r0,r4,r12,LSL #2
+        0x00000fe2:    f243364c    C.L6    MOV      r6,#0x334c
+        0x00000fe6:    f6074334    ..4C    ADD      r3,r7,#0xc34
+        0x00000fea:    ed880a00    ....    VSTR     s0,[r8,#0]
+        0x00000fee:    ed910a00    ....    VLDR     s0,[r1,#0]
+        0x00000ff2:    4430        0D      ADD      r0,r0,r6
+        0x00000ff4:    9a01        ..      LDR      r2,[sp,#4]
+        0x00000ff6:    ee311a42    1.B.    VSUB.F32 s2,s2,s4
+        0x00000ffa:    eeb00ac0    ....    VABS.F32 s0,s0
+        0x00000ffe:    2a96        .*      CMP      r2,#0x96
+        0x00001000:    ed831a00    ....    VSTR     s2,[r3,#0]
+        0x00001004:    ed800a00    ....    VSTR     s0,[r0,#0]
+        0x00001008:    d202        ..      BCS      {pc}+0x8 ; 0x1010
+        0x0000100a:    3201        .2      ADDS     r2,#1
+        0x0000100c:    f8c72c48    ..H,    STR      r2,[r7,#0xc48]
+        0x00001010:    f24810b5    H...    MOV      r0,#0x81b5
+        0x00001014:    f10c0601    ....    ADD      r6,r12,#1
+        0x00001018:    f6c1304e    ..N0    MOVT     r0,#0x1b4e
+        0x0000101c:    f607243c    ..<$    ADD      r4,r7,#0xa3c
+        0x00001020:    fba60500    ....    UMULL    r0,r5,r6,r0
+        0x00001024:    2096        .       MOVS     r0,#0x96
+        0x00001026:    ed9f0a87    ....    VLDR     s0,[pc,#540] ; [0x1244] = 0
+        0x0000102a:    092d        -.      LSRS     r5,r5,#4
+        0x0000102c:    fb056610    ...f    MLS      r6,r5,r0,r6
+        0x00001030:    f8c76c44    ..Dl    STR      r6,[r7,#0xc44]
+        0x00001034:    ed141a1d    ....    VLDR     s2,[r4,#-0x74]
+        0x00001038:    381e        .8      SUBS     r0,r0,#0x1e
+        0x0000103a:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x0000103e:    ed141a1c    ....    VLDR     s2,[r4,#-0x70]
+        0x00001042:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x00001046:    ed141a1b    ....    VLDR     s2,[r4,#-0x6c]
+        0x0000104a:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x0000104e:    ed141a1a    ....    VLDR     s2,[r4,#-0x68]
+        0x00001052:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x00001056:    ed141a19    ....    VLDR     s2,[r4,#-0x64]
+        0x0000105a:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x0000105e:    ed141a18    ....    VLDR     s2,[r4,#-0x60]
+        0x00001062:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x00001066:    ed141a17    ....    VLDR     s2,[r4,#-0x5c]
+        0x0000106a:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x0000106e:    ed141a16    ....    VLDR     s2,[r4,#-0x58]
+        0x00001072:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x00001076:    ed141a15    ....    VLDR     s2,[r4,#-0x54]
+        0x0000107a:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x0000107e:    ed141a14    ....    VLDR     s2,[r4,#-0x50]
+        0x00001082:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x00001086:    ed141a13    ....    VLDR     s2,[r4,#-0x4c]
+        0x0000108a:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x0000108e:    ed141a12    ....    VLDR     s2,[r4,#-0x48]
+        0x00001092:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x00001096:    ed141a11    ....    VLDR     s2,[r4,#-0x44]
+        0x0000109a:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x0000109e:    ed141a10    ....    VLDR     s2,[r4,#-0x40]
+        0x000010a2:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x000010a6:    ed141a0f    ....    VLDR     s2,[r4,#-0x3c]
+        0x000010aa:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x000010ae:    ed141a0e    ....    VLDR     s2,[r4,#-0x38]
+        0x000010b2:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x000010b6:    ed141a0d    ....    VLDR     s2,[r4,#-0x34]
+        0x000010ba:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x000010be:    ed141a0c    ....    VLDR     s2,[r4,#-0x30]
+        0x000010c2:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x000010c6:    ed141a0b    ....    VLDR     s2,[r4,#-0x2c]
+        0x000010ca:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x000010ce:    ed141a0a    ....    VLDR     s2,[r4,#-0x28]
+        0x000010d2:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x000010d6:    ed141a09    ....    VLDR     s2,[r4,#-0x24]
+        0x000010da:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x000010de:    ed141a08    ....    VLDR     s2,[r4,#-0x20]
+        0x000010e2:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x000010e6:    ed141a07    ....    VLDR     s2,[r4,#-0x1c]
+        0x000010ea:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x000010ee:    ed141a06    ....    VLDR     s2,[r4,#-0x18]
+        0x000010f2:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x000010f6:    ed141a05    ....    VLDR     s2,[r4,#-0x14]
+        0x000010fa:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x000010fe:    ed141a04    ....    VLDR     s2,[r4,#-0x10]
+        0x00001102:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x00001106:    ed141a03    ....    VLDR     s2,[r4,#-0xc]
+        0x0000110a:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x0000110e:    ed141a02    ....    VLDR     s2,[r4,#-8]
+        0x00001112:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x00001116:    ed141a01    ....    VLDR     s2,[r4,#-4]
+        0x0000111a:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x0000111e:    ed941a00    ....    VLDR     s2,[r4,#0]
+        0x00001122:    f1040478    ..x.    ADD      r4,r4,#0x78
+        0x00001126:    fe800a01    ....    VMAXNM.F32 s0,s0,s2
+        0x0000112a:    d183        ..      BNE      {pc}-0xf6 ; 0x1034
+        0x0000112c:    2a96        .*      CMP      r2,#0x96
+        0x0000112e:    d155        U.      BNE      {pc}+0xae ; 0x11dc
+        0x00001130:    9803        ..      LDR      r0,[sp,#0xc]
+        0x00001132:    ed9f1a43    ..C.    VLDR     s2,[pc,#268] ; [0x1240] = 0x3e32b8c2
+        0x00001136:    ed902a00    ...*    VLDR     s4,[r0,#0]
+        0x0000113a:    eeb42a41    ..A*    VCMP.F32 s4,s2
+        0x0000113e:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00001142:    da4b        K.      BGE      {pc}+0x9a ; 0x11dc
+        0x00001144:    ed932a00    ...*    VLDR     s4,[r3,#0]
+        0x00001148:    eeb42a41    ..A*    VCMP.F32 s4,s2
+        0x0000114c:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00001150:    da44        D.      BGE      {pc}+0x8c ; 0x11dc
+        0x00001152:    eeb11a0c    ....    VMOV.F32 s2,#7.00000000
+        0x00001156:    ed9e2a00    ...*    VLDR     s4,[lr,#0]
+        0x0000115a:    eeb42a41    ..A*    VCMP.F32 s4,s2
+        0x0000115e:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00001162:    da2d        -.      BGE      {pc}+0x5e ; 0x11c0
+        0x00001164:    ed982a00    ...*    VLDR     s4,[r8,#0]
+        0x00001168:    2000        .       MOVS     r0,#0
+        0x0000116a:    eeb42a41    ..A*    VCMP.F32 s4,s2
+        0x0000116e:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00001172:    db34        4.      BLT      {pc}+0x6c ; 0x11de
+        0x00001174:    eeb71a00    ....    VMOV.F32 s2,#1.00000000
+        0x00001178:    2200        ."      MOVS     r2,#0
+        0x0000117a:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x0000117e:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00001182:    dc24        $.      BGT      {pc}+0x4c ; 0x11ce
+        0x00001184:    e02c        ,.      B        {pc}+0x5c ; 0x11e0
+        0x00001186:    bf00        ..      NOP      
+        0x00001188:    eeb52a40    ..@*    VCMP.F32 s4,#0.0
+        0x0000118c:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x00001190:    f6bfad19    ....    BGE      {pc}-0x5ca ; 0xbc6
+        0x00001194:    ed9e2a00    ...*    VLDR     s4,[lr,#0]
+        0x00001198:    ed983a00    ...:    VLDR     s6,[r8,#0]
+        0x0000119c:    fe822a43    ..C*    VMINNM.F32 s4,s4,s6
+        0x000011a0:    e50f        ..      B        {pc}-0x5de ; 0xbc2
+        0x000011a2:    bf00        ..      NOP      
+        0x000011a4:    eeb50a40    ..@.    VCMP.F32 s0,#0.0
+        0x000011a8:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000011ac:    f6bfae45    ..E.    BGE      {pc}-0x372 ; 0xe3a
+        0x000011b0:    ed900a00    ....    VLDR     s0,[r0,#0]
+        0x000011b4:    ed981a01    ....    VLDR     s2,[r8,#4]
+        0x000011b8:    fe800a41    ..A.    VMINNM.F32 s0,s0,s2
+        0x000011bc:    e63b        ;.      B        {pc}-0x386 ; 0xe36
+        0x000011be:    bf00        ..      NOP      
+        0x000011c0:    eeb71a00    ....    VMOV.F32 s2,#1.00000000
+        0x000011c4:    eeb40a41    ..A.    VCMP.F32 s0,s2
+        0x000011c8:    eef1fa10    ....    VMRS     APSR_nzcv,FPSCR
+        0x000011cc:    dd06        ..      BLE      {pc}+0x10 ; 0x11dc
+        0x000011ce:    f8d70c4c    ..L.    LDR      r0,[r7,#0xc4c]
+        0x000011d2:    fab0f080    ....    CLZ      r0,r0
+        0x000011d6:    0942        B.      LSRS     r2,r0,#5
+        0x000011d8:    2001        .       MOVS     r0,#1
+        0x000011da:    e001        ..      B        {pc}+0x6 ; 0x11e0
+        0x000011dc:    2000        .       MOVS     r0,#0
+        0x000011de:    2200        ."      MOVS     r2,#0
+        0x000011e0:    f8d73c4c    ..L<    LDR      r3,[r7,#0xc4c]
+        0x000011e4:    f8c72c50    ..P,    STR      r2,[r7,#0xc50]
+        0x000011e8:    4318        .C      ORRS     r0,r0,r3
+        0x000011ea:    f8c70c4c    ..L.    STR      r0,[r7,#0xc4c]
+        0x000011ee:    d013        ..      BEQ      {pc}+0x2a ; 0x1218
+        0x000011f0:    ed910a00    ....    VLDR     s0,[r1,#0]
+        0x000011f4:    ed9f1a14    ....    VLDR     s2,[pc,#80] ; [0x1248] = 0x3f4ccccd
+        0x000011f8:    fe801a41    ..A.    VMINNM.F32 s2,s0,s2
+        0x000011fc:    ed9f2a13    ...*    VLDR     s4,[pc,#76] ; [0x124c] = 0xbf4ccccd
+        0x00001200:    4650        PF      MOV      r0,r10
+        0x00001202:    fe811a02    ....    VMAXNM.F32 s2,s2,s4
+        0x00001206:    ee308a41    0.A.    VSUB.F32 s16,s0,s2
+        0x0000120a:    ed818a00    ....    VSTR     s16,[r1,#0]
+        0x0000120e:    2150        P!      MOVS     r1,#0x50
+        0x00001210:    f7fffffe    ....    BL       __aeabi_memclr4
+        0x00001214:    e002        ..      B        {pc}+0x8 ; 0x121c
+        0x00001216:    bf00        ..      NOP      
+        0x00001218:    ed818a00    ....    VSTR     s16,[r1,#0]
+        0x0000121c:    eeb10a48    ..H.    VNEG.F32 s0,s16
+        0x00001220:    2000        .       MOVS     r0,#0
+        0x00001222:    ed878a00    ....    VSTR     s16,[r7,#0]
+        0x00001226:    ed870a01    ....    VSTR     s0,[r7,#4]
+        0x0000122a:    ed898a00    ....    VSTR     s16,[r9,#0]
+        0x0000122e:    ed890a01    ....    VSTR     s0,[r9,#4]
+        0x00001232:    b020         .      ADD      sp,sp,#0x80
+        0x00001234:    ecbd8b0a    ....    VPOP     {d8-d12}
+        0x00001238:    b001        ..      ADD      sp,sp,#4
+        0x0000123a:    e8bd8ff0    ....    POP      {r4-r11,pc}
+        0x0000123e:    bf00        ..      NOP      
+    $d
+        0x00001240:    3e32b8c2    ..2>    DCD    1043511490
+        0x00001244:    00000000    ....    DCD    0
+        0x00001248:    3f4ccccd    ..L?    DCD    1061997773
+        0x0000124c:    bf4ccccd    ..L.    DCD    3209481421
+
+** Section #26 '.rel.text.g1_assist_v10_step' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 88 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    11 relocations applied to section #25 '.text.g1_assist_v10_step'
+
+
+** Section #27 '.ARM.exidx.text.g1_assist_v10_step' (SHT_ARM_EXIDX) [SHF_ALLOC + SHF_LINK_ORDER]
+    Size   : 8 bytes (alignment 4)
+    Address: 0x00000000
+    Link to section #25 '.text.g1_assist_v10_step'
+
+
+** Section #28 '.rel.ARM.exidx.text.g1_assist_v10_step' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 8 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    1 relocations applied to section #27 '.ARM.exidx.text.g1_assist_v10_step'
+
+
+** Section #29 '.rodata.OBS_MEAN' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 3200 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #30 '.rodata.OBS_STD' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 3200 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #31 '.rodata.WEIGHT_0' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 204800 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #32 '.rodata.WEIGHT_1' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 65536 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #33 '.rodata.BIAS_1' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 1024 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #34 '.rodata.WEIGHT_2' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 65536 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #35 '.rodata.BIAS_2' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 256 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #36 '.rodata.WEIGHT_3' (SHT_PROGBITS) [SHF_ALLOC]
+    Size   : 4096 bytes (alignment 4)
+    Address: 0x00000000
+
+
+** Section #37 '.debug_loc' (SHT_PROGBITS)
+    Size   : 8873 bytes
+
+
+** Section #38 '.rel.debug_loc' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 672 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    84 relocations applied to section #37 '.debug_loc'
+
+
+** Section #39 '.debug_abbrev' (SHT_PROGBITS)
+    Size   : 516 bytes
+
+
+** Section #40 '.debug_info' (SHT_PROGBITS)
+    Size   : 3768 bytes
+
+
+** Section #41 '.rel.debug_info' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 2432 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    304 relocations applied to section #40 '.debug_info'
+
+
+** Section #42 '.debug_ranges' (SHT_PROGBITS)
+    Size   : 480 bytes
+
+
+** Section #43 '.rel.debug_ranges' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 736 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    92 relocations applied to section #42 '.debug_ranges'
+
+
+** Section #44 '.debug_str' (SHT_PROGBITS) [SHF_MERGE + SHF_STRINGS]
+    Size   : 1361 bytes
+
+
+** Section #45 '.comment' (SHT_PROGBITS) [SHF_MERGE + SHF_STRINGS]
+    Size   : 69 bytes
+
+
+** Section #46 '.note.GNU-stack' (SHT_PROGBITS)
+    Size   : 0 bytes
+
+
+** Section #47 '.ARM.attributes' (SHT_ARM_ATTRIBUTES)
+    Size   : 84 bytes
+
+
+** Section #48 '.debug_frame' (SHT_PROGBITS)
+    Size   : 288 bytes (alignment 4)
+
+
+** Section #49 '.rel.debug_frame' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 112 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    14 relocations applied to section #48 '.debug_frame'
+
+
+** Section #50 '.debug_line' (SHT_PROGBITS)
+    Size   : 6436 bytes
+
+
+** Section #51 '.rel.debug_line' (SHT_REL) [SHF_INFO_LINK]
+    Size   : 56 bytes (alignment 4)
+    Symbol table #52 '.symtab'
+    7 relocations applied to section #50 '.debug_line'
+
+
+** Section #52 '.symtab' (SHT_SYMTAB)
+    Size   : 1552 bytes (alignment 4)
+    String table #1 '.strtab'
+    Last local symbol no. 85
+
+

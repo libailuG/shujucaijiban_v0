@@ -1,0 +1,152 @@
+STM32H723ZGT6 主板最小点灯程序
+
+运行效果：绿色 LED6（PG9）亮 500ms、灭 500ms，循环。
+从开机开始闪烁，由 TIM6 定时器中断独立驱动。
+红色 LED5（PG11）、蓝色 LED4（PG14）保持熄灭。LED 低电平点亮。
+使用外部 25MHz 晶振和 PLL1，主频 550MHz；初始化板载 ICM-42688-P。
+
+文件与编译
+  App/main.c：GPIO 和闪灯逻辑。
+  App/imu.h、imu.c：IMU 数据结构和每 1ms 的采集服务。
+  App/imu_bus.c：I2C4 总线及 TIM2 微秒时钟。
+  App/icm_imu_i2c.c：复用此前子板的传感器驱动（未引入 FIFO 功能）。
+  App/mahony.c：复用此前子板的六轴姿态解算。
+  Startup/system_stm32h7xx.c：550MHz 时钟、内核 LDO 和向量表初始化。
+  zhuban_led.uvprojx：Keil MDK 工程，选择 Arm Compiler 6。
+  build.ps1：命令行编译脚本，已在本机编译通过。
+  Objects/zhuban_led.hex：烧录文件。
+  Objects/zhuban_led.bin：二进制，起始地址 0x08000000。
+  Objects/zhuban_led.axf：带符号的调试文件。
+
+在本目录执行：powershell -ExecutionPolicy Bypass -File .\build.ps1
+默认编译器位于 %LOCALAPPDATA%/Keil_v5/ARM/ARMCLANG/bin。
+可使用 -Toolchain 参数指定其他 Arm Compiler 6 的 bin 目录。
+Keil 工程选型 STM32H723ZGTx，需 STM32H7xx_DFP 4.1.3。
+首次下载前在 Debug 选择实际的 ST-Link/J-Link，接口选择 SW。
+下载算法选择 STM32H72x-73x_1024（1MB Flash）。
+
+烧录
+  可使用 STM32CubeProgrammer 或 Keil，通过 SWD 下载 HEX，然后复位。
+  JP1：1=GND，2=3.3V参考，3=NRST，4=SWDIO，5=SWCLK。
+  连接前核对实板排针方向。固件从 Flash 起始地址运行，无 Bootloader 偏移。
+  2026-11-10 已连接实板并完成 OpenOCD 和 Keil 命令行烧录、校验与运行检查。
+
+硬件前提
+  先确认主控 3.3V 正常。原理图 U4 的 EN 画为接地，若实板一致，
+  需要先修正使能接法；软件无法开启该 LDO。
+  原理图 LED 串联电阻为 10k，实际亮度可能较低。
+
+第三方来源
+  Device 头文件及启动汇编来自 ST 官方 cmsis-device-h7：
+  https://github.com/STMicroelectronics/cmsis-device-h7
+  Core 头文件复用相邻工程的 Arm CMSIS 版本；未使用附带的 F1 设备头文件。
+  许可证见 Drivers/CMSIS 下的 LICENSE 文件及源文件头。
+
+550MHz 时钟配置
+  HSE=25MHz（晶体模式，不是 BYPASS），PLL1 M=5、N=110、P=1。
+  VCO 输入 5MHz，VCO 输出 550MHz，CPU/SYSCLK=550MHz。
+  AHB/AXI=275MHz，APB1/2/3/4=137.5MHz。
+  内核 LDO + VOS0；Flash LATENCY=3，WRHIGHFREQ=3。
+  SysTick 按实际 SystemCoreClock 配置 1ms；绿灯仍亮灭各 500ms。
+  SystemCoreClockUpdate 仅适用于本工程的 HSI/PLL1 两种固定配置。
+
+550MHz 必要条件
+  CPU_FREQ_BOOST 选项字节必须启用，否则此芯片的上限为 520MHz。
+  烧录前可在 STM32CubeProgrammer 的 Option Bytes 中检查并启用
+  CPU_FREQ_BOOST（某些版本显示 CPUFREQ_BOOST），应用后复位或重新上电。
+  此程序只检查该位，不自动改写选项字节。
+  成功：绿色灯按 1 秒周期闪烁。
+  失败：红色灯常亮，初始化函数返回错误码：
+    1=CPU_FREQ_BOOST 未启用；2=VOS0 未就绪；3=外部晶振未启动；
+    4=PLL1 无法关闭；5=Flash 配置失败；6=PLL1 未锁定；7=时钟切换失败。
+  超时等待不会继续切换到目标高频。程序不自动回退到 520MHz。
+  已在实板确认晶振和 PLL 启动：CPU=550MHz、AHB=275MHz。
+  GPIOG ODR 的 PG9 位随时间翻转。尚未进行长时间稳定性或温升测试。
+
+时钟参考
+  https://www.st.com/resource/en/datasheet/stm32h723zg.pdf
+  https://www.st.com/resource/en/reference_manual/dm00603761.pdf
+  https://github.com/STMicroelectronics/stm32h7xx-hal-driver/blob/master/Inc/stm32h7xx_hal_rcc.h
+
+Keil 下载设置
+  ST-Link、SW、Normal、Autodetect，SWD 时钟 100kHz。
+  勾选 Program、Verify、Reset and Run。
+
+按键初始化
+  SW1=PC12，SW2=PC11，SW3=PB4，低电平按下，上拉输入。
+  每 1ms 扫描，连续 20 个样本一致后确认按下或松开；支持同时按下。
+  当前只记录消抖后的状态，不绑定任何灯光或模式切换动作。
+  Keil Watch 可查看 g_button_state（消抖后的按下位图）。
+  位图 bit0=SW1、bit1=SW2、bit2=SW3；1=按下，0=松开。
+  按键 GPIO 及代码在 App/main.c。未改变 PA13/PA14 的 SWD 调试功能。
+
+绿灯定时器
+  TIM6 时钟 275MHz，PSC=27499，ARR=4999，每 500ms 触发更新中断。
+  TIM6_DAC_IRQHandler 中翻转 PG9，完整闪烁周期为 1 秒。
+  SysTick 仅用于每 1ms 扫描按键，不再控制绿灯。
+
+板载 IMU
+  型号 ICM-42688-P，WHO_AM_I=0x47，自动探测 0x69 和 0x68。
+  实板已识别地址 0x69。I2C4：PD12=SCL、PD13=SDA，AF4，开漏。
+  I2C4 使用 HSI 64MHz 内核时钟，SCL 低于 400kHz；需要外部上拉。
+  TIM2 为 1MHz、32 位自由运行计数器，负责 1ms 采集调度与总线超时。
+  TIM7 每 1ms 发起六轴 12 字节寄存器读取，PSC=274，ARR=999。
+  I2C4_EV / I2C4_ER 中断负责寄存器地址发送、重复 START、接收和错误处理。
+  中断中没有总线等待循环或姿态解算；主循环 imu_poll() 消费完整数据并解算。
+  TIM2 保留微秒时间戳和超时计时；TIM6 绿灯、SysTick 按键扫描保持独立。
+  只保留一个完成槽，未消费或上一笔未完成时跳过当前时隙，不覆盖数据、不积压补读。
+  TIM7 / I2C4 中断优先级均为 5，彼此不抢占；绿灯 TIM6 优先级为 3。
+  卡住的传输由下一个 TIM7 中断检查并终止，超时检查阈值为 800us，检查间隔 1ms。
+  初始化和故障后的重初始化仍在主循环使用有超时的同步 I2C。
+  当前采用中断传输，未使用 DMA。不是 FIFO，不保证保留每个内部 ODR 样本。
+  量程：加速度 +/-16g，角速度 +/-2000度/秒。传感器内部 ODR 沿用原驱动 32kHz。
+
+数据结构
+  全局变量 g_imu_data，类型 ImuData，定义在 App/imu.h。
+    angle_rad.roll / pitch / yaw：横滚、俯仰、相对偏航，单位 rad。
+    gyro_rad_s.x / y / z：角速度，单位 rad/s。
+    accel_m_s2.x / y / z：包含重力的加速度，单位 m/s²。
+    timestamp_us：TIM7 发起读取的时刻，TIM2 微秒时间戳，约 71.6 分钟回绕。
+    sample_count：成功读取的累计次数。
+    valid：最近一次读取是否成功，1=成功；错误时旧数值不代表新样本。
+    angle_valid：姿态是否已通过静态重力初始化；初始剧烈运动时可能为 0。
+    last_error：0=正常；负数表示总线或传感器错误。
+  六轴 Mahony 解算没有磁力计，不提供绝对航向，yaw 会随零偏漂移。
+  业务代码建议使用 imu_get_data(&local_data) 获取一致快照；
+  例如 ImuData local_data; imu_get_data(&local_data); 再检查 valid / angle_valid。
+  连续 5 次读取失败后，每 500ms 重新尝试初始化；没有数据时不会伪造有效样本。
+
+验证
+  修改前的同步采集版本已实板验证 1000Hz。
+  TIM7 + I2C4 中断采集版本已通过 Keil 编译、烧录及校验。
+  实板样本数差 1021、时间戳差 1021000us，对应 1000Hz；valid=1、last_error=0。
+  短暂错误地址测试产生 NACK（last_error=-11、valid=0），随后自动恢复到
+  0x69 地址，valid=1、angle_valid=1、last_error=0。测试未改写 Flash 选项字节。
+  不包含长期稳定性、温漂和姿态精度标定。
+
+Battery monitoring (4S Li-ion/LiPo, full 16.8V):
+PF11/ADC1_INP2, schematic R18=100k, R19=10k, gain=11.
+16-bit ADC, conversion clock 8MHz, 810.5-cycle sampling, 100Hz nonblocking service.
+EMA 1/16 (~160ms); 0.10V upward hysteresis, immediate downward band transition.
+Level 4 >=15.6V: green 0.5Hz (toggle 1000ms).
+Level 3 >=14.8V: green 1Hz (toggle 500ms).
+Level 2 >=14.0V: green 2Hz (toggle 250ms).
+Level 1 <14.0V: green 4Hz (toggle 125ms).
+ADC fault: level=0, valid=0, last_error negative, green 4Hz.
+Watch: g_battery_data; voltage_v / filtered_voltage_v in volts, level=1..4.
+Nominal VREF+=3.3V. Adjust BATTERY_REFERENCE_V or BATTERY_CALIBRATION_GAIN
+in App/battery.h against a multimeter if needed. Bands indicate voltage,
+not accurate state of charge. TIM6 LED and TIM7 IMU remain independent.
+
+JP7 reserved serial port 2 (UART9, not USART2):
+JP7 pin1 GND, pin2 RX=PD14/AF11, pin3 TX=PD15/AF11, pin4 +3.3V.
+921600 baud, 8 data bits, no parity, 1 stop bit, no flow control.
+PCLK2=137.5MHz, BRR=149, actual baud=922818.8 (+0.132%).
+After startup, send ASCII hello_world\r\n once each second.
+TIM2 timestamp schedules messages in main; UART9 TX/TC IRQ transmits
+without blocking. IRQ priority6 is lower than IMU priority5.
+RX interrupt consumes bytes into g_uart2_last_rx and g_uart2_rx_count;
+no buffering/echo/protocol is enabled yet.
+Watch g_uart2_tx_count: completed message count; g_uart2_error_count: RX errors.
+Set RESERVED_UART2_HELLO_PERIOD_US in App/reserved_uart2.h for the interval.
+Connect JP7 pin3 to 3.3V USB-UART RX and pin1 to adapter GND.

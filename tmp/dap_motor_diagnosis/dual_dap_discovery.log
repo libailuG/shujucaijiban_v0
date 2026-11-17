@@ -1,0 +1,354 @@
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:44)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Debug: 3 2 options.c:348 parse_cmdline_args(): ARGV[0] = "C:\Users\libai\Desktop\X1\imu_caiji\zhuban_troubleshooting_archive\Tools\xpack-openocd-0.12.0-7\bin\openocd.exe"
+Debug: 4 3 options.c:348 parse_cmdline_args(): ARGV[1] = "-d3"
+Debug: 5 3 options.c:348 parse_cmdline_args(): ARGV[2] = "-f"
+Debug: 6 3 options.c:348 parse_cmdline_args(): ARGV[3] = "interface/cmsis-dap.cfg"
+Debug: 7 3 options.c:348 parse_cmdline_args(): ARGV[4] = "-c"
+Debug: 8 3 options.c:348 parse_cmdline_args(): ARGV[5] = "transport select swd"
+Debug: 9 3 options.c:348 parse_cmdline_args(): ARGV[6] = "-f"
+Debug: 10 3 options.c:348 parse_cmdline_args(): ARGV[7] = "target/stm32h7x.cfg"
+Debug: 11 3 options.c:348 parse_cmdline_args(): ARGV[8] = "-c"
+Debug: 12 3 options.c:348 parse_cmdline_args(): ARGV[9] = "adapter speed 500"
+Debug: 13 3 options.c:348 parse_cmdline_args(): ARGV[10] = "-c"
+Debug: 14 3 options.c:348 parse_cmdline_args(): ARGV[11] = "init"
+Debug: 15 3 options.c:348 parse_cmdline_args(): ARGV[12] = "-c"
+Debug: 16 3 options.c:348 parse_cmdline_args(): ARGV[13] = "cmsis-dap info"
+Debug: 17 3 options.c:348 parse_cmdline_args(): ARGV[14] = "-c"
+Debug: 18 3 options.c:348 parse_cmdline_args(): ARGV[15] = "shutdown"
+Debug: 19 3 options.c:233 add_default_dirs(): bindir=/home/runner/work/openocd-xpack/openocd-xpack/build-assets/build/win32-x64/application/bin
+Debug: 20 4 options.c:234 add_default_dirs(): pkgdatadir=/home/runner/work/openocd-xpack/openocd-xpack/build-assets/build/win32-x64/application/openocd
+Debug: 21 4 options.c:235 add_default_dirs(): exepath=C:/Users/libai/Desktop/X1/imu_caiji/zhuban_troubleshooting_archive/Tools/xpack-openocd-0.12.0-7/bin
+Debug: 22 4 options.c:236 add_default_dirs(): bin2data=../openocd
+Debug: 23 4 configuration.c:33 add_script_search_dir(): adding C:/Users/libai/AppData/Roaming/OpenOCD
+Debug: 24 4 configuration.c:33 add_script_search_dir(): adding C:/Users/libai/Desktop/X1/imu_caiji/zhuban_troubleshooting_archive/Tools/xpack-openocd-0.12.0-7/bin/../openocd/site
+Debug: 25 4 configuration.c:33 add_script_search_dir(): adding C:/Users/libai/Desktop/X1/imu_caiji/zhuban_troubleshooting_archive/Tools/xpack-openocd-0.12.0-7/bin/../openocd/scripts
+Debug: 26 4 command.c:82 script_debug(): command - ocd_find interface/cmsis-dap.cfg
+Debug: 27 5 configuration.c:89 find_file(): found C:/Users/libai/Desktop/X1/imu_caiji/zhuban_troubleshooting_archive/Tools/xpack-openocd-0.12.0-7/bin/../openocd/scripts/interface/cmsis-dap.cfg
+Debug: 28 6 command.c:82 script_debug(): command - adapter driver cmsis-dap
+Debug: 29 7 command.c:82 script_debug(): command - transport select swd
+Debug: 30 7 command.c:82 script_debug(): command - ocd_find target/stm32h7x.cfg
+Debug: 31 8 configuration.c:89 find_file(): found C:/Users/libai/Desktop/X1/imu_caiji/zhuban_troubleshooting_archive/Tools/xpack-openocd-0.12.0-7/bin/../openocd/scripts/target/stm32h7x.cfg
+Debug: 32 9 command.c:82 script_debug(): command - ocd_find target/swj-dp.tcl
+Debug: 33 10 configuration.c:89 find_file(): found C:/Users/libai/Desktop/X1/imu_caiji/zhuban_troubleshooting_archive/Tools/xpack-openocd-0.12.0-7/bin/../openocd/scripts/target/swj-dp.tcl
+Debug: 34 11 command.c:82 script_debug(): command - transport select
+Debug: 35 11 command.c:82 script_debug(): command - ocd_find mem_helper.tcl
+Debug: 36 11 configuration.c:89 find_file(): found C:/Users/libai/Desktop/X1/imu_caiji/zhuban_troubleshooting_archive/Tools/xpack-openocd-0.12.0-7/bin/../openocd/scripts/mem_helper.tcl
+Debug: 37 12 command.c:82 script_debug(): command - add_usage_text mrw address
+Debug: 38 12 command.c:82 script_debug(): command - add_help_text mrw Returns value of word in memory.
+Debug: 39 13 command.c:82 script_debug(): command - add_usage_text mrh address
+Debug: 40 13 command.c:82 script_debug(): command - add_help_text mrh Returns value of halfword in memory.
+Debug: 41 13 command.c:82 script_debug(): command - add_usage_text mrb address
+Debug: 42 14 command.c:82 script_debug(): command - add_help_text mrb Returns value of byte in memory.
+Debug: 43 15 command.c:82 script_debug(): command - add_usage_text mmw address setbits clearbits
+Debug: 44 15 command.c:82 script_debug(): command - add_help_text mmw Modify word in memory. new_val = (old_val & ~clearbits) | setbits;
+Debug: 45 15 command.c:82 script_debug(): command - transport select
+Debug: 46 16 command.c:82 script_debug(): command - transport select
+Debug: 47 16 command.c:82 script_debug(): command - transport select
+Debug: 48 16 command.c:82 script_debug(): command - swd newdap stm32h7x cpu -irlen 4 -ircapture 0x1 -irmask 0xf -expected-id 0x6ba02477
+Debug: 49 17 tcl.c:404 handle_jtag_newtap_args(): Creating New Tap, Chip: stm32h7x, Tap: cpu, Dotted: stm32h7x.cpu, 8 params
+Debug: 50 17 core.c:1488 jtag_tap_init(): Created Tap: stm32h7x.cpu @ abs position 0, irlen 4, capture: 0x1 mask: 0xf
+Debug: 51 17 command.c:82 script_debug(): command - dap create stm32h7x.dap -chain-position stm32h7x.cpu
+Debug: 52 17 command.c:82 script_debug(): command - transport select
+Debug: 53 17 command.c:82 script_debug(): command - transport select
+Debug: 54 18 command.c:82 script_debug(): command - target create stm32h7x.ap2 mem_ap -dap stm32h7x.dap -ap-num 2
+Debug: 55 18 command.c:82 script_debug(): command - swo create stm32h7x.swo -dap stm32h7x.dap -ap-num 2 -baseaddr 0xE00E3000
+Debug: 56 18 command.c:82 script_debug(): command - tpiu create stm32h7x.tpiu -dap stm32h7x.dap -ap-num 2 -baseaddr 0xE00F5000
+Debug: 57 18 command.c:82 script_debug(): command - target create stm32h7x.cpu0 cortex_m -endian little -dap stm32h7x.dap -ap-num 0
+Debug: 58 19 command.c:187 register_command(): command 'tpiu' is already registered
+Debug: 59 19 command.c:187 register_command(): command 'rtt' is already registered
+Debug: 60 20 command.c:82 script_debug(): command - stm32h7x.cpu0 configure -work-area-phys 0x20000000 -work-area-size 0x10000 -work-area-backup 0
+Debug: 61 21 target.c:2140 target_free_all_working_areas_restore(): freeing all working areas
+Debug: 62 21 target.c:2140 target_free_all_working_areas_restore(): freeing all working areas
+Debug: 63 21 target.c:2140 target_free_all_working_areas_restore(): freeing all working areas
+Debug: 64 21 command.c:82 script_debug(): command - flash bank stm32h7x.bank1.cpu0 stm32h7x 0x08000000 0 0 0 stm32h7x.cpu0
+Debug: 65 21 tcl.c:1432 handle_flash_bank_command(): 'stm32h7x' driver usage field missing
+Debug: 66 22 command.c:82 script_debug(): command - targets stm32h7x.cpu0
+Debug: 67 22 command.c:82 script_debug(): command - adapter speed 1800
+Debug: 68 22 adapter.c:254 adapter_config_khz(): handle adapter khz
+Debug: 69 22 adapter.c:217 adapter_khz_to_speed(): convert khz to adapter specific speed value
+Debug: 70 22 adapter.c:217 adapter_khz_to_speed(): convert khz to adapter specific speed value
+Debug: 71 22 command.c:82 script_debug(): command - adapter srst delay 100
+Debug: 72 22 command.c:82 script_debug(): command - transport select
+Debug: 73 22 command.c:82 script_debug(): command - reset_config srst_nogate
+Debug: 74 23 command.c:82 script_debug(): command - transport select
+Debug: 75 23 command.c:82 script_debug(): command - stm32h7x.cpu0 cortex_m reset_config sysresetreq
+Debug: 76 23 command.c:82 script_debug(): command - stm32h7x.dap apcsw 0x08000000 0x08000000
+Debug: 77 23 arm_adi_v5.c:1211 dap_get_config_ap(): refcount AP#0x0 get_config 1
+Debug: 78 23 arm_adi_v5.c:1226 dap_put_ap(): refcount AP#0x0 put 0
+Debug: 79 23 command.c:82 script_debug(): command - stm32h7x.cpu0 configure -event examine-end 
+	# Enable D3 and D1 DBG clocks
+	# DBGMCU_CR |= D3DBGCKEN | D1DBGCKEN
+	stm32h7x_dbgmcu_mmw 0x004 0x00600000 0
+
+	# Enable debug during low power modes (uses more power)
+	# DBGMCU_CR |= DBG_STANDBY | DBG_STOP | DBG_SLEEP D1 Domain
+	stm32h7x_dbgmcu_mmw 0x004 0x00000007 0
+	# DBGMCU_CR |= DBG_STANDBY | DBG_STOP | DBG_SLEEP D2 Domain
+	stm32h7x_dbgmcu_mmw 0x004 0x00000038 0
+
+	# Stop watchdog counters during halt
+	# DBGMCU_APB3FZ1 |= WWDG1
+	stm32h7x_dbgmcu_mmw 0x034 0x00000040 0
+	# DBGMCU_APB1LFZ1 |= WWDG2
+	stm32h7x_dbgmcu_mmw 0x03C 0x00000800 0
+	# DBGMCU_APB4FZ1 |= WDGLSD1 | WDGLSD2
+	stm32h7x_dbgmcu_mmw 0x054 0x000C0000 0
+
+	# Enable clock for tracing
+	# DBGMCU_CR |= TRACECLKEN
+	stm32h7x_dbgmcu_mmw 0x004 0x00100000 0
+
+	# RM0399 (id 0x450) M7+M4 with SWO Funnel
+	# RM0433 (id 0x450) M7 with SWO Funnel
+	# RM0455 (id 0x480) M7 without SWO Funnel
+	# RM0468 (id 0x483) M7 without SWO Funnel
+	# Enable CM7 and CM4 slave ports in SWO trace Funnel
+	# Works ok also on devices single core and without SWO funnel
+	# Hack, use stm32h7x_dbgmcu_mmw with big offset to control SWTF
+	# SWTF_CTRL |= ENS0 | ENS1
+	stm32h7x_dbgmcu_mmw 0x3000 0x00000003 0
+
+Debug: 80 24 command.c:82 script_debug(): command - stm32h7x.cpu0 configure -event reset-init 
+	# Clock after reset is HSI at 64 MHz, no need of PLL
+	adapter speed 4000
+
+Debug: 81 24 command.c:82 script_debug(): command - adapter speed 500
+Debug: 82 24 adapter.c:254 adapter_config_khz(): handle adapter khz
+Debug: 83 24 adapter.c:217 adapter_khz_to_speed(): convert khz to adapter specific speed value
+Debug: 84 24 adapter.c:217 adapter_khz_to_speed(): convert khz to adapter specific speed value
+User : 85 24 options.c:52 configuration_output_handler(): adapter speed: 500 kHzUser : 86 24 options.c:52 configuration_output_handler(): 
+Debug: 87 24 command.c:82 script_debug(): command - init
+Debug: 88 24 command.c:82 script_debug(): command - target init
+Debug: 89 25 command.c:82 script_debug(): command - target names
+Debug: 90 25 command.c:82 script_debug(): command - stm32h7x.ap2 cget -event gdb-flash-erase-start
+Debug: 91 25 command.c:82 script_debug(): command - stm32h7x.ap2 configure -event gdb-flash-erase-start reset init
+Debug: 92 25 command.c:82 script_debug(): command - stm32h7x.ap2 cget -event gdb-flash-write-end
+Debug: 93 25 command.c:82 script_debug(): command - stm32h7x.ap2 configure -event gdb-flash-write-end reset halt
+Debug: 94 25 command.c:82 script_debug(): command - stm32h7x.ap2 cget -event gdb-attach
+Debug: 95 25 command.c:82 script_debug(): command - stm32h7x.ap2 configure -event gdb-attach halt 1000
+Debug: 96 25 command.c:82 script_debug(): command - stm32h7x.cpu0 cget -event gdb-flash-erase-start
+Debug: 97 25 command.c:82 script_debug(): command - stm32h7x.cpu0 configure -event gdb-flash-erase-start reset init
+Debug: 98 25 command.c:82 script_debug(): command - stm32h7x.cpu0 cget -event gdb-flash-write-end
+Debug: 99 25 command.c:82 script_debug(): command - stm32h7x.cpu0 configure -event gdb-flash-write-end reset halt
+Debug: 100 26 command.c:82 script_debug(): command - stm32h7x.cpu0 cget -event gdb-attach
+Debug: 101 26 command.c:82 script_debug(): command - stm32h7x.cpu0 configure -event gdb-attach halt 1000
+Debug: 102 26 target.c:1598 handle_target_init_command(): Initializing targets...
+Debug: 103 26 mem_ap.c:61 mem_ap_init_target(): [stm32h7x.ap2] mem_ap_init_target
+Debug: 104 26 semihosting_common.c:109 semihosting_common_init():  
+Debug: 105 53 cmsis_dap_usb_bulk.c:124 cmsis_dap_usb_open(): could not open device 0x05e3:0x0626: Operation not supported or unimplemented on this platform
+Debug: 106 131 cmsis_dap_usb_bulk.c:189 cmsis_dap_usb_open(): enumerating interfaces of 0x30c9:0x00ec
+Debug: 107 151 cmsis_dap_usb_bulk.c:169 cmsis_dap_usb_open(): found product string of 0x04d8:0x00df 'ATK-HS-V3-CMSIS-DAP'
+Debug: 108 151 cmsis_dap_usb_bulk.c:189 cmsis_dap_usb_open(): enumerating interfaces of 0x04d8:0x00df
+Debug: 109 151 cmsis_dap_usb_bulk.c:249 cmsis_dap_usb_open(): skipping interface 0, has only 1 endpoints
+Debug: 110 152 cmsis_dap_usb_bulk.c:295 cmsis_dap_usb_open(): skipping interface 1, class 10 subclass 0 protocol 0
+Debug: 111 152 cmsis_dap_usb_bulk.c:256 cmsis_dap_usb_open(): skipping interface 2, endpoint[0] is not bulk out
+Debug: 112 152 cmsis_dap_usb_bulk.c:124 cmsis_dap_usb_open(): could not open device 0x8087:0x0036: Operation not supported or unimplemented on this platform
+Debug: 113 152 cmsis_dap_usb_bulk.c:124 cmsis_dap_usb_open(): could not open device 0x8086:0x777d: Operation not supported or unimplemented on this platform
+Debug: 114 154 cmsis_dap_usb_bulk.c:169 cmsis_dap_usb_open(): found product string of 0x04d8:0x00df 'ATK-HS-V3-CMSIS-DAP'
+Debug: 115 154 cmsis_dap_usb_bulk.c:189 cmsis_dap_usb_open(): enumerating interfaces of 0x04d8:0x00df
+Debug: 116 155 cmsis_dap_usb_bulk.c:249 cmsis_dap_usb_open(): skipping interface 0, has only 1 endpoints
+Debug: 117 155 cmsis_dap_usb_bulk.c:295 cmsis_dap_usb_open(): skipping interface 1, class 10 subclass 0 protocol 0
+Debug: 118 155 cmsis_dap_usb_bulk.c:256 cmsis_dap_usb_open(): skipping interface 2, endpoint[0] is not bulk out
+Debug: 119 155 cmsis_dap_usb_bulk.c:124 cmsis_dap_usb_open(): could not open device 0x05e3:0x0610: Operation not supported or unimplemented on this platform
+Debug: 120 155 cmsis_dap_usb_bulk.c:124 cmsis_dap_usb_open(): could not open device 0x8086:0x7ec0: Operation not supported or unimplemented on this platform
+Info : 121 183 cmsis_dap.c:1187 cmsis_dap_get_caps_info(): CMSIS-DAP: SWD supported
+Info : 122 183 cmsis_dap.c:1187 cmsis_dap_get_caps_info(): CMSIS-DAP: JTAG supported
+Info : 123 183 cmsis_dap.c:1187 cmsis_dap_get_caps_info(): CMSIS-DAP: SWO-UART supported
+Info : 124 183 cmsis_dap.c:1187 cmsis_dap_get_caps_info(): CMSIS-DAP: Atomic commands supported
+Info : 125 184 cmsis_dap.c:1164 cmsis_dap_get_version_info(): CMSIS-DAP: FW Version = 2.0.0
+Info : 126 188 cmsis_dap.c:1321 cmsis_dap_swd_open(): CMSIS-DAP: Interface Initialised (SWD)
+Debug: 127 189 cmsis_dap.c:1382 cmsis_dap_init(): CMSIS-DAP: Packet Size = 256
+Debug: 128 190 cmsis_dap.c:1406 cmsis_dap_init(): CMSIS-DAP: Packet Count = 16
+Debug: 129 190 cmsis_dap.c:1409 cmsis_dap_init(): Allocating FIFO for 4 pending packets
+Info : 130 191 cmsis_dap.c:1220 cmsis_dap_get_status(): SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 1 TDO = 1 nTRST = 1 nRESET = 1
+Info : 131 195 cmsis_dap.c:1461 cmsis_dap_init(): CMSIS-DAP: Interface ready
+Debug: 132 195 adapter.c:217 adapter_khz_to_speed(): convert khz to adapter specific speed value
+Debug: 133 196 adapter.c:221 adapter_khz_to_speed(): have adapter set up
+Debug: 134 197 adapter.c:217 adapter_khz_to_speed(): convert khz to adapter specific speed value
+Debug: 135 197 adapter.c:221 adapter_khz_to_speed(): have adapter set up
+Info : 136 197 adapter.c:182 adapter_init(): clock speed 500 kHz
+Debug: 137 197 openocd.c:133 handle_init_command(): Debug Adapter init complete
+Debug: 138 197 command.c:82 script_debug(): command - transport init
+Debug: 139 197 transport.c:274 handle_transport_init(): handle_transport_init
+Debug: 140 197 command.c:82 script_debug(): command - dap init
+Debug: 141 197 arm_dap.c:96 dap_init_all(): Initializing all DAPs ...
+Debug: 142 197 arm_dap.c:120 dap_init_all(): DAP stm32h7x.cpu configured by default to use ADIv5 protocol
+Debug: 143 197 cmsis_dap.c:1265 cmsis_dap_swd_switch_seq(): JTAG-to-SWD
+Info : 144 200 adi_v5_swd.c:385 swd_connect_single(): SWD DPIDR 0x6ba02477
+Debug: 145 202 arm_adi_v5.c:791 dap_dp_init(): stm32h7x.dap
+Debug: 146 202 arm_adi_v5.c:824 dap_dp_init(): DAP: wait CDBGPWRUPACK
+Debug: 147 202 arm_adi_v5.h:682 dap_dp_poll_register(): DAP: poll 4, mask 0x20000000, value 0x20000000
+Debug: 148 203 arm_adi_v5.c:832 dap_dp_init(): DAP: wait CSYSPWRUPACK
+Debug: 149 204 arm_adi_v5.h:682 dap_dp_poll_register(): DAP: poll 4, mask 0x80000000, value 0x80000000
+Debug: 150 206 cmsis_dap.c:862 cmsis_dap_swd_write_from_queue(): refusing to enable sticky overrun detection
+Debug: 151 207 openocd.c:150 handle_init_command(): Examining targets...
+Debug: 152 208 target.c:684 target_examine_one(): [stm32h7x.ap2] Examination started
+Debug: 153 208 target.c:1784 target_call_event_callbacks(): target event 19 (examine-start) for core stm32h7x.ap2
+Debug: 154 208 arm_adi_v5.c:1201 dap_get_ap(): refcount AP#0x2 get 1
+Debug: 155 209 arm_adi_v5.c:942 mem_ap_init(): MEM_AP CFG: large data 0, long address 0, big-endian 0
+Debug: 156 210 target.c:1784 target_call_event_callbacks(): target event 21 (examine-end) for core stm32h7x.ap2
+Info : 157 210 target.c:700 target_examine_one(): [stm32h7x.ap2] Examination succeed
+Debug: 158 210 target.c:684 target_examine_one(): [stm32h7x.cpu0] Examination started
+Debug: 159 210 target.c:1784 target_call_event_callbacks(): target event 19 (examine-start) for core stm32h7x.cpu0
+Debug: 160 210 arm_adi_v5.c:1201 dap_get_ap(): refcount AP#0x0 get 1
+Debug: 161 212 arm_adi_v5.c:942 mem_ap_init(): MEM_AP CFG: large data 0, long address 0, big-endian 0
+Debug: 162 214 target.c:2571 target_read_u32(): address: 0xe000ed00, value: 0x411fc272
+Info : 163 214 cortex_m.c:2753 cortex_m_examine(): [stm32h7x.cpu0] Cortex-M7 r1p2 processor detected
+Warn : 164 214 cortex_m.c:2769 cortex_m_examine(): [stm32h7x.cpu0] Erratum 3092511: Cortex-M7 can halt in an incorrect address when breakpoint and exception occurs simultaneously
+Info : 165 214 cortex_m.c:2774 cortex_m_examine(): [stm32h7x.cpu0] The erratum 3092511 workaround will resume after an incorrect halt
+Debug: 166 214 cortex_m.c:2776 cortex_m_examine(): [stm32h7x.cpu0] cpuid: 0x411fc272
+Debug: 167 217 target.c:2571 target_read_u32(): address: 0xe000ef40, value: 0x10110221
+Debug: 168 218 target.c:2571 target_read_u32(): address: 0xe000ef44, value: 0x12000011
+Debug: 169 219 cortex_m.c:2798 cortex_m_examine(): [stm32h7x.cpu0] Cortex-M7 floating point feature FPv5_DP found
+Debug: 170 220 target.c:2571 target_read_u32(): address: 0xe000edf0, value: 0x02010000
+Debug: 171 221 cortex_m.c:2849 cortex_m_examine(): [stm32h7x.cpu0] reset happened some time ago, ignore
+Debug: 172 221 target.c:2659 target_write_u32(): address: 0xe000edf0, value: 0xa05f0001
+Debug: 173 222 target.c:2659 target_write_u32(): address: 0xe000edfc, value: 0x01000000
+Debug: 174 224 target.c:2659 target_write_u32(): address: 0xe0000fb0, value: 0xc5acce55
+Debug: 175 229 target.c:2571 target_read_u32(): address: 0xe0000e80, value: 0x00000000
+Debug: 176 229 target.c:2659 target_write_u32(): address: 0xe0000e80, value: 0x00000000
+Debug: 177 236 target.c:2571 target_read_u32(): address: 0xe0000e80, value: 0x00000000
+Debug: 178 236 target.c:2659 target_write_u32(): address: 0xe0000e80, value: 0x00010009
+Debug: 179 237 target.c:2659 target_write_u32(): address: 0xe0000e00, value: 0x00000001
+Debug: 180 239 target.c:2659 target_write_u32(): address: 0xe0000e04, value: 0x00000000
+Debug: 181 240 target.c:2659 target_write_u32(): address: 0xe0000e08, value: 0x00000000
+Debug: 182 242 target.c:2659 target_write_u32(): address: 0xe0000e0c, value: 0x00000000
+Debug: 183 243 target.c:2659 target_write_u32(): address: 0xe0000e10, value: 0x00000000
+Debug: 184 244 target.c:2659 target_write_u32(): address: 0xe0000e14, value: 0x00000000
+Debug: 185 246 target.c:2659 target_write_u32(): address: 0xe0000e18, value: 0x00000000
+Debug: 186 247 target.c:2659 target_write_u32(): address: 0xe0000e1c, value: 0x00000000
+Debug: 187 250 target.c:2571 target_read_u32(): address: 0xe0002000, value: 0x10000080
+Debug: 188 251 target.c:2659 target_write_u32(): address: 0xe0002008, value: 0x00000000
+Debug: 189 252 target.c:2659 target_write_u32(): address: 0xe000200c, value: 0x00000000
+Debug: 190 253 target.c:2659 target_write_u32(): address: 0xe0002010, value: 0x00000000
+Debug: 191 255 target.c:2659 target_write_u32(): address: 0xe0002014, value: 0x00000000
+Debug: 192 258 target.c:2659 target_write_u32(): address: 0xe0002018, value: 0x00000000
+Debug: 193 259 target.c:2659 target_write_u32(): address: 0xe000201c, value: 0x00000000
+Debug: 194 260 target.c:2659 target_write_u32(): address: 0xe0002020, value: 0x00000000
+Debug: 195 262 target.c:2659 target_write_u32(): address: 0xe0002024, value: 0x00000000
+Debug: 196 263 cortex_m.c:2896 cortex_m_examine(): [stm32h7x.cpu0] FPB fpcr 0x10000080, numcode 8, numlit 0
+Debug: 197 264 target.c:2571 target_read_u32(): address: 0xe0001000, value: 0x40000000
+Debug: 198 264 cortex_m.c:2464 cortex_m_dwt_setup(): [stm32h7x.cpu0] DWT_CTRL: 0x40000000
+Debug: 199 266 target.c:2571 target_read_u32(): address: 0xe0001fbc, value: 0x00000000
+Debug: 200 267 cortex_m.c:2471 cortex_m_dwt_setup(): [stm32h7x.cpu0] DWT_DEVARCH: 0x0
+Debug: 201 267 target.c:2659 target_write_u32(): address: 0xe0001028, value: 0x00000000
+Debug: 202 268 target.c:2659 target_write_u32(): address: 0xe0001038, value: 0x00000000
+Debug: 203 270 target.c:2659 target_write_u32(): address: 0xe0001048, value: 0x00000000
+Debug: 204 271 target.c:2659 target_write_u32(): address: 0xe0001058, value: 0x00000000
+Debug: 205 272 cortex_m.c:2518 cortex_m_dwt_setup(): [stm32h7x.cpu0] DWT dwtcr 0x40000000, comp 4, watch/trigger
+Info : 206 272 cortex_m.c:2906 cortex_m_examine(): [stm32h7x.cpu0] target has 8 breakpoints, 4 watchpoints
+Debug: 207 273 target.c:1784 target_call_event_callbacks(): target event 21 (examine-end) for core stm32h7x.cpu0
+Debug: 208 273 target.c:4678 target_handle_event(): target: stm32h7x.cpu0 (cortex_m) event: 21 (examine-end) action: 
+	# Enable D3 and D1 DBG clocks
+	# DBGMCU_CR |= D3DBGCKEN | D1DBGCKEN
+	stm32h7x_dbgmcu_mmw 0x004 0x00600000 0
+
+	# Enable debug during low power modes (uses more power)
+	# DBGMCU_CR |= DBG_STANDBY | DBG_STOP | DBG_SLEEP D1 Domain
+	stm32h7x_dbgmcu_mmw 0x004 0x00000007 0
+	# DBGMCU_CR |= DBG_STANDBY | DBG_STOP | DBG_SLEEP D2 Domain
+	stm32h7x_dbgmcu_mmw 0x004 0x00000038 0
+
+	# Stop watchdog counters during halt
+	# DBGMCU_APB3FZ1 |= WWDG1
+	stm32h7x_dbgmcu_mmw 0x034 0x00000040 0
+	# DBGMCU_APB1LFZ1 |= WWDG2
+	stm32h7x_dbgmcu_mmw 0x03C 0x00000800 0
+	# DBGMCU_APB4FZ1 |= WDGLSD1 | WDGLSD2
+	stm32h7x_dbgmcu_mmw 0x054 0x000C0000 0
+
+	# Enable clock for tracing
+	# DBGMCU_CR |= TRACECLKEN
+	stm32h7x_dbgmcu_mmw 0x004 0x00100000 0
+
+	# RM0399 (id 0x450) M7+M4 with SWO Funnel
+	# RM0433 (id 0x450) M7 with SWO Funnel
+	# RM0455 (id 0x480) M7 without SWO Funnel
+	# RM0468 (id 0x483) M7 without SWO Funnel
+	# Enable CM7 and CM4 slave ports in SWO trace Funnel
+	# Works ok also on devices single core and without SWO funnel
+	# Hack, use stm32h7x_dbgmcu_mmw with big offset to control SWTF
+	# SWTF_CTRL |= ENS0 | ENS1
+	stm32h7x_dbgmcu_mmw 0x3000 0x00000003 0
+
+Debug: 209 274 command.c:82 script_debug(): command - transport select
+Debug: 210 274 command.c:82 script_debug(): command - target current
+Debug: 211 274 command.c:82 script_debug(): command - stm32h7x.ap2 read_memory 3759017988 32 1
+Debug: 212 274 mem_ap.c:241 mem_ap_read_memory(): [stm32h7x.ap2] Reading memory at physical address 0xe00e1004; size 4; count 1
+Debug: 213 279 command.c:82 script_debug(): command - stm32h7x.ap2 mww 3759017988 6291463
+Debug: 214 279 mem_ap.c:256 mem_ap_write_memory(): [stm32h7x.ap2] Writing memory at physical address 0xe00e1004; size 4; count 1
+Debug: 215 280 command.c:82 script_debug(): command - transport select
+Debug: 216 280 command.c:82 script_debug(): command - target current
+Debug: 217 280 command.c:82 script_debug(): command - stm32h7x.ap2 read_memory 3759017988 32 1
+Debug: 218 281 mem_ap.c:241 mem_ap_read_memory(): [stm32h7x.ap2] Reading memory at physical address 0xe00e1004; size 4; count 1
+Debug: 219 282 command.c:82 script_debug(): command - stm32h7x.ap2 mww 3759017988 6291463
+Debug: 220 283 mem_ap.c:256 mem_ap_write_memory(): [stm32h7x.ap2] Writing memory at physical address 0xe00e1004; size 4; count 1
+Debug: 221 284 command.c:82 script_debug(): command - transport select
+Debug: 222 284 command.c:82 script_debug(): command - target current
+Debug: 223 284 command.c:82 script_debug(): command - stm32h7x.ap2 read_memory 3759017988 32 1
+Debug: 224 284 mem_ap.c:241 mem_ap_read_memory(): [stm32h7x.ap2] Reading memory at physical address 0xe00e1004; size 4; count 1
+Debug: 225 289 command.c:82 script_debug(): command - stm32h7x.ap2 mww 3759017988 6291519
+Debug: 226 289 mem_ap.c:256 mem_ap_write_memory(): [stm32h7x.ap2] Writing memory at physical address 0xe00e1004; size 4; count 1
+Debug: 227 290 command.c:82 script_debug(): command - transport select
+Debug: 228 290 command.c:82 script_debug(): command - target current
+Debug: 229 290 command.c:82 script_debug(): command - stm32h7x.ap2 read_memory 3759018036 32 1
+Debug: 230 290 mem_ap.c:241 mem_ap_read_memory(): [stm32h7x.ap2] Reading memory at physical address 0xe00e1034; size 4; count 1
+Debug: 231 292 command.c:82 script_debug(): command - stm32h7x.ap2 mww 3759018036 64
+Debug: 232 292 mem_ap.c:256 mem_ap_write_memory(): [stm32h7x.ap2] Writing memory at physical address 0xe00e1034; size 4; count 1
+Debug: 233 294 command.c:82 script_debug(): command - transport select
+Debug: 234 294 command.c:82 script_debug(): command - target current
+Debug: 235 294 command.c:82 script_debug(): command - stm32h7x.ap2 read_memory 3759018044 32 1
+Debug: 236 294 mem_ap.c:241 mem_ap_read_memory(): [stm32h7x.ap2] Reading memory at physical address 0xe00e103c; size 4; count 1
+Debug: 237 298 command.c:82 script_debug(): command - stm32h7x.ap2 mww 3759018044 2048
+Debug: 238 299 mem_ap.c:256 mem_ap_write_memory(): [stm32h7x.ap2] Writing memory at physical address 0xe00e103c; size 4; count 1
+Debug: 239 300 command.c:82 script_debug(): command - transport select
+Debug: 240 300 command.c:82 script_debug(): command - target current
+Debug: 241 300 command.c:82 script_debug(): command - stm32h7x.ap2 read_memory 3759018068 32 1
+Debug: 242 301 mem_ap.c:241 mem_ap_read_memory(): [stm32h7x.ap2] Reading memory at physical address 0xe00e1054; size 4; count 1
+Debug: 243 302 command.c:82 script_debug(): command - stm32h7x.ap2 mww 3759018068 786432
+Debug: 244 302 mem_ap.c:256 mem_ap_write_memory(): [stm32h7x.ap2] Writing memory at physical address 0xe00e1054; size 4; count 1
+Debug: 245 304 command.c:82 script_debug(): command - transport select
+Debug: 246 304 command.c:82 script_debug(): command - target current
+Debug: 247 304 command.c:82 script_debug(): command - stm32h7x.ap2 read_memory 3759017988 32 1
+Debug: 248 305 mem_ap.c:241 mem_ap_read_memory(): [stm32h7x.ap2] Reading memory at physical address 0xe00e1004; size 4; count 1
+Debug: 249 307 command.c:82 script_debug(): command - stm32h7x.ap2 mww 3759017988 7340095
+Debug: 250 307 mem_ap.c:256 mem_ap_write_memory(): [stm32h7x.ap2] Writing memory at physical address 0xe00e1004; size 4; count 1
+Debug: 251 308 command.c:82 script_debug(): command - transport select
+Debug: 252 308 command.c:82 script_debug(): command - target current
+Debug: 253 309 command.c:82 script_debug(): command - stm32h7x.ap2 read_memory 3759030272 32 1
+Debug: 254 309 mem_ap.c:241 mem_ap_read_memory(): [stm32h7x.ap2] Reading memory at physical address 0xe00e4000; size 4; count 1
+Debug: 255 311 command.c:82 script_debug(): command - stm32h7x.ap2 mww 3759030272 3
+Debug: 256 311 mem_ap.c:256 mem_ap_write_memory(): [stm32h7x.ap2] Writing memory at physical address 0xe00e4000; size 4; count 1
+Info : 257 313 target.c:700 target_examine_one(): [stm32h7x.cpu0] Examination succeed
+Debug: 258 313 command.c:82 script_debug(): command - flash init
+Debug: 259 314 tcl.c:1489 handle_flash_init_command(): Initializing flash devices...
+Debug: 260 314 command.c:82 script_debug(): command - nand init
+Debug: 261 314 tcl.c:485 handle_nand_init_command(): Initializing NAND devices...
+Debug: 262 314 command.c:82 script_debug(): command - pld init
+Debug: 263 314 pld.c:337 handle_pld_init_command(): Initializing PLDs...
+Debug: 264 314 command.c:82 script_debug(): command - tpiu init
+Info : 265 314 gdb_server.c:3896 gdb_target_add_one(): [stm32h7x.ap2] gdb port disabled
+Info : 266 314 gdb_server.c:3862 gdb_target_start(): [stm32h7x.cpu0] starting gdb server on 3333
+Info : 267 316 server.c:298 add_service(): Listening on port 3333 for gdb connections
+Debug: 268 316 command.c:82 script_debug(): command - target names
+Debug: 269 316 command.c:82 script_debug(): command - target names
+Debug: 270 316 command.c:82 script_debug(): command - stm32h7x.ap2 cget -type
+Debug: 271 317 command.c:82 script_debug(): command - stm32h7x.cpu0 cget -type
+Debug: 272 317 command.c:82 script_debug(): command - cmsis-dap info
+Info : 273 318 cmsis_dap.c:1164 cmsis_dap_get_version_info(): CMSIS-DAP: FW Version = 2.0.0
+Info : 274 319 cmsis_dap.c:1220 cmsis_dap_get_status(): SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 1 TDO = 1 nTRST = 1 nRESET = 1
+Debug: 275 319 command.c:82 script_debug(): command - shutdown
+User : 276 319 server.c:761 handle_shutdown_command(): shutdown command invoked
+Debug: 277 319 breakpoints.c:328 breakpoint_remove_all_internal(): [stm32h7x.ap2] Delete all breakpoints
+Debug: 278 319 breakpoints.c:415 watchpoint_remove_all_internal(): [stm32h7x.ap2] Delete all watchpoints
+Debug: 279 319 mem_ap.c:71 mem_ap_deinit_target(): [stm32h7x.ap2] mem_ap_deinit_target
+Debug: 280 319 arm_adi_v5.c:1226 dap_put_ap(): refcount AP#0x2 put 0
+Debug: 281 319 target.c:2140 target_free_all_working_areas_restore(): freeing all working areas
+Debug: 282 319 breakpoints.c:328 breakpoint_remove_all_internal(): [stm32h7x.cpu0] Delete all breakpoints
+Debug: 283 320 breakpoints.c:415 watchpoint_remove_all_internal(): [stm32h7x.cpu0] Delete all watchpoints
+Debug: 284 320 arm_adi_v5.c:1226 dap_put_ap(): refcount AP#0x0 put 0
+Debug: 285 320 target.c:2140 target_free_all_working_areas_restore(): freeing all working areas
+Debug: 286 320 cmsis_dap.c:1275 cmsis_dap_swd_switch_seq(): SWD-to-JTAG

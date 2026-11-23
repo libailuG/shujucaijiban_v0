@@ -36,6 +36,17 @@ static int pressure(const CascadeSnapshot *s,uint32_t *value)
     *value=(uint32_t)r->status;
     return 1;
 }
+static int motor_sample(unsigned right,uint32_t now,MotorFrame *m)
+{
+#ifdef ZHUBAN_RTOS_PHASE1
+    (void)now;
+    int fresh=motor_get_fresh_feedback(right,m,30000U);
+#else
+    const volatile MotorData *d=right ? &g_motor_right : &g_motor_left;
+    int fresh=motor_get_feedback(right,m) && d->rx_valid && (uint32_t)(now-d->rx_timestamp_us)<=30000U;
+#endif
+    return fresh && !m->error_flag && isfinite(m->ang) && isfinite(m->speed);
+}
 uint32_t acquisition_mode_snapshot(AcquisitionFrame *f)
 {
     uint32_t now=imu_time_us();
@@ -44,15 +55,16 @@ uint32_t acquisition_mode_snapshot(AcquisitionFrame *f)
     memset(f,0,sizeof(*f));
     f->start_flag=TD_MCU_START; f->timestamp_us=now; f->end_flag=TD_MCU_END;
     int valid=1;
-    if (motor_get_feedback(0,&m) && !m.error_flag && g_motor_left.rx_valid &&
-        (uint32_t)(now-g_motor_left.rx_timestamp_us)<=30000U && isfinite(m.ang) && isfinite(m.speed)) {
+    if (motor_sample(0,now,&m)) {
         f->left_motor_angle=m.ang; f->left_motor_speed=m.speed;
     } else valid=0;
-    if (motor_get_feedback(1,&m) && !m.error_flag && g_motor_right.rx_valid &&
-        (uint32_t)(now-g_motor_right.rx_timestamp_us)<=30000U && isfinite(m.ang) && isfinite(m.speed)) {
+    if (motor_sample(1,now,&m)) {
         f->right_motor_angle=-m.ang; f->right_motor_speed=-m.speed;
     } else valid=0;
     ImuData body; imu_get_body_data(&body);
+#ifdef ZHUBAN_RTOS_PHASE1
+    now=imu_time_us(); /* The IMU task may have published after entering this function. */
+#endif
     if (body.valid && !body.last_error && (uint32_t)(now-body.timestamp_us)<=CP_FRESH_US &&
         isfinite(body.gyro_rad_s.x) && isfinite(body.gyro_rad_s.y) && isfinite(body.accel_m_s2.z)) {
         f->body_gyro_x=body.gyro_rad_s.x; f->body_gyro_y=body.gyro_rad_s.y;

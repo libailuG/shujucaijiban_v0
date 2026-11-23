@@ -27,5 +27,8 @@ extern volatile ImuData g_imu_body_data;
 void imu_get_body_data(ImuData *out); /* 一致快照；检查valid/angle_valid。 */
 void imu_init(void);
 void imu_poll(void);          /* Consume IRQ completions and solve attitude in main. */
+#ifdef ZHUBAN_RTOS_PHASE1
+void imu_rtos_task(void *argument);
+#endif
 void imu_get_data(ImuData *out);
 #endif

@@ -1,5 +1,8 @@
 #include "stm32h7xx.h"
 #include "imu_bus.h"
+#ifdef ZHUBAN_RTOS_PHASE1
+#include "rtos_phase1.h"
+#endif
 
 #define SCL (1UL << 12)
 #define SDA (1UL << 13)
@@ -108,7 +111,9 @@ void imu_bus_init(void)
         (1UL << 24) | (1UL << 26);
     GPIOD->OSPEEDR |= (3UL << 24) | (3UL << 26);
     peripheral_enable();
+#ifndef ZHUBAN_RTOS_PHASE1
     (void)imu_bus_recover();
+#endif
     NVIC_SetPriority(I2C4_EV_IRQn, 5U);
     NVIC_SetPriority(I2C4_ER_IRQn, 5U);
     NVIC_ClearPendingIRQ(I2C4_EV_IRQn);
@@ -130,6 +135,9 @@ static void sample_complete(int result)
     sample_active = 0U;
     __DMB();
     sample_done = 1U;
+#ifdef ZHUBAN_RTOS_PHASE1
+    rtos_phase1_imu_sample_ready_from_isr();
+#endif
 }
 
 static void sample_try_complete(void)

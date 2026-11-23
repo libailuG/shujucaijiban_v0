@@ -7,6 +7,9 @@
 #include "motor_bus.h"
 #include "cascade_left.h"
 #include "cascade_right.h"
+#ifdef ZHUBAN_RTOS_PHASE1
+#include "rtos_phase1.h"
+#endif
 
 /* Schematic page 2: LED6 green=PG9, LED5 red=PG11, LED4 blue=PG14.
  * Anodes connect to 3.3 V through resistors: LOW=ON, HIGH=OFF. */
@@ -73,7 +76,11 @@ static void buttons_scan_1ms(void)
     }
 }
 
+#ifdef ZHUBAN_RTOS_PHASE1
+void vApplicationTickHook(void)
+#else
 void SysTick_Handler(void)
+#endif
 {
     buttons_scan_1ms();
     receive_led_update();
@@ -132,9 +139,13 @@ int main(void)
         GPIOG->BSRR = RED_LED << 16;
         for (;;) { __NOP(); } /* Clock startup failed: keep red LED on. */
     }
+#ifndef ZHUBAN_RTOS_PHASE1
     if (SysTick_Config(SystemCoreClock / 1000UL) != 0U) {
         for (;;) { /* Invalid tick configuration. */ }
     }
+#else
+    NVIC_SetPriorityGrouping(0U); /* All implemented bits are preemption priority. */
+#endif
     led_timer_init();
     imu_init();
     battery_init();
@@ -145,6 +156,9 @@ int main(void)
     cascade_right_init();
     receive_led_ready = 1U;
 
+#ifdef ZHUBAN_RTOS_PHASE1
+    rtos_phase1_start();
+#else
     for (;;) {
         cascade_left_poll();
         cascade_right_poll();
@@ -157,4 +171,5 @@ int main(void)
         /* ARPE applies the new half-period at the next timer update. */
         TIM6->ARR = g_battery_data.led_half_period_ms * 10U - 1U;
     }
+#endif
 }

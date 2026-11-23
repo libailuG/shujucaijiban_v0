@@ -47,7 +47,16 @@ extern volatile uint32_t g_motor_zero_left_sent, g_motor_zero_right_sent, g_moto
 int motor_debug_receive_command(uint32_t mode_value, uint32_t switches, float left_torque, float right_torque);
 uint32_t motor_zero_status_bit(uint32_t now);
 void motor_bus_init(void);
+#ifdef ZHUBAN_RTOS_PHASE1
+void motor_bus_rtos_poll(uint32_t slots);
+int motor_get_fresh_feedback(unsigned right, MotorFrame *out, uint32_t max_age_us);
+#ifdef ZHUBAN_RTOS_CONTROLS
+void motor_bus_rtos_publish_command(void);
+void motor_bus_rtos_clear_command(void);
+#endif
+#else
 void motor_bus_poll(void);
+#endif
 /* 电机安装朝向（用户确认）：左侧电机正转时下落，右侧电机正转时上升。
  * 左侧=JP3/USART3/ID126，右侧=JP2/USART6/ID127。
  * 本接口保留电机原始反馈符号，不在读取时做方向取反。

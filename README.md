@@ -7,6 +7,7 @@
 - `firmware/zhuban_caiji.uvprojx`：Keil 工程，目标名 Zhuban_Caiji。
 - `firmware/Objects/zhuban_caiji.hex`：Keil 重新构建后的烧录文件。
 - `firmware/build.ps1`：独立命令行构建，输出到 ObjectsCli/zhuban_caiji.hex 和 .bin。
+- `firmware_rtos_controls/zhuban_rtos_controls.uvprojx`：独立 RTOS 控制版 Keil 工程；命令行构建见同目录 `build.ps1`。
 - `start.bat`：启动控制模式 1 监测上位机。
 - `start_simulation.bat`：启动监测上位机的无硬件演示。
 - `start_motor_simulator.bat`：启动独立电机模拟器。
@@ -14,6 +15,7 @@
 ## 目录
 
 - `firmware`：原 App、Drivers、Startup、RTE、data、链接脚本、Keil 配置及构建输出。
+- `firmware_rtos_controls`：独立的 RTOS 控制版源码、FreeRTOS、构建脚本和 Keil 工程；详情见其 RTOS_CONTROLS.md。
 - `host/control_mode1_monitor`：控制模式 1 监测上位机，具体串口、接线及协议见其 README.md。
 - `host/motor_simulator`：电机模拟器，使用前阅读其 README.md 并确认接线和模拟用途。
 - `backups`：原备份；本次重排前配置保存在 before_directory_layout_20261113。
@@ -72,3 +74,5 @@
 模式3右侧KP更新（2026-11-17，覆盖此前右侧KP0）：允许出力且反馈正常时，左右KP均为10；左侧正弦默认3Nm/2秒，右侧扭矩仍为0。禁止、异常及置零时左右仍沿用mode1全零/KP0。未烧录。
 
 模式3反馈保护取消（2026-11-17，覆盖此前反馈故障清零说明）：反馈无效/过期、左右时间差、mode错误、error_flag及非有限角度/速度仅记录当前状态和累计故障，不停止正弦、不重置相位；反馈曲线无效时仍不显示无效数值。手动禁止、退出、bit3普通静止及既有置零抑制保持。当前左侧默认3Nm/2秒，右扭矩0，允许出力时两侧KP10；仅模式3生效。未烧录。
+
+模式3轨迹50Hz更新（2026-11-17）：正弦每20ms更新一次，中间保持上次扭矩；许可开启首点为0，停止/退出/置零立即清零，不等待20ms。按实际经过时间推进相位，延迟时跳过漏点、不补发。电机每侧100Hz（左右5ms交替）、串口1上传100Hz保持；默认左侧3Nm/2秒、右扭矩0，允许时两侧KP10；反馈故障仅诊断。未烧录。

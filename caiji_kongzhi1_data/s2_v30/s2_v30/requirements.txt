@@ -1,0 +1,2 @@
+numpy>=1.26,<3
+# Export/validation only: torch; MuJoCo for full-chain validation.

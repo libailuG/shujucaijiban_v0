@@ -1,0 +1,13 @@
+{
+  "host_C99": true,
+  "host_warnings_as_errors": true,
+  "address_undefined_sanitizer_selftest": true,
+  "cortex_m4f_cross_compile": true,
+  "m4f_text_rodata_bytes": 238220,
+  "m4f_bss_bytes": 2412,
+  "board_timing_measured": false,
+  "hardware_tested": false,
+  "standalone_zip_C_selftest_and_python_demo": true,
+  "motor_output_mapping_and_12Nm_rejection": true,
+  "optional_limit_slew_frames": 30
+}

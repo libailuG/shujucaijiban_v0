@@ -39,6 +39,7 @@ volatile MotorData g_motor_left, g_motor_right;
  */
 volatile uint32_t g_motor_zero_state, g_motor_zero_switch;
 volatile uint32_t g_motor_zero_left_sent, g_motor_zero_right_sent, g_motor_zero_recovered;
+#if !defined(ZHUBAN_RTOS_PHASE1) || defined(ZHUBAN_RTOS_CONTROLS)
 static uint32_t zero_last_switch, zero_started_us, zero_probe_armed;
 static uint32_t zero_probe_tx[2], zero_probe_rx[2];
 int motor_debug_receive_command(uint32_t mode_value, uint32_t switches, float left_torque, float right_torque)
@@ -71,6 +72,53 @@ static uint32_t zero_torque_required(void)
     return g_motor_zero_switch || (g_motor_zero_state >= MOTOR_ZERO_QUEUED &&
         g_motor_zero_state <= MOTOR_ZERO_WAIT_FEEDBACK);
 }
+#endif
+
+#ifdef ZHUBAN_RTOS_CONTROLS
+typedef struct {
+    uint32_t mode, valid, timestamp_us, max_age_us;
+    float torque[2], kp;
+} MotorCommandSnapshot;
+static MotorCommandSnapshot published_command;
+
+void motor_bus_rtos_clear_command(void)
+{
+    uint32_t saved=__get_PRIMASK(); __disable_irq();
+    published_command.valid=0U;
+    __DMB();
+    __set_PRIMASK(saved);
+}
+
+void motor_bus_rtos_publish_command(void)
+{
+    MotorCommandSnapshot next={0};
+    next.mode=g_uart2_debug_mode;
+    if (next.mode==RESERVED_UART2_DEBUG_MODE_VALUE && g_motor_debug_mode) {
+        next.torque[0]=g_motor_debug_torque_left;
+        next.torque[1]=g_motor_debug_torque_right;
+        next.kp=50.0f;
+        next.valid=1U;
+        next.max_age_us=UINT32_MAX;
+    } else if (control_mode1_get_command(next.torque)) {
+        next.kp=10.0f;
+        next.valid=1U;
+        next.max_age_us=21000U;
+    } else if (control_mode2_get_command(next.torque)) {
+        next.kp=20.0f;
+        next.valid=1U;
+        next.max_age_us=11000U;
+    } else if (control_mode3_get_command(next.torque)) {
+        next.kp=10.0f;
+        next.valid=1U;
+        next.max_age_us=25000U;
+    }
+    next.timestamp_us=imu_time_us();
+    uint32_t saved=__get_PRIMASK(); __disable_irq();
+    published_command=next;
+    __DMB();
+    __set_PRIMASK(saved);
+}
+#endif
 
 volatile MotorDiagnostics g_motor_diag_left, g_motor_diag_right;
 volatile MotorRxRecent g_motor_left_rx_recent;
@@ -78,9 +126,11 @@ static MotorBus left={.uart=USART3,.gpio=GPIOD,.de=1U<<10,.id=126,.data=&g_motor
     .tx=motor_tx_dma[0],.dma=DMA1_Stream1,.dma_shift=6U};
 static MotorBus right={.uart=USART6,.gpio=GPIOC,.de=1U<<8,.id=127,.data=&g_motor_right,
     .tx=motor_tx_dma[1],.dma=DMA1_Stream2,.dma_shift=16U};
+#ifndef ZHUBAN_RTOS_PHASE1
 static uint32_t previous_send, previous_diag;
 /* Alternate independent buses every 5ms: each motor retains its 10ms period. */
 #define MOTOR_SEND_GAP_US (MOTOR_PERIOD_US / 2U)
+#endif
 static uint32_t next_send_right;
 static volatile MotorDiagnostics *diagnostics(MotorBus *b) {
     return b==&left ? &g_motor_diag_left : &g_motor_diag_right;
@@ -142,11 +192,26 @@ void motor_bus_init(void) {
     dma_init(&left,DMAMUX1_Channel1,46U,DMA1_Stream1_IRQn);
     dma_init(&right,DMAMUX1_Channel2,72U,DMA1_Stream2_IRQn);
     uart_init(&left,USART3_IRQn); uart_init(&right,USART6_IRQn);
+#ifdef ZHUBAN_RTOS_PHASE1
+    /* TIM2 keeps its 1 MHz timebase. CC1/CC2 are internal compare events. */
+    TIM2->DIER = 0U;
+    TIM2->CCMR1 = 0U;
+    TIM2->SR = 0U;
+    NVIC_SetPriority(TIM2_IRQn,4U);
+    NVIC_ClearPendingIRQ(TIM2_IRQn);
+    NVIC_EnableIRQ(TIM2_IRQn);
+#else
     previous_send=imu_time_us();
+#endif
     next_send_right=0U;
 }
 static void receive_poll(MotorBus *b) {
-    for(unsigned budget=0;budget<128;budget++) {
+#ifdef ZHUBAN_RTOS_PHASE1
+    const unsigned limit=256; /* 2 Mbps at a 1 ms service interval. */
+#else
+    const unsigned limit=128;
+#endif
+    for(unsigned budget=0;budget<limit;budget++) {
         if(b->consumed_epoch!=b->epoch) {
             uint32_t saved=__get_PRIMASK(); __disable_irq();
             b->tail=b->head; b->consumed_epoch=b->epoch;
@@ -172,6 +237,32 @@ static void receive_poll(MotorBus *b) {
     }
     b->data->bad_tail_count=b->stream.bad_tail;
 }
+
+#ifdef ZHUBAN_RTOS_PHASE1
+static void arm_tx_compare(MotorBus *b)
+{
+    uint32_t saved=__get_PRIMASK(); __disable_irq();
+    b->gpio->BSRR=b->de;
+    __DSB(); /* Timestamp after the GPIO write reaches the peripheral. */
+    b->de_since=imu_time_us();
+    uint32_t deadline=b->de_since+DE_SETUP_US+1U; /* Round up a partial 1 us count. */
+    b->state=1U;
+    if (b==&left) {
+        TIM2->CCR1=deadline;
+        TIM2->SR=~TIM_SR_CC1IF;
+        TIM2->DIER|=TIM_DIER_CC1IE;
+        if ((int32_t)(imu_time_us()-deadline)>=0) TIM2->EGR=TIM_EGR_CC1G;
+    } else {
+        TIM2->CCR2=deadline;
+        TIM2->SR=~TIM_SR_CC2IF;
+        TIM2->DIER|=TIM_DIER_CC2IE;
+        if ((int32_t)(imu_time_us()-deadline)>=0) TIM2->EGR=TIM_EGR_CC2G;
+    }
+    __DSB();
+    __set_PRIMASK(saved);
+}
+#endif
+
 static void start_motor_command_frame(MotorBus *b,uint32_t now,uint32_t mode) {
     if(b->state) { ++b->data->busy_skips; return; }
     MotorFrame f={0}; f.start_flag=0xAAAAAAAAU; f.end_flag=0xEEEEEEEEU;
@@ -184,6 +275,7 @@ static void start_motor_command_frame(MotorBus *b,uint32_t now,uint32_t mode) {
      * 非零命令来自UART9 data2==11调试或控制模式1接口，均受置零抑制；调试KP=50，控制模式1 KP=10。
      * mode2只用于开关2的一次性位置置零，控制字段仍全部为0。 */
     f.motor_id=b->id; f.mode=mode;
+#ifndef ZHUBAN_RTOS_PHASE1
     if (g_motor_debug_mode && mode==MOTOR_TORQUE && !zero_torque_required()) {
         f.torque = b==&left ? g_motor_debug_torque_left : g_motor_debug_torque_right;
         f.KP = 50.0f; /* 电机协议中的电流限幅系数，不是位置环增益。 */
@@ -198,14 +290,35 @@ static void start_motor_command_frame(MotorBus *b,uint32_t now,uint32_t mode) {
             }
         }
     }
+#endif
+#ifdef ZHUBAN_RTOS_CONTROLS
+    if (mode==MOTOR_TORQUE && !zero_torque_required()) {
+        MotorCommandSnapshot command;
+        uint32_t saved=__get_PRIMASK(); __disable_irq();
+        command=published_command;
+        __set_PRIMASK(saved);
+        if (command.valid && command.mode==g_uart2_debug_mode &&
+            (command.max_age_us==UINT32_MAX ||
+             (uint32_t)(imu_time_us()-command.timestamp_us)<=command.max_age_us)) {
+            f.torque=command.torque[b==&left ? 0 : 1];
+            f.KP=command.kp;
+        }
+    }
+#endif
     b->data->tx_frame=f; motor_encode(b->tx,&f);
     if(SCB->CCR&SCB_CCR_DC_Msk) SCB_CleanDCache_by_Addr((uint32_t *)b->tx,64);
     __DSB();
     b->completed_mode=UINT32_MAX; /* An aborted frame must not reuse an old completion. */
     b->uart->ICR=USART_ICR_TCCF;
+#ifdef ZHUBAN_RTOS_PHASE1
+    (void)now;
+    arm_tx_compare(b);
+#else
     b->gpio->BSRR=b->de; b->de_since=now;
     __DMB(); b->state=1;
+#endif
 }
+#if !defined(ZHUBAN_RTOS_PHASE1) || defined(ZHUBAN_RTOS_CONTROLS)
 static void zero_sequence_poll(uint32_t now)
 {
     switch (g_motor_zero_state) {
@@ -235,7 +348,9 @@ static void zero_sequence_poll(uint32_t now)
             zero_probe_tx[0]=g_motor_left.tx_count; zero_probe_tx[1]=g_motor_right.tx_count;
             zero_probe_armed=0U;
             g_motor_zero_state=MOTOR_ZERO_WAIT_FEEDBACK;
+#ifndef ZHUBAN_RTOS_PHASE1
             previous_send=now-MOTOR_SEND_GAP_US; /* Query left now, right 5ms later. */
+#endif
             next_send_right=0U;
         }
         break;
@@ -259,6 +374,34 @@ static void zero_sequence_poll(uint32_t now)
     default: break;
     }
 }
+#endif
+
+static void start_tx_dma(MotorBus *b)
+{
+    DMA1->LIFCR=0x3DU<<b->dma_shift;
+    b->dma->NDTR=48U;
+    b->state=2; __DMB();
+    b->dma->CR|=DMA_SxCR_EN;
+    b->uart->CR3|=USART_CR3_DMAT;
+}
+
+#ifdef ZHUBAN_RTOS_PHASE1
+void TIM2_IRQHandler(void)
+{
+    uint32_t pending=TIM2->SR&TIM2->DIER;
+    if (pending&TIM_SR_CC1IF) {
+        TIM2->DIER&=~TIM_DIER_CC1IE;
+        TIM2->SR=~TIM_SR_CC1IF;
+        start_tx_dma(&left);
+    }
+    if (pending&TIM_SR_CC2IF) {
+        TIM2->DIER&=~TIM_DIER_CC2IE;
+        TIM2->SR=~TIM_SR_CC2IF;
+        start_tx_dma(&right);
+    }
+    __DSB();
+}
+#endif
 
 static void enable_tx(MotorBus *b,uint32_t now) {
     /* Abort without spinning in an IRQ. After DMA stops, allow 100us for
@@ -273,13 +416,9 @@ static void enable_tx(MotorBus *b,uint32_t now) {
         b->gpio->BSRR=b->de<<16;
         __DMB(); b->state=0;
     }
-    if(b->state==1 && (uint32_t)(now-b->de_since)>=DE_SETUP_US) {
-        DMA1->LIFCR=0x3DU<<b->dma_shift;
-        b->dma->NDTR=48U;
-        b->state=2; __DMB();
-        b->dma->CR|=DMA_SxCR_EN;
-        b->uart->CR3|=USART_CR3_DMAT;
-    }
+#ifndef ZHUBAN_RTOS_PHASE1
+    if(b->state==1 && (uint32_t)(now-b->de_since)>=DE_SETUP_US) start_tx_dma(b);
+#endif
 }
 static void update_rx_idle(MotorBus *b) {
     /* RX ISR also resets these fields: keep timestamp and accumulator atomic.
@@ -294,6 +433,29 @@ static void update_rx_idle(MotorBus *b) {
     b->data->rx_idle_ms=(add_ms>UINT32_MAX-idle)?UINT32_MAX:idle+add_ms;
     __set_PRIMASK(saved);
 }
+#ifdef ZHUBAN_RTOS_PHASE1
+void motor_bus_rtos_poll(uint32_t slots) {
+    receive_poll(&left); receive_poll(&right);
+    uint32_t now=imu_time_us();
+#ifdef ZHUBAN_RTOS_CONTROLS
+    zero_sequence_poll(now);
+#endif
+    if (slots) {
+        /* Keep left/right slot parity while skipping any coalesced slots. */
+        next_send_right^=(slots-1U)&1U;
+#ifdef ZHUBAN_RTOS_CONTROLS
+        uint32_t normal_allowed=g_motor_zero_state==MOTOR_ZERO_IDLE ||
+            g_motor_zero_state>=MOTOR_ZERO_WAIT_FEEDBACK;
+        if (normal_allowed)
+#endif
+        start_motor_command_frame(next_send_right ? &right : &left,0U,MOTOR_TORQUE);
+        next_send_right^=1U;
+    }
+    update_rx_idle(&left); update_rx_idle(&right);
+    sample_rx_pin(&left,9); sample_rx_pin(&right,7);
+    enable_tx(&left,now); enable_tx(&right,now);
+}
+#else
 void motor_bus_poll(void) {
     receive_poll(&left); receive_poll(&right);
     update_rx_idle(&left); update_rx_idle(&right);
@@ -310,16 +472,28 @@ void motor_bus_poll(void) {
     }
     enable_tx(&left,now); enable_tx(&right,now);
 }
+#endif
 /* 电机安装朝向（用户确认）：左侧电机正转时下落，右侧电机正转时上升。
  * 左侧=JP3/USART3/ID126，右侧=JP2/USART6/ID127。
  * 本接口保留电机原始反馈符号，不在读取时做方向取反。
  */
-int motor_get_feedback(unsigned is_right,MotorFrame *out) {
-    volatile MotorData *d=is_right?&g_motor_right:&g_motor_left;
+static int copy_feedback(unsigned is_right,MotorFrame *out,uint32_t *timestamp) {
+    const volatile MotorData *d=is_right?&g_motor_right:&g_motor_left;
     if(out==0 || !d->rx_valid) return 0;
     uint32_t saved=__get_PRIMASK(); __disable_irq();
-    *out=d->rx_frame; __set_PRIMASK(saved); return 1;
+    *out=d->rx_frame;
+    if (timestamp) *timestamp=d->rx_timestamp_us;
+    __set_PRIMASK(saved); return 1;
 }
+int motor_get_feedback(unsigned is_right,MotorFrame *out) {
+    return copy_feedback(is_right,out,0);
+}
+#ifdef ZHUBAN_RTOS_PHASE1
+int motor_get_fresh_feedback(unsigned is_right,MotorFrame *out,uint32_t max_age_us) {
+    uint32_t timestamp;
+    return copy_feedback(is_right,out,&timestamp) && (uint32_t)(imu_time_us()-timestamp)<=max_age_us;
+}
+#endif
 static void uart_irq(MotorBus *b) {
     USART_TypeDef *u=b->uart; uint32_t s=u->ISR;
     uint32_t errors=s&(USART_ISR_PE|USART_ISR_FE|USART_ISR_NE|USART_ISR_ORE);

@@ -355,7 +355,8 @@
             <useXO>0</useXO>
             <ClangAsOpt>0</ClangAsOpt>
             <VariousControls>
-              <MiscControls></MiscControls>              <Define>STM32H723xx</Define>
+              <MiscControls>
+</MiscControls>              <Define>STM32H723xx</Define>
               <Undefine>
               </Undefine><IncludePath>.\App;.\Drivers\CMSIS\Device;.\Drivers\CMSIS\Core</IncludePath>
             </VariousControls>
@@ -433,10 +434,35 @@
               <FileType>1</FileType>
               <FilePath>.\App\battery.c</FilePath>
             </File>
+            <File>
+              <FileName>imu.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\imu.h</FilePath>
+            </File>
+            <File>
+              <FileName>imu_bus.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\imu_bus.h</FilePath>
+            </File>
+            <File>
+              <FileName>icm_imu_i2c.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\icm_imu_i2c.h</FilePath>
+            </File>
+            <File>
+              <FileName>mahony.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\mahony.h</FilePath>
+            </File>
+            <File>
+              <FileName>battery.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\battery.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Communication</GroupName>
+          <GroupName>Cascade</GroupName>
           <Files>
             <File>
               <FileName>cascade_protocol.c</FileName>
@@ -459,14 +485,49 @@
               <FilePath>.\App\cascade_right.c</FilePath>
             </File>
             <File>
+              <FileName>cascade_protocol.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\cascade_protocol.h</FilePath>
+            </File>
+            <File>
+              <FileName>cascade_receiver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\cascade_receiver.h</FilePath>
+            </File>
+            <File>
+              <FileName>cascade_left.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\cascade_left.h</FilePath>
+            </File>
+            <File>
+              <FileName>cascade_right.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\cascade_right.h</FilePath>
+            </File>
+            <File>
+              <FileName>cascade_link.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\cascade_link.h</FilePath>
+            </File>
+            <File>
+              <FileName>cascade_port.inc</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\cascade_port.inc</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>UART</GroupName>
+          <Files>
+            <File>
               <FileName>reserved_uart2.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\App\reserved_uart2.c</FilePath>
             </File>
             <File>
-              <FileName>motor_bus.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\App\motor_bus.c</FilePath>
+              <FileName>reserved_uart2.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\reserved_uart2.h</FilePath>
             </File>
             <File>
               <FileName>reserved_uart1.c</FileName>
@@ -477,6 +538,36 @@
               <FileName>reserved_uart1.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\App\reserved_uart1.h</FilePath>
+            </File>
+            <File>
+              <FileName>mcu_uart_protocol.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\mcu_uart_protocol.h</FilePath>
+            </File>
+            <File>
+              <FileName>mcu_uart_stream.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\mcu_uart_stream.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Motor</GroupName>
+          <Files>
+            <File>
+              <FileName>motor_bus.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\App\motor_bus.c</FilePath>
+            </File>
+            <File>
+              <FileName>motor_bus.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\motor_bus.h</FilePath>
+            </File>
+            <File>
+              <FileName>motor_protocol.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\motor_protocol.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -519,14 +610,24 @@
               <FilePath>.\App\imu_debug_mode.c</FilePath>
             </File>
             <File>
+              <FileName>imu_debug_mode.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\imu_debug_mode.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Mode_Acquisition</GroupName>
+          <Files>
+            <File>
               <FileName>acquisition_mode.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\App\acquisition_mode.c</FilePath>
             </File>
             <File>
-              <FileName>imu_debug_mode.h</FileName>
+              <FileName>acquisition_mode.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\App\imu_debug_mode.h</FilePath>
+              <FilePath>.\App\acquisition_mode.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -547,6 +648,11 @@
               <FileName>control_mode1_monitor.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\App\control_mode1_monitor.h</FilePath>
+            </File>
+            <File>
+              <FileName>control_mode1_observation.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\control_mode1_observation.h</FilePath>
             </File>
             <File>
               <FileName>s2_deploy.c</FileName>
@@ -633,11 +739,6 @@
           </GroupOption>
           <Files>
             <File>
-              <FileName>control_mode3.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\App\control_mode3.c</FilePath>
-            </File>
-            <File>
               <FileName>control_mode2.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\App\control_mode2.c</FilePath>
@@ -646,6 +747,11 @@
               <FileName>control_mode2.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\App\control_mode2.h</FilePath>
+            </File>
+            <File>
+              <FileName>control_mode2_telemetry.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\control_mode2_telemetry.h</FilePath>
             </File>
             <File>
               <FileName>g1_assist_v10_policy.c</FileName>
@@ -666,6 +772,90 @@
               <FileName>assist_oscillation_monitor.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\App\control2_policy\assist_oscillation_monitor.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Mode_Control3</GroupName>
+          <GroupOption>
+            <CommonProperty>
+              <UseCPPCompiler>0</UseCPPCompiler>
+              <RVCTCodeConst>0</RVCTCodeConst>
+              <RVCTZI>0</RVCTZI>
+              <RVCTOtherData>0</RVCTOtherData>
+              <ModuleSelection>0</ModuleSelection>
+              <IncludeInBuild>1</IncludeInBuild>
+              <AlwaysBuild>0</AlwaysBuild>
+              <GenerateAssemblyFile>0</GenerateAssemblyFile>
+              <AssembleAssemblyFile>0</AssembleAssemblyFile>
+              <PublicsOnly>0</PublicsOnly>
+              <StopOnExitCode>3</StopOnExitCode>
+              <CustomArgument></CustomArgument>
+              <IncludeLibraryModules></IncludeLibraryModules>
+              <ComprImg>0</ComprImg>
+            </CommonProperty>
+            <GroupArmAds>
+              <Cads>
+                <interw>1</interw>
+                <Optim>4</Optim>
+                <oTime>0</oTime>
+                <SplitLS>0</SplitLS>
+                <OneElfS>1</OneElfS>
+                <Strict>0</Strict>
+                <EnumInt>0</EnumInt>
+                <PlainCh>0</PlainCh>
+                <Ropi>0</Ropi>
+                <Rwpi>0</Rwpi>
+                <wLevel>2</wLevel>
+                <uThumb>0</uThumb>
+                <uSurpInc>0</uSurpInc>
+                <uC99>1</uC99>
+                <uGnu>1</uGnu>
+                <useXO>0</useXO>
+                <v6Lang>3</v6Lang>
+                <v6LangP>3</v6LangP>
+                <vShortEn>1</vShortEn>
+                <vShortWch>1</vShortWch>
+                <v6Lto>0</v6Lto>
+                <v6WtE>0</v6WtE>
+                <v6Rtti>0</v6Rtti>
+                <VariousControls>
+                  <MiscControls>-mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off -O3</MiscControls>
+                  <Define>STM32H723xx</Define>
+                  <Undefine></Undefine>
+                  <IncludePath>.\App;.\Drivers\CMSIS\Device;.\Drivers\CMSIS\Core</IncludePath>
+                </VariousControls>
+              </Cads>
+              <Aads>
+                <interw>2</interw>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <thumb>2</thumb>
+                <SplitLS>2</SplitLS>
+                <SwStkChk>2</SwStkChk>
+                <NoWarn>2</NoWarn>
+                <uSurpInc>2</uSurpInc>
+                <useXO>2</useXO>
+                <ClangAsOpt>0</ClangAsOpt>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Aads>
+            </GroupArmAds>
+          </GroupOption>
+          <Files>
+            <File>
+              <FileName>control_mode3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\App\control_mode3.c</FilePath>
+            </File>
+            <File>
+              <FileName>control_mode3.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\control_mode3.h</FilePath>
             </File>
           </Files>
         </Group>

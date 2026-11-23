@@ -1,0 +1,54 @@
+{
+  "source_sha256": "25981d75a0ee2f00ca352532d40fdbfc8f0131d56687a61d1034dcc52039d8a0",
+  "version": "v30_stm32f405",
+  "widths": [
+    65,
+    256,
+    128,
+    64,
+    2
+  ],
+  "activation": "relu",
+  "epsilon": 0.009999999776482582,
+  "cap_Nm": 12,
+  "arrays": {
+    "norm_mean": [
+      65
+    ],
+    "norm_std": [
+      65
+    ],
+    "norm_eps": [
+      1
+    ],
+    "actor_0_weight": [
+      256,
+      65
+    ],
+    "actor_0_bias": [
+      256
+    ],
+    "actor_2_weight": [
+      128,
+      256
+    ],
+    "actor_2_bias": [
+      128
+    ],
+    "actor_4_weight": [
+      64,
+      128
+    ],
+    "actor_4_bias": [
+      64
+    ],
+    "actor_6_weight": [
+      2,
+      64
+    ],
+    "actor_6_bias": [
+      2
+    ]
+  },
+  "weight_bytes": 233236
+}

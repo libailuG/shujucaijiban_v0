@@ -3,6 +3,10 @@
 #include "imu_bus.h"
 #include "icm_imu_i2c.h"
 #include "mahony.h"
+#ifdef ZHUBAN_RTOS_PHASE1
+#include "FreeRTOS.h"
+#include "task.h"
+#endif
 
 volatile ImuData g_imu_data;
 /* 竖装坐标按实测修正，见下方映射；保留g_imu_data的原传感器坐标。 */
@@ -43,9 +47,22 @@ static void sample_timer_init(void)
     TIM7->CR1 |= TIM_CR1_CEN;
 }
 
+#ifdef ZHUBAN_RTOS_PHASE1
+static void imu_task_delay(void *context, uint32_t us)
+{
+    (void)context;
+    /* Include the partial first tick so sensor timing cannot round down. */
+    vTaskDelay(pdMS_TO_TICKS((us + 999U) / 1000U) + 1U);
+}
+#endif
+
 static int start_sensor(void)
 {
+#ifdef ZHUBAN_RTOS_PHASE1
+    const icm_imu_bus_t bus = {0, imu_bus_read, imu_bus_write, imu_task_delay};
+#else
     const icm_imu_bus_t bus = {0, imu_bus_read, imu_bus_write, imu_delay_us};
+#endif
     int result = imu_bus_recover();
     if (result != 0) return result;
     const uint8_t addresses[] = {0x69U, 0x68U};
@@ -66,11 +83,32 @@ static int start_sensor(void)
 void imu_init(void)
 {
     imu_bus_init();
+#ifdef ZHUBAN_RTOS_PHASE1
+    retry_at = imu_time_us() + 100000U;
+    sample_timer_init();
+#else
     imu_delay_us(0, 100000U);
     sample_timer_init();
     /* Initialization/retries are handled by the main-loop service. */
     retry_at = imu_time_us();
+#endif
 }
+
+#ifdef ZHUBAN_RTOS_PHASE1
+void imu_rtos_task(void *argument)
+{
+    (void)argument;
+    for (;;) {
+        if (ready) {
+            (void)ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+        } else {
+            int32_t remaining = (int32_t)(retry_at - imu_time_us());
+            if (remaining > 0) imu_task_delay(0, (uint32_t)remaining);
+        }
+        imu_poll();
+    }
+}
+#endif
 
 void imu_get_data(ImuData *out)
 {

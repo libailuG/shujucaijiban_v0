@@ -22,7 +22,7 @@ int main(void){
  motor[0].mode=motor[1].mode=MOTOR_TORQUE;fresh();g_uart2_debug_mode=3;
  assert(!control_mode3_get_command(a));control_mode3_set_torque_enabled(1);
  assert(control_mode3_get_command(a)&&a[0]==0&&a[1]==0);
- for(unsigned n=1;n<=400;n++){now+=10000;fresh();assert(control_mode3_get_command(a));assert(fabsf(a[0]-3*sinf(3.14159265359f*n*.01f))<.0001f);assert(a[1]==0);}
+ for(unsigned n=1;n<=400;n++){now+=10000;fresh();assert(control_mode3_get_command(a));assert(fabsf(a[0]-3*sinf(3.14159265359f*(n/2)*.02f))<.0001f);assert(a[1]==0);}
  control_mode3_set_torque_enabled(0);assert(!control_mode3_get_command(a));control_mode3_set_torque_enabled(1);assert(control_mode3_get_command(a)&&a[0]==0);
  now+=40000;assert(control_mode3_get_command(a));assert(g_control_mode3_monitor.status&CONTROL3_LEFT_OLD);
  assert(fabsf(a[0]-3*sinf(.04f*3.14159265359f))<.0001f);fresh();
@@ -36,7 +36,7 @@ int main(void){
  motor[0].ang=0;assert(control_mode3_get_command(a));assert(g_control_mode3_monitor.status==0);assert(g_control_mode3_monitor.resets==resets);
  for(unsigned z=1;z<6;z++){g_motor_zero_state=z;assert(!control_mode3_get_command(a));}g_motor_zero_state=6;g_motor_zero_switch=1;assert(!control_mode3_get_command(a));g_motor_zero_switch=0;assert(control_mode3_get_command(a)&&a[0]==0);
  g_uart2_debug_mode=0;assert(!control_mode3_get_command(a));g_uart2_debug_mode=3;assert(control_mode3_get_command(a)&&a[0]==0);
- now=0xfffffff0U;fresh();control_mode3_reset();assert(control_mode3_get_command(a));now+=10000;fresh();assert(control_mode3_get_command(a));assert(fabsf(a[0]-3*sinf(.01f*3.14159265359f))<.0001f);
+ now=0xfffffff0U;fresh();control_mode3_reset();assert(control_mode3_get_command(a));now+=10000;fresh();assert(control_mode3_get_command(a)&&a[0]==0);now+=10000;fresh();assert(control_mode3_get_command(a));assert(fabsf(a[0]-3*sinf(.02f*3.14159265359f))<.0001f);
  control_mode3_fill_feedback(&f);assert(f.data8==a[0]&&f.data9==a[1]);assert(!control_mode3_set_parameters(NAN,2));assert(!control_mode3_set_parameters(16,2));
  assert(!control_mode3_set_parameters(4,0));assert(!control_mode3_set_parameters(4,61));
  assert(control_mode3_set_parameters(4,1));assert(control_mode3_get_command(a)&&a[0]==0);
@@ -49,5 +49,5 @@ int main(void){
  FILE *fp=fopen("work/control3_20261117/telemetry_fixture.bin","wb");assert(fp);fwrite(&telemetry,1,sizeof(telemetry),fp);fclose(fp);
  control_mode3_set_torque_enabled(0);now+=10000;fresh();control_mode3_poll();assert(!(telemetry.flags&14));
  assert(control_mode3_set_parameters(0,.1f));control_mode3_set_torque_enabled(1);assert(control_mode3_get_command(a)&&a[0]==0);
- puts("Mode3 tests PASS: waveform, sign, permission, feedback diagnostics without suppression, zeroing, restart, timer wrap, telemetry");return 0;
+ puts("Mode3 tests PASS: 50Hz sample hold, waveform, sign, permission, feedback diagnostics without suppression, zeroing, restart, timer wrap, telemetry");return 0;
 }

@@ -78,11 +78,13 @@ void reserved_uart2_init(void)
     rx_stream = (McuUartStream){0};
     g_uart2_debug_mode = 0U;
     acquisition_mode_set_enabled(0U);
+#if !defined(ZHUBAN_RTOS_PHASE1) || defined(ZHUBAN_RTOS_CONTROLS)
     control_mode1_set_torque_enabled(0U);
     control_mode2_set_torque_enabled(0U);
     control_mode3_set_torque_enabled(0U);
     control_mode2_reset(); control_mode3_reset();
     control_mode1_set_observation_enabled(0U);
+#endif
     g_uart2_tx_frame = (td_mcu_frame_t){0};
     g_uart2_tx_frame.start_flag = TD_MCU_START;
     g_uart2_tx_frame.end_flag = TD_MCU_END;
@@ -133,6 +135,14 @@ static void receive_poll(void)
             __set_PRIMASK(saved);
             if (accepted) {
                 uint32_t requested_mode = (frame.data1 & RESERVED_UART2_STATIONARY_MASK) ? 0U : reserved_uart2_accept_mode(frame.data2);
+#if defined(ZHUBAN_RTOS_PHASE1) && !defined(ZHUBAN_RTOS_CONTROLS)
+                /* Phase 1 accepts sensor and acquisition modes only. */
+                g_uart2_debug_mode = requested_mode >= RESERVED_UART2_IMU_MODE_VALUE ? requested_mode : 0U;
+                acquisition_mode_set_enabled(g_uart2_debug_mode==RESERVED_UART2_ACQUISITION_VALUE && (frame.data1 & 1U));
+#else
+#ifdef ZHUBAN_RTOS_CONTROLS
+                motor_bus_rtos_clear_command();
+#endif
                 if (motor_debug_receive_command(requested_mode, frame.data1, frame.data8, frame.data9)) {
                     if (g_uart2_debug_mode != requested_mode) { control_mode1_reset(); control_mode2_reset(); control_mode3_reset(); }
                     /* Invalid settings never prevent stop/mode acceptance. */
@@ -151,6 +161,7 @@ static void receive_poll(void)
                         g_uart2_debug_mode==RESERVED_UART2_CONTROL_MODE1_VALUE &&
                         (frame.data1 & RESERVED_UART2_CONTROL1_TORQUE_MASK));
                 }
+#endif
             }
         }
     }
@@ -182,13 +193,21 @@ void reserved_uart2_poll(void)
         tx_busy = 0U;
     }
     receive_poll();
+#if !defined(ZHUBAN_RTOS_PHASE1) || defined(ZHUBAN_RTOS_CONTROLS)
     control_mode1_poll(); /* 非控制模式时清空策略及保持命令。 */
     control_mode2_poll();
     control_mode3_poll();
+#endif
     acquisition_mode_poll();
     uint32_t now = imu_time_us();
     if (!tx_busy && (uint32_t)(now - previous_send) >= RESERVED_UART2_TX_PERIOD_US) {
         previous_send = now; /* Skip missed periods; never send a backlog. */
+#if defined(ZHUBAN_RTOS_PHASE1) && !defined(ZHUBAN_RTOS_CONTROLS)
+        uint32_t bit0 = g_uart2_debug_mode == RESERVED_UART2_ACQUISITION_VALUE && acquisition_mode_is_enabled();
+        g_uart2_tx_frame.data1 = (g_uart2_tx_frame.data1 &
+            ~(RESERVED_UART2_ZERO_SWITCH_MASK | RESERVED_UART2_CONTROL1_OBSERVATION_MASK | RESERVED_UART2_SENSOR_STATUS_MASK)) |
+            (bit0 ? RESERVED_UART2_ZERO_SWITCH_MASK : 0U);
+#else
         /* bit0 echoes torque permission in control modes, zero status in mode 11. */
         uint32_t bit0 = g_uart2_debug_mode == RESERVED_UART2_CONTROL_MODE1_VALUE ?
             g_control_mode1_torque_enabled :
@@ -201,6 +220,7 @@ void reserved_uart2_poll(void)
             (bit0 ? RESERVED_UART2_ZERO_SWITCH_MASK : 0U) |
             ((g_uart2_debug_mode==RESERVED_UART2_CONTROL_MODE1_VALUE && g_control_mode1_observation_enabled) ?
              RESERVED_UART2_CONTROL1_OBSERVATION_MASK : 0U);
+#endif
         g_uart2_tx_frame.data2 = g_uart2_debug_mode;
         if (g_uart2_debug_mode == RESERVED_UART2_ACQUISITION_VALUE) {
             acquisition_mode_fill_feedback(&g_uart2_tx_frame);
@@ -209,6 +229,7 @@ void reserved_uart2_poll(void)
         } else if (g_uart2_debug_mode >= RESERVED_UART2_LEFT_THIGH_VALUE &&
                    g_uart2_debug_mode <= RESERVED_UART2_RIGHT_PRESSURE_VALUE) {
             cascade_debug_mode_fill_feedback(&g_uart2_tx_frame, g_uart2_debug_mode);
+#if !defined(ZHUBAN_RTOS_PHASE1) || defined(ZHUBAN_RTOS_CONTROLS)
         } else if (g_uart2_debug_mode == RESERVED_UART2_CONTROL_MODE1_VALUE) {
             control_mode1_fill_feedback(&g_uart2_tx_frame);
         } else if (g_uart2_debug_mode == RESERVED_UART2_CONTROL_MODE2_VALUE) {
@@ -217,6 +238,7 @@ void reserved_uart2_poll(void)
             control_mode3_fill_feedback(&g_uart2_tx_frame);
         } else if (g_motor_debug_mode) {
             motor_debug_mode_fill_feedback(&g_uart2_tx_frame);
+#endif
         } else {
             /* 普通模式反馈。 */
             normal_mode_fill_feedback(&g_uart2_tx_frame);

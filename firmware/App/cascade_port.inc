@@ -142,6 +142,13 @@ static void request(uint8_t type,uint32_t now)
     /* Disable receive while driving RE#/DE high. */
     PORT_UART->CR1&=~USART_CR1_RE;
     PORT_UART->ICR=USART_ICR_TCCF; PORT_GPIO->BSRR=DE;
+#ifdef ZHUBAN_RTOS_PHASE1
+    /* This runs in the low priority I/O task, with IRQs and preemption enabled. */
+    __DSB();
+    imu_delay_us(0,3U);
+    tx_since=imu_time_us();
+    tx_phase=2; PORT_UART->CR1|=USART_CR1_TXEIE_TXFNFIE;
+#endif
     ++PORT_DIAG.tx_requests;
     PORT_DIAG.state=type==CP_INFO?CASCADE_WAIT_INFO:CASCADE_WAIT_START;
 }

@@ -52,23 +52,27 @@ static int send_frame(const void *frame, uint32_t length)
     UART4->CR1 |= USART_CR1_TXEIE_TXFNFIE;
     return 1;
 }
+#if !defined(ZHUBAN_RTOS_PHASE1) || defined(ZHUBAN_RTOS_CONTROLS)
 int reserved_uart1_send_observation(const ControlMode1Observation *frame)
 {
     if (g_uart2_debug_mode!=RESERVED_UART2_CONTROL_MODE1_VALUE ||
         !g_control_mode1_observation_enabled) return 0;
     return send_frame(frame,sizeof(*frame));
 }
+#endif
 int reserved_uart1_send_acquisition(const uint8_t frame[ACQUISITION_FRAME_SIZE])
 {
     if (g_uart2_debug_mode!=RESERVED_UART2_ACQUISITION_VALUE || !acquisition_mode_is_enabled()) return 0;
     return send_frame(frame,ACQUISITION_FRAME_SIZE);
 }
+#if !defined(ZHUBAN_RTOS_PHASE1) || defined(ZHUBAN_RTOS_CONTROLS)
 int reserved_uart1_send_control2(const ControlMode2Telemetry *frame)
 {
     if (!frame || !((g_uart2_debug_mode==RESERVED_UART2_CONTROL_MODE2_VALUE && frame->version==1U) ||
         (g_uart2_debug_mode==RESERVED_UART2_CONTROL_MODE3_VALUE && frame->version==3U))) return 0;
     return send_frame(frame,sizeof(*frame));
 }
+#endif
 void UART4_IRQHandler(void)
 {
     if ((UART4->ISR & USART_ISR_TXE_TXFNF) && (UART4->CR1 & USART_CR1_TXEIE_TXFNFIE)) {

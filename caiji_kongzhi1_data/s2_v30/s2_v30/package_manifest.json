@@ -1,0 +1,78 @@
+{
+  "README.md": {
+    "bytes": 4577,
+    "sha256": "edc15cab8fcdb17012d1b5fd5f69002ed7cbab7bdd185a55d17d530a8a841fec"
+  },
+  "build_cortex_m4.sh": {
+    "bytes": 996,
+    "sha256": "210773c0d7b4fab08a87c98eb36427d7eb5d6819cd41febb96cb98edd9b44de8"
+  },
+  "c/Makefile": {
+    "bytes": 347,
+    "sha256": "43664d9741d403389487b2fd46bb1f1b4ce25f748b1f551ed202057375ed61ad"
+  },
+  "c/main.c": {
+    "bytes": 3805,
+    "sha256": "10e203b2fe1aa97b42797bc3ec4e3633afdb6188c00526bd680ebfe751b5cc4a"
+  },
+  "c/s2_deploy.c": {
+    "bytes": 921232,
+    "sha256": "b600c903173b285e99144ec9068fd0c57b76b1dccaefec782e370953256b3d2c"
+  },
+  "c/s2_deploy.h": {
+    "bytes": 14154,
+    "sha256": "eee0771ceaaff20c8b4d58367befad553b3fb2898fc0d62d7ac78785bfd63591"
+  },
+  "controller.py": {
+    "bytes": 4945,
+    "sha256": "279b4db130f8785bf12a6061399931c03914866cebea395d9c94cb6f1e7ed1cb"
+  },
+  "demo.py": {
+    "bytes": 224,
+    "sha256": "a1364dd2d3c6729498b09f290428bb36393543b3a481c22fdaca8b2fd8e32029"
+  },
+  "export_policy.py": {
+    "bytes": 2525,
+    "sha256": "1fa7a0b51a322b3faebd0f9469b9d592afda5f859ddff34face02c173a797e7a"
+  },
+  "package.py": {
+    "bytes": 799,
+    "sha256": "a0cc0cda10e27d0f66dfbd3437c4dd5632fa81ac125118a1132109d9857d7d20"
+  },
+  "requirements.txt": {
+    "bytes": 82,
+    "sha256": "7e3bc143e4b5416e49da13648fab4f488e632bad4a49c786107efe5090ccedb3"
+  },
+  "tests/c_api.py": {
+    "bytes": 2400,
+    "sha256": "129c088a343814fcab3eb8511acbb59740838de11340a277e5eba9092eda6c6a"
+  },
+  "tests/validate.py": {
+    "bytes": 7486,
+    "sha256": "ca7098a4c7e914dd97f05ac5c04976267a16571178b8195e820ab260788ce9cc"
+  },
+  "validation/build.json": {
+    "bytes": 404,
+    "sha256": "8ce917195fd010dc4f24cdcb197db36f9ca0ad725b5794ff0d3fbce78085ff3d"
+  },
+  "validation/mujoco_reference.npz": {
+    "bytes": 102224,
+    "sha256": "78a19cd0379c7af4e99b7ec330f39962cb9e15729628ec80038d3e7bb4329a4c"
+  },
+  "validation/validation.json": {
+    "bytes": 1107,
+    "sha256": "0a7a97d38381f3dd8ae5a0c53106aa20a3ea684ed0527d5d50553eeb13910c4b"
+  },
+  "weights/S2_v30_fp32.pt": {
+    "bytes": 237509,
+    "sha256": "25981d75a0ee2f00ca352532d40fdbfc8f0131d56687a61d1034dcc52039d8a0"
+  },
+  "weights/actor_weights.npz": {
+    "bytes": 236068,
+    "sha256": "fee54544f4a5cad4a8776cc8153a88026888c05a47ba2b4e1be10d64043a9e0f"
+  },
+  "weights/manifest.json": {
+    "bytes": 756,
+    "sha256": "9ec6e64c49791f15b5d40ac1d8f7229d028328658b83d5ce0fc873a73bca2ab8"
+  }
+}

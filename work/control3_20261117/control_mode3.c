@@ -7,6 +7,7 @@
 #include "reserved_uart1.h"
 volatile ControlMode3Monitor g_control_mode3_monitor={CONTROL3_DISABLED,0,0,0,{0,0}};
 volatile uint32_t g_control_mode3_torque_enabled;
+#define CONTROL3_TRAJECTORY_PERIOD_US 20000U /* 50Hz; hold between updates. */
 static uint32_t active, previous;
 static uint32_t phase_us;
 static uint32_t period_us=2000000U;
@@ -65,9 +66,15 @@ static void control_mode3_update(void)
     if (fault & CONTROL3_ZEROING) {
         control_mode3_reset(); g_control_mode3_monitor.status=fault; return;
     }
-    if (!active) { active=1; previous=now; }
-    /* Integrate unsigned microsecond deltas, including timer wrap; bounded phase. */
-    phase_us=(phase_us+(uint32_t)(now-previous)%period_us)%period_us;
+    g_control_mode3_monitor.status=fault;
+    if (!active) {
+        active=1; previous=now; /* Zero-phase first sample. */
+        return;
+    }
+    uint32_t elapsed=now-previous;
+    if (elapsed<CONTROL3_TRAJECTORY_PERIOD_US) return;
+    /* Use elapsed time, skip missed samples without a catch-up burst. */
+    phase_us=(phase_us+elapsed%period_us)%period_us;
     previous=now;
     g_control_mode3_monitor.elapsed_us=phase_us;
     g_control_mode3_monitor.torque_nm[0]=g_control_mode3_amplitude_nm*sinf(6.28318530717958647692f*((float)phase_us/(float)period_us));

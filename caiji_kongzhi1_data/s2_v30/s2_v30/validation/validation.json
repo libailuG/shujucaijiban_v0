@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "source_policy_sha256": "25981d75a0ee2f00ca352532d40fdbfc8f0131d56687a61d1034dcc52039d8a0",
+  "torch": "2.7.0+cu128",
+  "numpy": "1.26.0",
+  "mujoco": "3.5.0",
+  "weight_bytes": 233236,
+  "random_observations": 1000,
+  "c_raw_max_error": 1.430511474609375e-06,
+  "numpy_raw_max_error": 1.8477439880371094e-06,
+  "selftest_error": 6.51925802230835e-08,
+  "synthetic_frames": 2000,
+  "synthetic_obs_raw_command_errors": [
+    6.258487701416016e-07,
+    9.5367431640625e-07,
+    9.059906005859375e-06
+  ],
+  "mounting_samples": 100,
+  "mounting_max_error": 3.5762786865234375e-07,
+  "fault_cases": [
+    "nan",
+    "timing",
+    "quaternion",
+    "sensor",
+    "disable",
+    "uncalibrated",
+    "invalid_limit"
+  ],
+  "mujoco_reference_frames": 1010,
+  "mujoco_obs_raw_command_errors": [
+    1.862645149230957e-08,
+    2.980232238769531e-07,
+    3.814697265625e-06
+  ],
+  "c_closed_loop_physics_steps": 20200,
+  "c_closed_loop_seconds": 20.200000000001705,
+  "c_closed_loop_actual_torque_peak_Nm": 12.0,
+  "state_bytes": 2068,
+  "workspace_bytes": 1796,
+  "hardware_validation": false
+}

@@ -1,128 +1,0 @@
-Dependencies for Project 'zhuban_led', Target 'Zhuban_LED': (DO NOT MODIFY !)
-CompilerVersion: 6240000::V6.24::ARMCLANG
-F (.\App\main.c)(0x6AF66791)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core -mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx-o ./objects/main.o -MMD)
-I (Drivers\CMSIS\Device\stm32h7xx.h)(0x6AF29074)
-I (Drivers\CMSIS\Device\stm32h723xx.h)(0x6AF29073)
-I (Drivers\CMSIS\Core\core_cm7.h)(0x6AEA90FA)
-I (Drivers\CMSIS\Device\system_stm32h7xx.h)(0x6AF29075)
-I (App\imu.h)(0x6AF57AF2)
-I (App\imu_bus.h)(0x6AF2B30C)
-I (App\battery.h)(0x6AF3D139)
-I (App\reserved_uart2.h)(0x6AF6789E)
-I (App\mcu_uart_protocol.h)(0x6AF3D93B)
-I (App\control_mode1.h)(0x6AF6789E)
-I (App\control_mode1_monitor.h)(0x6AF66E10)
-I (App\reserved_uart1.h)(0x6AF66E10)
-I (App\motor_bus.h)(0x6AF58FAB)
-I (App\motor_protocol.h)(0x6AF58153)
-I (App\motor_debug_mode.h)(0x6AF5776B)
-F (.\Startup\system_stm32h7xx.c)(0x6AF5891F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core -mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx-o ./objects/system_stm32h7xx.o -MMD)
-I (Drivers\CMSIS\Device\stm32h7xx.h)(0x6AF29074)
-I (Drivers\CMSIS\Device\stm32h723xx.h)(0x6AF29073)
-I (Drivers\CMSIS\Core\core_cm7.h)(0x6AEA90FA)
-I (Drivers\CMSIS\Device\system_stm32h7xx.h)(0x6AF29075)
-F (.\Startup\startup_stm32h723xx.s)(0x6AF2B146)(--cpu Cortex-M7 --fpu=SoftVFP -g --diag_suppress=A1950W -I .\App -I .\Drivers\CMSIS\Device -I .\Drivers\CMSIS\Core --pd "__UVISION_VERSION SETA 543"--pd "STM32H723xx SETA 1"--pd "STM32H723xx SETA 1"--list .\listings\startup_stm32h723xx.lst--xref -o .\objects\startup_stm32h723xx.o--depend .\objects\startup_stm32h723xx.d)
-F (.\App\imu.c)(0x6AF57055)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core -mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx-o ./objects/imu.o -MMD)
-I (Drivers\CMSIS\Device\stm32h7xx.h)(0x6AF29074)
-I (Drivers\CMSIS\Device\stm32h723xx.h)(0x6AF29073)
-I (Drivers\CMSIS\Core\core_cm7.h)(0x6AEA90FA)
-I (Drivers\CMSIS\Device\system_stm32h7xx.h)(0x6AF29075)
-I (App\imu.h)(0x6AF57AF2)
-I (App\imu_bus.h)(0x6AF2B30C)
-I (App\icm_imu_i2c.h)(0x6AF2B2EB)
-I (App\mahony.h)(0x6AF56E39)
-F (.\App\imu_bus.c)(0x6AF5906A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core -mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx-o ./objects/imu_bus.o -MMD)
-I (Drivers\CMSIS\Device\stm32h7xx.h)(0x6AF29074)
-I (Drivers\CMSIS\Device\stm32h723xx.h)(0x6AF29073)
-I (Drivers\CMSIS\Core\core_cm7.h)(0x6AEA90FA)
-I (Drivers\CMSIS\Device\system_stm32h7xx.h)(0x6AF29075)
-I (App\imu_bus.h)(0x6AF2B30C)
-F (.\App\icm_imu_i2c.c)(0x6AF2B2EB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core -mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx-o ./objects/icm_imu_i2c.o -MMD)
-I (App\icm_imu_i2c.h)(0x6AF2B2EB)
-F (.\App\mahony.c)(0x6AF56E39)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core -mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx-o ./objects/mahony.o -MMD)
-I (App\mahony.h)(0x6AF56E39)
-F (.\App\battery.c)(0x6AF3D156)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core -mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx-o ./objects/battery.o -MMD)
-I (Drivers\CMSIS\Device\stm32h7xx.h)(0x6AF29074)
-I (Drivers\CMSIS\Device\stm32h723xx.h)(0x6AF29073)
-I (Drivers\CMSIS\Core\core_cm7.h)(0x6AEA90FA)
-I (Drivers\CMSIS\Device\system_stm32h7xx.h)(0x6AF29075)
-I (App\imu_bus.h)(0x6AF2B30C)
-I (App\battery.h)(0x6AF3D139)
-F (.\App\reserved_uart2.c)(0x6AF6789E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core -mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx-o ./objects/reserved_uart2.o -MMD)
-I (Drivers\CMSIS\Device\stm32h7xx.h)(0x6AF29074)
-I (Drivers\CMSIS\Device\stm32h723xx.h)(0x6AF29073)
-I (Drivers\CMSIS\Core\core_cm7.h)(0x6AEA90FA)
-I (Drivers\CMSIS\Device\system_stm32h7xx.h)(0x6AF29075)
-I (App\imu_bus.h)(0x6AF2B30C)
-I (App\reserved_uart2.h)(0x6AF6789E)
-I (App\mcu_uart_protocol.h)(0x6AF3D93B)
-I (App\control_mode1.h)(0x6AF6789E)
-I (App\control_mode1_monitor.h)(0x6AF66E10)
-I (App\mcu_uart_stream.h)(0x6AF3DA21)
-I (App\normal_mode.h)(0x6AF57625)
-I (App\motor_debug_mode.h)(0x6AF5776B)
-I (App\imu_debug_mode.h)(0x6AF57625)
-I (App\motor_bus.h)(0x6AF58FAB)
-I (App\motor_protocol.h)(0x6AF58153)
-F (.\App\motor_bus.c)(0x6AF58FAB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core -mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx-o ./objects/motor_bus.o -MMD)
-I (Drivers\CMSIS\Device\stm32h7xx.h)(0x6AF29074)
-I (Drivers\CMSIS\Device\stm32h723xx.h)(0x6AF29073)
-I (Drivers\CMSIS\Core\core_cm7.h)(0x6AEA90FA)
-I (Drivers\CMSIS\Device\system_stm32h7xx.h)(0x6AF29075)
-I (App\imu_bus.h)(0x6AF2B30C)
-I (App\motor_bus.h)(0x6AF58FAB)
-I (App\motor_protocol.h)(0x6AF58153)
-I (App\motor_debug_mode.h)(0x6AF5776B)
-I (App\mcu_uart_protocol.h)(0x6AF3D93B)
-I (App\control_mode1.h)(0x6AF6789E)
-I (App\control_mode1_monitor.h)(0x6AF66E10)
-F (.\App\reserved_uart1.c)(0x6AF66E10)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core -mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx-o ./objects/reserved_uart1.o -MMD)
-I (Drivers\CMSIS\Device\stm32h7xx.h)(0x6AF29074)
-I (Drivers\CMSIS\Device\stm32h723xx.h)(0x6AF29073)
-I (Drivers\CMSIS\Core\core_cm7.h)(0x6AEA90FA)
-I (Drivers\CMSIS\Device\system_stm32h7xx.h)(0x6AF29075)
-I (App\reserved_uart2.h)(0x6AF6789E)
-I (App\mcu_uart_protocol.h)(0x6AF3D93B)
-I (App\control_mode1.h)(0x6AF6789E)
-I (App\control_mode1_monitor.h)(0x6AF66E10)
-I (App\reserved_uart1.h)(0x6AF66E10)
-F (.\App\reserved_uart1.h)(0x6AF66E10)()
-F (.\App\normal_mode.c)(0x6AF6729F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core -mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx-o ./objects/normal_mode.o -MMD)
-I (App\normal_mode.h)(0x6AF57625)
-I (App\mcu_uart_protocol.h)(0x6AF3D93B)
-I (App\imu.h)(0x6AF57AF2)
-I (App\battery.h)(0x6AF3D139)
-I (App\motor_bus.h)(0x6AF58FAB)
-I (App\motor_protocol.h)(0x6AF58153)
-I (App\motor_debug_mode.h)(0x6AF5776B)
-F (.\App\normal_mode.h)(0x6AF57625)()
-F (.\App\motor_debug_mode.c)(0x6AF5784B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core -mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx-o ./objects/motor_debug_mode.o -MMD)
-I (App\motor_debug_mode.h)(0x6AF5776B)
-I (App\mcu_uart_protocol.h)(0x6AF3D93B)
-I (App\motor_bus.h)(0x6AF58FAB)
-I (App\motor_protocol.h)(0x6AF58153)
-I (App\battery.h)(0x6AF3D139)
-F (.\App\motor_debug_mode.h)(0x6AF5776B)()
-F (.\App\imu_debug_mode.c)(0x6AF57AF2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core -mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx-o ./objects/imu_debug_mode.o -MMD)
-I (App\imu_debug_mode.h)(0x6AF57625)
-I (App\mcu_uart_protocol.h)(0x6AF3D93B)
-I (App\imu.h)(0x6AF57AF2)
-F (.\App\imu_debug_mode.h)(0x6AF57625)()
-F (.\App\control_mode1.c)(0x6AF6789E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core -mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx-o ./objects/control_mode1.o -MMD)
-I (App\control_mode1.h)(0x6AF6789E)
-I (App\mcu_uart_protocol.h)(0x6AF3D93B)
-I (App\control_mode1_monitor.h)(0x6AF66E10)
-I (App\control1_policy\s2_deploy.h)(0x6AF57E40)
-I (App\imu.h)(0x6AF57AF2)
-I (App\imu_bus.h)(0x6AF2B30C)
-I (App\motor_bus.h)(0x6AF58FAB)
-I (App\motor_protocol.h)(0x6AF58153)
-I (App\motor_debug_mode.h)(0x6AF5776B)
-I (App\reserved_uart2.h)(0x6AF6789E)
-I (App\reserved_uart1.h)(0x6AF66E10)
-I (App\normal_mode.h)(0x6AF57625)
-F (.\App\control_mode1.h)(0x6AF6789E)()
-F (.\App\control_mode1_monitor.h)(0x6AF66E10)()
-F (.\App\control1_policy\s2_deploy.c)(0x6AF57E40)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m7 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./App -I ./Drivers/CMSIS/Device -I ./Drivers/CMSIS/Core -mfpu=fpv5-d16 -mfloat-abi=softfp -ffp-contract=off-D__UVISION_VERSION="543" -DSTM32H723xx -DSTM32H723xx-o ./objects/s2_deploy.o -MMD)
-I (App\control1_policy\s2_deploy.h)(0x6AF57E40)
-F (.\App\control1_policy\s2_deploy.h)(0x6AF57E40)()
